@@ -1,0 +1,89 @@
+$fa-font-path: "../fonts/font-awesome";
+
+// Core UI
+@import "~@coreui/coreui/scss/coreui";
+
+// Fontawsome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import "~toastr/toastr";
+
+// Custom styles
+.form-group.required .control-label:after {
+  content: "*";
+  margin-left: 5px;
+  color: #ff1e42;
+}
+
+// Customize toast plugin
+#toast-container {
+  & > div {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.30196078431372547);
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+// Avatar upload placeholder
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+  margin: 50px auto;
+  .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+    input {
+      display: none;
+      + label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #FFFFFF;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all .2s ease-in-out;
+        &:hover {
+          background: #f1f1f1;
+          border-color: #d6d6d6;
+        }
+        &:after {
+          content: "\f040";
+          font-family: 'Font Awesome 5 Free';
+          color: #757575;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+  .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
