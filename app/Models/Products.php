@@ -87,4 +87,8 @@ class Products extends Model
         return $this->hasMany(ProductsOptionGroup::class, 'product_id', 'id');
     }
 
+    public function specification()
+    {
+        return $this->hasMany(ProductsSpecification::class, 'product_id', 'id');
+    }
 }
