@@ -66,7 +66,7 @@
                     @button([
                         'type' => 'link',
                         'action' => 'ghost-dark',
-                        'url' => route('admin.products.brands.index'),
+                        'url' => route('admin.products.option.items.index', [$product, $group]),
                         'text' => 'Cancel',
                         'class' => 'float-right'
                     ])
