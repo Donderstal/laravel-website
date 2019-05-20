@@ -17,7 +17,7 @@
                 @forelse($groups as $item)
                     <tr>
                         <td>{{ $item->title }}</td>
-                        <td>{{ $item->option->count() }}</td>
+                        <td>{{ $item->items->count() }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->created_at)->ago() }}</td>
                         <td class="text-center">
                             @button([
