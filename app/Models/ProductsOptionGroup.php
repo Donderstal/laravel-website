@@ -16,7 +16,7 @@ class ProductsOptionGroup extends Model
         'title'
     ];
 
-    public function option()
+    public function items()
     {
         return $this->hasMany(ProductsOption::class, 'group_id', 'id');
     }
