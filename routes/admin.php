@@ -73,6 +73,17 @@ Route::group(['prefix' => 'products', 'as' => 'products.', 'namespace' => 'Produ
         });
     });
 
+    // Define specification routes
+    Route::group(['prefix' => '{product}/specification', 'as' => 'specification.'], function () {
+        Route::get('/', 'ProductsSpecificationController@index')->name('index');
+        Route::post('/', 'ProductsSpecificationController@store');
+
+        Route::get('/edit/{specification}', 'ProductsSpecificationController@edit')->name('edit');
+        Route::put('/edit/{specification}', 'ProductsSpecificationController@update');
+
+        Route::delete('/delete/{specification}', 'ProductsSpecificationController@delete')->name('delete');
+    });
+
     // Define Product colors routes
     Route::group(['prefix' => 'colors', 'as' => 'colors.'], function () {
         Route::get('/', 'ProductsColorsController@index')->name('index');
