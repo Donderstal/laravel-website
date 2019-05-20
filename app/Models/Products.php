@@ -96,4 +96,9 @@ class Products extends Model
     {
         return $this->hasMany(ProductsServices::class, 'product_id', 'id');
     }
+
+    public function slug() {
+        return $this->hasMany(ProductsSlugs::class, 'product_id', 'id');
+    }
+
 }
