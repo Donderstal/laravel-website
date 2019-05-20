@@ -78,6 +78,14 @@
                                 'icon' => 'fas fa-boxes',
                                 'text' => 'Options'
                             ])@endbutton
+                            @button([
+                                'type' => 'link',
+                                'url' => route('admin.products.services.index', ['product' => $product->id]),
+                                'action' => 'outline-success',
+                                'class' => 'btn-sm',
+                                'icon' => 'fas fa-tools',
+                                'text' => 'Services'
+                            ])@endbutton
                         </td>
                         <td class="text-center">
                             @button([
