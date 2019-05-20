@@ -64,7 +64,7 @@
                             ])@endbutton
                             @button([
                                 'type' => 'link',
-                                'url' => route('admin.users.edit', ['user' => $product->id]),
+                                'url' => route('admin.products.specification.index', ['product' => $product->id]),
                                 'action' => 'outline-success',
                                 'class' => 'btn-sm',
                                 'icon' => 'fas fa-list',
