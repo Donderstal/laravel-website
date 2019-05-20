@@ -22,7 +22,7 @@
                         <td class="text-center">
                             @button([
                                 'type' => 'link',
-                                'url' => '#',
+                                'url' => route('admin.products.option.items.index', ['product' => $product->id, 'group' => $item->id]),
                                 'action' => 'outline-success',
                                 'class' => 'btn-sm',
                                 'icon' => 'fas fa-list-alt',
