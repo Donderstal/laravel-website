@@ -53,13 +53,13 @@ Route::group(['prefix' => 'products', 'as' => 'products.', 'namespace' => 'Produ
 
     // Products options routes
     Route::group(['prefix' => '{product}/option', 'as' => 'option.'], function () {
-        Route::get('/', 'ProductsOptionsController@index')->name('index');
-        Route::post('/', 'ProductsOptionsController@store');
+        Route::get('/', 'ProductsOptionsGroupController@index')->name('index');
+        Route::post('/', 'ProductsOptionsGroupController@store');
 
-        Route::get('/edit/{group}', 'ProductsOptionsController@edit')->name('edit');
-        Route::put('/edit/{group}', 'ProductsOptionsController@update');
+        Route::get('/edit/{group}', 'ProductsOptionsGroupController@edit')->name('edit');
+        Route::put('/edit/{group}', 'ProductsOptionsGroupController@update');
 
-        Route::delete('/delete/{group}', 'ProductsOptionsController@delete')->name('delete');
+        Route::delete('/delete/{group}', 'ProductsOptionsGroupController@delete')->name('delete');
     });
 
     // Define Product colors routes
