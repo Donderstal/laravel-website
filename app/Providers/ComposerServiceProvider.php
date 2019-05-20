@@ -27,5 +27,9 @@ class ComposerServiceProvider extends ServiceProvider
             'admin.layouts.sidebar',
             'App\Http\Composers\AdminNavigationComposer'
         );
+        view()->composer(
+            'admin.layouts.breadcrumb',
+            'App\Http\Composers\AdminBreadcrumbComposer'
+        );
     }
 }
