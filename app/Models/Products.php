@@ -91,4 +91,9 @@ class Products extends Model
     {
         return $this->hasMany(ProductsSpecification::class, 'product_id', 'id');
     }
+
+    public function services()
+    {
+        return $this->hasMany(ProductsServices::class, 'product_id', 'id');
+    }
 }
