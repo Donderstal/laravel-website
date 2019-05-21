@@ -9,14 +9,14 @@ use App\Model\ProductsBrands;
 use App\Models\Products;
 use App\Models\ProductsColors;
 use App\Models\ProductsModels;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductsController extends Controller
 {
     public function index()
     {
         $products = Products::orderBy('created_at', 'DESC')
-            ->with(['user', 'brand', 'model'])
+            ->with(['user', 'brand', 'model', 'slug'])
             ->paginate(config('site.admin.per_page'));
 
         return view('admin.products.index')->with([
@@ -35,6 +35,12 @@ class ProductsController extends Controller
     public function store(CreateProductRequest $request)
     {
         $product = Products::create($request->except(['_token', 'cover_file']));
+
+        // Add slug for product
+        $product->slug()->create([
+            'slug' => Str::slug($request->title),
+            'default' => true
+        ]);
 
         if ($request->hasFile('cover_file')) {
             $product->setCover($request->cover_file);
@@ -60,6 +66,17 @@ class ProductsController extends Controller
     {
         if ($request->hasFile('cover_file')) {
             $product->setCover($request->cover_file);
+        }
+
+        if ($product->title != $request->title) {
+            // set the default of all slugs to false
+            $product->slug()->update(['default' => false]);
+
+            // create a new slug
+            $product->slug()->create([
+                'slug' => Str::slug($request->title),
+                'default' => true
+            ]);
         }
 
         $product->update($request->except($request->except(['_token', 'cover_file'])));
