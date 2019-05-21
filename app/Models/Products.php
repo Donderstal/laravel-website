@@ -28,7 +28,8 @@ class Products extends Model
         'model_id',
         'user_id',
         'status',
-        'enable'
+        'enable',
+        'visits'
     ];
 
     protected static function boot()
