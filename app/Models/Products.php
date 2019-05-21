@@ -14,6 +14,10 @@ class Products extends Model
     protected static $logAttributes = ['*'];
     protected static $logOnlyDirty = true;
 
+    protected static $ignoreChangedAttributes = [
+        'visits',
+    ];
+
     protected $fillable = [
         'title',
         'note',
