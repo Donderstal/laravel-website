@@ -9,6 +9,9 @@ class ProductsOptionGroup extends Model
 {
     use LogsActivity;
 
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
+
     protected $table = 'products_option_group';
 
     protected $fillable = [

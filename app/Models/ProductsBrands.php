@@ -10,6 +10,9 @@ class ProductsBrands extends Model
 {
     use LogsActivity;
 
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
+
     protected $table = 'products_brands';
 
     protected $fillable = [

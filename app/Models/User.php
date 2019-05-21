@@ -13,6 +13,9 @@ class User extends Authenticatable
     use Notifiable;
     use LogsActivity;
 
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
+
     /**
      * The attributes that are mass assignable.
      *

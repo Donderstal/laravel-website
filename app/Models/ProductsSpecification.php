@@ -11,6 +11,9 @@ class ProductsSpecification extends Model
 
     protected $table = 'products_specification';
 
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
+
     protected $fillable = [
         'product_id',
         'title',

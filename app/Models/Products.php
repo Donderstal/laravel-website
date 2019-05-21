@@ -11,6 +11,9 @@ class Products extends Model
 {
     use LogsActivity;
 
+    protected static $logAttributes = ['*'];
+    protected static $logOnlyDirty = true;
+
     protected $fillable = [
         'title',
         'note',
