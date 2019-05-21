@@ -15,13 +15,19 @@ return [
         // global file size
         'file_size' => 10485760, // 10 MB
 
-        // size of images
-        'size' => [
+        // size of different actions
+        'actions' => [
             // size of avatar image
             'avatar' => '60x60',
 
             // size of thumbnails in data list
             'list_thumbnail' => '64x64',
+
+            // size of thumbnails
+            'thumbnail' => '160x80',
+
+            // size of covers
+            'cover' => '800x400',
 
         ]
     ],
