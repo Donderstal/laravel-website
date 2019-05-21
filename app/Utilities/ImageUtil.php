@@ -22,14 +22,20 @@ class ImageUtil
         Route::group(['prefix' => 'image', 'as' => 'image.', 'namespace' => '\App\Utilities'], function () {
             Route::get('/{filename}', 'ImageUtil@showOriginal')->name('original');
 
-            Route::get('/avatar/{filename}', 'ImageUtil@showAvatar')->name('avatar');
-            Route::get('/list_thumbnail/{filename}', 'ImageUtil@showListThumbnail')->name('list_thumbnail');
+            Route::get('/{action}/{filename}', 'ImageUtil@showWithAction')->name('action')
+                ->where('action', implode('|', array_keys(config('site.image.actions'))));
         });
     }
 
-    public function showListThumbnail($filename)
+    public function showWithAction($action, $filename)
     {
-        return $this->makeFitImage($this->getImagePath($filename), config('site.image.size.list_thumbnail'))->response();
+        if (method_exists($this, 'show' . $action)) {
+            return $this->{'show' . $action}($filename);
+        }
+
+        return $this->makeFitImage($this->getImagePath($filename),
+            config('site.image.actions')[$action])->response();
+
     }
 
     public function showAvatar($filename)
