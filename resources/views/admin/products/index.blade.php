@@ -22,7 +22,7 @@
                 @forelse($products as $product)
                     <tr>
                         <td>
-                            {{ $product->title }}
+                            <a href="{{ route('products.show', $product->slug->slug) }}">{{ $product->title }}</a>
                         </td>
                         <td>
                             {{ $product->brand->title }}
