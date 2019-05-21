@@ -15,7 +15,7 @@ class CreateProductsSlugsTable extends Migration
     {
         Schema::create('products_slugs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('product_id');
+            $table->bigInteger('product_id')->unsigned();
             $table->string('slug')->unique();
             $table->boolean('default')->default(0);
             $table->timestamps();
