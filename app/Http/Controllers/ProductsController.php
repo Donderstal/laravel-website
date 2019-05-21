@@ -70,8 +70,19 @@ class ProductsController extends Controller
             }
         })[0];
 
+        // get related products
+        $related_products = Products::where('brand_id', $product->brand_id)
+            ->where('model_id', $product->model_id)
+            ->where('enable', true)
+            ->where('id', '<>', $product->id)
+            ->with(['cover', 'brand'])
+            ->take(3)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
         return view('products.show')->with([
-            'product' => $product
+            'product' => $product,
+            'related_products' => $related_products
         ]);
     }
 }

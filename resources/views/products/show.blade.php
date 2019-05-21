@@ -80,4 +80,24 @@
     {{-- Product Note --}}
     <p>{{ $product->note }}</p>
 
+
+    {{-- Related Products --}}
+    <h1>Related Products</h1>
+    <ul>
+    @foreach($related_products as $related)
+        <li>
+            Brand: {{ $related->brand->title }}
+            <br>
+            Title: {{ $related->title }}
+            <br>
+            cover: {{ route('image.action', ['thumbnail', $related->cover->picture]) }}
+            <br>
+            Price: {{ $related->price }}
+            <br>
+            Mileage: {{ $related->mileage }}
+            <br>
+            Year: {{ $related->year }}
+        </li>
+    @endforeach
+    </ul>
 @endsection
