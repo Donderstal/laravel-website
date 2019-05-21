@@ -18,7 +18,7 @@
                     <tr>
                         <td>
                             @if ($item->logo)
-                                <img src="{{ route('image.list_thumbnail', $item->logo) }}" class="img-thumbnail"
+                                <img src="{{ route('image.action', ['list_thumbnail', $item->logo]) }}" class="img-thumbnail"
                                      alt="{{ $item->title }}">
                             @else
                                 &nbsp;
@@ -63,7 +63,7 @@
                 'type' => 'file',
                 'label' => 'Logo',
                 'name' => 'logo_file',
-                'current' => isset($brand->logo) && $brand->logo ? route('image.list_thumbnail', $brand->logo) : null
+                'current' => isset($brand->logo) && $brand->logo ? route('image.action', ['list_thumbnail', $brand->logo]) : null
             ])
             @endinput
             @slot('footer')

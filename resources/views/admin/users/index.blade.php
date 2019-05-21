@@ -20,7 +20,7 @@
                         <tr>
                             <td class="text-center">
                                 <div class="avatar">
-                                    <img class="img-avatar" src="{{ $user->avatar ? route('image.avatar', $user->avatar) : asset('img/admin/default-avatar.png') }}"
+                                    <img class="img-avatar" src="{{ $user->avatar ? route('image.action', ['avatar', $user->avatar]) : asset('img/admin/default-avatar.png') }}"
                                          alt="{{ $user->name }}">
                                     <span class="avatar-status {{ $user->isOnline() ? 'badge-success' : 'badge-danger' }}"></span>
                                 </div>

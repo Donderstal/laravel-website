@@ -18,7 +18,7 @@
                 @forelse($pictures as $item)
                     <tr>
                         <td>
-                            <img src="{{ route('image.list_thumbnail', $item->picture) }}" class="img-thumbnail"
+                            <img src="{{ route('image.action', ['list_thumbnail', $item->picture]) }}" class="img-thumbnail"
                                  alt="{{ $item->label }}">
                         </td>
                         <td>

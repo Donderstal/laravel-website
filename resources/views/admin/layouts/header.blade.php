@@ -19,7 +19,7 @@
             <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                aria-expanded="false">
                 <img class="img-avatar"
-                     src="{{ !empty(Auth::user()->avatar) ? route('image.avatar', Auth::user()->avatar) : asset('img/admin/default-avatar.png') }}"
+                     src="{{ !empty(Auth::user()->avatar) ? route('image.action', ['avatar', Auth::user()->avatar]) : asset('img/admin/default-avatar.png') }}"
                      alt="{{ Auth::user()->name }}">
                 {{ Auth::user()->name }}
             </a>

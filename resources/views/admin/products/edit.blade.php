@@ -41,7 +41,7 @@
                 'type' => 'file',
                 'label' => 'Cover picture',
                 'name' => 'cover_file',
-                'current' => route('image.list_thumbnail', $product->cover->picture),
+                'current' => route('image.action', ['list_thumbnail', $product->cover->picture]),
                 'required' => true,
             ])
             @endinput
