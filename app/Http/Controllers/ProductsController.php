@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use App\Models\ProductsSlugs;
 use Illuminate\Http\Request;
 
@@ -11,20 +12,10 @@ class ProductsController extends Controller
     {
         // get the product slug
         $slug_data = ProductsSlugs::where('slug', $slug)
-            ->with([
-                'product' => function($q){
-                    $q->where('enable', true);
-                },
-                'product.brand',
-                'product.model',
-                'product.color',
-                'product.cover',
-                'product.gallery'
-            ])
             ->first();
 
         // if product slug was wrong and does not exists
-        if (empty($slug_data) || empty($slug_data->product)) {
+        if (empty($slug_data)) {
             abort(404);
         }
 
@@ -44,16 +35,43 @@ class ProductsController extends Controller
             }
         }
 
-        // assign product
-        $product = $slug_data->product;
+        // Get the product details
+        $product = Products::where('id', $slug_data->product_id)
+            ->where('enable', true)
+            ->with([
+                'brand',
+                'model',
+                'gallery' => function ($q) {
+                    $q->orderBy('sort', 'ASC');
+                },
+                'color',
+                'options' => function ($q) {
+                    $q->with('items');
+                },
+                'specification',
+                'services'
+            ])
+            ->first();
+
+        // Product does not exists
+        if (empty($product)) {
+            abort(404);
+        }
 
         // update product visits
         $product->timestamps = false;
         $product->visits++;
         $product->save();
 
+        // get the cover from gallery array
+        $product->cover = (object)array_filter($product->gallery->toArray(), function ($item) use ($product) {
+            if ($item['id'] == $product->cover_id) {
+                return $product;
+            }
+        })[0];
+
         return view('products.show')->with([
-            'product' => $slug_data->product
+            'product' => $product
         ]);
     }
 }
