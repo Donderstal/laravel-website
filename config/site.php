@@ -126,6 +126,9 @@ return [
             'mt' => 'Manual Transmission',
             'am' => 'Automated Manual Transmission',
             'cvt' => 'Continuously Variable Transmission',
-        ]
+        ],
+
+        // products prefix url
+        'url' => 'autos',
     ]
 ];
