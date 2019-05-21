@@ -46,7 +46,7 @@ class ImageUtil
             $filepath = base_path(config('site.user.default_avatar_path'));
         }
 
-        return $this->makeFitImage($filepath, config('site.image.size.avatar'))->response();
+        return $this->makeFitImage($filepath, config('site.image.actions')['avatar'])->response();
     }
 
 
