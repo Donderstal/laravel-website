@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('color_id')->unsigned();
             $table->bigInteger('brand_id')->unsigned();
             $table->bigInteger('model_id')->unsigned();
+            $table->integer('visits')->default(0);
             $table->bigInteger('created_by')->unsigned();
             $table->enum('status', ['available', 'sold'])->default('available');
             $table->boolean('enable')->default(true);
