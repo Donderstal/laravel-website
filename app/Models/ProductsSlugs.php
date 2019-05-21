@@ -19,4 +19,9 @@ class ProductsSlugs extends Model
         'slug',
         'default'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Products::class, 'product_id', 'id');
+    }
 }
