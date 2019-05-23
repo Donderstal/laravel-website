@@ -25,4 +25,9 @@ $global-palette: (
     dark-grey: #555C62,
     light-grey: #999EA3,
     lightest-grey: #BABABA
-)
+);
+
+@font-face {
+    font-family: "Montserrat";
+    src: font-files("../fonts/montserrat/montserrat.regular.ttf"); 
+}
