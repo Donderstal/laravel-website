@@ -85,4 +85,11 @@ class ProductsController extends Controller
             'related_products' => $related_products
         ]);
     }
+
+    public function all(){
+        $products = Products::all();
+        return view('products.all')->with([
+            'products' => $products
+        ]);
+    }
 }
