@@ -83,6 +83,8 @@
                 <span class="sub-title">A Bigger Circle</span>
             </div>
 
+            @include('partials.product-template')
+
             <div class="links">
                 <a href="https://www.abiggercircle.com/">ABiggerCircle</a>
                 <a href="https://github.com/abiggercircle/abc-laravel-boilerplate">Github Repository</a>
