@@ -65,14 +65,34 @@ $paragraph-styles: (
 );
 
 $header-styles: (
-    'xlarge': (
-        'h1': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'h2': ('fs': 42, 'lh': 52, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'h3': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'contact-info': ('fs': 16, 'lh': 26, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'navbar-link': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'contact': ('fs': 21, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
-        'attention-quote': ('fs': 20, 'lh': 38, 'mt': 0, 'mb': $paragraph-margin-bottom)
-      )
+  'xsmall': (
+    'h1': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'h2': ('fs': 42, 'lh': 52, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'h3': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'contact-info': ('fs': 16, 'lh': 26, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'navbar-link': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'contact': ('fs': 21, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'attention-quote': ('fs': 20, 'lh': 38, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  ),
+  'large': (
+    'h1': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'h2': ('fs': 42, 'lh': 52, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'h3': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'contact-info': ('fs': 16, 'lh': 26, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'navbar-link': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'contact': ('fs': 21, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'attention-quote': ('fs': 20, 'lh': 38, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  ),
+  'xlarge': (
+      'h1': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'h2': ('fs': 42, 'lh': 52, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'h3': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'contact-info': ('fs': 16, 'lh': 26, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'navbar-link': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'contact': ('fs': 21, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+      'attention-quote': ('fs': 20, 'lh': 38, 'mt': 0, 'mb': $paragraph-margin-bottom)
+    )
 );
