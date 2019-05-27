@@ -1,4 +1,3 @@
-
 <section class="footer">
     <!-- 
        Contact information 
