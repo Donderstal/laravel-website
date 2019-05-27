@@ -6,7 +6,7 @@
 <section>
     <!-- Top image -->
     <div class="general-info__top-image">
-
+        GENERAL INFO BABY!
     </div>
      <!-- Main paragraph -->
      <div class="general-info__top-image">
