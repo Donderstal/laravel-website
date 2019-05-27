@@ -26,11 +26,10 @@ ImageUtil::routes();
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
     Route::get('/', 'ProductsController@all')->name('show');
     Route::get('{slug}', 'ProductsController@show')->name('show');
+
 });
 
-Route::get('/werkplaats', function () {
-    return view('general-info');
-});
+    Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 
 // Paginas:
 

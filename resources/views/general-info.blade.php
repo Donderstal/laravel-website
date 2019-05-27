@@ -3,34 +3,42 @@
     They're pretty much the same except for their content
 -->
 
-<section>
-    <!-- Top image -->
-    <div class="general-info__top-image">
-        GENERAL INFO BABY!
-    </div>
-     <!-- Main paragraph -->
-     <div class="general-info__top-image">
+@extends('layouts.master')
 
-    </div>
+@section('content')
+    <section>
+        <div>
+            <!-- Top image -->
+            <div class="general-info__top-image">
+                GENERAL INFO BABY!
+            </div>
+            <!-- Main paragraph -->
+            <div class="general-info__main-paragraph">
 
-<!-- if not over ons -->    
-    <!-- First subparagraph -->
-    <div class="general-info__top-image">
+            </div>
 
-    </div>
-    <!-- Second subparagraph -->
-    <div class="general-info__top-image">
+        <!-- if not over ons -->    
+            <!-- First subparagraph -->
+            <div class="general-info__first-paragraph">
 
-    </div>
+            </div>
+            <!-- Second subparagraph -->
+            <div class="general-info__second-pararaph">
 
-    <!-- Contact form -->
-    <div class="general-info__top-image">
+            </div>
 
-    </div>
-<!-- end if -->
+            <!-- Contact form -->
+            <div class="general-info_contact-form">
 
-<!-- else if over ons -->
-    <div class="general-info__top-image">
+            </div>
+        <!-- end if -->
 
-    </div>
-</section>
+        <!-- else if over ons -->
+            <div class="general-info__top-image">
+
+            </div>
+        <!-- end if -->
+        
+        </div>
+    </section>
+@endsection

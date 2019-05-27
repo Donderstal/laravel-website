@@ -8,6 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" media="all" rel="stylesheet" type="text/css">
 
     @yield('head_extra')
 

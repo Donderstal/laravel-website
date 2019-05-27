@@ -6,3 +6,8 @@
     color: $white;
     background-color: map-get($global-palette, 'darkest-grey');
 }
+
+%flex-and-justify {
+    justify-content: space-around;
+    display: flex;
+}

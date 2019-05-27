@@ -1,0 +1,19 @@
+.top-bar {
+    max-height: 3rem;
+    margin: 2rem auto;
+    max-width: map-get($breakpoints, xlarge)
+}
+
+.header__menu-paragraph {
+    display: inline-block;  
+    margin-bottom: 0;
+}
+
+.header__menu-anchor {
+    
+}
+
+
+.header__main-subsection {
+    @extend %flex-and-justify;
+}

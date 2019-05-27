@@ -1,0 +1,20 @@
+@mixin create-paragraph-classes($para-array, $modifier) {
+    @each $size, $paras in $para-array {
+      @include breakpoint($size) {
+        @if $modifier == 'formal' {
+          @each $para, $para-defs in $paras {
+            #{$para}--#{$modifier}, .#{$para}--#{$modifier} {
+              @include font-props-from-defs($para-defs);
+            }
+          }        
+        }
+        @else {
+          @each $para, $para-defs in $paras {
+            #{$para}, .#{$para} {
+              @include font-props-from-defs($para-defs);
+            }
+          }        
+        }
+      }
+    }
+  }
