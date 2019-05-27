@@ -12,6 +12,8 @@
      <div class="general-info__top-image">
 
     </div>
+
+<!-- if not over ons -->    
     <!-- First subparagraph -->
     <div class="general-info__top-image">
 
@@ -20,7 +22,14 @@
     <div class="general-info__top-image">
 
     </div>
+
     <!-- Contact form -->
+    <div class="general-info__top-image">
+
+    </div>
+<!-- end if -->
+
+<!-- else if over ons -->
     <div class="general-info__top-image">
 
     </div>
