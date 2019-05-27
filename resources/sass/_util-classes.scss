@@ -1,0 +1,8 @@
+%center-in-parent {
+    margin: 0 auto;
+}
+
+%dark-bg-white-text {
+    color: $white;
+    background-color: map-get($global-palette, 'darkest-grey');
+}

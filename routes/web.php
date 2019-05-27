@@ -27,3 +27,19 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('/', 'ProductsController@all')->name('show');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
+
+Route::get('/werkplaats', function () {
+    return view('general-info');
+});
+
+// Paginas:
+
+// Home --> /home --> view('home')
+// Zoek resultaten --> ?? --> view('search-results')
+// Ons aanbod --> /aanbod --> view('aanbod)
+// Enkel Product --> /aanbod/product --> view('view-product')
+// Werkplaats --> /werkplaats --> view('general-info')->with(text)
+// Financiering --> /financiering --> view('general-info')->with(financiering-text)
+// Zoektocht --> /zoektocht --> view('general-info')->with(zoektocht-text)
+// Over ons --> /over-ons --> view('general-info')->with(over-ons-text)
+// Contact /contact --> view('general-info')->with(contact-text)
