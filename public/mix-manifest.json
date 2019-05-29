@@ -1,9 +1,8 @@
 {
-    "/js/admin.js": "/js/admin.js?id=ce4a4384f15bf9ae8698",
+    "/js/admin.js": "/js/admin.js?id=e6dd5a69069d764d8c7c",
     "/js/app.js": "/js/app.js?id=a40325819be623eceec0",
-    "/css/app.css": "/css/app.css?id=d207bad3a95c567abe84",
+    "/css/app.css": "/css/app.css?id=c0c1c28fe0e5684641f8",
     "/css/admin.css": "/css/admin.css?id=5ca703705c94b7f0f598",
-    "/img/admin/default-avatar.png": "/img/admin/default-avatar.png?id=c07dc535605b5377073f",
     "/fonts/font-awesome/fa-brands-400.eot": "/fonts/font-awesome/fa-brands-400.eot?id=9a2f6a3257c6a819b2de",
     "/fonts/font-awesome/fa-brands-400.svg": "/fonts/font-awesome/fa-brands-400.svg?id=38975343b586296e9b73",
     "/fonts/font-awesome/fa-brands-400.ttf": "/fonts/font-awesome/fa-brands-400.ttf?id=5b9d371c82d38952e151",
@@ -18,5 +17,6 @@
     "/fonts/font-awesome/fa-solid-900.svg": "/fonts/font-awesome/fa-solid-900.svg?id=7726a281c1d436eb038f",
     "/fonts/font-awesome/fa-solid-900.ttf": "/fonts/font-awesome/fa-solid-900.ttf?id=045c51352bcf74cc33d5",
     "/fonts/font-awesome/fa-solid-900.woff": "/fonts/font-awesome/fa-solid-900.woff?id=11931db83ee6df2bf8cf",
-    "/fonts/font-awesome/fa-solid-900.woff2": "/fonts/font-awesome/fa-solid-900.woff2?id=d0357555cf1f900925b4"
+    "/fonts/font-awesome/fa-solid-900.woff2": "/fonts/font-awesome/fa-solid-900.woff2?id=d0357555cf1f900925b4",
+    "/fonts/montserrat/montserrat.regular.ttf": "/fonts/montserrat/montserrat.regular.ttf?id=2b2a9723be672f5b6377"
 }
