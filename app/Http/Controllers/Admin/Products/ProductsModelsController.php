@@ -15,7 +15,7 @@ class ProductsModelsController extends Controller
     {
         return view('admin.products.models')->with([
             'brand' => $brand,
-            'models' => $this->getModelsName()
+            'models' => $this->getModelsName($brand)
         ]);
     }
 
@@ -31,7 +31,7 @@ class ProductsModelsController extends Controller
     public function edit(ProductsBrands $brand, ProductsModels $model)
     {
         return view('admin.products.models')->with([
-            'models' => $this->getModelsName(),
+            'models' => $this->getModelsName($brand),
             'brand' => $brand,
             'model' => $model
         ]);
@@ -55,8 +55,8 @@ class ProductsModelsController extends Controller
         return redirect()->route('admin.products.brands.models.index', $brand->id);
     }
 
-    public function getModelsName()
+    public function getModelsName($brand)
     {
-        return ProductsModels::orderBy('title', 'ASC')->get();
+        return $brand->models()->orderBy('title', 'ASC')->get();
     }
 }
