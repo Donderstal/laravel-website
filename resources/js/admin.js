@@ -89,3 +89,11 @@ $(document).on('click', '.confirm-delete', function () {
 $('#deleteConfirmation').on('hide.bs.modal', function (e) {
     $('#deleteConfirmation').find('input[type=hidden][name=route]').val('');
 });
+
+// Update the "Choose file ..." with the file name
+$('.custom-file-input').on('change',function(){
+    //get the file name
+    var fileName = $(this).val();
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName.replace(/^.*\\/, ""));
+});
