@@ -23,7 +23,8 @@ $cyan: #6cb2eb;
 $global-palette: (
     darkest-grey: #293133,
     dark-grey: #555C62,
-    light-grey: #999EA3,
+    medium-grey: #999EA3,
+    light-grey: #A7A7A7,
     lightest-grey: #BABABA
 );
 
@@ -111,6 +112,7 @@ $footer-fonts: (
     'contact-detail-font': ('fs': 16, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'open-day-font': ('fs': 18, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'open-location-font': ('fs': 13, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'open-times-font': ('fs': 16, 'lh': 29, 'mt': 0, 'mb': $paragraph-margin-bottom)
+    'open-times-font': ('fs': 16, 'lh': 29, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'bottom-copyright-font' : ('fs': 14, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom)
   )
 )

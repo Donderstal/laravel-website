@@ -88,6 +88,11 @@ $font-weight-semi-bold: 500;
 }
 
 .open-location-font {
+  color: map-get($global-palette, light-grey);
   font-weight: $font-weight-normal-bold;
   margin-bottom: 0;
+}
+
+.bottom-copyright-font {
+  color: map-get($global-palette, medium-grey);
 }
