@@ -1,0 +1,29 @@
+.footer {
+
+}
+
+.footer__contact-and-photo {
+    background-color: black;
+    color: white;
+}
+
+
+.footer__newsletter-and-social {
+    
+}
+
+.footer__contact-details {
+    @extend .contact-detail-font;
+}
+
+.footer__opening-hours__day {
+    @extend .open-day-font;
+}
+
+.footer__opening-hours__type {
+    @extend .open-location-font;
+}
+
+.footer__opening-hours__time {
+    @extend .open-times-font;
+}

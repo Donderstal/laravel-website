@@ -50,8 +50,8 @@
   }
 }
 
-
 $font-weight-very-bold: 900;
+$font-weight-medium-bold: 700;
 $font-weight-normal-bold: 600;
 $font-weight-semi-bold: 500;
 
@@ -60,6 +60,7 @@ $font-weight-semi-bold: 500;
 
 @include create-paragraph-classes($header-styles);
 
+// header
 @include create-paragraph-classes($navbar-fonts);
 
 .navbar-header-font {
@@ -72,4 +73,21 @@ $font-weight-semi-bold: 500;
 
 .navbar-link-font {
   font-weight: $font-weight-normal-bold;
+}
+
+// footer
+@include create-paragraph-classes($footer-fonts);
+
+.contact-detail-font {
+  font-weight: $font-weight-medium-bold;
+}
+
+.open-day-font {
+  font-weight: $font-weight-normal-bold;
+  margin-bottom: .375rem;
+}
+
+.open-location-font {
+  font-weight: $font-weight-normal-bold;
+  margin-bottom: 0;
 }
