@@ -1,15 +1,12 @@
-.footer {
-
-}
-
 .footer__contact-and-photo {
+    @extend %generic-padding;
     background-color: black;
     color: white;
 }
 
 
 .footer__newsletter-and-social {
-    
+    @extend %generic-padding;
 }
 
 .footer__contact-details {
@@ -26,4 +23,32 @@
 
 .footer__opening-hours__time {
     @extend .open-times-font;
+}
+
+.footer__photo-photo {
+    font-size: 2rem;
+}
+
+.footer__social {
+    @extend %center-in-parent;
+    display: inline-block; 
+}
+
+.footer__newsletter__copy {
+    max-width: 380px;
+}
+
+.footer__newsletter__input {
+    display: inline-block;
+    max-width: 280px;
+    height: 56px;
+    border: 1px solid #000000;
+}
+
+.footer__bottom-copyright {
+    text-align: center;
+    sub {
+        display: inline-block; 
+        margin: 0 auto;
+    }
 }
