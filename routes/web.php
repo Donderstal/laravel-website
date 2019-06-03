@@ -29,6 +29,9 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 });
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
+Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    
+Route::get('/over-ons', 'GeneralInfoController@over-ons')->name('over-ons');    
+Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
 
 // Paginas:
 
