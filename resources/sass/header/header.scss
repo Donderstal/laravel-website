@@ -1,7 +1,11 @@
 .top-bar {
     max-height: 3rem;
-    margin: 2rem auto;
-    max-width: map-get($breakpoints, xlarge)
+    margin: 0 auto 2rem;
+    max-width: map-get($breakpoints, xlarge);
+    background-color: white;
+    @include breakpoint(medium up) {
+        margin: 1rem auto 2rem;
+    }
 }
 
 .header__menu-paragraph {
@@ -9,11 +13,14 @@
     margin-bottom: 0;
 }
 
-.header__menu-anchor {
-    
+.header-subsection {
+    @extend %flex-and-justify;
 }
 
+.header__dropdown-button {
+    @extend .navbar-dropdown-font;
+}
 
-.header__main-subsection {
-    @extend %flex-and-justify;
+.header-subsection--last {
+    Bactext-align: right;
 }

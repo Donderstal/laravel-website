@@ -28,7 +28,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
 
-    Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
+Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 
 // Paginas:
 
