@@ -24,9 +24,8 @@ Auth::routes([
 ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
-    Route::get('/', 'ProductsController@all')->name('show');
+    Route::get('/list', 'ProductsController@list')->name('list');
     Route::get('{slug}', 'ProductsController@show')->name('show');
-
 });
 
     Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
