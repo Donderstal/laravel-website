@@ -50,7 +50,7 @@
 
          <!-- photo with logo -->
          <div class="cell small-12 large-6 footer__photo">
-               <img class="footer__photo-photo" src="/resources/img/city-photo.jpg">
+               <img class="footer__photo-photo" >
          </div>
 
     </div>
