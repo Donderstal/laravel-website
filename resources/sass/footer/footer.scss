@@ -25,10 +25,6 @@
     @extend .open-times-font;
 }
 
-.footer__photo-photo {
-    font-size: 2rem;
-}
-
 .footer__social {
     @extend %center-in-parent;
     display: inline-block; 
