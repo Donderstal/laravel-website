@@ -6,35 +6,38 @@
 @extends('layouts.master')
 
 @section('content')
-    <section>
-        <div>
+    <section class="general-info">
+        <div class="grid-x">
             <!-- Top image -->
-            <div class="general-info__top-image">
-                GENERAL INFO BABY!
+            <div class="cell small-12 general-info__top-image">
+
             </div>
             <!-- Main paragraph -->
-            <div class="general-info__main-paragraph">
-
+            <div class="cell small-12 large-10 large-offset-2 general-info__main-paragraph">
+                <h1>{{ $title }}</h1>
+                <p>{{ $text1 }}</p>
             </div>
 
         <!-- if not over ons -->    
             <!-- First subparagraph -->
-            <div class="general-info__first-paragraph">
-
+            <div class="cell small-12 large-10 end general-info__paragraph">
+                <h2> Over {{ $title }} </h2>
+                <p> {{ $text2 }} </p>
             </div>
             <!-- Second subparagraph -->
-            <div class="general-info__second-pararaph">
-
+            <div class="cell small-12 large-10 large-offset-2 general-info__paragraph">
+                <h2> Over {{ $title }} </h2>
+                <p> {{ $text3 }} </p>
             </div>
 
             <!-- Contact form -->
-            <div class="general-info_contact-form">
+            <div class="cell small-12 large-10 end general-info_contact-form">
 
             </div>
         <!-- end if -->
 
         <!-- else if over ons -->
-            <div class="general-info__top-image">
+            <div class="cell small-12 general-info__top-image">
 
             </div>
         <!-- end if -->

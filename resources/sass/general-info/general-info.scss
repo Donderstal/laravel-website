@@ -1,0 +1,9 @@
+.general-info__main-paragraph {
+    @extend %generic-padding;
+    background-color: map-get($global-palette, dark-grey);
+    color: white;
+}
+
+.general-info__paragraph {
+    @extend %generic-padding;
+}
