@@ -86,9 +86,9 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function all(){
+    public function list(){
         $products = Products::all();
-        return view('products.all')->with([
+        return view('products.list')->with([
             'products' => $products
         ]);
     }

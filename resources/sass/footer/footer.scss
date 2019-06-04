@@ -1,0 +1,54 @@
+.footer__contact-and-photo {
+    @extend %generic-padding;
+    background-color: black;
+    color: white;
+}
+
+
+.footer__newsletter-and-social {
+    @extend %generic-padding;
+}
+
+.footer__contact-details {
+    @extend .contact-detail-font;
+}
+
+.footer__opening-hours__day {
+    @extend .open-day-font;
+}
+
+.footer__opening-hours__type {
+    @extend .open-location-font;
+}
+
+.footer__opening-hours__time {
+    @extend .open-times-font;
+}
+
+.footer__social {
+    @extend %center-in-parent;
+    display: inline-block; 
+}
+
+.footer__newsletter__copy {
+    color: map-get($global-palette, dark-grey);
+    max-width: 380px;
+}
+
+.footer__newsletter__input {
+    color: map-get($global-palette, medium-grey);
+    display: inline-block;
+    max-width: 280px;
+    height: 56px;
+    border: 1px solid #000000;
+    margin-right: 1.25rem;
+}
+
+.footer__bottom-copyright {
+    @extend .bottom-copyright-font;
+    text-align: center;
+    sub {
+        display: inline-block; 
+        margin: 0 auto;
+    }
+}
