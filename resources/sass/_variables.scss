@@ -107,6 +107,18 @@ $navbar-fonts: (
   )
 );
 
+$general-fonts: (
+  'small' : (
+    'standard-font': ('fs': 15, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'main-header-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'secondary-header-font': ('fs': 21,'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  ),
+  'medium': (
+    'main-header-font': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'secondary-header-font': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  )
+);
+
 $footer-fonts: (
   'small' : (
     'contact-detail-font': ('fs': 16, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
@@ -115,4 +127,4 @@ $footer-fonts: (
     'open-times-font': ('fs': 16, 'lh': 29, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'bottom-copyright-font' : ('fs': 14, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom)
   )
-)
+);

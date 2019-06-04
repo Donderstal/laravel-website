@@ -56,9 +56,9 @@ $font-weight-normal-bold: 600;
 $font-weight-semi-bold: 500;
 
 
-@include create-paragraph-classes($paragraph-styles);
+/* @include create-paragraph-classes($paragraph-styles);
 
-@include create-paragraph-classes($header-styles);
+@include create-paragraph-classes($header-styles); */
 
 // header
 @include create-paragraph-classes($navbar-fonts);
@@ -95,4 +95,15 @@ $font-weight-semi-bold: 500;
 
 .bottom-copyright-font {
   color: map-get($global-palette, medium-grey);
+}
+
+// general font styles
+@include create-paragraph-classes($general-fonts);
+
+.main-header-font, .secondary-header-font {
+  font-weight: $font-weight-normal-bold;
+}
+
+.standard-font {
+  font-weight: $font-weight-semi-bold;
 }

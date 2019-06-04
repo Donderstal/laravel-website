@@ -1,9 +1,21 @@
 .general-info__main-paragraph {
     @extend %generic-padding;
-    background-color: map-get($global-palette, dark-grey);
+    background-color: map-get($global-palette, darkest-grey);
     color: white;
+    h1 {
+        @extend .main-header-font;
+    }
+    p {
+        @extend .standard-font;
+    }
 }
 
 .general-info__paragraph {
     @extend %generic-padding;
+    h2 {
+        @extend .secondary-header-font;
+    }
+    p {
+        @extend .standard-font;
+    }
 }
