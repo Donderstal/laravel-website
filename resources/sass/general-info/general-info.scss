@@ -21,6 +21,7 @@
 }
 
 .general-info__contact-form {
+    @extend %center-in-parent;
     max-width: 580px;
 }
 

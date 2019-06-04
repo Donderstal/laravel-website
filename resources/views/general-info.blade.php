@@ -65,6 +65,15 @@
                         </textarea>
                     </div>
 
+                    <div class="cell small-12">
+                        <input type="checkbox" id="voorwaarden" name="voorwaarden">
+                        <label for="voorwaarden">Ja, ik ga akkoord met de voorwaarden.</label>
+                    </div>
+
+                    <div class="cell small-12">
+                        <button>NU VERZENDEN -></button>
+                    </div>
+                    
                 </form>
             </div>
         <!-- end if -->
