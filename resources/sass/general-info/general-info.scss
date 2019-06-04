@@ -19,3 +19,15 @@
         @extend .standard-font;
     }
 }
+
+.general-info__contact-form {
+    max-width: 580px;
+}
+
+.general-info__top-image {
+    @extend %generic-padding;
+}
+
+.general-info {
+    @extend %generic-padding;
+}

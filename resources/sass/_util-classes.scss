@@ -25,3 +25,14 @@ button {
     height: 56px;
     width: 180px;
 }
+
+input {
+    // hey listen
+    color: map-get($global-palette, medium-grey);
+    display: inline-block;
+    max-width: 280px;
+    height: 56px;
+    border: 1px solid #000000;
+    margin-right: 1.25rem;
+    padding: 1rem;
+}
