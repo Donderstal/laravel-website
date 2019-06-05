@@ -16,7 +16,18 @@
     padding: $main-margin-mobile;
 
     @include breakpoint(medium up) {
+
         padding: $main-margin-tablet;
+    } 
+}
+
+%generic-padding-large {
+    padding: $main-margin-mobile;
+    @include breakpoint(medium up) {
+        padding: $large-margin-tablet;
+    } 
+    @include breakpoint(large up) {
+        padding: $large-margin-desktop;
     } 
 }
 
@@ -27,12 +38,11 @@ button {
 }
 
 input {
-    // hey listen
     color: map-get($global-palette, medium-grey);
+    box-sizing: border-box;
     display: inline-block;
     max-width: 280px;
     height: 56px;
-    border: 1px solid #000000;
     margin-right: 1.25rem;
-    padding: 1rem;
+    padding: 1rem !important;
 }

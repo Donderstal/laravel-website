@@ -10,9 +10,9 @@ class GeneralInfoController extends Controller {
 
         return view('general-info')->with([
             'title' => 'Werkplaats',
-            'text1'  => '#1 Welcome to werkplaats bruh! Lorem ipsum ipsum werkplaats brotha',
-            'text2'  => '#2 Welcome to werkplaats bruh! Lorem ipsum ipsum werkplaats brotha',
-            'text3'  => '#3 Welcome to werkplaats bruh! Lorem ipsum ipsum werkplaats brotha'
+            'text1'  => '#1 Welcome to werkplaats bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text2'  => '#2 Welcome to werkplaats bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text3'  => '#3 Welcome to werkplaats bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.'
         ]);
     }
 
@@ -20,9 +20,9 @@ class GeneralInfoController extends Controller {
 
         return view('general-info')->with([
             'title' => 'Financiering',
-            'text1'  => '#1 Welcome to financiering bruh! Lorem ipsum ipsum financiering brotha',
-            'text2'  => '#2 Welcome to financiering bruh! Lorem ipsum ipsum financiering brotha',
-            'text3'  => '#3 Welcome to financiering bruh! Lorem ipsum ipsum financiering brotha'
+            'text1'  => '#1 Welcome to financiering bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text2'  => '#2 Welcome to financiering bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text3'  => '#3 Welcome to financiering bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.'
         ]);
     }
 
@@ -30,9 +30,9 @@ class GeneralInfoController extends Controller {
 
         return view('general-info')->with([
             'title' => 'Zoektocht',
-            'text1'  => '#1 Welcome to zoektocht bruh! Lorem ipsum ipsum zoektocht brotha',
-            'text2'  => '#2 Welcome to zoektocht bruh! Lorem ipsum ipsum zoektocht brotha',
-            'text3'  => '#3 Welcome to zoektocht bruh! Lorem ipsum ipsum zoektocht brotha'
+            'text1'  => '#1 Welcome to zoektocht bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text2'  => '#2 Welcome to zoektocht bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text3'  => '#3 Welcome to zoektocht bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.'
         ]);
     }
 
@@ -40,9 +40,9 @@ class GeneralInfoController extends Controller {
 
         return view('general-info')->with([
             'title' => 'Over ons',
-            'text1'  => '#1 Welcome to over ons bruh! Lorem ipsum ipsum over ons brotha',
-            'text2'  => '#2 Welcome to over ons bruh! Lorem ipsum ipsum over ons brotha',
-            'text3'  => '#3 Welcome to over ons bruh! Lorem ipsum ipsum over ons brotha'
+            'text1'  => '#1 Welcome to over ons bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text2'  => '#2 Welcome to over ons bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text3'  => '#3 Welcome to over ons bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.'
         ]);
     }
 
@@ -50,9 +50,9 @@ class GeneralInfoController extends Controller {
 
         return view('general-info')->with([
             'title' => 'Contact',
-            'text1'  => '#1 Welcome to contact bruh! Lorem ipsum ipsum contact brotha',
-            'text2'  => '#2 Welcome to contact bruh! Lorem ipsum ipsum contact brotha',
-            'text3'  => '#3 Welcome to contact bruh! Lorem ipsum ipsum contact brotha'
+            'text1'  => '#1 Welcome to contact bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text2'  => '#2 Welcome to contact bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
+            'text3'  => '#3 Welcome to contact bruh! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.'
         ]);
     }
 

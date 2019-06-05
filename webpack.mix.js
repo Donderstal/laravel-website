@@ -33,10 +33,10 @@ mix
     .webpackConfig({
         devtool: "inline-source-map",
         plugins: [
-            new CleanWebpackPlugin({
+            /* new CleanWebpackPlugin({
                 cleanOnceBeforeBuildPatterns: ['public/img', 'public/fonts'],
                 verbose: true
-            }),
+            }), */
             new CopyWebpackPlugin([{
                 from: 'resources/img',
                 to: 'img',

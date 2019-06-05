@@ -107,3 +107,15 @@ $font-weight-semi-bold: 500;
 .standard-font {
   font-weight: $font-weight-semi-bold;
 }
+
+// form font styles
+@include create-paragraph-classes($form-fonts);
+
+.form-label-font {
+  color: map-get($global-palette, medium-grey);
+  font-weight: $font-weight-very-bold;
+}
+
+.form-placeholder-font {
+  color: map-get($global-palette, medium-grey);
+}

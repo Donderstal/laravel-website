@@ -1,5 +1,5 @@
 .general-info__main-paragraph {
-    @extend %generic-padding;
+    @extend %generic-padding-large;
     background-color: map-get($global-palette, darkest-grey);
     color: white;
     h1 {
@@ -8,27 +8,57 @@
     p {
         @extend .standard-font;
     }
+    @include breakpoint (large up) {
+        position: relative;
+        top: -18.5rem;        
+    }
 }
 
 .general-info__paragraph {
-    @extend %generic-padding;
     h2 {
         @extend .secondary-header-font;
     }
     p {
         @extend .standard-font;
     }
+    @extend %generic-padding;
+    @include breakpoint (large up) {
+        padding-left: 0rem;
+        padding-right: $large-margin-desktop;
+        position: relative;
+        top: -10rem;        
+    }
 }
 
 .general-info__contact-form {
     @extend %center-in-parent;
-    max-width: 580px;
+    max-width: 600px;
+    h1 {
+        @extend .main-header-font;
+    }
 }
 
 .general-info__top-image {
-    @extend %generic-padding;
+    z-index: -1;
+    position: relative;
+    right: -10rem;       
+}
+
+.general-info__cover-photo {
+    float: right;
+    width: 1053px;
+    height: 641px;
 }
 
 .general-info {
     @extend %generic-padding;
+    padding-top: 0rem;
+}
+
+label {
+    @extend .form-label-font;
+}
+
+input {
+    @extend .form-placeholder-font;
 }

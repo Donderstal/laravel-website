@@ -36,7 +36,10 @@ $global-palette: (
 $main-margin-mobile: 1.25rem;
 $main-margin-tablet: 2.0625rem;
 
+$large-margin-tablet: 4.375rem;
+$large-margin-desktop: 6.25rem;
 
+// Font styles
 $paragraph-styles: (
   'small': (
     'p1': ('fs': 18, 'lh': 28, 'mt': 0, 'mb': $paragraph-margin-bottom),
@@ -126,5 +129,12 @@ $footer-fonts: (
     'open-location-font': ('fs': 13, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'open-times-font': ('fs': 16, 'lh': 29, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'bottom-copyright-font' : ('fs': 14, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  )
+);
+
+$form-fonts: (
+  'small': (
+    'form-label-font': ('fs': 13, 'lh': 16, 'mt': 0, 'mb': 4),
+    'form-placeholder-font': ('fs': 19, 'lh': 15, 'mt': 0, 'mb': 0)
   )
 );
