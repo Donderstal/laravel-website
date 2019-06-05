@@ -1,3 +1,7 @@
+.footer {
+    margin-top: ($large-margin-desktop *1.5);
+}
+
 .footer__contact-and-photo {
     @extend %generic-padding;
     background-color: black;
@@ -31,7 +35,7 @@
 }
 
 .footer__newsletter__copy {
-    color: map-get($global-palette, dark-grey);
+    color: map-get($global-palette, medium-grey);
     max-width: 380px;
 }
 

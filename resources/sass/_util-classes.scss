@@ -4,7 +4,7 @@
 
 %dark-bg-white-text {
     color: $white;
-    background-color: map-get($global-palette, 'darkest-grey');
+    background-color: map-get($global-palette, 'dark');
 }
 
 %flex-and-justify {
@@ -41,8 +41,11 @@ input {
     color: map-get($global-palette, medium-grey);
     box-sizing: border-box;
     display: inline-block;
-    max-width: 280px;
+   max-width: 340px;
     height: 56px;
     margin-right: 1.25rem;
     padding: 1rem !important;
+    @include breakpoint (large up) {
+        max-width: 280px;        
+    }
 }

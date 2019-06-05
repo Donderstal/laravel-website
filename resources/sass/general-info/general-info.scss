@@ -1,6 +1,6 @@
 .general-info__main-paragraph {
     @extend %generic-padding-large;
-    background-color: map-get($global-palette, darkest-grey);
+    background-color: map-get($global-palette, dark);
     color: white;
     h1 {
         @extend .main-header-font;
@@ -8,8 +8,11 @@
     p {
         @extend .standard-font;
     }
+    position: relative;
+    @include breakpoint (medium up) {
+        top: -10rem;        
+    }
     @include breakpoint (large up) {
-        position: relative;
         top: -18.5rem;        
     }
 }
@@ -22,37 +25,63 @@
         @extend .standard-font;
     }
     @extend %generic-padding;
-    @include breakpoint (large up) {
+    @include breakpoint (medium up) {
         padding-left: 0rem;
         padding-right: $large-margin-desktop;
         position: relative;
+        top: -7.5rem;        
+    }
+    @include breakpoint (large up) {
         top: -10rem;        
     }
 }
 
 .general-info__contact-form {
     @extend %center-in-parent;
-    max-width: 600px;
+    max-width: 720px;
     h1 {
         @extend .main-header-font;
+    }
+    @include breakpoint (large up) {
+        max-width: 600px; 
     }
 }
 
 .general-info__top-image {
     z-index: -1;
     position: relative;
-    right: -10rem;       
+    @include breakpoint (large up) {
+        right: -10rem;  
+    }
+         
 }
 
 .general-info__cover-photo {
     float: right;
-    width: 1053px;
-    height: 641px;
+    @include breakpoint (medium up) {
+        width: 612px;
+        height: 373px;    
+    }
+    @include breakpoint (large up) {
+        width: 1053px;
+        height: 641px;    
+    }
+
+}
+
+.checkbox-label {
+    @extend .standard-font;
+    color: map-get($global-palette, dark);
 }
 
 .general-info {
     @extend %generic-padding;
     padding-top: 0rem;
+}
+
+.general-info__form-button {
+    margin-top: 2rem;
+    width: 280px;
 }
 
 label {

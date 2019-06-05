@@ -91,3 +91,16 @@ section {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+input[type="checkbox"] {
+  vertical-align: middle;
+  margin-bottom: 0rem;
+  border: 2px solid #000000;
+  width: 18px;
+  height: 18px;
+}
+
+textarea {
+  height: 168px;
+  width: 580px;
+}

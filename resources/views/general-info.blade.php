@@ -61,17 +61,17 @@
                     
                     <div class="cell small-12">
                         <label for="opmerking">Vragen en opmerkingen:</label>
-                        <textarea type="text" id="opmerking" name="opmerking" placeholder="Vragen en opmerkingen">
+                        <textarea id="opmerking" name="opmerking" placeholder="Vragen en opmerkingen">
                         </textarea>
                     </div>
 
                     <div class="cell small-12">
                         <input type="checkbox" id="voorwaarden" name="voorwaarden">
-                        <label for="voorwaarden">Ja, ik ga akkoord met de voorwaarden.</label>
+                        <label class="checkbox-label" for="voorwaarden">Ja, ik ga akkoord met de voorwaarden.</label>
                     </div>
 
                     <div class="cell small-12">
-                        <button>VERZENDEN</button>
+                        <button class="general-info__form-button">VERZENDEN</button>
                     </div>
                     
                 </form>
