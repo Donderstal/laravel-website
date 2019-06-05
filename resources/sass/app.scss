@@ -102,5 +102,7 @@ input[type="checkbox"] {
 
 textarea {
   height: 168px;
-  width: 580px;
+  @include breakpoint (medium up) {
+    width: 580px;    
+  }
 }

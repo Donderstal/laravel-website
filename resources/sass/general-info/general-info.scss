@@ -26,21 +26,25 @@
     }
     @extend %generic-padding;
     @include breakpoint (medium up) {
-        padding-left: 0rem;
-        padding-right: $large-margin-desktop;
         position: relative;
         top: -7.5rem;        
     }
     @include breakpoint (large up) {
+        padding-left: 0rem;
+        padding-right: $large-margin-desktop;
         top: -10rem;        
     }
 }
 
 .general-info__contact-form {
     @extend %center-in-parent;
+    @extend %generic-padding;
     max-width: 720px;
     h1 {
         @extend .main-header-font;
+    }
+    @include breakpoint (medium up) {
+       padding: 0
     }
     @include breakpoint (large up) {
         max-width: 600px; 
@@ -48,10 +52,11 @@
 }
 
 .general-info__top-image {
+    @extend %generic-padding;
     z-index: -1;
     position: relative;
     @include breakpoint (large up) {
-        right: -10rem;  
+        right: -5rem;  
     }
          
 }
@@ -72,10 +77,13 @@
 .checkbox-label {
     @extend .standard-font;
     color: map-get($global-palette, dark);
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
 }
 
 .general-info {
+    @include breakpoint(small down) {
+        padding: 0;
+    }
     @extend %generic-padding;
     padding-top: 0rem;
 }
@@ -85,5 +93,6 @@ label {
 }
 
 input {
+    border-radius: 2px !important;
     @extend .form-placeholder-font;
 }
