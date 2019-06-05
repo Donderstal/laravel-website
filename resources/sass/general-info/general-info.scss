@@ -72,16 +72,12 @@
 .checkbox-label {
     @extend .standard-font;
     color: map-get($global-palette, dark);
+    margin-bottom: 2rem;
 }
 
 .general-info {
     @extend %generic-padding;
     padding-top: 0rem;
-}
-
-.general-info__form-button {
-    margin-top: 2rem;
-    width: 280px;
 }
 
 label {
