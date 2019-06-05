@@ -47,7 +47,20 @@ input {
     height: 56px !important;
     margin-right: 1.25rem;
     padding: 1rem !important;
+    border-radius: 2px !important;
+    @extend .form-placeholder-font;
     @include breakpoint (large up) {
         max-width: 280px;        
     }
+}
+
+.checkbox-label {
+    @extend .standard-font;
+    color: map-get($global-palette, dark);
+    margin-bottom: 2rem !important;
+}
+
+
+label {
+    @extend .form-label-font;
 }

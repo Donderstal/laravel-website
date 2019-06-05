@@ -4,6 +4,7 @@
     color: white;
     h1 {
         @extend .main-header-font;
+        margin-top: 2.5rem;
     }
     p {
         @extend .standard-font;
@@ -74,12 +75,6 @@
 
 }
 
-.checkbox-label {
-    @extend .standard-font;
-    color: map-get($global-palette, dark);
-    margin-bottom: 2rem !important;
-}
-
 .general-info {
     @include breakpoint(small down) {
         padding: 0;
@@ -88,11 +83,59 @@
     padding-top: 0rem;
 }
 
-label {
-    @extend .form-label-font;
+.general-info__reviews {
+    @extend %generic-padding;
+    @include breakpoint (small down) {
+        margin-top: $large-margin-desktop;        
+    }
 }
 
-input {
-    border-radius: 2px !important;
-    @extend .form-placeholder-font;
+.general-info__review-panel {
+    margin-top: 2.5rem;
+    padding-right: 1.5rem;
+}
+
+.general-info__review-title {
+    @extend .secondary-header-font;
+    margin-bottom: 0rem;
+}
+
+.general-info__review-car {
+    @extend .open-location-font;
+}
+
+.general-info__review-text {
+    @extend .standard-font;
+}
+
+.general-info__our-team {
+    @extend %generic-padding;
+}
+
+.general-info__employee-photo {
+    @extend %center-in-parent;
+    display: block;
+    max-height: 180px;
+    max-width: 130px;
+    @include breakpoint (medium up) {
+        max-height: 300px;
+        max-width: 180px;
+    }
+    @include breakpoint (large up) {
+        max-height: 320px;
+        max-width: 250px;
+    }
+}
+
+.general-info__employee-wrapper {
+    @extend %center-in-parent;
+}
+
+.general-info__employee-name, .general-info__employee-job-title {
+    @extend .product-card-header;
+    display: block;
+}
+
+.general-info__employee-job-title  {
+    color: map-get($global-palette, medium-grey )
 }

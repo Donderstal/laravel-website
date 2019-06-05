@@ -18,8 +18,44 @@
                 <p>{{ $text1 }}</p>
             </div>
 
-        <!-- if not over ons -->    
-            <!-- First subparagraph -->
+            @if ($title == 'Over ons')
+            <div class="grid-x cell small-12 general-info__reviews">
+
+                <div class="cell small-12">
+                    <h1 class="main-header-font">WAT ANDEREN <br/> DENKEN OVER GAM</h1>
+                </div>
+
+                @foreach($reviews as $review)
+                <div class="general-info__review-panel cell small-12 medium-10 large-6">
+                    <h2 class="general-info__review-title"> {{ $review['title'] }} </h2> 
+                    <sub class="general-info__review-car">{{ $review['car'] }}</sub> 
+                    <p class="general-info__review-text"> {{ $review['text'] }} </p>
+                </div>   
+                @endforeach
+
+            </div>
+
+
+            <div class="grid-x cell small-12 grid-margin-x grid-margin-y general-info__our-team">
+                <div class="cell small-12">
+                    <h1 class="main-header-font">ONS TEAM</h1>
+                </div>
+
+                @foreach($employees as $employee)
+                <div class="general-info__employee cell small-6 medium-4 large-3">
+                    <img class="general-info__employee-photo" src="{{ $employee['img'] }}">
+                    <div class="general-info__employee-wrapper">
+                        <p class="general-info__employee-name">{{ $employee['name'] }}</p> 
+                        <p class="general-info__employee-job-title"> {{ $employee['job-title'] }} </p>
+                    </div>
+                </div>   
+                @endforeach
+
+            </div>
+            @endif
+
+
+            @if ($title != 'Contact' && $title != 'Over ons')
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">
                 <h2> OVER {{ strtoupper($title) }} </h2>
                 <p> {{ $text2 }} </p>
@@ -29,8 +65,10 @@
                 <h2> OVER {{ strtoupper($title) }} </h2>
                 <p> {{ $text3 }} </p>
             </div>
+            @endif
 
             <!-- Contact form -->
+            @if ($title != 'Over ons')
             <div class="general-info__contact-form">
                 <h1>CONTACT FORMULIER</h1>
                 <form class="grid-x general-info__form">
@@ -76,14 +114,8 @@
                     
                 </form>
             </div>
-        <!-- end if -->
+            @endif
 
-        <!-- else if over ons -->
-            <div class="cell small-12 general-info__top-image">
-                    
-            </div>
-        <!-- end if -->
-        
         </div>
     </section>
 @endsection

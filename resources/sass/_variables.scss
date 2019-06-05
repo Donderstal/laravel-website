@@ -113,7 +113,8 @@ $general-fonts: (
   'small' : (
     'standard-font': ('fs': 15, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'main-header-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'secondary-header-font': ('fs': 21,'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom)
+    'secondary-header-font': ('fs': 21,'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom)
   ),
   'medium': (
     'main-header-font': ('fs': 48, 'lh': 58, 'mt': 0, 'mb': $paragraph-margin-bottom),

@@ -51,6 +51,7 @@
 }
 
 $font-weight-very-bold: 900;
+
 $font-weight-medium-bold: 700;
 $font-weight-normal-bold: 600;
 $font-weight-semi-bold: 500;
@@ -106,6 +107,10 @@ $font-weight-semi-bold: 500;
 
 .standard-font {
   font-weight: $font-weight-semi-bold;
+}
+
+.product-card-header {
+  font-weight: $font-weight-medium-bold;
 }
 
 // form font styles
