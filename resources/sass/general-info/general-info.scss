@@ -139,3 +139,8 @@
 .general-info__employee-job-title  {
     color: map-get($global-palette, medium-grey )
 }
+
+.general-info__contact {
+    width: 500px;
+    @extend %center-in-parent;
+}

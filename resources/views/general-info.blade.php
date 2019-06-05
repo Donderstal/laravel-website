@@ -6,6 +6,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     <section class="general-info">
         <div class="grid-x">
             <!-- Top image -->
@@ -54,17 +55,62 @@
             </div>
             @endif
 
+            @if ($title == 'Contact')
+            <div class="grid-x general-info__contact">
+
+                <div>
+
+                </div>
+
+                <!--- Contact details --->
+                <div class="cell small-12 medium-6"> 
+                    <div class="footer__contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i><span> Energiestraat 25B <br/>
+                        <u>1</u>411 AR, Naarden </span></p>
+                    </div>
+                    <div class="footer__contact-details">
+                        <p><i class="fas fa-phone"></i><span> <u>0</u>35 - 694 4646</span></p>
+                    </div>
+                    <div class="footer__contact-details">
+                        <p><i class="far fa-envelope"></i><span> <u>i</u>nfo@gambv.nl</span></p>
+                    </div>
+                </div>
+
+                <!--- Opening hours --->
+                <div class="cell small-12 medium-6"> 
+                    <div class="footer__opening-hours"> 
+                        <p class="footer__opening-hours__day"> Maandag t/m vrijdag </p>
+                        <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                        <p class="footer__opening-hours__time"> 08:00 - 18:00 </p>
+                    </div>
+                    <div class="footer__opening-hours"> 
+                        <p class="footer__opening-hours__day"> Zaterdag </p>
+                        <p class="footer__opening-hours__type"> Showroom </p>
+                        <p class="footer__opening-hours__time"> 10:00 - 17:00 </p>
+                        <p class="footer__opening-hours__type"> Werkplaats </p>
+                        <p class="footer__opening-hours__time"> Gesloten </p>
+                    </div>
+                    <div class="footer__opening-hours"> 
+                        <p class="footer__opening-hours__day"> Zondag </p>
+                        <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                        <p class="footer__opening-hours__time"> Gesloten </p>
+                    </div>
+                </div>
+
+            </div>
+            @endif
+
 
             @if ($title != 'Contact' && $title != 'Over ons')
-            <div class="cell small-12 medium-9 large-6 general-info__paragraph">
-                <h2> OVER {{ strtoupper($title) }} </h2>
-                <p> {{ $text2 }} </p>
-            </div>
-            <!-- Second subparagraph -->
-            <div class="cell small-12 medium-9 large-6 general-info__paragraph">
-                <h2> OVER {{ strtoupper($title) }} </h2>
-                <p> {{ $text3 }} </p>
-            </div>
+                <div class="cell small-12 medium-9 large-6 general-info__paragraph">
+                    <h2> OVER {{ strtoupper($title) }} </h2>
+                    <p> {{ $text2 }} </p>
+                </div>
+                <!-- Second subparagraph -->
+                <div class="cell small-12 medium-9 large-6 general-info__paragraph">
+                    <h2> OVER {{ strtoupper($title) }} </h2>
+                    <p> {{ $text3 }} </p>
+                </div>
             @endif
 
             <!-- Contact form -->
