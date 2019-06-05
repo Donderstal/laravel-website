@@ -16,6 +16,7 @@ class SearchController extends Controller
         $products = Products::search($request->q)
             ->where('enable', true)
             ->with(['cover', 'brand'])
+            ->orderBy('created_at', 'DESC')
             ->paginate(config('site.products.paginate_count'));
 
         return view('search.result')->with([
