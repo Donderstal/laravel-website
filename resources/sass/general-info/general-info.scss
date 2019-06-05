@@ -141,6 +141,11 @@
 }
 
 .general-info__contact {
-    width: 500px;
+    margin-top: 3.5rem;
+    width: 320px;
+    @include breakpoint(large up) {
+        width: 500px;        
+    }
+    @extend %generic-padding;
     @extend %center-in-parent;
 }
