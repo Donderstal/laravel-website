@@ -5,11 +5,13 @@ namespace App\Models;
 use App\Model\ProductsBrands;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Products extends Model
 {
     use LogsActivity;
+    use SearchableTrait;
 
     protected static $logAttributes = ['*'];
     protected static $logOnlyDirty = true;
@@ -34,6 +36,19 @@ class Products extends Model
         'status',
         'enable',
         'visits'
+    ];
+
+    protected $searchable = [
+        'columns' => [
+            'products.title' => 1,
+            'products.note' => 3,
+            'products_brands.title' => 2,
+            'products_models.title' => 2,
+        ],
+        'joins' => [
+            'products_brands' => ['products.brand_id','products_brands.id'],
+            'products_models' => ['products.model_id','products_models.id'],
+        ],
     ];
 
     protected static function boot()
