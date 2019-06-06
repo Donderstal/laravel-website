@@ -19,6 +19,8 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
+$margin-small: 60px;
+$margin-large: 180px;
 
 $global-palette: (
     dark: #022835,
@@ -101,11 +103,15 @@ $header-styles: (
     )
 );
 
-$navbar-fonts: (
+$navigation-fonts: (
   'small': (
     'navbar-header-font': ('fs': 35, 'lh': 43, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'navbar-dropdown-font': ('fs': 14, 'lh': 18, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'navbar-link-font': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom)
+    'navbar-link-font': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'search-bar-title-font': ('fs': 26, 'lh': 32, 'mt': 0, 'mb': 0)
+  ),
+  'medium': (
+    'search-bar-title-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': 0)
   )
 );
 

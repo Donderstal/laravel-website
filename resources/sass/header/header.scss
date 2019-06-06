@@ -2,7 +2,8 @@
     max-height: 3rem;
     margin: 0 auto 2rem;
     max-width: map-get($breakpoints, xlarge);
-    background-color: white;
+    background-color: rgba(2,40,53,0.15);
+    color: $white;
     @include breakpoint(medium up) {
         margin: 1rem auto 2rem;
     }

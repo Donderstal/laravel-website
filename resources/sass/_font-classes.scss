@@ -62,7 +62,12 @@ $font-weight-semi-bold: 500;
 @include create-paragraph-classes($header-styles); */
 
 // header
-@include create-paragraph-classes($navbar-fonts);
+@include create-paragraph-classes($navigation-fonts);
+
+.search-bar-title-font {
+  font-weight: $font-weight-medium-bold;
+  color: map-get($global-palette, dark)
+}
 
 .navbar-header-font {
   font-weight: $font-weight-very-bold;

@@ -1,16 +1,41 @@
-$margin-small: 60px;
-$margin-large: 180px;
-
-.homepage__img {
-    @extend %center-in-parent;
+.homepage__header-image {
+    background-image: url('/img/city-street.jpg');
+    background-size: cover;
     display: block;
-    max-width: 1280px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+}
+
+.homepage__header-image-wrapper {
+    height: 75vh;
+    @include breakpoint (medium up) {
+        height: 80vh;   
+    }
 }
 
 .homepage__search-bar {
     @extend %center-in-parent;
-    max-width: 620px;
-    border: 3px solid #000000;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 101px;
+    padding-left: $margin-small / 2;
+    padding-right: $margin-small / 2;
+    @include breakpoint (medium up) {
+        height: 126px;
+        width: 620px;        
+    }
+    @include breakpoint (large up) {
+        width: 780px;       
+        height: 146px 
+    }
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
 }
 
 .homepage__search-button {
@@ -27,4 +52,40 @@ $margin-large: 180px;
 
 .homepage__about-and-info {
     margin-bottom: $margin-large;
+}
+
+.homepage__our-products-button {
+    @extend %center-in-parent;
+}
+
+.search-bar__title {
+    @extend .search-bar-title-font;
+}
+
+.search-bar__left, .search-bar__right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar__left {
+    @include breakpoint (medium up) {
+        border-right: .5px groove map-get($global-palette, medium-grey);
+    }
+}
+
+.search-bar__icon {
+    position: relative;
+    @include breakpoint (small only) {
+        height: 22px;
+        width: 14px;
+    }
+    @include breakpoint (medium up) {
+        left: 5rem;        
+    }
+}
+
+.homepage__featured {
+    text-align: center;
+    align-items: center;
+    display: flex;
 }
