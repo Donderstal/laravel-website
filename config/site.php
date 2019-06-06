@@ -136,5 +136,8 @@ return [
 
         // products prefix url
         'url' => 'autos',
+
+        // number of records per page in listings, search and ...
+        'paginate_count' => 25
     ]
 ];

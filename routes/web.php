@@ -27,3 +27,5 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('/', 'ProductsController@all')->name('show');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
+
+Route::get('search', 'SearchController@index')->name('search');
