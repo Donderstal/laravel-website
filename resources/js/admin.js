@@ -12,6 +12,7 @@ try {
     require("bootstrap");
     window.toastr = require("toastr/toastr");
     require('@coreui/coreui');
+    require('select2');
 } catch (e) {
 }
 
