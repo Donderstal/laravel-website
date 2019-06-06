@@ -24,7 +24,7 @@ class CreateSpecificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|unique:products_specification,title,' . $this->product->id,
             'value' => 'required'
         ];
     }

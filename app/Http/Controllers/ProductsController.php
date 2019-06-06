@@ -88,7 +88,7 @@ class ProductsController extends Controller
 
     public function list(){
         $products = Products::all();
-        return view('products.list')->with([
+        return view('aanbod')->with([
             'products' => $products
         ]);
     }

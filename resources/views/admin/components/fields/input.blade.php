@@ -70,7 +70,7 @@
             {!! Form::label($name, $label, ['class' => 'control-label']) !!}
         @endisset
         {!! Form::select($name, $list , null , [
-        'class' => 'form-control',
+        'class' => 'form-control '.($errors->has($name) ? 'is-invalid' : '' ),
         'required' => !empty($required) ? true : false,
         'placeholder' => !empty($placeholder) ? $placeholder : null
         ]) !!}
@@ -86,7 +86,7 @@
             {!! Form::label($name, $label, ['class' => 'control-label']) !!}
         @endisset
         {!! Form::textarea('note', null, [
-        'class' => 'form-control',
+        'class' => 'form-control '.($errors->has($name) ? 'is-invalid' : '' ),
         'required' => !empty($required) ? true : false,
         'placeholder' => !empty($placeholder) ? $placeholder : null
         ]) !!}

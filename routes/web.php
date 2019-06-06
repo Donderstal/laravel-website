@@ -30,8 +30,10 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    
-Route::get('/over-ons', 'GeneralInfoController@over-ons')->name('over-ons');    
+Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');    
+Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');    
 Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
+Route::get('search', 'SearchController@index')->name('search');
 
 // Paginas:
 
@@ -44,3 +46,4 @@ Route::get('/contact', 'GeneralInfoController@contact')->name('contact');
 // Zoektocht --> /zoektocht --> view('general-info')->with(zoektocht-text)
 // Over ons --> /over-ons --> view('general-info')->with(over-ons-text)
 // Contact /contact --> view('general-info')->with(contact-text)
+

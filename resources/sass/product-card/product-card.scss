@@ -1,0 +1,14 @@
+.product-card {
+    @extend %center-in-parent;
+    border: 2px solid black;
+    height: 330px;
+    width: 280px;
+    @include breakpoint (medium) {
+        height: 407px;
+        width: 405px;
+    }
+    @include breakpoint (large) {
+        height: 379px;
+        width: 360px;
+    }
+}

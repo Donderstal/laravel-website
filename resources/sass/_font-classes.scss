@@ -51,17 +51,23 @@
 }
 
 $font-weight-very-bold: 900;
+
 $font-weight-medium-bold: 700;
 $font-weight-normal-bold: 600;
 $font-weight-semi-bold: 500;
 
 
-@include create-paragraph-classes($paragraph-styles);
+/* @include create-paragraph-classes($paragraph-styles);
 
-@include create-paragraph-classes($header-styles);
+@include create-paragraph-classes($header-styles); */
 
 // header
-@include create-paragraph-classes($navbar-fonts);
+@include create-paragraph-classes($navigation-fonts);
+
+.search-bar-title-font {
+  font-weight: $font-weight-medium-bold;
+  color: map-get($global-palette, dark)
+}
 
 .navbar-header-font {
   font-weight: $font-weight-very-bold;
@@ -94,5 +100,37 @@ $font-weight-semi-bold: 500;
 }
 
 .bottom-copyright-font {
+  color: map-get($global-palette, medium-grey);
+}
+
+// general font styles
+@include create-paragraph-classes($general-fonts);
+
+.main-header-font, .secondary-header-font {
+  font-weight: $font-weight-normal-bold;
+}
+
+.standard-font {
+  font-weight: $font-weight-semi-bold;
+}
+
+.product-card-header {
+  font-weight: $font-weight-medium-bold;
+}
+
+// form font styles
+@include create-paragraph-classes($form-fonts);
+
+.button-font {
+  color: white;
+  font-weight: $font-weight-normal-bold;
+}
+
+.form-label-font {
+  color: map-get($global-palette, medium-grey);
+  font-weight: $font-weight-very-bold;
+}
+
+.form-placeholder-font {
   color: map-get($global-palette, medium-grey);
 }

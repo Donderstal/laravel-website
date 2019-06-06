@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateSpecificationRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class UpdateSpecificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|unique:products_specification,title,' . $this->specification->id . ',id,product_id,' . $this->product->id,
             'value' => 'required'
         ];
     }

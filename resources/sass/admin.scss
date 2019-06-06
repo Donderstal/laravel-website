@@ -11,6 +11,10 @@ $fa-font-path: "../fonts/font-awesome";
 
 @import "~toastr/toastr";
 
+// Import Select2 plugin
+@import "~select2/src/scss/core";
+@import "~@ttskch/select2-bootstrap4-theme/src/layout";
+
 // Custom styles
 .form-group.required .control-label:after {
   content: "*";

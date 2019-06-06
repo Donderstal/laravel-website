@@ -4,7 +4,7 @@
 
 %dark-bg-white-text {
     color: $white;
-    background-color: map-get($global-palette, 'darkest-grey');
+    background-color: map-get($global-palette, 'dark');
 }
 
 %flex-and-justify {
@@ -16,12 +16,50 @@
     padding: $main-margin-mobile;
 
     @include breakpoint(medium up) {
+
         padding: $main-margin-tablet;
     } 
 }
 
+%generic-padding-large {
+    padding: $main-margin-mobile;
+    @include breakpoint(medium up) {
+        padding: $large-margin-tablet;
+    } 
+    @include breakpoint(large up) {
+        padding: $large-margin-desktop;
+    } 
+}
+
 button {
-    border: 2px solid #000000;
-    height: 56px;
-    width: 180px;
+    @extend .button-font;
+    background-color: map-get($global-palette, active);
+    color: white;
+    border-radius: 5px;
+}
+
+input {
+    color: map-get($global-palette, medium-grey);
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 340px;
+    height: 56px !important;
+    margin-right: 1.25rem;
+    padding: 1rem !important;
+    border-radius: 2px !important;
+    @extend .form-placeholder-font;
+    @include breakpoint (large up) {
+        max-width: 280px;        
+    }
+}
+
+.checkbox-label {
+    @extend .standard-font;
+    color: map-get($global-palette, dark);
+    margin-bottom: 2rem !important;
+}
+
+
+label {
+    @extend .form-label-font;
 }
