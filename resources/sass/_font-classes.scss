@@ -118,6 +118,10 @@ $font-weight-semi-bold: 500;
   font-weight: $font-weight-medium-bold;
 }
 
+.homepage-subtitle-font {
+  font-weight: 800;
+}
+
 // form font styles
 @include create-paragraph-classes($form-fonts);
 

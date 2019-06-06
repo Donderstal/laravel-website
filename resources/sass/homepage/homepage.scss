@@ -23,13 +23,15 @@
 .homepage__uitgelicht-pointer {
     @extend %center-in-parent;
     @extend %generic-padding;
-    @extend .product-card-header;
+    @extend .homepage-subtitle-font;
     font-weight: 800;
     margin-bottom: 0;
     text-align: center;
     border-radius: 5px 5px 0 0;
     background-color: #FFFFFF;
-    @include breakpoint (large) {
+    width: 130px;
+    height: 52px;
+    @include breakpoint (medium up) {
         width: 296px;
         height: 91px;
     }
@@ -143,6 +145,12 @@
     @extend .main-header-font;
     text-align: center;
     color: map-get($global-palette, dark);
+}
+
+.homepage__about-title {
+    @include breakpoint (small only) {
+        text-align: left;
+    }
 }
 
 .homepage__contact-details-wrapper {
