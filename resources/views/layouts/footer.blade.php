@@ -13,39 +13,39 @@
 
             <!--- Contact details --->
             <div class="cell small-12 medium-6"> 
-                    <div class="grid-x footer__contact-details">
+               <div class="grid-x footer__contact-details">
 
-                        <div class="cell small-1">
-                            <p><i class="fas fa-map-marker-alt"></i></p>
-                        </div>
-                        <div class="cell small-11">
-                            <p><span> Energiestraat 25B <br/>
-                            <u>1</u>411 AR, Naarden </span></p>
-                        </div>
-                        
-                    </div>
-                    <div class="grid-x footer__contact-details">
+                  <div class="cell small-1">
+                        <p><i class="fas fa-map-marker-alt"></i></p>
+                  </div>
+                  <div class="cell small-11">
+                        <p><span> Energiestraat 25B <br/>
+                        <u>1</u>411 AR, Naarden </span></p>
+                  </div>
+                     
+                  </div>
+                  <div class="grid-x footer__contact-details">
 
-                        <div class="cell small-1">
-                            <p><i class="fas fa-phone"></i></p>
-                        </div>
-                        <div class="cell small-11">
-                            <p> <u>0</u>35 - 694 4646</span></p>
-                        </div>      
+                     <div class="cell small-1">
+                           <p><i class="fas fa-phone"></i></p>
+                     </div>
+                     <div class="cell small-11">
+                           <p> <u>0</u>35 - 694 4646</span></p>
+                     </div>      
 
-                    </div>
+                  </div>
 
-                    <div class="grid-x footer__contact-details">
+                  <div class="grid-x footer__contact-details">
 
-                        <div class="cell small-1">
-                            <p><i class="far fa-envelope"></i></p>
-                        </div>
-                        <div class="cell small-11">
-                            <p><span> <u>i</u>nfo@gambv.nl</span></p>
-                        </div>
-                        
-                    </div>
-                </div>
+                     <div class="cell small-1">
+                           <p><i class="far fa-envelope"></i></p>
+                     </div>
+                     <div class="cell small-11">
+                           <p><span> <u>i</u>nfo@gambv.nl</span></p>
+                     </div>
+                     
+                  </div>
+               </div>
 
             <!--- Opening hours --->
             <div class="cell small-12 medium-4 large-6"> 

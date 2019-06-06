@@ -23,7 +23,7 @@
             <div class="cell small-12 homepage__featured grid-x">
 
                 <div class="cell small-12">
-                    <h2>UITGELICHT</h2>
+                    <h2 class="homepage__featured-title">UITGELICHT</h2>
                 </div>
 
                 <div class="cell small-12 grid-x">
@@ -32,27 +32,50 @@
                     @include('products.card')
                 </div>
 
-                <button class="homepage__our-products-button">Check dit aanbod bro</button>
+                <button class="homepage__our-products-button">ONS AANBOD BEKIJKEN</button>
 
             </div>
 
-            <div class="homepage__about-and-info">
-                <h2>GOOISCHE AUTO MEDIAIR</h2>
-                <div>
-                Adipiscing vestibulum molestie eros suspendisse habitant ullamcorper scelerisque volutpat dictumst adipiscing in accumsan iaculis vivamus parturient dis. Mus dictumst non congue condimentum curabitur mi vel ridiculus sem suspendisse senectus a convallis nostra condimentum tincidunt ac auctor orci nec ligula.
-                </div>
-                <div>
+            <div class="cell small-12 homepage__about-and-info">
+                <div class="homepage__about">
+                    <h2 class="homepage__about-title">GOOISCHE AUTO MEDIAIR</h2>
                     <div>
-                    <p><i class="fas fa-map-marker-alt"></i><span> Energiestraat 25B <br/>
-                    <u>1</u>411 AR, Naarden </span></p>
+                    Adipiscing vestibulum molestie eros suspendisse habitant ullamcorper scelerisque volutpat dictumst adipiscing in accumsan iaculis vivamus parturient dis. Mus dictumst non congue condimentum curabitur mi vel ridiculus sem suspendisse senectus a convallis nostra condimentum tincidunt ac auctor orci nec ligula.
+                    </div>
                 </div>
-                <div>
-                    <p><i class="fas fa-phone"></i><span> <u>0</u>35 - 694 4646</span></p>
+
+                <div class="cell small-12 grid-x homepage__contact-details-wrapper"> 
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-2 homepage__contact-details__left-div">
+                            <p><i class="fas fa-map-marker-alt"></i></p>
+                        </div>
+                        <div class="cell small-10 homepage__contact-details__right-div">
+                            <p><span> Energiestraat 25B <br/>
+                            <u>1</u>411 AR, Naarden </span></p>
+                        </div> 
+                    </div>
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-2 homepage__contact-details__left-div">
+                            <p><i class="fas fa-phone"></i></p>
+                        </div>
+                        <div class="cell small-10 homepage__contact-details__right-div">
+                            <p> <u>0</u>35 - 694 4646</span></p>
+                        </div>      
+                    </div>
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-2 homepage__contact-details__left-div">
+                            <p><i class="far fa-envelope"></i></p>
+                        </div>
+                        <div class="cell small-10 homepage__contact-details__right-div">
+                            <p><span> <u>i</u>nfo@gambv.nl</span></p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <p><i class="far fa-envelope"></i><span> <u>i</u>nfo@gambv.nl</span></p>
-                </div>
-                </div>
+                
             </div>
         </div>
 

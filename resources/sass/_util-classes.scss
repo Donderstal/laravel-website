@@ -32,11 +32,10 @@
 }
 
 button {
+    @extend .button-font;
     background-color: map-get($global-palette, active);
     color: white;
     border-radius: 5px;
-    height: 66px;
-    width: 200px;
 }
 
 input {

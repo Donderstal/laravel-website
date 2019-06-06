@@ -140,7 +140,11 @@ $footer-fonts: (
 
 $form-fonts: (
   'small': (
+    'button-font': ('fs': 15, 'lh': 19, 'mt': 0, 'mb': 0),
     'form-label-font': ('fs': 13, 'lh': 16, 'mt': 0, 'mb': 4),
     'form-placeholder-font': ('fs': 19, 'lh': 15, 'mt': 0, 'mb': 0)
+  ),
+  'medium': (
+    'button-font': ('fs': 20, 'lh': 24, 'mt': 0, 'mb': 0)
   )
 );

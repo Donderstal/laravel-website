@@ -51,11 +51,18 @@
 }
 
 .homepage__about-and-info {
+    @extend %generic-padding;
     margin-bottom: $margin-large;
 }
 
 .homepage__our-products-button {
     @extend %center-in-parent;
+    height: 56px;
+    width: 280px;
+    @include breakpoint (medium up) {
+        height: 66px;
+        width: 380px; 
+    }
 }
 
 .search-bar__title {
@@ -84,8 +91,54 @@
     }
 }
 
+.search-bar__button {
+    @include breakpoint(small) {
+        height: 35px;
+        width: 260px;
+    }
+    @include breakpoint(medium up) {
+        height: 66px;
+        width: 200px;
+    }
+}
+
 .homepage__featured {
     text-align: center;
     align-items: center;
     display: flex;
+}
+
+.homepage__about {
+    @extend %center-in-parent;
+    max-width: 625px;
+    div {
+        @extend .standard-font;
+        font-weight: 600;
+        color: map-get($global-palette, dark);
+    }
+    margin-bottom: 80px;
+}
+
+.homepage__about-title, .homepage__featured-title {
+    @extend .main-header-font;
+    text-align: center;
+    color: map-get($global-palette, dark);
+}
+
+.homepage__contact-details-wrapper {
+    @extend %center-in-parent;
+    max-width: 801px;
+}
+
+.homepage__contact-details {
+    @extend .contact-detail-font;
+    color: map-get($global-palette, dark);
+}
+
+.homepage__contact-details__right-div {
+    padding-left: 1rem;
+}
+
+.homepage__contact-details__left-div {
+    text-align: right;
 }
