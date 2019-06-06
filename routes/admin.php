@@ -82,6 +82,8 @@ Route::group(['prefix' => 'products', 'as' => 'products.', 'namespace' => 'Produ
         Route::put('/edit/{specification}', 'ProductsSpecificationController@update');
 
         Route::delete('/delete/{specification}', 'ProductsSpecificationController@delete')->name('delete');
+
+        Route::get('/get-specs-title', 'ProductsSpecificationController@getSpecTitle')->name('get_title');
     });
 
     // Define services routes

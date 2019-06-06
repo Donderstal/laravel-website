@@ -7,6 +7,7 @@ use App\Http\Requests\CreateSpecificationRequest;
 use App\Http\Requests\UpdateSpecificationRequest;
 use App\Models\Products;
 use App\Models\ProductsSpecification;
+use Illuminate\Http\Request;
 
 class ProductsSpecificationController extends Controller
 {
@@ -59,5 +60,19 @@ class ProductsSpecificationController extends Controller
         flash_message('Specification deleted successfully.', 'warning');
 
         return redirect()->route('admin.products.specification.index', $product);
+    }
+
+    public function getSpecTitle(Request $request)
+    {
+        if (empty($request->q)) {
+            return [];
+        }
+
+        $specTitle = ProductsSpecification::where('title', 'like', '%' . $request->q . '%')
+            ->groupBy('title')
+            ->select('title')
+            ->get();
+
+        return $specTitle;
     }
 }
