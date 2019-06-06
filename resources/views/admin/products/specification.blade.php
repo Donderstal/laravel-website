@@ -50,6 +50,8 @@
             @panel(['title' => isset($specification) ? 'Edit specification' : 'New specification'])
             @input([
                 'label' => 'Title',
+                'type' => 'select',
+                'list' => old('title') ? [old('title') => old('title')] : (isset($specification) ? [$specification->title => $specification->title] : []),
                 'name' => 'title',
                 'required' => true,
             ])
@@ -84,3 +86,39 @@
         </div>
     </div>
 @stop
+
+@push('scripts-ready')
+    $('[name=title]').select2({
+        placeholder: 'Select an item',
+        tags: true,
+        ajax: {
+            url: '{{ route('admin.products.specification.get_title', $product) }}',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: data.map(function(item) {
+                        return {
+                            id : item.title,
+                            text : item.title
+                        };
+                    })
+                };
+            },
+            cache: true
+        },
+        createTag: function (params) {
+            var term = $.trim(params.term);
+
+            if (term === '') {
+                return null;
+            }
+
+            return {
+                id: term,
+                text: term,
+                newTag: true // add additional parameters
+            }
+        }
+    });
+@endpush
