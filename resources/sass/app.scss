@@ -106,3 +106,7 @@ textarea {
     width: 580px;    
   }
 }
+
+u{
+  text-decoration-color: map-get($global-palette, active)  
+}
