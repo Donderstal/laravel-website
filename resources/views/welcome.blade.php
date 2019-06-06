@@ -5,20 +5,25 @@
 
         <div class="homepage__header-image-wrapper">
             <div class="homepage__header-image">
-                
+                <div class="grid-x homepage__search-bar">
+                    <div class="cell small-12 medium-8 search-bar__left">
+                        <span class="search-bar__title">Vind jouw merk</span>
+                        <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
+                    </div>
+                    <div class="cell small-12 medium-4 search-bar__right">
+                        <button class="search-bar__button">ZOEKEN</button>
+                    </div>
+                </div>
+                <div class="homepage__uitgelicht-pointer-wrapper">
+                    <p class="homepage__uitgelicht-pointer">
+                        UITGELICHT
+                        <img class="homepage__uitgelicht-pointer__icon" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="grid-x homepage__main-content">
-            <div class="grid-x homepage__search-bar">
-                <div class="cell small-12 medium-8 search-bar__left">
-                    <span class="search-bar__title">Vind jouw merk</span>
-                    <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
-                </div>
-                <div class="cell small-12 medium-4 search-bar__right">
-                    <button class="search-bar__button">ZOEKEN</button>
-                </div>
-            </div>
             
             <div class="cell small-12 homepage__featured grid-x">
 
