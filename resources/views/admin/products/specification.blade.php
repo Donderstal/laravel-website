@@ -89,7 +89,8 @@
 
 @push('scripts-ready')
     $('[name=title]').select2({
-        placeholder: 'Select an item',
+        theme: 'bootstrap4',
+        placeholder: 'Enter title to search or add',
         tags: true,
         ajax: {
             url: '{{ route('admin.products.specification.get_title', $product) }}',
