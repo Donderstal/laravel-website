@@ -2,7 +2,11 @@
 <section class="header">
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
-            <img class="navbar__search-icon" src="{{ asset('img/ui-icons/search.svg') }}">
+            <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search.svg') }}">
+            <div class="navbar__searchbar">
+                <input class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
+                <button class="navbar__searchbar__button">ZOEKEN</button>
+            </div>
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             <!-- <p class="header__menu-paragraph navbar-header-font">G A M</p> --> 

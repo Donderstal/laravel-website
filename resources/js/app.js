@@ -33,8 +33,14 @@ require('./bootstrap');
 // });
 
 $( document ).ready(function() {
+
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
-            toggleDropdown() 
+        toggleDropdown() 
+        }
+    )
+
+    document.getElementById('navbar__search-icon').addEventListener('click', () => {
+        toggleSearchbar() 
         }
     )
 });
@@ -49,4 +55,8 @@ function toggleDropdown() {
     $('.header').hasClass('dropdown-nav-active') 
     ? $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal.svg')
     : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
+}
+
+function toggleSearchbar() {
+    $('.navbar__searchbar').toggle()
 }
