@@ -31,6 +31,11 @@
     } 
 }
 
+%red-underline {
+    text-decoration: underline;
+    text-decoration-color: map-get($global-palette, active);
+}
+
 button {
     @extend .button-font;
     background-color: map-get($global-palette, active);
@@ -63,3 +68,12 @@ input {
 label {
     @extend .form-label-font;
 }
+
+.contact-details__anchor:hover {
+    @extend %red-underline;
+}
+
+%section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }

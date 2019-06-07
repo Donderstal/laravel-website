@@ -7,7 +7,7 @@
             <div class="homepage__header-image">
                 <div class="grid-x homepage__search-bar">
                     <div class="cell small-12 medium-8 search-bar__left">
-                        <span class="search-bar__title">Vind jouw merk</span>
+                        <span class="search-bar__title">Vind jouw merk</a>
                         <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
                     </div>
                     <div class="cell small-12 medium-4 search-bar__right">
@@ -52,30 +52,30 @@
                 <div class="cell small-12 grid-x homepage__contact-details-wrapper"> 
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
-                        <div class="cell small-2 homepage__contact-details__left-div">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
                             <p><i class="fas fa-map-marker-alt"></i></p>
                         </div>
-                        <div class="cell small-10 homepage__contact-details__right-div">
-                            <p><span> Energiestraat 25B <br/>
-                            <u>1</u>411 AR, Naarden </span></p>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
+                            <u>1</u>411 AR, Naarden </a></p>
                         </div> 
                     </div>
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
-                        <div class="cell small-2 homepage__contact-details__left-div">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
                             <p><i class="fas fa-phone"></i></p>
                         </div>
-                        <div class="cell small-10 homepage__contact-details__right-div">
-                            <p> <u>0</u>35 - 694 4646</span></p>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p> <a class="contact-details__anchor"><u>0</u>35 - 694 4646</a></p>
                         </div>      
                     </div>
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
-                        <div class="cell small-2 homepage__contact-details__left-div">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
                             <p><i class="far fa-envelope"></i></p>
                         </div>
-                        <div class="cell small-10 homepage__contact-details__right-div">
-                            <p><span> <u>i</u>nfo@gambv.nl</span></p>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
                         </div>
                     </div>
 
