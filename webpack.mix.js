@@ -19,6 +19,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 mix
     .js('resources/js/app.js', 'public/js')
     .js('resources/js/admin.js', 'public/js')
+    .js('resources/js/client.js', 'public/js')
     .copyDirectory('resources/fonts', 'public/fonts')
     .sass('resources/sass/app.scss', 'public/css', {
         implementation: require('node-sass')

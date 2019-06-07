@@ -31,3 +31,22 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+$( document ).ready(function() {
+    document.getElementById('header__dropdown-button').addEventListener('click', () => {
+            toggleDropdown() 
+        }
+    )
+});
+
+
+function toggleDropdown() {
+    $('.header-main-menu').toggle();
+    $('.navbar__search-icon').toggle();
+    $('.header').toggleClass('dropdown-nav-active')
+    $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
+
+    $('.header').hasClass('dropdown-nav-active') 
+    ? $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal.svg')
+    : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
+}

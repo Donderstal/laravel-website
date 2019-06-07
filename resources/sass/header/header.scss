@@ -27,6 +27,14 @@ $topbar-height-lg: 130px;
     a {
         color: white;
     }
+    @include breakpoint(medium down) {
+        display: block;
+        margin: 2rem auto;
+        a {
+            color: map-get($global-palette, dark);
+            font-weight: 600;
+        }
+    }
 }
 
 .header__menu-anchor:hover {
@@ -39,7 +47,7 @@ $topbar-height-lg: 130px;
 
 .header__dropdown-button {
     @extend .navbar-dropdown-font;
-    padding-left: 1rem;
+    padding-left: 2rem;
     margin-bottom: 0;
 }
 
@@ -56,4 +64,34 @@ $topbar-height-lg: 130px;
     @include breakpoint(large up) {
         max-height: $topbar-height-lg * .8;
     }
+}
+
+.header__dropdown-button:hover {
+    cursor: pointer;
+}
+
+.header-main-menu {
+    @extend .header-subsection;
+    @include breakpoint(medium down) {
+        display: none;
+        height: 50vh;
+        width: 100vw;
+        position: absolute;
+        top: $topbar-height-md;
+        left: 0;
+        text-align: center;
+        background-color: #E0E1DD
+    }
+    @include breakpoint (small only) {
+        height: 100vh !important;
+        top: $topbar-height-sm !important;
+    }
+}
+
+.dropdown-nav-active {
+    background-color: #E0E1DD;
+}
+
+.dropdown-nav-active-button {
+    color: map-get($global-palette, dark)
 }
