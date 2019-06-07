@@ -7,14 +7,39 @@
         height: 332px;
         width: 322px;
     }
-    @include breakpoint (xlarge) {
-        height: 407px;
-        width: 405px;
-    }
 }
 
 .product-card__car-image {
     width: 100%;
     height: 100%;
     opacity: .9;
+}
+
+.product-card__car-name {
+    @extend .product-card-header;
+    margin-bottom: 0;
+}
+
+.product-card__car-model {
+    @extend .product-card-header;
+    color: map-get($global-palette, medium-grey)
+}
+
+.product-card__car-price {
+    text-align: right;
+}
+
+.product-card__top-text-row {
+    padding: 15px 20px 0 20px
+}
+
+.product-card__bottom-text-row {
+    padding: 0 20px 150px 20px 
+}
+
+.product-card__decorative-line {
+    background-color: #EFEFEF;
+    width: 292px;
+    height: 1px;
+    margin: 0 auto;
 }
