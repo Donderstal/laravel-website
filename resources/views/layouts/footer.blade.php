@@ -19,8 +19,8 @@
                         <p><i class="fas fa-map-marker-alt"></i></p>
                   </div>
                   <div class="cell small-11">
-                        <p><span> Energiestraat 25B <br/>
-                        <u>1</u>411 AR, Naarden </span></p>
+                        <p class="footer__contact-paragraph"><a class="contact-details__anchor"> Energiestraat 25B <br/>
+                        <u>1</u>411 AR, Naarden </a></p>
                   </div>
                      
                   </div>
@@ -30,7 +30,7 @@
                            <p><i class="fas fa-phone"></i></p>
                      </div>
                      <div class="cell small-11">
-                           <p> <u>0</u>35 - 694 4646</span></p>
+                           <p  class="footer__contact-paragraph"><a class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
                      </div>      
 
                   </div>
@@ -41,7 +41,7 @@
                            <p><i class="far fa-envelope"></i></p>
                      </div>
                      <div class="cell small-11">
-                           <p><span> <u>i</u>nfo@gambv.nl</span></p>
+                           <p  class="footer__contact-paragraph"><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
                      </div>
                      
                   </div>

@@ -6,8 +6,8 @@ $topbar-height-lg: 130px;
     height: $topbar-height-sm;
     margin: 0 auto 2rem;
     max-width: map-get($breakpoints, xlarge);
-    background-color: rgba(2,40,53,0.15);
     color: $white;
+    background-color: transparent;
     @include breakpoint(medium up) {
         margin: 0 auto 2rem;
         height: $topbar-height-md;
@@ -17,9 +17,20 @@ $topbar-height-lg: 130px;
     }
 }
 
+.header {
+    background-color: rgba(2,40,53,0.15);
+}
+
 .header__menu-paragraph {
     display: inline-block;  
     margin-bottom: 0;
+    a {
+        color: white;
+    }
+}
+
+.header__menu-anchor:hover {
+    @extend %red-underline;
 }
 
 .header-subsection {
@@ -28,7 +39,12 @@ $topbar-height-lg: 130px;
 
 .header__dropdown-button {
     @extend .navbar-dropdown-font;
+    padding-left: 1rem;
     margin-bottom: 0;
+}
+
+.header__active-link {
+    @extend %red-underline;
 }
 
 .navbar__GAM-logo {
