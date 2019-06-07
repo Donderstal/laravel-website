@@ -24,7 +24,7 @@
                 <div class="product-card__year-header">Bouwjaar</div>
                 <div class="product-card__year">2018</div>
             </div>
-            <div class="cell small-4">
+            <div class="cell small-4 product-card__check-me-wrapper">
                 <div class="product-card__check-me-out"><u>BE</u>KIJKEN</div>
             </div>
         </div>

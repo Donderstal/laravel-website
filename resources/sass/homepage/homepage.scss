@@ -176,3 +176,7 @@
     margin-top: .5rem;
     @extend %center-in-parent;
 }
+
+.homepage__featured-cars {
+    @extend %section-inner
+}

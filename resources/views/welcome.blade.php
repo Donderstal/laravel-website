@@ -31,14 +31,14 @@
                     <h2 class="homepage__featured-title">UITGELICHT</h2>
                 </div>
 
-                <div class="cell small-12 grid-x">
+                <div class="cell small-12 homepage__featured-cars grid-x">
                     @include('products.card')
                     @include('products.card')
                     @include('products.card')
                 </div>
-
-                <button class="homepage__our-products-button">ONS AANBOD BEKIJKEN</button>
-
+                <div class="cell small-12 ">
+                    <button class="homepage__our-products-button">ONS AANBOD BEKIJKEN</button>
+                </div>
             </div>
 
             <div class="cell small-12 homepage__about-and-info">
