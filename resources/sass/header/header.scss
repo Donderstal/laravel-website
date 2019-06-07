@@ -73,6 +73,7 @@ $topbar-height-lg: 130px;
 .header-main-menu {
     @extend .header-subsection;
     @include breakpoint(medium down) {
+        z-index: 20;
         display: none;
         height: 50vh;
         width: 100vw;

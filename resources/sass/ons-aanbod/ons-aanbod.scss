@@ -1,0 +1,25 @@
+.ons-aanbod {
+    @extend %generic-padding;
+    @extend %section-inner;
+}
+
+.ons-aanbod__header, .ons-aanbod__header-number {
+    @extend .main-header-font;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.ons-aanbod__header-number {
+    color: map-get($global-palette, medium-grey);
+    margin-bottom: 20px;
+}
+
+.ons-aanbod__sort-text {
+    @extend .ons-aanbod-subheader;
+}
+  
+.ons-aanbod__sort-select {
+    option {
+    @extend .ons-aanbod-select;          
+    }
+}

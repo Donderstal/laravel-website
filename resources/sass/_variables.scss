@@ -121,7 +121,6 @@ $general-fonts: (
     'standard-font': ('fs': 15, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'main-header-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'secondary-header-font': ('fs': 21,'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'homepage-subtitle-font': ('fs': 13, 'lh': 16, 'mt': 0, 'mb': $paragraph-margin-bottom)
   ),
   'medium': (
@@ -149,5 +148,19 @@ $form-fonts: (
   ),
   'medium': (
     'button-font': ('fs': 20, 'lh': 24, 'mt': 0, 'mb': 0)
+  )
+);
+
+$product-fonts: (
+  'small': (
+    'ons-aanbod-subheader': ('fs': 18, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'ons-aanbod-select': ('fs': 16, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+  ),
+  'medium': (
+    'ons-aandbod-select': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+  ),
+  'large': (
+
   )
 );
