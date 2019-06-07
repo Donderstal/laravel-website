@@ -72,3 +72,8 @@ label {
 .contact-details__anchor:hover {
     @extend %red-underline;
 }
+
+%section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }

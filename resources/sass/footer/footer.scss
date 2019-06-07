@@ -2,15 +2,19 @@
     margin-top: ($large-margin-desktop *1.5);
 }
 
+.footer__top-wrapper {
+    background-color: map-get($global-palette, dark)    
+}
+
 .footer__contact-and-photo {
-    @extend %generic-padding;
-    background-color: black;
+    @extend %section-inner;
     color: white;
 }
 
-
 .footer__newsletter-and-social {
     @extend %generic-padding;
+    padding-bottom: 0;
+    @extend %section-inner;
 }
 
 .footer__contact-details {
@@ -29,17 +33,37 @@
     @extend .open-times-font;
 }
 
+.footer__contact {
+    @extend %generic-padding;
+}
+
 .footer__social {
     @extend %center-in-parent;
     display: inline-block; 
 }
 
 .footer__newsletter__copy {
-    color: map-get($global-palette, medium-grey);
+    @extend .standard-font;
+    color: map-get($global-palette, dark);
     max-width: 380px;
 }
 
-//burrrburrr
+
+.footer__photo {
+    @include breakpoint (large up) {
+       display: flex;
+       align-items: center;
+    }
+}
+
+.footer__photo-photo {
+    height: 460px;
+    width: 100%;
+    @include breakpoint (large up) {
+        width: 658px;
+        height: 378px;
+    }
+}
 
 .footer__newsletter__input {
     color: map-get($global-palette, medium-grey);
@@ -63,4 +87,41 @@
     a {
         color: white;     
     }
+}
+
+.footer__newsletter__header, .footer__contact-header {
+    @extend .main-header-font;
+}
+
+.footer__newsletter__button {
+    width: 280px;
+    height: 56px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+
+.footer__social {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    margin-bottom: 60px;
+}
+
+.fa-facebook-square, .fa-instagram {
+    font-size: 2rem;
+}
+
+.footer__social-title {
+    @extend .homepage-subtitle-font;
+}
+
+.footer__social-wrapper {
+    @include breakpoint (large up) {
+        display: flex;
+        align-items: center;
+        div {
+            margin: 0 auto;
+        }
+     }
 }
