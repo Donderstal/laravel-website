@@ -10,6 +10,8 @@
         <button>Naar zoekopdracht</button>
     </div>
     <!--- else if match -->
-    
+    <!-- for each (...) -->
 
+    <!-- end for eatch -->
+    <!-- end if/else -->
 </section>

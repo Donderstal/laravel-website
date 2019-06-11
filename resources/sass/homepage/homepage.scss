@@ -37,29 +37,6 @@
     }
 }
 
-.homepage__search-bar {
-    @extend %center-in-parent;
-    @extend %generic-border-radius;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    width: 300px;
-    height: 101px;
-    padding-left: $margin-small / 2;
-    padding-right: $margin-small / 2;
-    top: 70%;
-    position: relative;
-    @include breakpoint (medium up) {
-        height: 126px;
-        width: 620px;        
-    }
-    @include breakpoint (large up) {
-        width: 780px;       
-        height: 146px 
-    }
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
-}
-
 .homepage__search-button {
     @extend %center-in-parent;
     display: block;
@@ -69,65 +46,13 @@
 
 .homepage__featured {
     margin-top: $margin-small;
-    margin-bottom: $margin-large;
+    margin-bottom: $margin-large;    
+    align-items: center;
+    display: flex;
 }
 
 .homepage__about-and-info {
     @extend %generic-padding;
-}
-
-.homepage__our-products-button {
-    @extend %center-in-parent;
-    margin-top: $margin-small;
-    height: 56px;
-    width: 280px;
-    @include breakpoint (medium up) {
-        height: 66px;
-        width: 380px; 
-    }
-}
-
-.search-bar__title {
-    @extend .search-bar-title-font;
-}
-
-.search-bar__left, .search-bar__right {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar__left {
-    @include breakpoint (medium up) {
-        border-right: .5px groove map-get($global-palette, medium-grey);
-    }
-}
-
-.search-bar__icon {
-    position: relative;
-    @include breakpoint (small only) {
-        height: 22px;
-        width: 14px;
-    }
-    @include breakpoint (medium up) {
-        left: 5rem;        
-    }
-}
-
-.search-bar__button {
-    @include breakpoint(small) {
-        height: 35px;
-        width: 260px;
-    }
-    @include breakpoint(medium up) {
-        height: 66px;
-        width: 200px;
-    }
-}
-
-.homepage__featured {
-    text-align: center;
-    align-items: center;
-    display: flex;
 }
 
 .homepage__about {
@@ -178,5 +103,21 @@
 }
 
 .homepage__featured-cars {
-    @extend %section-inner
+    @extend %section-inner;
+}
+
+.homepage__our-products-button{
+    @extend button;
+    @extend %center-in-parent;
+    display: block;
+    margin-top: $margin-small;
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    width: 280px;
+    @include breakpoint (medium up) {
+        height: 66px;
+        line-height: 66px;
+        width: 380px; 
+    }
 }

@@ -1,12 +1,15 @@
 .ons-aanbod {
     @extend %generic-padding;
     @extend %section-inner;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .ons-aanbod__header, .ons-aanbod__header-number {
     @extend .main-header-font;
     font-weight: bold;
     margin-bottom: 0;
+    display: inline-block;
 }
 
 .grid-container {
@@ -16,6 +19,7 @@
 .ons-aanbod__header-number {
     color: map-get($global-palette, medium-grey);
     margin-bottom: 20px;
+    margin-left: 1rem;
 }
 
 .ons-aanbod__sort-text {
@@ -30,4 +34,41 @@
     option {
         @extend .ons-aanbod-select;          
     }
+}
+
+.ons-aanbod__sort-wrapper {
+    float: right;
+}
+
+.ons-aanbod__title-bar {
+    margin-bottom: $main-margin-tablet;
+    margin-top: $main-margin-tablet * 2;
+}
+
+.ons-aanbod__nav-buttons__wrapper {
+    @extend %center-in-parent;
+    margin-top: $main-margin-tablet;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ons-aanbod__nav-buttons {
+    display: inline-block;
+}
+
+%bottom-button {
+    @extend %generic-border-radius;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #022835;}
+
+.ons-aanbod__bottom-button {
+    @extend %bottom-button;
+    background-color: white;
+    color: map-get($global-palette, dark)
+}
+
+.ons-aanbod__bottom-button--active {
+    @extend %bottom-button;
 }

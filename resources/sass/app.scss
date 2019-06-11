@@ -84,10 +84,13 @@
 
 @import 'ons-aanbod/ons-aanbod';
 
+@import 'search-bar/search-bar';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
 
 input[type="checkbox"] {
   vertical-align: middle;
@@ -102,6 +105,10 @@ textarea {
   @include breakpoint (medium up) {
     width: 580px;    
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 u {

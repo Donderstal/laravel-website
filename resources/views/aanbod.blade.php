@@ -4,42 +4,49 @@
 @section('content')
     <section class="ons-aanbod-wrapper">
 
-        <div class="grid-x homepage__search-bar">
-            <div class="cell small-12 medium-8 search-bar__left">
-                <select class="search-bar__title">Vind jouw merk</select>
-                <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
-            </div>
-            <div class="cell small-12 medium-4 search-bar__right">
-                <button class="search-bar__button">ZOEKEN</button>
-            </div>
-        </div>
+        <div class="grid-x grid-container">
 
-        <div class="grid-x ons-aanbod">
+        @include('partials.search-bar')
+            <div class="cell small-12 grid-x ons-aanbod__title-bar">
+                <div class="cell small-12 medium-6">
+                    <h2 class="ons-aanbod__header">ONS AANBOD</h2>
+                    <h2 class="ons-aanbod__header-number"> 00 </h2>
+                </div>
 
-            <div class="cell small-12 medium-6">
-                <h2 class="ons-aanbod__header">ONS AANBOD</h2>
-                <h2 class="ons-aanbod__header-number"> 00 </h2>
-            </div>
-
-            <div class="cell small-12 medium-6">
-                <span class="ons-aanbod__sort-text"> Sorteren op </span>
-                <select class="ons-aanbod__sort-select">    
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
+                <div class="cell small-12 medium-6">
+                    <div class="ons-aanbod__sort-wrapper">
+                        <span class="ons-aanbod__sort-text"> Sorteren op </span>
+                        <select class="ons-aanbod__sort-select">    
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
-        </div>
-
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="cell small-12 grid-x grid-margin-y">
                 @foreach($products as $indexKey => $product)
                     @include('products.card')
                 @endforeach
             </div> 
+
+            <div class="ons-aanbod__nav-buttons__wrapper">
+                <div class="ons-aanbod__nav-buttons">
+                    <button class="ons-aanbod__bottom-button"> <- </button>
+                </div> 
+                <div class="ons-aanbod__nav-buttons">
+                    <button class="ons-aanbod__bottom-button--active"> 1 </button>
+                    <button class="ons-aanbod__bottom-button"> 2 </button>
+                    <button class="ons-aanbod__bottom-button"> 3 </button>
+                </div> 
+                <div class="ons-aanbod__nav-buttons">
+                    <button class="ons-aanbod__bottom-button"> -> </button>
+                </div> 
+            </div> 
+
         </div>
 
-        </section>
+    </section>
 @endsection

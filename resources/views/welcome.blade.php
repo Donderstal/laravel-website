@@ -5,15 +5,7 @@
 
         <div class="homepage__header-image-wrapper">
             <div class="homepage__header-image">
-                <div class="grid-x homepage__search-bar">
-                    <div class="cell small-12 medium-8 search-bar__left">
-                        <span class="search-bar__title">Vind jouw merk</a>
-                        <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
-                    </div>
-                    <div class="cell small-12 medium-4 search-bar__right">
-                        <button class="search-bar__button">ZOEKEN</button>
-                    </div>
-                </div>
+                @include('partials.search-bar')
                 <div class="homepage__uitgelicht-pointer-wrapper">
                     <p class="homepage__uitgelicht-pointer">
                         UITGELICHT
@@ -37,8 +29,9 @@
                     @include('products.card')
                 </div>
                 <div class="cell small-12 ">
-                    <button class="homepage__our-products-button">ONS AANBOD BEKIJKEN</button>
+                    <a class="homepage__our-products-button" href="{{ route('products.list') }}">ONS AANBOD BEKIJKEN</a>
                 </div>
+                
             </div>
 
             <div class="cell small-12 homepage__about-and-info">
