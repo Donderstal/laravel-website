@@ -1,4 +1,4 @@
-<div class="cell small-12 medium-6 large-3">
+<div class="cell small-12 medium-6 large-4 xlarge-3">
 
     <div class="grid-y product-card ">
 

@@ -6,7 +6,7 @@
 
         <div class="grid-x homepage__search-bar">
             <div class="cell small-12 medium-8 search-bar__left">
-                <span class="search-bar__title">Vind jouw merk</a>
+                <select class="search-bar__title">Vind jouw merk</select>
                 <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
             </div>
             <div class="cell small-12 medium-4 search-bar__right">

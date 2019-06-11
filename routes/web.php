@@ -35,6 +35,7 @@ Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');
 Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
 Route::get('search', 'SearchController@index')->name('search');
 
+
 // Paginas:
 
 // Home --> /home --> view('home')

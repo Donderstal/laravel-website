@@ -24,11 +24,11 @@
             </div>
             <div class="header-main-menu">
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="#"> Home</a></p>
-                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor"> Ons aanbod</a></p>
-                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('werkplaats') }}">Verkocht</a></p>
+                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('products.list') }}"> Ons aanbod</a></p>
+                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('products.list') }}">Verkocht</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('werkplaats') }}">Werkplaats</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('financiering') }}">Financiering</a></p>
-                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor">Zoekopdracht</a></p>
+                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('zoektocht') }}">Zoektocht</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('over-ons') }}">Over ons</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('contact') }}">Contact</a></p>
             </div>

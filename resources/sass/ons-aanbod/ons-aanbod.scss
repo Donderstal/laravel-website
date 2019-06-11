@@ -23,6 +23,10 @@
 }
   
 .ons-aanbod__sort-select {
+    width: 280px;
+    height: 56px;
+    border: 2px solid #8D9297;
+    @extend %generic-border-radius;
     option {
         @extend .ons-aanbod-select;          
     }
