@@ -1,5 +1,8 @@
-
-<section class="header">
+@if(Request::url() === 'http://www.gam.test' )
+    <section class="header-home">
+@else 
+    <section class="header-general">
+@endif
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
             <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search.svg') }}">
@@ -9,10 +12,13 @@
             </div>
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
-            <!-- <p class="header__menu-paragraph navbar-header-font">G A M</p> --> 
-            <img class="navbar__GAM-logo" src="{{ asset('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+            @if(Request::url() === 'http://www.gam.test' )
+                <img class="navbar__GAM-logo" src="{{ asset('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+            @else 
+                <img class="navbar__GAM-logo" src="{{ asset('img/ui-icons/GAM-logo-minimal.svg') }}">
+            @endif
         </div>
-        <div class="cell small-3 large-8 large-order-2">
+        <div class="cell small-3 large-8 large-order-2 header__main-navigation">
             <div class="hide-for-large">
                 <p id="header__dropdown-button" class="header__dropdown-button"><u>M</u>ENU</p>
             </div>

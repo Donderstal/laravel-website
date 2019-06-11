@@ -17,8 +17,19 @@ $topbar-height-lg: 130px;
     }
 }
 
-.header {
+.header-home {
     background-color: rgba(2,40,53,0.15);
+
+}
+
+.header-general {
+    background-color: transparent;
+    .header__dropdown-button {
+        color: map-get($global-palette, dark);
+    }
+    .header__menu-anchor {
+        color: map-get($global-palette, dark);
+    }
 }
 
 .header__menu-paragraph {
