@@ -19,7 +19,8 @@ $topbar-height-lg: 130px;
 
 .header-home {
     background-color: rgba(2,40,53,0.15);
-
+    position: relative;
+    z-index: 3;
 }
 
 .header-general {

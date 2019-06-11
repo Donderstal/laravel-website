@@ -28,7 +28,9 @@
 
             <div class="cell small-12 grid-x grid-margin-y">
                 @foreach($products as $indexKey => $product)
+                 <div class="cell small-12 medium-6 large-3">
                     @include('products.card')
+                    </div>
                 @endforeach
             </div> 
 
