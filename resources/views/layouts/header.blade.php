@@ -5,7 +5,11 @@
 @endif
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
-            <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search.svg') }}">
+            @if(Request::url() === 'http://www.gam.test' )
+                <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search.svg') }}">
+            @else 
+                <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search-black.svg') }}">
+            @endif
             <div class="navbar__searchbar">
                 <input class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
                 <button class="navbar__searchbar__button">ZOEKEN</button>
@@ -23,7 +27,7 @@
                 <p id="header__dropdown-button" class="header__dropdown-button"><u>M</u>ENU</p>
             </div>
             <div class="header-main-menu">
-                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="#"> Home</a></p>
+                <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="/"> Home</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('products.list') }}"> Ons aanbod</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('products.list') }}">Verkocht</a></p>
                 <p class="navbar-link-font header__menu-paragraph"><a class="header__menu-anchor" href="{{ route('werkplaats') }}">Werkplaats</a></p>
