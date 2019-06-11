@@ -102,13 +102,13 @@ $topbar-height-lg: 130px;
 }
 
 .navbar__searchbar {
+    @extend %generic-border-radius;
     display:none;
     width: 320px;
     height: 60px;
     position: absolute; 
     top: $topbar-height-sm;
     background-color: white;
-    border-radius: 5px;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
     @include breakpoint (small only) {
         left: 0;

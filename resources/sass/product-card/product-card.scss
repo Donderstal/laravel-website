@@ -1,12 +1,12 @@
 .product-card {
     @extend %center-in-parent;
+    @extend %small-border-radius;
     height: 330px;
     width: 280px;
     @include breakpoint (medium) {
         height: 332px;
         width: 322px;
     }
-    border-radius: 3px;
 }
 
 .product-card__car-image {

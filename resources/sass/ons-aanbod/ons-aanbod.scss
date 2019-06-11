@@ -9,6 +9,10 @@
     margin-bottom: 0;
 }
 
+.grid-container {
+    max-width: 1440px;
+}
+
 .ons-aanbod__header-number {
     color: map-get($global-palette, medium-grey);
     margin-bottom: 20px;
@@ -20,6 +24,6 @@
   
 .ons-aanbod__sort-select {
     option {
-    @extend .ons-aanbod-select;          
+        @extend .ons-aanbod-select;          
     }
 }

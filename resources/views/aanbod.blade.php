@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <section class="ons-aanbod">
+    <section class="ons-aanbod-wrapper">
 
         <div class="grid-x homepage__search-bar">
             <div class="cell small-12 medium-8 search-bar__left">

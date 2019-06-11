@@ -39,6 +39,7 @@
 
 .homepage__search-bar {
     @extend %center-in-parent;
+    @extend %generic-border-radius;
     display: flex;
     align-items: center;
     background-color: white;
@@ -56,7 +57,6 @@
         width: 780px;       
         height: 146px 
     }
-    border-radius: 5px;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
 }
 

@@ -94,9 +94,9 @@
 }
 
 .footer__newsletter__button {
+    @extend %generic-border-radius;
     width: 280px;
     height: 56px;
-    border-radius: 5px;
     margin-bottom: 60px;
 }
 
