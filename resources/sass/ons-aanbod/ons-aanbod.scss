@@ -29,6 +29,9 @@
 .ons-aanbod__header-number {
     color: map-get($global-palette, medium-grey);
     margin-bottom: 20px;
+    @include breakpoint (large up) {
+        margin-left: 1rem;
+    }
 }
 
 .ons-aanbod__sort-text {

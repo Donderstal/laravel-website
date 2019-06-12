@@ -25,6 +25,7 @@ ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
     Route::get('/list', 'ProductsController@list')->name('list');
+    Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
 

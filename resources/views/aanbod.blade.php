@@ -5,15 +5,19 @@
 
         <div class="grid-x grid-container">
 
-        @include('partials.search-bar')
+        @if( strpos(Request::url(), 'list') !== false)
+            @include('partials.search-bar')
+        @endif
+        
             <div class="cell small-12 grid-x ons-aanbod__title-bar">
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__header-wrapper">
-                        <h2 class="ons-aanbod__header">ONS AANBOD</h2> <br class="show-for-small" />
+                        <h2 class="ons-aanbod__header"> {{ strtoupper( $title ) }} </h2> <br class="hide-for-large" />
                         <h2 class="ons-aanbod__header-number"> 00 </h2>
                     </div>
                 </div>
 
+            @if( strpos(Request::url(), 'list') !== false)
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__sort-wrapper">
                         <span class="ons-aanbod__sort-text"> Sorteren op </span>
@@ -25,6 +29,7 @@
                         </select>
                     </div>
                 </div>
+            @endif
             </div>
 
             <div class="cell small-12 grid-x grid-margin-y">

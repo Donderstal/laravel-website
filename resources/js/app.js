@@ -34,7 +34,7 @@ var SVGInjector = require('svg-injector')
 // });
 
 $( document ).ready(function() {
-
+    
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown() 
         }

@@ -6,9 +6,9 @@
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
             @if(Request::url() === 'http://www.gam.test' )
-                <img id="navbar__search-icon svg-injection" class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search.svg') }}">
+                <img id="navbar__search-icon" class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search.svg') }}">
             @else 
-                <img id="navbar__search-icon svg-injection" class="navbar__search-icon" src="{{ asset('img/ui-icons/search-black.svg') }}">
+                <img id="navbar__search-icon" class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search-black.svg') }}">
             @endif
             <div class="navbar__searchbar">
                 <input class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
