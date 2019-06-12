@@ -10,6 +10,16 @@
     font-weight: bold;
     margin-bottom: 0;
     display: inline-block;
+ 
+}
+
+.ons-aanbod__header-wrapper {
+    @include breakpoint (small only) {
+        margin: 0 auto;
+        max-width: 320px;
+        
+    }  
+    padding-left: 1rem; 
 }
 
 .grid-container {
@@ -19,7 +29,6 @@
 .ons-aanbod__header-number {
     color: map-get($global-palette, medium-grey);
     margin-bottom: 20px;
-    margin-left: 1rem;
 }
 
 .ons-aanbod__sort-text {
@@ -39,10 +48,12 @@
 .ons-aanbod__sort-wrapper {
     @include breakpoint (small only) {
         margin: 0 auto;
-        max-width: 420px;
+        max-width: 320px;
+        padding-left: 1rem;
     }
     @include breakpoint (medium up) {
         float: right;
+        padding-right: 1rem;
     }
 
 }
@@ -50,6 +61,11 @@
 .ons-aanbod__title-bar {
     margin-bottom: $main-margin-tablet;
     margin-top: $main-margin-tablet * 2;
+    @include breakpoint (medium only) {
+        width: 820px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .ons-aanbod__nav-buttons__wrapper {

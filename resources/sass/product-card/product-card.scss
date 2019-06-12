@@ -8,6 +8,10 @@
         height: 332px;
         width: 322px;
     }
+    @include breakpoint (medium) {
+        height: 332px;
+        width: 300px;
+    }
 }
 
 .product-card__car-image {
