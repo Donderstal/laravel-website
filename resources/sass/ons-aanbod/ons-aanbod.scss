@@ -72,3 +72,23 @@
 .ons-aanbod__bottom-button--active {
     @extend %bottom-button;
 }
+
+.button-arrow-left {
+    transform: rotate(180deg)
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+ }
+
+.ons-aanbod__bottom-button:hover {
+    background-color: map-get($global-palette, dark);
+    color: white;
+    svg {
+        path {
+            stroke: white;                
+        }    
+    }
+}

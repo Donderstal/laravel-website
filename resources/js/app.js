@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+var SVGInjector = require('svg-injector')
 
 // window.Vue = require('vue');
 
@@ -43,7 +44,16 @@ $( document ).ready(function() {
         toggleSearchbar() 
         }
     )
+
+    // Elements to inject
+    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
+
+    console.log(mySVGsToInject)
+
+    // Do the injection
+    SVGInjector(mySVGsToInject);
 });
+
 
 
 function toggleDropdown() {

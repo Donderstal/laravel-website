@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('content')
@@ -36,7 +35,7 @@
 
             <div class="ons-aanbod__nav-buttons__wrapper">
                 <div class="ons-aanbod__nav-buttons">
-                    <button class="ons-aanbod__bottom-button"> <- </button>
+                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> </button>
                 </div> 
                 <div class="ons-aanbod__nav-buttons">
                     <button class="ons-aanbod__bottom-button--active"> 1 </button>
@@ -44,7 +43,7 @@
                     <button class="ons-aanbod__bottom-button"> 3 </button>
                 </div> 
                 <div class="ons-aanbod__nav-buttons">
-                    <button class="ons-aanbod__bottom-button"> -> </button>
+                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  </button>
                 </div> 
             </div> 
 

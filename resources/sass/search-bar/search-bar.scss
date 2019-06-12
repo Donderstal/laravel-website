@@ -32,7 +32,11 @@
     }
 }
 
-option:hover {
+.search-bar__option {
+    padding: 1rem;
+}
+
+.search-bar__option:hover {
     background-color: map-get($global-palette, active);
 }
 
