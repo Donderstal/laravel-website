@@ -29,7 +29,7 @@
                 @foreach($products as $indexKey => $product)
                  <div class="cell small-12 medium-6 large-3">
                     @include('products.card')
-                    </div>
+                </div>
                 @endforeach
             </div> 
 

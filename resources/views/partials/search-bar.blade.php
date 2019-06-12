@@ -13,7 +13,7 @@
             <option class="search-bar__option" value="porsche">Porsche</option>
             <option class="search-bar__option" value="volvo">Volvo</option>
         </select>
-        <img class="search-bar__icon" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
+        <img class="search-bar__icon svg-injection" src="{{ asset('img/ui-icons/list-arrows.svg')}}">
     </div>
     <div class="cell small-0 medium-1">
     </div>

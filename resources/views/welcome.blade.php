@@ -9,7 +9,7 @@
                 <div class="homepage__uitgelicht-pointer-wrapper">
                     <p class="homepage__uitgelicht-pointer">
                         UITGELICHT
-                        <img class="homepage__uitgelicht-pointer__icon" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
+                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
                     </p>
                 </div>
             </div>
@@ -24,9 +24,15 @@
                 </div>
 
                 <div class="cell small-12 homepage__featured-cars grid-x">
-                    @include('products.card')
-                    @include('products.card')
-                    @include('products.card')
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
                 </div>
                 <div class="cell small-12 ">
                     <a class="homepage__our-products-button" href="{{ route('products.list') }}">ONS AANBOD BEKIJKEN</a>

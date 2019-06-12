@@ -37,7 +37,14 @@
 }
 
 .ons-aanbod__sort-wrapper {
-    float: right;
+    @include breakpoint (small only) {
+        margin: 0 auto;
+        max-width: 420px;
+    }
+    @include breakpoint (medium up) {
+        float: right;
+    }
+
 }
 
 .ons-aanbod__title-bar {

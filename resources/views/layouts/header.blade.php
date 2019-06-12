@@ -6,9 +6,9 @@
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
             @if(Request::url() === 'http://www.gam.test' )
-                <img id="navbar__search-icon" class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search.svg') }}">
+                <img id="navbar__search-icon svg-injection" class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search.svg') }}">
             @else 
-                <img id="navbar__search-icon" class="navbar__search-icon" src="{{ asset('img/ui-icons/search-black.svg') }}">
+                <img id="navbar__search-icon svg-injection" class="navbar__search-icon" src="{{ asset('img/ui-icons/search-black.svg') }}">
             @endif
             <div class="navbar__searchbar">
                 <input class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
@@ -19,7 +19,7 @@
             @if(Request::url() === 'http://www.gam.test' )
                 <img class="navbar__GAM-logo svg-injection" src="{{ asset('img/ui-icons/GAM-logo-minimal-white.svg') }}">
             @else 
-                <img class="navbar__GAM-logo" src="{{ asset('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="navbar__GAM-logo svg-injection" src="{{ asset('img/ui-icons/GAM-logo-minimal.svg') }}">
             @endif
         </div>
         <div class="cell small-3 large-8 large-order-2 header__main-navigation">
