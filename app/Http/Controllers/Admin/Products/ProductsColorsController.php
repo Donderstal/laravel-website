@@ -45,9 +45,14 @@ class ProductsColorsController extends Controller
 
     public function delete(ProductsColors $color)
     {
-        $color->delete();
-
-        flash_message('The color deleted successfully.', 'warning');
+        try {
+            $color->delete();
+            flash_message('The color deleted successfully.', 'warning');
+        } catch (\Exception $e) {
+            if ($e->errorInfo[1] == 1451) {
+                flash_message('Could not delete this color, because of it used in products.', 'error');
+            }
+        }
 
         return redirect()->route('admin.products.colors.index');
     }
