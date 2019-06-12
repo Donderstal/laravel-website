@@ -3,6 +3,7 @@
     @extend %small-border-radius;
     height: 330px;
     width: 280px;
+    margin-bottom: 2rem;
     @include breakpoint (medium) {
         height: 332px;
         width: 322px;

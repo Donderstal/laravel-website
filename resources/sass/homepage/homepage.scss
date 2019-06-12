@@ -56,7 +56,6 @@
 }
 
 .homepage__about {
-    @extend %center-in-parent;
     max-width: 625px;
     div {
         @extend .standard-font;
@@ -64,6 +63,9 @@
         color: map-get($global-palette, dark);
     }
     margin-bottom: 80px;
+    @include breakpoint (large up) {
+        margin: 0 auto;
+    }
 }
 
 .homepage__about-title, .homepage__featured-title {
@@ -73,7 +75,7 @@
 }
 
 .homepage__about-title {
-    @include breakpoint (small only) {
+    @include breakpoint (medium down) {
         text-align: left;
     }
 }
@@ -86,6 +88,9 @@
 .homepage__contact-details {
     @extend .contact-detail-font;
     color: map-get($global-palette, dark);
+    @include breakpoint (large up) {
+        margin-top: 2rem;
+    }
 }
 
 .homepage__contact-details__right-div {
