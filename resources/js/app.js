@@ -48,8 +48,6 @@ $( document ).ready(function() {
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
-    console.log(mySVGsToInject)
-
     // Do the injection
     SVGInjector(mySVGsToInject);
 });

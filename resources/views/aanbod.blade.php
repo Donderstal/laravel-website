@@ -8,12 +8,12 @@
         @if( strpos(Request::url(), 'list') !== false)
             @include('partials.search-bar')
         @endif
-        
+
             <div class="cell small-12 grid-x ons-aanbod__title-bar">
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__header-wrapper">
                         <h2 class="ons-aanbod__header"> {{ strtoupper( $title ) }} </h2> <br class="hide-for-large" />
-                        <h2 class="ons-aanbod__header-number"> 00 </h2>
+                        <h2 class="ons-aanbod__header-number"> {{ count($products) }} </h2>
                     </div>
                 </div>
 
