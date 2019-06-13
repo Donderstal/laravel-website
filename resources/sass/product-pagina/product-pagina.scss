@@ -1,0 +1,16 @@
+.product-page__main-info, .product-page__opties {
+    background-color: map-get($global-palette, dark);
+    color: white
+}
+
+.product-page__image-header, .product-page__opties, .product-page__extra-specificaties, .product-page__over-gam, .product-page__related-products {
+    @extend %generic-padding;
+}
+
+.product-page__main-info__inner, .product-page__specificaties__inner {
+    @extend %generic-padding;
+    @include breakpoint (medium only) {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+}
