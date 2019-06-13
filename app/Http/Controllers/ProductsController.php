@@ -87,7 +87,8 @@ class ProductsController extends Controller
     }
 
     public function list(){
-        $products = Products::all()->where('status', 'available');
+        $products = Products::with(['gallery', 'slug'])->get()
+            ->where('status', 'available');
         return view('aanbod')->with([
             'title' => 'Ons aanbod',
             'products' => $products
