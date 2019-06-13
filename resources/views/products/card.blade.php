@@ -21,11 +21,11 @@
             <div class="product-card__kilometers"> {{ $product['mileage'] }} </div>
         </div>
         <div class="cell small-4">
-            <div class="product-card__year-header">Bouwjaar</div>
+            <div class="product-card__year-header"> Jaar </div>
             <div class="product-card__year"> {{ $product['year'] }} </div>
         </div>
         <div class="cell small-4 product-card__check-me-wrapper">
-            <a class="product-card__check-me-out" href=""><u>BE</u>KIJKEN</a>
+            <a class="product-card__check-me-out" href="{{ route( 'products.show', ['slug' => $product->slug->slug]) }}"><u>BE</u>KIJKEN</a>
         </div>
     </div>
 
