@@ -9,11 +9,24 @@
     margin-bottom: 6px;
 }
 
+.product-page__main-header-dark-font {
+    // fs: 32, lh: 39
+    @extend .main-header-font;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
 .product-page__main-subtitle-font {
     // fs: 18, lh: 20
     @extend .open-day-font;
     font-weight: 600;
     color: map-get($global-palette, light-grey)
+}
+
+.product-page__main-subtitle-font--white {
+    @extend .open-day-font;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .product-page__price-font {
@@ -81,15 +94,17 @@
 }
 
 .product-page__options-font {
-    // fs: 15, lh: 19
+    // fs: 15, lh: 21
     @extend .button-font;
+    line-height: 21px;
     font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 .product-page__bottom-specs-title-font {
     // fs: 21, lh: 25    
     @extend .spec-header-font;
-    color: map-get($global-palette, dark)
+    color: map-get($global-palette, dark);
 }
 
 .product-page__bottom-specs-subtitle-font {
@@ -102,4 +117,8 @@
 .product-page__bottom-specs-details-font {
     // fs: 15, lh: 22    
     @extend .spec-details-font;
+}
+
+.product-page__option-wrapper {
+    margin-bottom: 2rem;
 }

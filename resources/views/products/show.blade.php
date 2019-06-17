@@ -118,29 +118,54 @@
         </div>
 
         <div class="cell small-12 product-page__specificaties">
-            <div class="product-page__specificaties__inner">
-                {{-- Specification --}}
-                <ul>
-                    @foreach($product->specification as $specification)
-                        <li>{{ $specification->title }} : {{ $specification->value }}</li>
-                    @endforeach
-            </ul>
+            <div class="grid-x product-page__specificaties__inner">
+                <div class="cell small-12 product-page__specificaties__header"> 
+                    <h1 class="product-page__main-header-dark-font">
+                        SPECIFICATIES
+                    </h1>
+                </div>         
+                @foreach($product->specification as $specification)
+                <div class="cell small-6 large-3 product-page__specificaties__subsection"> 
+                    <p class="product-page__detail-title-lightbg-font">
+                        {{ $specification->title }}
+                    </p>
+                    <p class="product-page__detail-lightbg-font">
+                        {{ $specification->value }}
+                    </p>
+                </div>    
+                @endforeach
             </div>
         </div>
 
         <div class="cell small-12 product-page__opties">
+            <div class="grid-x product-page__opties__inner">
+                <div class="cell small-12 product-page__opties__header"> 
+                    <h1 class="product-page__main-header-font">
+                        OPTIES
+                    </h1>
+                </div>   
             {{-- Options --}}
-            <ul>
                 @foreach($product->options as $options)
-                    <li>{{ $options->title }}
-                        <ul>
+                <div class="grid-x cell small-12 product-page__option-wrapper">
+                    <div class="cell small-12">
+                        <p class="product-page__main-subtitle-font--white">
+                            {{ $options->title }}
+                        </p>
+                    </div>
+                    <div class="grid-x cell small-12">
                             @foreach($options->items as $item)
-                                <li>{{ $item->title }}</li>
+                            <div class="cell small-12 large-4">
+                                <p class="product-page__options-font">- {{ $item->title }}</p>
+                            </div>
                             @endforeach
                         </ul>
-                    </li>
+                    </div>
+                </div>
                 @endforeach
-            </ul>
+                <div class="product-page__main-info__subsection">
+                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
+                </div>
+            </div>
         </div>
 
         <div class="cell small-12 product-page__extra-specificaties">

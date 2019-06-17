@@ -80,3 +80,16 @@
         stroke: white;                
     }      
 }
+
+.product-page__specificaties__subsection {
+    margin-bottom: $margin-small / 4;
+}
+
+.product-page__specificaties__header, .product-page__opties__header {
+    margin-bottom: $margin-small / 2
+}
+
+.product-page__opties__header {
+    margin-bottom: $margin-small / 2;
+    margin-top: $margin-small / 2
+}
