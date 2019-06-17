@@ -10,6 +10,7 @@
             <img class="product-page__image-header__img" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
             <div class="product-page__image-header__button-wrapper">
                 <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> </button>
+                    x / xx
                 <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  </button>
             </div>
         </div>
