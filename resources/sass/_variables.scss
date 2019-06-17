@@ -34,11 +34,11 @@ $global-palette: (
     src: font-files("../fonts/montserrat/montserrat.regular.ttf"); 
 }
 
-$main-margin-mobile: 1.25rem;
-$main-margin-tablet: 2.0625rem;
+$main-margin-mobile: 1.25rem;   // 20px
+$main-margin-tablet: 2.0625rem; // 33px
 
-$large-margin-tablet: 4.375rem;
-$large-margin-desktop: 6.25rem;
+$large-margin-tablet: 4.375rem;  // 70px
+$large-margin-desktop: 6.25rem;  // 100px
 
 // Font styles
 $paragraph-styles: (
