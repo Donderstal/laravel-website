@@ -154,7 +154,7 @@
                     </div>
                     <div class="grid-x cell small-12">
                             @foreach($options->items as $item)
-                            <div class="cell small-12 large-4">
+                            <div class="cell small-12 medium-6 large-4">
                                 <p class="product-page__options-font">- {{ $item->title }}</p>
                             </div>
                             @endforeach
@@ -168,25 +168,31 @@
             </div>
         </div>
 
-        <div class="cell small-12 product-page__extra-specificaties">
-            {{-- Services --}}
-            <ul>
+        <div class="cell small-12 product-page__service">
+            <div class="grid-x product-page__service-inner">
+                <div class="cell small-12 product-page__service-subsection">
+                    <p class="product-page__bottom-specs-title-font">SERVICE</p>
+                </div>
                 @foreach($product->services as $services)
-                    <li>{{ $services->title }} : {{ $services->value }}</li>
+                <div class="cell small-12 medium-6">
+                    <p class="product-page__service-subtitle">{{ $services->title }}</p> 
+                    <p class="product-page__service-desc">{{ $services->value }}</p>
+                </div>
                 @endforeach
-            </ul>
-
-            brrruh
 
             {{-- Product Status --}}
             <p>{{ $product->status == 'available' ? 'Available' : 'Sold' }}</p>
 
             {{-- Product Note --}}
             <p>{{ $product->note }}</p>
+            </div>
+        </div>
+
+        <div class="cell small-12 product-page__decorative-line--bottom">
         </div>
 
         <div class="cell small-12 product-page__over-gam">
-            At GAM, we love money!
+            At GAM, we love money and cars!
         </div>
 
         <div class="cell small-12 product-page__related-products">

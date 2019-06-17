@@ -10,7 +10,7 @@
 
 .product-page__image-header, 
 .product-page__opties, 
-.product-page__extra-specificaties, 
+.product-page__service, 
 .product-page__over-gam, 
 .product-page__related-products {
     @extend %generic-padding;
@@ -92,4 +92,26 @@
 .product-page__opties__header {
     margin-bottom: $margin-small / 2;
     margin-top: $margin-small / 2
+}
+
+.product-page__option-wrapper {
+    margin-bottom: 2rem;
+}
+
+.product-page__service-subtitle {
+    @extend .product-page__bottom-specs-subtitle-font;
+}
+
+.product-page__service-desc {
+    @extend .product-page__bottom-specs-details-font;
+}
+
+.product-page__service-subtitle, .product-page__service-desc {
+    @include breakpoint(large up) {
+        display: inline-block;
+    }
+}
+
+.product-page__decorative-line--bottom {
+    @extend .product-page__decorative-line;
 }
