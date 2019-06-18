@@ -104,6 +104,7 @@
 .product-page__bottom-specs-title-font {
     // fs: 21, lh: 25    
     @extend .spec-header-font;
+    font-weight: 700;
     color: map-get($global-palette, dark);
 }
 

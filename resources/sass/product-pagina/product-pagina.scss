@@ -9,11 +9,19 @@
 }
 
 .product-page__image-header, 
-.product-page__opties, 
+.product-page__opties__inner, 
 .product-page__service, 
 .product-page__over-gam, 
 .product-page__related-products {
     @extend %generic-padding;
+}
+
+.product-page__specificaties,
+.product-page__opties__inner, 
+.product-page__service, 
+.product-page__over-gam, 
+.product-page__related-products {
+    @extend %section-inner;
 }
 
 .product-page__main-info__inner, .product-page__specificaties__inner {
@@ -21,6 +29,13 @@
     @include breakpoint (medium only) {
         max-width: 640px;
         margin: 0 auto;
+    }
+}
+
+.product-page__main-info {
+    @include breakpoint (large up) {
+        padding-left: 10rem;
+        padding-right: 10rem;
     }
 }
 
@@ -36,12 +51,35 @@
 .product-page__image-header {
     position: relative; 
     z-index: 2;
+    display: flex;
+    align-items: center;
+    left: 10rem;
+}
+
+.product-page__image-header__img {
+    width: 100%;
+    height: auto;
+}
+
+.product-page__header-img-wrapper {
+    max-height: 646px;	
+    max-width: 994px;
+    margin: 0 auto;    
 }
 
 .product-page__main-info {
     position: relative;
     top: -10rem;
-    padding-top: 10rem;
+    padding-top: 10rem;        
+    @include breakpoint (large up) {
+        top: 0;
+        padding-top: 0;        
+    }
+}
+
+.product-page__over-gam__subsection {
+    @extend %generic-padding;
+    padding-left: 0;
 }
 
 .product-page__main-info__subsection {
@@ -85,8 +123,11 @@
     margin-bottom: $margin-small / 4;
 }
 
-.product-page__specificaties__header, .product-page__opties__header {
-    margin-bottom: $margin-small / 2
+.product-page__specificaties__header, .product-page__opties__header, .product-page__service-subsection {
+    margin-bottom: $margin-small / 2;
+    @include breakpoint(large up) {
+        margin-top: $margin-small;
+    }
 }
 
 .product-page__opties__header {

@@ -6,16 +6,24 @@
 
     <div class="grid-x">
 
-        <div class="cell small-12 large-6 product-page__image-header">
-            <img class="product-page__image-header__img" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
-            <div class="product-page__image-header__button-wrapper">
-                <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> </button>
-                    x / xx
-                <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  </button>
-            </div>
+        <div class="cell small-0 large-12">
+
         </div>
 
-        <div class="cell small-12 large-6 product-page__main-info">
+
+        <div class="cell small-12 large-5 product-page__image-header">
+            <div class="product-page__header-img-wrapper">
+                <img class="product-page__image-header__img" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+                <div class="product-page__image-header__button-wrapper">
+                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> </button>
+                        x / xx
+                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  </button>
+                </div>                
+            </div>
+
+        </div>
+
+        <div class="cell small-12 large-7 product-page__main-info">
             <div class="product-page__main-info__inner">
 
                 <div class="product-page__main-info__subsection">
@@ -171,12 +179,16 @@
         <div class="cell small-12 product-page__service">
             <div class="grid-x product-page__service-inner">
                 <div class="cell small-12 product-page__service-subsection">
-                    <p class="product-page__bottom-specs-title-font">SERVICE</p>
+                    <p class="product-page__bottom-specs-title-font">VOORZIEN VAN</p>
                 </div>
                 @foreach($product->services as $services)
-                <div class="cell small-12 medium-6">
-                    <p class="product-page__service-subtitle">{{ $services->title }}</p> 
-                    <p class="product-page__service-desc">{{ $services->value }}</p>
+                <div class="cell grid-x small-12 medium-6">
+                    <div class="cell small-12 large-2">
+                        <p class="product-page__service-subtitle">{{ $services->title }}</p> 
+                    </div>
+                    <div class="cell small-12 large-10">
+                        <p class="product-page__service-desc">{{ $services->value }}</p>
+                    </div>
                 </div>
                 @endforeach
 
@@ -192,7 +204,26 @@
         </div>
 
         <div class="cell small-12 product-page__over-gam">
-            At GAM, we love money and cars!
+            <div class="grid-x product-page__over-gam__inner">
+                <div class="cell small-12">
+                    <p class="product-page__bottom-specs-title-font">OP ZOEK NAAR EEN VERGELIJKBARE AUTO?</p>
+                </div>
+                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
+                    Wij zoeken de auto van uw wensen! Gooische Auto Mediair, 10 jaar ervaring in het importeren van jong gebruikte auto’s. 
+
+                    Ons bedrijf is aangesloten bij de BOVAG. Prijzen zijn incl. BTW en BPM tenzij anders vermeld. Inruil van uw huidige auto is mogelijk. 
+                </div>
+                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
+                    <p>Geopend:</p>
+                    Maandag t/m vrijdag van 08.00 tot 18.00 uur. 
+                    Zaterdag van 10.00 tot 17.00 uur.
+
+                    Dichtbij (500m) snelweg A1 gevestigd, afrit 6 Naarden Vesting. 
+                </div>
+                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
+                    Door een snel wisselende voorraad is het raadzaam eerst telefonisch contact te zoeken. Ondanks uiterst zorgvuldig samengestelde advertenties kunnen aan druk- of zetfouten geen rechten worden ontleend.
+                </div>
+            </div>
         </div>
 
         <div class="cell small-12 product-page__related-products">
