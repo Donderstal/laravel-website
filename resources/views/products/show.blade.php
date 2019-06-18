@@ -13,12 +13,19 @@
 
         <div class="cell small-12 large-5 product-page__image-header">
             <div class="product-page__header-img-wrapper">
+
                 <img class="product-page__image-header__img" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+
                 <div class="product-page__image-header__button-wrapper">
-                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> </button>
+                    <button class="ons-aanbod__bottom-button"> 
+                        <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> 
+                    </button>
                         x / xx
-                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  </button>
-                </div>                
+                    <button class="ons-aanbod__bottom-button"> 
+                        <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  
+                    </button>
+                </div>     
+
             </div>
 
         </div>
@@ -103,25 +110,6 @@
                     <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
                 </div>
 
-                {{-- Product Model --}}
-                <!-- <p>{{ $product->model->title }}</p>
-
-                {{-- Product Color --}}
-                <p>{{ $product->color->title }}</p>                
-                {{-- Product Price --}}
-                
-
-                {{-- Product Millage --}}
-                <p>{{ $product->mileage }}</p>
-
-                {{-- Product Year --}}
-                <p>{{ $product->year }}</p>
-
-                {{-- Product Transmission --}}
-                <p>{{ config('site.products.transmission_types')[$product->transmission] }}</p>
-
-                {{-- Product Transmission --}}
-                <p>{{ config('site.products.fuel_types')[$product->fuel] }}</p> -->
             </div>
         </div>
 
@@ -183,6 +171,24 @@
                         OPMERKINGEN
                     </h1>
                 </div>
+
+                <div class="cell small-12 medium-4 product-page__remarks-subsection">
+                    <p>{{ $product->model->title }}</p>
+                    <p>{{ $product->note }}</p>
+                </div>
+                <div class="cell small-12 medium-4 product-page__remarks-subsection">
+                    <p>Bel voor meer informatie, een proefrit of een afspraak.</p>
+                    <div class="grid-x product-page__contact-details">
+
+                        <div class="cell small-1">
+                              <p><i class="fas fa-phone"></i></p>
+                        </div>
+                        <div class="cell small-11">
+                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
+                        </div>      
+
+                     </div>
+                </div>
             </div>
         </div>
 
@@ -201,12 +207,6 @@
                     </div>
                 </div>
                 @endforeach
-
-            {{-- Product Status --}}
-            <p>{{ $product->status == 'available' ? 'Available' : 'Sold' }}</p>
-
-            {{-- Product Note --}}
-            <p>{{ $product->note }}</p>
             </div>
         </div>
 
@@ -224,7 +224,7 @@
                     Ons bedrijf is aangesloten bij de BOVAG. Prijzen zijn incl. BTW en BPM tenzij anders vermeld. Inruil van uw huidige auto is mogelijk. 
                 </div>
                 <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
-                    <p>Geopend:</p>
+                    <p class="product-page__over-gam__subheader">Geopend:</p>
                     Maandag t/m vrijdag van 08.00 tot 18.00 uur. 
                     Zaterdag van 10.00 tot 17.00 uur.
 

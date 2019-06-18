@@ -26,7 +26,18 @@
     @extend %section-inner;
 }
 
-.product-page__main-info__inner, .product-page__specificaties__inner {
+.product-page__main-info__inner, {
+    @extend %generic-padding;
+    @extend %center-in-parent;
+    @include breakpoint (medium) {
+        max-width: 640px;
+    }
+    @include breakpoint (medium up) {
+        max-width: 420px;
+    }
+}
+
+.product-page__specificaties__inner {
     @extend %generic-padding;
     @include breakpoint (medium only) {
         max-width: 640px;
@@ -41,12 +52,6 @@
     }
 }
 
-.product-page__main-info__inner {
-    @include breakpoint (large up) {
-        max-width: 420px; 
-    }
-}
-
 .product-page__image-header__button-wrapper {
     position: relative;
     display: flex;
@@ -54,6 +59,9 @@
     top: -1.5rem;
     margin: 0 auto;
     width: 160px;
+    @include breakpoint (large up) {
+        top: -1.5rem;    
+    }
 }
 
 .product-page__image-header {
@@ -61,7 +69,9 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    left: 10rem;
+    @include breakpoint (large up) {
+        left: 10rem;        
+    }
 }
 
 .product-page__image-header__img {
@@ -78,7 +88,10 @@
 .product-page__main-info {
     position: relative;
     top: -10rem;
-    padding-top: 10rem;        
+    padding-top: 10rem;
+    @include breakpoint (medium down) {
+        margin-bottom: -10rem;           
+    }  
     @include breakpoint (large up) {
         top: 0;
         padding-top: 0;        
@@ -87,7 +100,10 @@
 
 .product-page__over-gam__subsection {
     @extend %generic-padding;
+    @extend .standard-font;
+    font-weight: normal;
     padding-left: 0;
+
 }
 
 .product-page__main-info__subsection {
@@ -95,6 +111,11 @@
     div {
         margin-bottom: $margin-small / 4;
     }
+}
+
+.product-page__over-gam__subheader {
+    @extend .ons-aanbod-subheader;    
+    color: map-get($global-palette, dark)
 }
 
 .product-page__decorative-line {
@@ -134,8 +155,12 @@
     margin-bottom: $margin-small / 4;
 }
 
-.product-page__specificaties__header, .product-page__opties__header, .product-page__service-subsection {
+.product-page__specificaties__header, .product-page__opties__header, 
+.product-page__service-subsection, .product-page__main-header-font {
     margin-bottom: $margin-small / 2;
+    @include breakpoint(medium) {
+        margin-top: $margin-small / 2;
+    }
     @include breakpoint(large up) {
         margin-top: $margin-small;
     }
@@ -165,5 +190,13 @@
 }
 
 .product-page__decorative-line--bottom {
+    padding-left: 2rem;
+    padding-right: 2rem;
     @extend .product-page__decorative-line;
+}
+
+.product-page__remarks-subsection {
+    p {
+        max-width: 280px;
+    }
 }
