@@ -140,26 +140,30 @@
                         OPTIES
                     </h1>
                 </div>   
+
             {{-- Options --}}
-                @foreach($product->options as $options)
-                <div class="grid-x cell small-12 product-page__option-wrapper">
-                    <div class="cell small-12">
-                        <p class="product-page__main-subtitle-font--white">
-                            {{ $options->title }}
-                        </p>
+                <div class="cell small-12 grid-x product-page__all-options-wrapper">
+                    @foreach($product->options as $options)
+                    <div class="grid-x cell small-12 product-page__option-wrapper">
+                        <div class="cell small-12">
+                            <p class="product-page__main-subtitle-font--white">
+                                {{ $options->title }}
+                            </p>
+                        </div>
+                        <div class="grid-x cell small-12">
+                                @foreach($options->items as $item)
+                                <div class="cell small-12 medium-6 large-4">
+                                    <p class="product-page__options-font">- {{ $item->title }}</p>
+                                </div>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
-                    <div class="grid-x cell small-12">
-                            @foreach($options->items as $item)
-                            <div class="cell small-12 medium-6 large-4">
-                                <p class="product-page__options-font">- {{ $item->title }}</p>
-                            </div>
-                            @endforeach
-                        </ul>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
+
                 <div class="product-page__main-info__subsection">
-                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
+                    <p id="product-page__meer-opties" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
                 </div>
             </div>
         </div>
@@ -197,16 +201,23 @@
                 <div class="cell small-12 product-page__service-subsection">
                     <p class="product-page__bottom-specs-title-font">VOORZIEN VAN</p>
                 </div>
-                @foreach($product->services as $services)
-                <div class="cell grid-x small-12 medium-6">
-                    <div class="cell small-12 large-2">
-                        <p class="product-page__service-subtitle">{{ $services->title }}</p> 
+
+                <div class="cell small-12 grid-x product-page__services-wrapper">
+                    @foreach($product->services as $services)
+                    <div class="cell grid-x small-12 medium-6">
+                        <div class="cell small-12 large-2">
+                            <p class="product-page__service-subtitle">{{ $services->title }}</p> 
+                        </div>
+                        <div class="cell small-12 large-10">
+                            <p class="product-page__service-desc">{{ $services->value }}</p>
+                        </div>
                     </div>
-                    <div class="cell small-12 large-10">
-                        <p class="product-page__service-desc">{{ $services->value }}</p>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
+
+                <div class="cell small-12 product-page__main-info__subsection">
+                    <p id="product-page__meer-voorzien-van" class="product-page__all-specs-font--dark"><img class="product-page__all-specs-arrow--dark svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
+                </div>
             </div>
         </div>
 

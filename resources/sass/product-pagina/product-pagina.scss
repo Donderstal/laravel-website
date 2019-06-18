@@ -151,6 +151,13 @@
     }      
 }
 
+.product-page__all-specs-arrow--dark  {
+    transform: rotate(90deg);
+    path {
+        stroke: map-get($global-palette, dark);                
+    }      
+}
+
 .product-page__specificaties__subsection {
     margin-bottom: $margin-small / 4;
 }
@@ -199,4 +206,16 @@
     p {
         max-width: 280px;
     }
+}
+
+.product-page__all-options-wrapper {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: $margin-small / 2;
+}
+
+.product-page__services-wrapper {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: $margin-small / 2;
 }

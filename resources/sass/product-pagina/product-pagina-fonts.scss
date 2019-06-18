@@ -93,6 +93,13 @@
     font-weight: 600;
 }
 
+.product-page__all-specs-font--dark {
+    // fs: 15, lh: 19
+    @extend .button-font;
+    font-weight: 600;
+    color: map-get($global-palette, dark)
+}
+
 .product-page__options-font {
     // fs: 15, lh: 21
     @extend .button-font;
