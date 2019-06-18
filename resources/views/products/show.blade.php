@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="product-page__main-info__subsection">
-                    <p class="product-page__price-font">&euro; {{ number_format($product->price) }}</p>
+                    <p class="product-page__price-font">&euro; {{ number_format("$product->price",0,",",".") }}</p>
 
                     <p class="product-page__VAT-font">BTW niet verrekenbaar</p>
                 </div>
@@ -173,6 +173,14 @@
                 <div class="product-page__main-info__subsection">
                     <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="cell small-12 product-page__remarks hide-for-small">
+            <div>
+                <h1 class="product-page__main-header-font">
+                    OPMERKINGEN
+                </h1>
             </div>
         </div>
 
