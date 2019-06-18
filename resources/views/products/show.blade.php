@@ -177,10 +177,12 @@
         </div>
 
         <div class="cell small-12 product-page__remarks hide-for-small">
-            <div>
-                <h1 class="product-page__main-header-font">
-                    OPMERKINGEN
-                </h1>
+            <div class="grid-x product-page__remarks-inner">
+                <div class="cell small-12">
+                    <h1 class="product-page__main-header-font">
+                        OPMERKINGEN
+                    </h1>
+                </div>
             </div>
         </div>
 
