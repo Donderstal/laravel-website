@@ -247,29 +247,21 @@
             </div>
         </div>
 
-        <div class="cell small-12 product-page__related-products">
-            {{-- Related Products --}}
-            <h1>Related Products</h1>
-            <ul>
-            @foreach($related_products as $related)
-                <li>
-                    Brand: {{ $related->brand->title }}
-                    <br>
-                    Title: {{ $related->title }}
-                    <br>
-                    cover: {{ route('image.action', ['thumbnail', $related->cover->picture]) }}
-                    <br>
-                    Price: {{ $related->price }}
-                    <br>
-                    Mileage: {{ $related->mileage }}
-                    <br>
-                    Year: {{ $related->year }}
-                </li>
-            @endforeach
-            </ul>
+        <div class="grid-x cell small-12 product-page__related-products">
+
+            <div class="cell small-12">
+                <h2 class="homepage__featured-title">UITGELICHT</h2>
+            </div>
+
+            <div class="cell small-12 homepage__featured-cars grid-x">
+                @foreach($related_products as $related)
+                <div class="cell small-12 large-4">
+                    @include('products.card', ['product' => $related])
+                </div>
+                @endforeach
+            </div>
         </div>
 
-        {{-- Product Gallery--}}
         <ul>
             @foreach($product->gallery as $picture)
                 @if ($picture->id != $product->cover_id)
