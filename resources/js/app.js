@@ -45,6 +45,16 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('product-page__meer-opties').addEventListener('click', () => {
+        showParentElement('opties')
+        }
+    )
+
+    document.getElementById('product-page__meer-voorzien-van').addEventListener('click', () => {
+        showParentElement('voorzien-van')
+        }
+    )
+
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
@@ -52,6 +62,13 @@ $( document ).ready(function() {
     SVGInjector(mySVGsToInject);
 });
 
+
+
+function showParentElement(modifier){
+    (modifier === 'opties')
+    ? $('.product-page__all-options-wrapper').toggleClass('full-height')
+    : $('.product-page__services-wrapper').toggleClass('full-height')
+}
 
 
 function toggleDropdown() {

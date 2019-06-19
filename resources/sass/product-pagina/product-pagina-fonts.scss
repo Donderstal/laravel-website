@@ -1,0 +1,128 @@
+/**
+* Font classes
+*/
+
+.product-page__main-header-font {
+    // fs: 32, lh: 39
+    @extend .main-header-font;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.product-page__main-header-dark-font {
+    // fs: 32, lh: 39
+    @extend .main-header-font;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.product-page__main-subtitle-font {
+    // fs: 18, lh: 20
+    @extend .open-day-font;
+    font-weight: 600;
+    color: map-get($global-palette, light-grey)
+}
+
+.product-page__main-subtitle-font--white {
+    @extend .open-day-font;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.product-page__price-font {
+    // fs: 24, lh: 29
+    @extend .product-price-font;
+    font-weight: 600;
+}
+
+.product-page__input-font {
+    // fs: 15, lh: 19
+    @extend .navbar-searchbar-font;
+    color: map-get($global-palette, medium-grey)
+}
+
+.product-page__VAT-font {
+    // fs: 15, lh: 19
+    @extend .navbar-searchbar-font;
+    color: map-get($global-palette, medium-grey);
+    font-weight: 600;
+}
+
+.product-page__contact-small-font {
+    // fs: 16, lh: 19
+    @extend .call-or-share-font-small;
+    color: map-get($global-palette, medium-grey);
+}
+
+.product-page__contact-large-font {
+    // fs: 16, lh: 24
+    @extend .call-or-share-font-large;
+    color: white
+}
+
+.product-page__detail-title-darkbg-font {
+    // fs: 13, lh: 21
+    @extend .open-location-font;
+    font-weight: 800;
+    color: map-get($global-palette, medium-grey)
+}
+
+.product-page__detail-title-lightbg-font {
+    // fs: 13, lh: 16
+    @extend .form-label-font;
+    font-weight: 800;
+    color: map-get($global-palette, medium-grey)
+}
+
+.product-page__detail-darkbg-font {
+    // fs: 15, lh: 19
+    @extend .open-location-font;
+    font-weight: 600;
+}
+
+.product-page__detail-lightbg-font {
+    // fs: 15, lh: 19
+    @extend .open-location-font;
+    font-weight: 600;
+    color: map-get($global-palette, dark)
+}
+
+.product-page__all-specs-font {
+    // fs: 15, lh: 19
+    @extend .button-font;
+    font-weight: 600;
+}
+
+.product-page__all-specs-font--dark {
+    // fs: 15, lh: 19
+    @extend .button-font;
+    font-weight: 600;
+    color: map-get($global-palette, dark)
+}
+
+.product-page__options-font {
+    // fs: 15, lh: 21
+    @extend .button-font;
+    line-height: 21px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.product-page__bottom-specs-title-font {
+    // fs: 21, lh: 25    
+    @extend .spec-header-font;
+    font-weight: 700;
+    color: map-get($global-palette, dark);
+}
+
+.product-page__bottom-specs-subtitle-font {
+    // fs: 14, lh: 21    
+    @extend .spec-subtitle-font;
+    font-weight: 800;
+    color: map-get($global-palette, medium-grey)
+}
+
+.product-page__bottom-specs-details-font {
+    // fs: 15, lh: 22    
+    @extend .spec-details-font;
+}
