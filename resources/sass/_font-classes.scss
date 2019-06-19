@@ -134,3 +134,16 @@ $font-weight-semi-bold: 500;
 .form-placeholder-font {
   color: map-get($global-palette, medium-grey);
 }
+
+// products font styles
+@include create-paragraph-classes($product-fonts);
+
+.ons-aanbod-subheader {
+  font-weight: bold;
+  color: map-get($global-palette, medium-grey);
+} 
+
+.ons-aandbod-select {
+  font-weight: 800;
+  color: map-get($global-palette, dark);
+}

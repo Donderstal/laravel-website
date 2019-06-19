@@ -6,12 +6,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     height: 100%;
 }
 
 .homepage__header-image-wrapper {
     height: 100vh;
+    margin-bottom: -8rem;
 }
 
 .homepage__uitgelicht-pointer-wrapper {
@@ -37,29 +37,6 @@
     }
 }
 
-.homepage__search-bar {
-    @extend %center-in-parent;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    width: 300px;
-    height: 101px;
-    padding-left: $margin-small / 2;
-    padding-right: $margin-small / 2;
-    top: 70%;
-    position: relative;
-    @include breakpoint (medium up) {
-        height: 126px;
-        width: 620px;        
-    }
-    @include breakpoint (large up) {
-        width: 780px;       
-        height: 146px 
-    }
-    border-radius: 5px;
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
-}
-
 .homepage__search-button {
     @extend %center-in-parent;
     display: block;
@@ -69,69 +46,16 @@
 
 .homepage__featured {
     margin-top: $margin-small;
-    margin-bottom: $margin-large;
+    margin-bottom: $margin-large;    
+    align-items: center;
+    display: flex;
 }
 
 .homepage__about-and-info {
     @extend %generic-padding;
 }
 
-.homepage__our-products-button {
-    @extend %center-in-parent;
-    margin-top: $margin-small;
-    height: 56px;
-    width: 280px;
-    @include breakpoint (medium up) {
-        height: 66px;
-        width: 380px; 
-    }
-}
-
-.search-bar__title {
-    @extend .search-bar-title-font;
-}
-
-.search-bar__left, .search-bar__right {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar__left {
-    @include breakpoint (medium up) {
-        border-right: .5px groove map-get($global-palette, medium-grey);
-    }
-}
-
-.search-bar__icon {
-    position: relative;
-    @include breakpoint (small only) {
-        height: 22px;
-        width: 14px;
-    }
-    @include breakpoint (medium up) {
-        left: 5rem;        
-    }
-}
-
-.search-bar__button {
-    @include breakpoint(small) {
-        height: 35px;
-        width: 260px;
-    }
-    @include breakpoint(medium up) {
-        height: 66px;
-        width: 200px;
-    }
-}
-
-.homepage__featured {
-    text-align: center;
-    align-items: center;
-    display: flex;
-}
-
 .homepage__about {
-    @extend %center-in-parent;
     max-width: 625px;
     div {
         @extend .standard-font;
@@ -139,6 +63,9 @@
         color: map-get($global-palette, dark);
     }
     margin-bottom: 80px;
+    @include breakpoint (large up) {
+        margin: 0 auto;
+    }
 }
 
 .homepage__about-title, .homepage__featured-title {
@@ -148,7 +75,7 @@
 }
 
 .homepage__about-title {
-    @include breakpoint (small only) {
+    @include breakpoint (medium down) {
         text-align: left;
     }
 }
@@ -161,6 +88,9 @@
 .homepage__contact-details {
     @extend .contact-detail-font;
     color: map-get($global-palette, dark);
+    @include breakpoint (large up) {
+        margin-top: 2rem;
+    }
 }
 
 .homepage__contact-details__right-div {
@@ -175,4 +105,24 @@
     display: block;
     margin-top: .5rem;
     @extend %center-in-parent;
+}
+
+.homepage__featured-cars {
+    @extend %section-inner;
+}
+
+.homepage__our-products-button{
+    @extend button;
+    @extend %center-in-parent;
+    display: block;
+    margin-top: $margin-small;
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    width: 280px;
+    @include breakpoint (medium up) {
+        height: 66px;
+        line-height: 66px;
+        width: 380px; 
+    }
 }

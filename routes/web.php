@@ -25,6 +25,7 @@ ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
     Route::get('/list', 'ProductsController@list')->name('list');
+    Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
 
@@ -34,6 +35,7 @@ Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');
 Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');    
 Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
 Route::get('search', 'SearchController@index')->name('search');
+
 
 // Paginas:
 

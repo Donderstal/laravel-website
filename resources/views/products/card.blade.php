@@ -1,11 +1,32 @@
-<div class="cell small-12 large-4">
+<div class="grid-y product-card ">
 
-    <div class="product-card ">
+    <div class="cell small-7 product-card__image-wrapper">
+        <img class="product-card__car-image" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+    </div>
+    <div class="cell small-3 grid-x product-card__top-text-row">
+        <div class="cell small-12 grid-x">
+            <div class="cell small-6 product-card__car-name">{{ $product['title'] }} </div> 
+            <div class="cell small-6 product-card__car-price"> {{ $product['price'] }} </div>
+            <div class="cell small-12 product-card__car-model"> {{ $product['model']['title'] }} </div> 
+        </div>
+        <div class="product-card__decorative-line">
+        </div>
+    </div>
 
-    <h3>Test test</h3>
-
-    <p>Dikke waggie jonguh</p>
-
+    
+    
+    <div class="cell small-2 grid-x product-card__bottom-text-row">
+        <div class="cell small-4">
+            <div class="product-card__kilometers-header">KM stand</div>
+            <div class="product-card__kilometers"> {{ $product['mileage'] }} </div>
+        </div>
+        <div class="cell small-4">
+            <div class="product-card__year-header"> Jaar </div>
+            <div class="product-card__year"> {{ $product['year'] }} </div>
+        </div>
+        <div class="cell small-4 product-card__check-me-wrapper">
+            <a class="product-card__check-me-out" href="{{ route( 'products.show', ['slug' => $product->slug->slug]) }}"><u>BE</u>KIJKEN</a>
+        </div>
     </div>
 
 </div>
