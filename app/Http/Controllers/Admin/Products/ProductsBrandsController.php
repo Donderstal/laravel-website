@@ -67,7 +67,7 @@ class ProductsBrandsController extends Controller
             flash_message('The brand deleted successfully.', 'warning');
         } catch (\Exception $e) {
             if ($e->errorInfo[1] == 1451) {
-                flash_message('Could not delete this brand, because of it used in products.', 'error');
+                flash_message('Could not delete this brand, because it is currently in use in one or more products.', 'error');
             }
         }
 
