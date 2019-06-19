@@ -62,9 +62,14 @@ class ProductsBrandsController extends Controller
 
     public function delete(ProductsBrands $brand)
     {
-        $brand->delete();
-
-        flash_message('The brand deleted successfully.', 'warning');
+        try {
+            $brand->delete();
+            flash_message('The brand deleted successfully.', 'warning');
+        } catch (\Exception $e) {
+            if ($e->errorInfo[1] == 1451) {
+                flash_message('Could not delete this brand, because it is currently in use in one or more products.', 'error');
+            }
+        }
 
         return redirect()->route('admin.products.brands.index');
     }
