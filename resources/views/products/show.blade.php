@@ -2,30 +2,13 @@
 
 @section('content')
 
+<script type="text/javascript">
+    var gallery = {!! json_encode($product->gallery) !!}
+</script>
+
 <section class="product-page">
 
     <div class="grid-x">
-
-        <div class="cell small-0 large-12">
-            <script type="text/javascript">
-                var gallery = {!! json_encode($product->gallery) !!}
-
-            </script>
-
-            <ul>
-                @foreach($product->gallery as $picture)
-                    @if ($picture->id != $product->cover_id)
-                        <li>
-                            Label: {{ $picture->label }}
-                            <br>
-                            Cover: {{ route('image.action', ['thumbnail', $picture->picture]) }}
-                            <br>
-                            Thumbnail: {{ route('image.action', ['thumbnail', $picture->picture]) }}
-                        </li>
-                    @endif
-                @endforeach
-            </ul>
-        </div>
 
         <div class="cell small-12 large-5 product-page__image-header">
             <div class="product-page__header-img-wrapper">

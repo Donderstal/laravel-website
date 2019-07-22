@@ -68,7 +68,6 @@ function toggleSearchbar() {
 // It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
 
 function getNextPicture(direction) {
-    console.log(gallery)
 
     const currentPictureObject = gallery.find(isCurrentPicture)
     const currentPictureObjectIndex = gallery.indexOf(currentPictureObject)
@@ -93,8 +92,6 @@ function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
     if (nextPictureObjectIndex < 0) {
         nextPictureObjectIndex = (gallery.length - 1)
     }
-
-    console.log(nextPictureObjectIndex)
 
     return nextPictureObjectIndex 
 }
