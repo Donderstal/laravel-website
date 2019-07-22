@@ -2,7 +2,6 @@
 * non-font classes
 */
 
-
 .product-page__main-info, .product-page__opties {
     background-color: map-get($global-palette, dark);
     color: white
@@ -159,7 +158,7 @@
 }
 
 .product-page__specificaties__subsection {
-    margin-bottom: $margin-small / 4;
+    margin-bottom: $margin-small / 3;
 }
 
 .product-page__specificaties__header, .product-page__opties__header, 

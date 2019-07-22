@@ -84,6 +84,8 @@
     // fs: 15, lh: 19
     @extend .open-location-font;
     font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.1875rem;
     color: map-get($global-palette, dark)
 }
 
