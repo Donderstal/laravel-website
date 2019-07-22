@@ -19,7 +19,7 @@
                     <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> 
                     </button>
-                        x / {{ sizeof($product->gallery) }}
+                        <span> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
                     <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  
                     </button>

@@ -98,6 +98,8 @@ function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
         nextPictureObjectIndex = (gallery.length - 1)
     }
 
+    document.getElementById('product-gallery__counter').innerText = ( nextPictureObjectIndex + 1 )
+
     return nextPictureObjectIndex 
 }
 
