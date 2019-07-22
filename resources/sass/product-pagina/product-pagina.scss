@@ -237,8 +237,9 @@
 }
 
 .large-gallery__button-div {
-    padding-top: 5rem;
+    padding-top: 3.5rem;
     z-index: 20;
+    color: white;
 }
 
 .large-gallery__return-button {
@@ -246,4 +247,7 @@
     top: 10vh;
     z-index: 20;
     right: 25vw;
+    padding: .5rem 2rem;
+    background-color: transparent;
+    border: 2px solid white;
 }

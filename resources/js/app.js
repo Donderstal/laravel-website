@@ -111,10 +111,20 @@ function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
 }
 
 function getLargeGallery () {
-    createLargeGalleryBackground ()
-    createLargeGallery()
-    createLargeGalleryButtonDiv()
-    createLargeGalleryReturnButton()
+    if ($('#return-button').length !== 1) {
+        createLargeGalleryBackground ()
+        toggleLargeGallery()
+        toggleLargeGalleryButtonDiv()
+        createLargeGalleryReturnButton()        
+    }
+
+}
+
+function removeLargeGallery() {
+    toggleLargeGallery()
+    toggleLargeGalleryButtonDiv()
+    $('.large-gallery__background-div').remove()
+    $('.large-gallery__return-button').remove()
 }
 
 function createLargeGalleryBackground () {
@@ -123,7 +133,7 @@ function createLargeGalleryBackground () {
     }).appendTo('body');
 }
 
-function createLargeGallery() {
+function toggleLargeGallery() {
     $('.product-page__image-header')
         .toggleClass('cell')
         .toggleClass('small-12')
@@ -137,11 +147,14 @@ function createLargeGallery() {
 function createLargeGalleryReturnButton () {
     $('<button/>', {
         text: 'terug',
+        id: 'return-button',
         class: 'large-gallery__return-button'
     }).appendTo('body');
+
+    $('#return-button').click(removeLargeGallery)
 }
 
-function createLargeGalleryButtonDiv() {
+function toggleLargeGalleryButtonDiv() {
     $('.product-page__image-header__button-wrapper')
         .toggleClass('large-gallery__button-div')
 }
