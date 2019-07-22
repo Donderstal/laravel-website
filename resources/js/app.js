@@ -1,40 +1,11 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
+
 var SVGInjector = require('svg-injector')
 
-// window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app'
-// });
 
 $( document ).ready(function() {
-    
+    // All event listeners are in this function
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown() 
         }
@@ -55,6 +26,16 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('product-gallery__right-button').addEventListener('click', () => {
+        getNextPicture('right')
+        }
+    )
+
+    document.getElementById('product-gallery__left-button').addEventListener('click', () => {
+        getNextPicture('left')
+        }
+    )
+
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
@@ -62,14 +43,11 @@ $( document ).ready(function() {
     SVGInjector(mySVGsToInject);
 });
 
-
-
 function showParentElement(modifier){
     (modifier === 'opties')
     ? $('.product-page__all-options-wrapper').toggleClass('full-height')
     : $('.product-page__services-wrapper').toggleClass('full-height')
 }
-
 
 function toggleDropdown() {
     $('.header-main-menu').toggle();
@@ -77,11 +55,55 @@ function toggleDropdown() {
     $('.header').toggleClass('dropdown-nav-active')
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
 
-    $('.header').hasClass('dropdown-nav-active') 
+    $('.header').hasClass('dropdown-nav-active')
     ? $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal.svg')
     : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
 }
 
 function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
+}
+
+// The 'gallery' variable is an Array of Objects
+// It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
+
+function getNextPicture(direction) {
+    console.log(gallery)
+
+    const currentPictureObject = gallery.find(isCurrentPicture)
+    const currentPictureObjectIndex = gallery.indexOf(currentPictureObject)
+    const nextPictureObjectIndex = getNextPictureObjectIndex(direction, currentPictureObjectIndex)
+    displayNextPicture(nextPictureObjectIndex, currentPictureObject)
+}
+
+function isCurrentPicture(element) {
+    const currentImageFileName = $('#product-image').attr('src').split('/')[5]
+    return currentImageFileName == element.picture
+}
+
+function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
+    let nextPictureObjectIndex = ( direction == 'left' ) 
+        ? (currentPictureObjectIndex - 1) 
+        : (currentPictureObjectIndex + 1) 
+
+    if (nextPictureObjectIndex > (gallery.length - 1) ) {
+        nextPictureObjectIndex = 0
+    }
+
+    if (nextPictureObjectIndex < 0) {
+        nextPictureObjectIndex = (gallery.length - 1)
+    }
+
+    console.log(nextPictureObjectIndex)
+
+    return nextPictureObjectIndex 
+}
+
+function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
+    const nextPictureFileName = gallery[nextPictureObjectIndex].picture
+    const nextPicturePath = $('#product-image')
+        .attr('src')
+        .replace(currentPictureObject.picture, nextPictureFileName);
+
+    $('#product-image').attr('src', nextPicturePath)
 }
