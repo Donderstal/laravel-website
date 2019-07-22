@@ -36,6 +36,11 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('product-image').addEventListener('click', () => {
+        getLargeGallery()
+        }
+    )
+
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
@@ -103,4 +108,40 @@ function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
         .replace(currentPictureObject.picture, nextPictureFileName);
 
     $('#product-image').attr('src', nextPicturePath)
+}
+
+function getLargeGallery () {
+    createLargeGalleryBackground ()
+    createLargeGallery()
+    createLargeGalleryButtonDiv()
+    createLargeGalleryReturnButton()
+}
+
+function createLargeGalleryBackground () {
+    $('<div/>', {
+        class: 'large-gallery__background-div'
+    }).appendTo('body');
+}
+
+function createLargeGallery() {
+    $('.product-page__image-header')
+        .toggleClass('cell')
+        .toggleClass('small-12')
+        .toggleClass('large-5')
+        .toggleClass('large-gallery__gallery-div')
+
+    $('.product-page__header-img-wrapper') 
+        .toggleClass('large-gallery__gallery-div')
+}
+
+function createLargeGalleryReturnButton () {
+    $('<button/>', {
+        text: 'terug',
+        class: 'large-gallery__return-button'
+    }).appendTo('body');
+}
+
+function createLargeGalleryButtonDiv() {
+    $('.product-page__image-header__button-wrapper')
+        .toggleClass('large-gallery__button-div')
 }
