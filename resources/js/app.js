@@ -48,12 +48,14 @@ $( document ).ready(function() {
     SVGInjector(mySVGsToInject);
 });
 
+// Used for opening up 'meer opties' and 'voorzien van' parts of product page
 function showParentElement(modifier){
     (modifier === 'opties')
     ? $('.product-page__all-options-wrapper').toggleClass('full-height')
     : $('.product-page__services-wrapper').toggleClass('full-height')
 }
 
+// Toggle dropdown nav-menu
 function toggleDropdown() {
     $('.header-main-menu').toggle();
     $('.navbar__search-icon').toggle();
@@ -65,6 +67,7 @@ function toggleDropdown() {
     : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
 }
 
+// Toggle menu search bar
 function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
@@ -72,6 +75,8 @@ function toggleSearchbar() {
 // The 'gallery' variable is an Array of Objects
 // It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
 
+
+// Functions for scrolling through gallery
 function getNextPicture(direction) {
 
     const currentPictureObject = gallery.find(isCurrentPicture)
@@ -112,23 +117,32 @@ function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
     $('#product-image').attr('src', nextPicturePath)
 }
 
+// Functions for opening Large gallery
+/// Open large gallery 'controller'
 function getLargeGallery () {
     if ($('#return-button').length !== 1) {
         createLargeGalleryBackground ()
         toggleLargeGallery()
         toggleLargeGalleryButtonDiv()
-        createLargeGalleryReturnButton()        
+        createLargeGalleryReturnButton()       
+        
+        $('body').toggleClass('large-gallery__body-styles')
+        $('html,body').scrollTop(0);
+        $('.header-general').css('display', 'none');
     }
-
 }
 
+/// close large gallery 'controller'
 function removeLargeGallery() {
     toggleLargeGallery()
     toggleLargeGalleryButtonDiv()
+    $('body').toggleClass('large-gallery__body-styles')
+    $('.header-general').css('display', 'block');
     $('.large-gallery__background-div').remove()
     $('.large-gallery__return-button').remove()
 }
 
+// Helper functions
 function createLargeGalleryBackground () {
     $('<div/>', {
         class: 'large-gallery__background-div'
@@ -141,14 +155,11 @@ function toggleLargeGallery() {
         .toggleClass('small-12')
         .toggleClass('large-5')
         .toggleClass('large-gallery__gallery-div')
-
-    $('.product-page__header-img-wrapper') 
-        .toggleClass('large-gallery__gallery-div')
 }
 
 function createLargeGalleryReturnButton () {
     $('<button/>', {
-        text: 'terug',
+        text: 'TERUG',
         id: 'return-button',
         class: 'large-gallery__return-button'
     }).appendTo('body');
