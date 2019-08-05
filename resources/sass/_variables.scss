@@ -25,7 +25,7 @@ $margin-large: 180px;
 $global-palette: (
     dark: #022835,
     medium-grey: #8D9297,
-    light-grey: #8D9297,
+    light-grey: #E0E1DD,
     active: #C7081B
 );
 
@@ -34,11 +34,11 @@ $global-palette: (
     src: font-files("../fonts/montserrat/montserrat.regular.ttf"); 
 }
 
-$main-margin-mobile: 1.25rem;
-$main-margin-tablet: 2.0625rem;
+$main-margin-mobile: 1.25rem;   // 20px
+$main-margin-tablet: 2.0625rem; // 33px
 
-$large-margin-tablet: 4.375rem;
-$large-margin-desktop: 6.25rem;
+$large-margin-tablet: 4.375rem;  // 70px
+$large-margin-desktop: 6.25rem;  // 100px
 
 // Font styles
 $paragraph-styles: (
@@ -108,12 +108,15 @@ $navigation-fonts: (
     'navbar-header-font': ('fs': 35, 'lh': 43, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'navbar-dropdown-font': ('fs': 14, 'lh': 18, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'navbar-link-font': ('fs': 15, 'lh': 20, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'search-bar-title-font': ('fs': 26, 'lh': 32, 'mt': 0, 'mb': 0),
+    'search-bar-title-font': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': 0),
     'navbar-searchbar-font': ('fs': 15, 'lh': 19, 'mt': 0, 'mb': 0)
   ),
   'medium': (
+    'search-bar-title-font': ('fs': 26, 'lh': 32, 'mt': 0, 'mb': 0)
+  ),
+  'large': (
     'search-bar-title-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': 0)
-  )
+    )
 );
 
 $general-fonts: (
@@ -121,7 +124,6 @@ $general-fonts: (
     'standard-font': ('fs': 15, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'main-header-font': ('fs': 32, 'lh': 39, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'secondary-header-font': ('fs': 21,'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
-    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
     'homepage-subtitle-font': ('fs': 13, 'lh': 16, 'mt': 0, 'mb': $paragraph-margin-bottom)
   ),
   'medium': (
@@ -149,5 +151,27 @@ $form-fonts: (
   ),
   'medium': (
     'button-font': ('fs': 20, 'lh': 24, 'mt': 0, 'mb': 0)
+  )
+);
+
+$product-fonts: (
+  'small': (
+    'ons-aanbod-subheader': ('fs': 18, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'ons-aanbod-select': ('fs': 16, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-card-header': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-price-font': ('fs': 24, 'lh': 29, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'call-or-share-font-small': ('fs': 16, 'lh': 19, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'call-or-share-font-large': ('fs': 16, 'lh': 24, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'spec-header-font': ('fs': 21, 'lh': 25, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'spec-subtitle-font': ('fs': 14, 'lh': 21, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'spec-details-font': ('fs': 15, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  ),
+  'medium': (
+    'ons-aanbod-select': ('fs': 18, 'lh': 22, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'product-price-font': ('fs': 36, 'lh': 44, 'mt': 0, 'mb': $paragraph-margin-bottom),
+    'spec-header-font': ('fs': 28, 'lh': 34, 'mt': 0, 'mb': $paragraph-margin-bottom)
+  ),
+  'large': (
+
   )
 );

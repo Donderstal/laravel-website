@@ -2,6 +2,14 @@
     margin: 0 auto;
 }
 
+%generic-border-radius {
+    border-radius: 5px;
+}
+
+%small-border-radius {
+    border-radius: 3px;
+}
+
 %dark-bg-white-text {
     color: $white;
     background-color: map-get($global-palette, 'dark');
@@ -38,9 +46,9 @@
 
 button {
     @extend .button-font;
+    @extend %generic-border-radius;
     background-color: map-get($global-palette, active);
     color: white;
-    border-radius: 5px;
 }
 
 input {
@@ -76,4 +84,8 @@ label {
 %section-inner {
     max-width: 1280px;
     margin: 0 auto;
-  }
+}
+
+.full-height {
+    height: 100% !important;
+}

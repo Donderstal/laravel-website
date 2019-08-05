@@ -82,6 +82,14 @@
 
 @import 'homepage/homepage';
 
+@import 'ons-aanbod/ons-aanbod';
+
+@import 'search-bar/search-bar';
+
+@import 'product-pagina/product-pagina-fonts';
+
+@import 'product-pagina/product-pagina';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -100,6 +108,10 @@ textarea {
   @include breakpoint (medium up) {
     width: 580px;    
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 u {

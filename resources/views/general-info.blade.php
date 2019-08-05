@@ -56,65 +56,65 @@
             @endif
 
             @if ($title == 'Contact')
-            <div class="grid-x general-info__contact">
+            <div class="grid-x cell small-12 general-info__contact">
+                <div class="grid-x general-info__contact__inner">
+                    <!--- Contact details --->
+                    <div class="cell small-12 medium-6"> 
+                        <div class="grid-x footer__contact-details">
 
-                <!--- Contact details --->
-                <div class="cell small-12 medium-6"> 
-                    <div class="grid-x footer__contact-details">
+                            <div class="cell small-1">
+                                <p><i class="fas fa-map-marker-alt"></i></p>
+                            </div>
+                            <div class="cell small-11">
+                                <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
+                                <u>1</u>411 AR, Naarden </a></p>
+                            </div>
+                            
+                        </div>
+                        <div class="grid-x footer__contact-details">
 
-                        <div class="cell small-1">
-                            <p><i class="fas fa-map-marker-alt"></i></p>
+                            <div class="cell small-1">
+                                <p><i class="fas fa-phone"></i></p>
+                            </div>
+                            <div class="cell small-11">
+                                <p><a class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
+                            </div>      
+
                         </div>
-                        <div class="cell small-11">
-                            <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
-                            <u>1</u>411 AR, Naarden </a></p>
+
+                        <div class="grid-x footer__contact-details">
+
+                            <div class="cell small-1">
+                                <p><i class="far fa-envelope"></i></p>
+                            </div>
+                            <div class="cell small-11">
+                                <p><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
+                            </div>
+                            
                         </div>
-                        
                     </div>
-                    <div class="grid-x footer__contact-details">
 
-                        <div class="cell small-1">
-                            <p><i class="fas fa-phone"></i></p>
+                    <!--- Opening hours --->
+                    <div class="cell small-12 medium-6"> 
+                        <div class="footer__opening-hours"> 
+                            <p class="footer__opening-hours__day"> Maandag t/m vrijdag </p>
+                            <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                            <p class="footer__opening-hours__time"> 08:00 - 18:00 </p>
                         </div>
-                        <div class="cell small-11">
-                            <p><a class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
-                        </div>      
-
-                    </div>
-
-                    <div class="grid-x footer__contact-details">
-
-                        <div class="cell small-1">
-                            <p><i class="far fa-envelope"></i></p>
+                        <div class="footer__opening-hours"> 
+                            <p class="footer__opening-hours__day"> Zaterdag </p>
+                            <p class="footer__opening-hours__type"> Showroom </p>
+                            <p class="footer__opening-hours__time"> 10:00 - 17:00 </p>
+                            <p class="footer__opening-hours__type"> Werkplaats </p>
+                            <p class="footer__opening-hours__time"> Gesloten </p>
                         </div>
-                        <div class="cell small-11">
-                            <p><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
+                        <div class="footer__opening-hours"> 
+                            <p class="footer__opening-hours__day"> Zondag </p>
+                            <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                            <p class="footer__opening-hours__time"> Gesloten </p>
                         </div>
-                        
                     </div>
                 </div>
-
-                <!--- Opening hours --->
-                <div class="cell small-12 medium-6"> 
-                    <div class="footer__opening-hours"> 
-                        <p class="footer__opening-hours__day"> Maandag t/m vrijdag </p>
-                        <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
-                        <p class="footer__opening-hours__time"> 08:00 - 18:00 </p>
-                    </div>
-                    <div class="footer__opening-hours"> 
-                        <p class="footer__opening-hours__day"> Zaterdag </p>
-                        <p class="footer__opening-hours__type"> Showroom </p>
-                        <p class="footer__opening-hours__time"> 10:00 - 17:00 </p>
-                        <p class="footer__opening-hours__type"> Werkplaats </p>
-                        <p class="footer__opening-hours__time"> Gesloten </p>
-                    </div>
-                    <div class="footer__opening-hours"> 
-                        <p class="footer__opening-hours__day"> Zondag </p>
-                        <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
-                        <p class="footer__opening-hours__time"> Gesloten </p>
-                    </div>
-                </div>
-
             </div>
             @endif
 
@@ -133,7 +133,7 @@
 
             <!-- Contact form -->
             @if ($title != 'Over ons')
-            <div class="general-info__contact-form">
+            <div class="cell small-12 general-info__contact-form">
                 <h1>CONTACT FORMULIER</h1>
                 <form class="grid-x general-info__form">
                     <div class="cell small-12 medium-6">

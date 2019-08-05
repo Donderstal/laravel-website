@@ -1,0 +1,120 @@
+.ons-aanbod {
+    @extend %generic-padding;
+    @extend %section-inner;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ons-aanbod__header, .ons-aanbod__header-number {
+    @extend .main-header-font;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+ 
+}
+
+.ons-aanbod__header-wrapper {
+    @include breakpoint (small only) {
+        margin: 0 auto;
+        max-width: 320px;
+        
+    }  
+    padding-left: 1rem; 
+}
+
+.grid-container {
+    max-width: 1440px;
+}
+
+.ons-aanbod__header-number {
+    color: map-get($global-palette, medium-grey);
+    margin-bottom: 20px;
+    @include breakpoint (large up) {
+        margin-left: 1rem;
+    }
+}
+
+.ons-aanbod__sort-text {
+    @extend .ons-aanbod-subheader;
+}
+  
+.ons-aanbod__sort-select {
+    width: 280px;
+    height: 56px;
+    border: 2px solid #8D9297;
+    @extend %generic-border-radius;
+    option {
+        @extend .ons-aanbod-select;          
+    }
+}
+
+.ons-aanbod__sort-wrapper {
+    @include breakpoint (small only) {
+        margin: 0 auto;
+        max-width: 320px;
+        padding-left: 1rem;
+    }
+    @include breakpoint (medium up) {
+        float: right;
+        padding-right: 1rem;
+    }
+
+}
+
+.ons-aanbod__title-bar {
+    margin-bottom: $main-margin-tablet;
+    margin-top: $main-margin-tablet * 2;
+    @include breakpoint (medium only) {
+        width: 820px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.ons-aanbod__nav-buttons__wrapper {
+    @extend %center-in-parent;
+    margin-top: $main-margin-tablet;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ons-aanbod__nav-buttons {
+    display: inline-block;
+}
+
+%bottom-button {
+    @extend %generic-border-radius;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #022835;}
+
+.ons-aanbod__bottom-button {
+    @extend %bottom-button;
+    background-color: white;
+    color: map-get($global-palette, dark)
+}
+
+.ons-aanbod__bottom-button--active {
+    @extend %bottom-button;
+}
+
+.button-arrow-left {
+    transform: rotate(180deg)
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+ }
+
+.ons-aanbod__bottom-button:hover {
+    background-color: map-get($global-palette, dark);
+    color: white;
+    svg {
+        path {
+            stroke: white;                
+        }    
+    }
+}

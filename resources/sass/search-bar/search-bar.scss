@@ -1,0 +1,74 @@
+.search-bar {
+    @extend %center-in-parent;
+    @extend %generic-border-radius;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 101px;
+    padding-left: $margin-small / 2;
+    padding-right: $margin-small / 2;
+    top: 70%;
+    position: relative;
+    @include breakpoint (medium up) {
+        height: 126px;
+        width: 620px;        
+    }
+    @include breakpoint (large up) {
+        width: 780px;       
+        height: 146px 
+    }
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
+}
+
+.search-bar__title {
+    @extend .search-bar-title-font;
+    background-image: none;
+    max-width: 350px;
+    border: none;
+    height: 100%;
+    @include breakpoint (small) {
+        padding: 1.1875rem 0 .5rem;
+    }
+}
+
+.search-bar__option {
+    padding: 1rem;
+}
+
+.search-bar__option:hover {
+    background-color: map-get($global-palette, active);
+}
+
+.search-bar__left {
+    
+    @include breakpoint (medium up) {
+        left: 5rem;   
+        border-right: .5px groove map-get($global-palette, medium-grey);     
+    }
+}
+
+
+.search-bar__left, .search-bar__right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar__icon {
+    position: relative;
+    @include breakpoint (small only) {
+        height: 22px;
+        width: 14px;
+    }
+}
+
+.search-bar__button {
+    @include breakpoint(small) {
+        height: 35px;
+        width: 260px;
+    }
+    @include breakpoint(medium up) {
+        height: 66px;
+        width: 200px;
+    }
+}

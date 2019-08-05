@@ -24,5 +24,5 @@
 
     @yield('script_extra')
 </body>
-<script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>
 </html>

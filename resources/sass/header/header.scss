@@ -17,8 +17,20 @@ $topbar-height-lg: 130px;
     }
 }
 
-.header {
+.header-home {
     background-color: rgba(2,40,53,0.15);
+    position: relative;
+    z-index: 3;
+}
+
+.header-general {
+    background-color: transparent;
+    .header__dropdown-button {
+        color: map-get($global-palette, dark);
+    }
+    .header__menu-anchor {
+        color: map-get($global-palette, dark);
+    }
 }
 
 .header__menu-paragraph {
@@ -73,6 +85,7 @@ $topbar-height-lg: 130px;
 .header-main-menu {
     @extend .header-subsection;
     @include breakpoint(medium down) {
+        z-index: 20;
         display: none;
         height: 50vh;
         width: 100vw;
@@ -100,27 +113,32 @@ $topbar-height-lg: 130px;
     cursor: pointer;
 }
 
+.header__search-icon-wrapper {
+    margin-bottom: 0;
+}
+
 .navbar__searchbar {
+    @extend %generic-border-radius;
     display:none;
     width: 320px;
     height: 60px;
     position: absolute; 
     top: $topbar-height-sm;
     background-color: white;
-    border-radius: 5px;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
-    @include breakpoint (small only) {
-        left: 0;
+    z-index: 10;
+
+    @include breakpoint (medium down) {
+        left: 2rem;
     }
     @include breakpoint (medium only) {
-        left: 0;
         top: $topbar-height-md;
     }
-    @include breakpoint (large) {
+    @include breakpoint (large up) {
         width: 390px;
         height: 60px;
         top: $topbar-height-lg;
-        right: 0;
+        right: 5rem;
     }
 }
 
@@ -132,6 +150,7 @@ $topbar-height-lg: 130px;
 
 .navbar__searchbar__button {
     @extend .navbar-searchbar-font;
-    width: 96px;
+    width: 150px;
     height: 40px;
 }
+

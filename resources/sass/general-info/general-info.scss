@@ -56,6 +56,7 @@
     @extend %generic-padding;
     z-index: -1;
     position: relative;
+    padding-top: 0rem;
     @include breakpoint (large up) {
         right: -5rem;  
     }
@@ -76,11 +77,12 @@
 }
 
 .general-info {
+    @extend %generic-padding;
+    @extend %section-inner;
+    padding-top: 0rem;
     @include breakpoint(small down) {
         padding: 0;
     }
-    @extend %generic-padding;
-    padding-top: 0rem;
 }
 
 .general-info__reviews {
@@ -153,4 +155,14 @@
     }
     @extend %generic-padding;
     @extend %center-in-parent;
+}
+
+
+.general-info__contact__inner {
+    @extend %center-in-parent; 
+    margin-top: -10rem;
+    margin-bottom: 5rem;
+    @include breakpoint(medium up) {
+        width: 500px;        
+    }
 }
