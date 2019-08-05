@@ -13,9 +13,7 @@
 
 use App\Facades\ImageUtil;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LandingPageController@index')->name('landing-page');
 
 Auth::routes([
     'register' => (App::environment() == 'local' ? true : false)
