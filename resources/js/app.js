@@ -1,40 +1,11 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
+
 var SVGInjector = require('svg-injector')
 
-// window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app'
-// });
 
 $( document ).ready(function() {
-    
+    // All event listeners are in this function
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown() 
         }
@@ -55,6 +26,21 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('product-gallery__right-button').addEventListener('click', () => {
+        getNextPicture('right')
+        }
+    )
+
+    document.getElementById('product-gallery__left-button').addEventListener('click', () => {
+        getNextPicture('left')
+        }
+    )
+
+    document.getElementById('product-image').addEventListener('click', () => {
+        getLargeGallery()
+        }
+    )
+
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
@@ -62,26 +48,126 @@ $( document ).ready(function() {
     SVGInjector(mySVGsToInject);
 });
 
-
-
+// Used for opening up 'meer opties' and 'voorzien van' parts of product page
 function showParentElement(modifier){
     (modifier === 'opties')
     ? $('.product-page__all-options-wrapper').toggleClass('full-height')
     : $('.product-page__services-wrapper').toggleClass('full-height')
 }
 
-
+// Toggle dropdown nav-menu
 function toggleDropdown() {
     $('.header-main-menu').toggle();
     $('.navbar__search-icon').toggle();
     $('.header').toggleClass('dropdown-nav-active')
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
 
-    $('.header').hasClass('dropdown-nav-active') 
+    $('.header').hasClass('dropdown-nav-active')
     ? $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal.svg')
     : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
 }
 
+// Toggle menu search bar
 function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
+}
+
+// The 'gallery' variable is an Array of Objects
+// It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
+
+
+// Functions for scrolling through gallery
+function getNextPicture(direction) {
+
+    const currentPictureObject = gallery.find(isCurrentPicture)
+    const currentPictureObjectIndex = gallery.indexOf(currentPictureObject)
+    const nextPictureObjectIndex = getNextPictureObjectIndex(direction, currentPictureObjectIndex)
+    displayNextPicture(nextPictureObjectIndex, currentPictureObject)
+}
+
+function isCurrentPicture(element) {
+    const currentImageFileName = $('#product-image').attr('src').split('/')[5]
+    return currentImageFileName == element.picture
+}
+
+function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
+    let nextPictureObjectIndex = ( direction == 'left' ) 
+        ? (currentPictureObjectIndex - 1) 
+        : (currentPictureObjectIndex + 1) 
+
+    if (nextPictureObjectIndex > (gallery.length - 1) ) {
+        nextPictureObjectIndex = 0
+    }
+
+    if (nextPictureObjectIndex < 0) {
+        nextPictureObjectIndex = (gallery.length - 1)
+    }
+
+    document.getElementById('product-gallery__counter').innerText = ( nextPictureObjectIndex + 1 )
+
+    return nextPictureObjectIndex 
+}
+
+function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
+    const nextPictureFileName = gallery[nextPictureObjectIndex].picture
+    const nextPicturePath = $('#product-image')
+        .attr('src')
+        .replace(currentPictureObject.picture, nextPictureFileName);
+
+    $('#product-image').attr('src', nextPicturePath)
+}
+
+// Functions for opening Large gallery
+/// Open large gallery 'controller'
+function getLargeGallery () {
+    if ($('#return-button').length !== 1) {
+        createLargeGalleryBackground ()
+        toggleLargeGallery()
+        toggleLargeGalleryButtonDiv()
+        createLargeGalleryReturnButton()       
+        
+        $('body').toggleClass('large-gallery__body-styles')
+        $('html,body').scrollTop(0);
+        $('.header-general').css('display', 'none');
+    }
+}
+
+/// close large gallery 'controller'
+function removeLargeGallery() {
+    toggleLargeGallery()
+    toggleLargeGalleryButtonDiv()
+    $('body').toggleClass('large-gallery__body-styles')
+    $('.header-general').css('display', 'block');
+    $('.large-gallery__background-div').remove()
+    $('.large-gallery__return-button').remove()
+}
+
+// Helper functions
+function createLargeGalleryBackground () {
+    $('<div/>', {
+        class: 'large-gallery__background-div'
+    }).appendTo('body');
+}
+
+function toggleLargeGallery() {
+    $('.product-page__image-header')
+        .toggleClass('cell')
+        .toggleClass('small-12')
+        .toggleClass('large-5')
+        .toggleClass('large-gallery__gallery-div')
+}
+
+function createLargeGalleryReturnButton () {
+    $('<button/>', {
+        text: 'TERUG',
+        id: 'return-button',
+        class: 'large-gallery__return-button'
+    }).appendTo('body');
+
+    $('#return-button').click(removeLargeGallery)
+}
+
+function toggleLargeGalleryButtonDiv() {
+    $('.product-page__image-header__button-wrapper')
+        .toggleClass('large-gallery__button-div')
 }

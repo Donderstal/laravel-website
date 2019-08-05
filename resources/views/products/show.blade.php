@@ -2,26 +2,25 @@
 
 @section('content')
 
+<script type="text/javascript">
+    var gallery = {!! json_encode($product->gallery) !!}
+</script>
+
 <section class="product-page">
 
     <div class="grid-x">
 
-        <div class="cell small-0 large-12">
-
-        </div>
-
-
         <div class="cell small-12 large-5 product-page__image-header">
             <div class="product-page__header-img-wrapper">
 
-                <img class="product-page__image-header__img" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+                <img class="product-page__image-header__img" id="product-image" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
 
                 <div class="product-page__image-header__button-wrapper">
-                    <button class="ons-aanbod__bottom-button"> 
+                    <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> 
                     </button>
-                        x / xx
-                    <button class="ons-aanbod__bottom-button"> 
+                        <span> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
+                    <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  
                     </button>
                 </div>     
@@ -261,20 +260,6 @@
                 @endforeach
             </div>
         </div>
-
-        <ul>
-            @foreach($product->gallery as $picture)
-                @if ($picture->id != $product->cover_id)
-                    <li>
-                        Label: {{ $picture->label }}
-                        <br>
-                        Cover: {{ route('image.action', ['thumbnail', $picture->picture]) }}
-                        <br>
-                        Thumbnail: {{ route('image.action', ['thumbnail', $picture->picture]) }}
-                    </li>
-                @endif
-            @endforeach
-        </ul>
 
     <div>
 </section>
