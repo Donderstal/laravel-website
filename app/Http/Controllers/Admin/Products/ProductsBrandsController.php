@@ -78,4 +78,13 @@ class ProductsBrandsController extends Controller
     {
         return ProductsBrands::orderBy('title', 'ASC')->get();
     }
+
+    public function getBrandNamesArray() {
+        $brands = $this->getBrandsName();
+        $number_of_brands = count($brands);
+        for ( $i = 0; $i < $number_of_brands; $i++) {
+            $brands_list[] = $brands[$i]['title'];
+        }
+        return $brands_list;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use App\Models\ProductsSlugs;
+use App\Http\Controllers\Admin\Products\ProductsBrandsController;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -89,9 +90,14 @@ class ProductsController extends Controller
     public function list(){
         $products = Products::with(['gallery', 'slug'])->get()
             ->where('status', 'available');
+            
+        $product_brands_controller = new ProductsBrandsController;
+        $brands_list = $product_brands_controller->getBrandNamesArray();
+
         return view('aanbod')->with([
             'title' => 'Ons aanbod',
-            'products' => $products
+            'products' => $products,
+            'brands' => $brands_list
         ]);
     }
 
