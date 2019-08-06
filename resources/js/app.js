@@ -16,36 +16,51 @@ $( document ).ready(function() {
         }
     )
 
-    document.getElementById('product-page__meer-opties').addEventListener('click', () => {
-        showParentElement('opties')
-        }
-    )
+    if ( $('#brands-search-button').length > 0 ) {
+        document.getElementById('brands-search-button').addEventListener('click', () => {
+            handleSearchRequest()
+            }
+        )
+    }
 
-    document.getElementById('product-page__meer-voorzien-van').addEventListener('click', () => {
-        showParentElement('voorzien-van')
-        }
-    )
+    if ( $('#product-page__meer-opties').length > 0 ) {
+        document.getElementById('product-page__meer-opties').addEventListener('click', () => {
+            showParentElement('opties')
+            }
+        )
 
-    document.getElementById('product-gallery__right-button').addEventListener('click', () => {
-        getNextPicture('right')
-        }
-    )
+        document.getElementById('product-page__meer-voorzien-van').addEventListener('click', () => {
+            showParentElement('voorzien-van')
+            }
+        )
 
-    document.getElementById('product-gallery__left-button').addEventListener('click', () => {
-        getNextPicture('left')
-        }
-    )
+        document.getElementById('product-gallery__right-button').addEventListener('click', () => {
+            getNextPicture('right')
+            }
+        )
 
-    document.getElementById('product-image').addEventListener('click', () => {
-        getLargeGallery()
-        }
-    )
+        document.getElementById('product-gallery__left-button').addEventListener('click', () => {
+            getNextPicture('left')
+            }        
+        )
+
+        document.getElementById('product-image').addEventListener('click', () => {
+            getLargeGallery()
+            }
+        )
+
+    }
+
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
-    // Do the injection
-    SVGInjector(mySVGsToInject);
+    if (mySVGsToInject) {
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    }
+
+
 });
 
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page
@@ -72,9 +87,14 @@ function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
 
+
+function handleSearchRequest() {
+    const searchRequest = $('#landing-page__search-select').val();
+    window.location += ('search?q=' + searchRequest)
+}
+
 // The 'gallery' variable is an Array of Objects
 // It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
-
 
 // Functions for scrolling through gallery
 function getNextPicture(direction) {

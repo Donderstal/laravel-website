@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    public function searchForRequest(Request $request)
     {
         if (empty($request->q)) {
             return view('search.index');
@@ -19,7 +19,9 @@ class SearchController extends Controller
             ->orderBy('created_at', 'DESC')
             ->paginate(config('site.products.paginate_count'));
 
-        return view('search.result')->with([
+        return view('aanbod')->with([
+
+            'title' => 'Zoekresultaten voor "' . $request->q . '"',
             'products' => $products
         ]);
 
