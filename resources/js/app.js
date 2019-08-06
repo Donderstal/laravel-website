@@ -16,16 +16,12 @@ $( document ).ready(function() {
         }
     )
 
-    document.getElementById('brands-search-button').addEventListener('click', () => {
-        handleSearchRequest()
-        }
-    )
-
-    // Elements to inject
-    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
-
-    // Do the injection
-    SVGInjector(mySVGsToInject);
+    if ( $('#brands-search-button').length > 0 ) {
+        document.getElementById('brands-search-button').addEventListener('click', () => {
+            handleSearchRequest()
+            }
+        )
+    }
 
     if ( $('#product-page__meer-opties').length > 0 ) {
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
@@ -55,6 +51,16 @@ $( document ).ready(function() {
 
     }
 
+
+    // Elements to inject
+    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
+
+    if (mySVGsToInject) {
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    }
+
+
 });
 
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page
@@ -81,9 +87,10 @@ function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
 
+
 function handleSearchRequest() {
     const searchRequest = $('#landing-page__search-select').val();
-    console.log(searchRequest)
+    window.location += ('search?q=' + searchRequest)
 }
 
 // The 'gallery' variable is an Array of Objects

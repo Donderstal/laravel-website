@@ -11,6 +11,6 @@
     <div class="cell small-0 medium-1">
     </div>
     <div class="cell small-12 medium-4 search-bar__right">
-        <button onclick="toggleSearchBar()" id="brands-search-button" class="search-bar__button">ZOEKEN</button>
+        <button id="brands-search-button" class="search-bar__button">ZOEKEN</button>
     </div>
 </div>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    public function searchForRequest(Request $request)
     {
         if (empty($request->q)) {
             return view('search.index');

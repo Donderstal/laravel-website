@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Model\ProductsBrands;
 use App\Http\Controllers\Admin\Products\ProductsBrandsController;
+use App\Http\Controllers\SearchController;
 
 class LandingPageController extends Controller
 {
