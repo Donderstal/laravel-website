@@ -68,8 +68,52 @@
 // Variables
 @import 'variables';
 
+// Variables
+@import 'util-classes';
+@import 'font-classes';
+
+@import 'header/header';
+
+@import 'footer/footer';
+
+@import 'general-info/general-info';
+
+@import 'product-card/product-card';
+
+@import 'homepage/homepage';
+
+@import 'ons-aanbod/ons-aanbod';
+
+@import 'search-bar/search-bar';
+
+@import 'product-pagina/product-pagina-fonts';
+
+@import 'product-pagina/product-pagina';
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+  margin-bottom: 0rem;
+  border: 2px solid #000000;
+  width: 18px;
+  height: 18px;
+}
+
+textarea {
+  height: 168px;
+  @include breakpoint (medium up) {
+    width: 580px;    
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+u {
+  @extend %red-underline;
 }

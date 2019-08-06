@@ -1,0 +1,168 @@
+.general-info__main-paragraph {
+    @extend %generic-padding-large;
+    background-color: map-get($global-palette, dark);
+    color: white;
+    h1 {
+        @extend .main-header-font;
+        margin-top: 2.5rem;
+    }
+    p {
+        @extend .standard-font;
+    }
+    position: relative;
+    @include breakpoint (medium up) {
+        top: -10rem;        
+    }
+    @include breakpoint (large up) {
+        top: -18.5rem;        
+    }
+}
+
+.general-info__paragraph {
+    h2 {
+        @extend .secondary-header-font;
+    }
+    p {
+        @extend .standard-font;
+    }
+    @extend %generic-padding;
+    @include breakpoint (medium up) {
+        position: relative;
+        top: -7.5rem;        
+    }
+    @include breakpoint (large up) {
+        padding-left: 0rem;
+        padding-right: $large-margin-desktop;
+        top: -10rem;        
+    }
+}
+
+.general-info__contact-form {
+    @extend %center-in-parent;
+    @extend %generic-padding;
+    max-width: 720px;
+    h1 {
+        @extend .main-header-font;
+    }
+    @include breakpoint (medium up) {
+       padding: 0
+    }
+    @include breakpoint (large up) {
+        max-width: 600px; 
+    }
+}
+
+.general-info__top-image {
+    @extend %generic-padding;
+    z-index: -1;
+    position: relative;
+    padding-top: 0rem;
+    @include breakpoint (large up) {
+        right: -5rem;  
+    }
+         
+}
+
+.general-info__cover-photo {
+    float: right;
+    @include breakpoint (medium up) {
+        width: 612px;
+        height: 373px;    
+    }
+    @include breakpoint (large up) {
+        width: 1053px;
+        height: 641px;    
+    }
+
+}
+
+.general-info {
+    @extend %generic-padding;
+    @extend %section-inner;
+    padding-top: 0rem;
+    @include breakpoint(small down) {
+        padding: 0;
+    }
+}
+
+.general-info__reviews {
+    @extend %generic-padding;
+    @include breakpoint (small down) {
+        margin-top: $large-margin-desktop;        
+    }
+}
+
+.general-info__form-button {
+    height: 56px;
+    width: 280px;
+}
+
+.general-info__review-panel {
+    margin-top: 2.5rem;
+    padding-right: 1.5rem;
+}
+
+.general-info__review-title {
+    @extend .secondary-header-font;
+    margin-bottom: 0rem;
+}
+
+.general-info__review-car {
+    @extend .open-location-font;
+}
+
+.general-info__review-text {
+    @extend .standard-font;
+}
+
+.general-info__our-team {
+    @extend %generic-padding;
+}
+
+.general-info__employee-photo {
+    @extend %center-in-parent;
+    display: block;
+    max-height: 180px;
+    max-width: 130px;
+    @include breakpoint (medium up) {
+        max-height: 300px;
+        max-width: 180px;
+    }
+    @include breakpoint (large up) {
+        max-height: 320px;
+        max-width: 250px;
+    }
+}
+
+.general-info__employee-wrapper {
+    @extend %center-in-parent;
+}
+
+.general-info__employee-name, .general-info__employee-job-title {
+    @extend .product-card-header;
+    display: block;
+}
+
+.general-info__employee-job-title  {
+    color: map-get($global-palette, medium-grey )
+}
+
+.general-info__contact {
+    margin-top: 3.5rem;
+    width: 320px;
+    @include breakpoint(large up) {
+        width: 500px;        
+    }
+    @extend %generic-padding;
+    @extend %center-in-parent;
+}
+
+
+.general-info__contact__inner {
+    @extend %center-in-parent; 
+    margin-top: -10rem;
+    margin-bottom: 5rem;
+    @include breakpoint(medium up) {
+        width: 500px;        
+    }
+}

@@ -1,0 +1,156 @@
+$topbar-height-sm: 63px;
+$topbar-height-md: 71px;
+$topbar-height-lg: 130px;
+
+.top-bar {
+    height: $topbar-height-sm;
+    margin: 0 auto 2rem;
+    max-width: map-get($breakpoints, xlarge);
+    color: $white;
+    background-color: transparent;
+    @include breakpoint(medium up) {
+        margin: 0 auto 2rem;
+        height: $topbar-height-md;
+    }
+    @include breakpoint(large up) {
+        height: $topbar-height-lg;
+    }
+}
+
+.header-home {
+    background-color: rgba(2,40,53,0.15);
+    position: relative;
+    z-index: 3;
+}
+
+.header-general {
+    background-color: transparent;
+    .header__dropdown-button {
+        color: map-get($global-palette, dark);
+    }
+    .header__menu-anchor {
+        color: map-get($global-palette, dark);
+    }
+}
+
+.header__menu-paragraph {
+    display: inline-block;  
+    margin-bottom: 0;
+    a {
+        color: white;
+    }
+    @include breakpoint(medium down) {
+        display: block;
+        margin: 2rem auto;
+        a {
+            color: map-get($global-palette, dark);
+            font-weight: 600;
+        }
+    }
+}
+
+.header__menu-anchor:hover {
+    @extend %red-underline;
+}
+
+.header-subsection {
+    @extend %flex-and-justify;
+}
+
+.header__dropdown-button {
+    @extend .navbar-dropdown-font;
+    padding-left: 2rem;
+    margin-bottom: 0;
+}
+
+.header__active-link {
+    @extend %red-underline;
+}
+
+.navbar__GAM-logo {
+    width: auto;
+    max-height: $topbar-height-sm * .8;
+    @include breakpoint(medium up) {
+        max-height: $topbar-height-md * .8;
+    }
+    @include breakpoint(large up) {
+        max-height: $topbar-height-lg * .8;
+    }
+}
+
+.header__dropdown-button:hover {
+    cursor: pointer;
+}
+
+.header-main-menu {
+    @extend .header-subsection;
+    @include breakpoint(medium down) {
+        z-index: 20;
+        display: none;
+        height: 50vh;
+        width: 100vw;
+        position: absolute;
+        top: $topbar-height-md;
+        left: 0;
+        text-align: center;
+        background-color: #E0E1DD
+    }
+    @include breakpoint (small only) {
+        height: 100vh !important;
+        top: $topbar-height-sm !important;
+    }
+}
+
+.dropdown-nav-active {
+    background-color: #E0E1DD;
+}
+
+.dropdown-nav-active-button {
+    color: map-get($global-palette, dark)
+}
+
+.navbar__search-icon {
+    cursor: pointer;
+}
+
+.header__search-icon-wrapper {
+    margin-bottom: 0;
+}
+
+.navbar__searchbar {
+    @extend %generic-border-radius;
+    display:none;
+    width: 320px;
+    height: 60px;
+    position: absolute; 
+    top: $topbar-height-sm;
+    background-color: white;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
+    z-index: 10;
+
+    @include breakpoint (medium down) {
+        left: 2rem;
+    }
+    @include breakpoint (medium only) {
+        top: $topbar-height-md;
+    }
+    @include breakpoint (large up) {
+        width: 390px;
+        height: 60px;
+        top: $topbar-height-lg;
+        right: 5rem;
+    }
+}
+
+.navbar__searchbar__input, .navbar__searchbar__input:focus {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.navbar__searchbar__button {
+    @extend .navbar-searchbar-font;
+    width: 150px;
+    height: 40px;
+}
+

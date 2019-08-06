@@ -1,93 +1,87 @@
 @extends('layouts.master')
 
-@section('head_extra')
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .sub-title {
-            font-size: 50px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-@stop
-
 @section('content')
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+    <section class="homepage">
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-        <div class="content">
-            <div class="title m-b-md">
-                Laravel boilerplate
-                <br>
-                <span class="sub-title">A Bigger Circle</span>
-            </div>
-
-            <div class="links">
-                <a href="https://www.abiggercircle.com/">ABiggerCircle</a>
-                <a href="https://github.com/abiggercircle/abc-laravel-boilerplate">Github Repository</a>
-                <a href="https://laravel.com/docs">Docs</a>
+        <div class="homepage__header-image-wrapper">
+            <div class="homepage__header-image">
+                @include('partials.search-bar')
+                <div class="homepage__uitgelicht-pointer-wrapper">
+                    <p class="homepage__uitgelicht-pointer">
+                        UITGELICHT
+                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+
+        <div class="grid-x homepage__main-content">
+            
+            <div class="cell small-12 homepage__featured grid-x">
+
+                <div class="cell small-12">
+                    <h2 class="homepage__featured-title">UITGELICHT</h2>
+                </div>
+
+                <div class="cell small-12 homepage__featured-cars grid-x">
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
+                    <div class="cell small-12 large-4">
+                        @include('products.card')
+                    </div>
+                </div>
+                <div class="cell small-12 ">
+                    <a class="homepage__our-products-button" href="{{ route('products.list') }}">ONS AANBOD BEKIJKEN</a>
+                </div>
+                
+            </div>
+
+            <div class="cell small-12 homepage__about-and-info">
+                <div class="homepage__about">
+                    <h2 class="homepage__about-title">GOOISCHE AUTO MEDIAIR</h2>
+                    <div>
+                    Adipiscing vestibulum molestie eros suspendisse habitant ullamcorper scelerisque volutpat dictumst adipiscing in accumsan iaculis vivamus parturient dis. Mus dictumst non congue condimentum curabitur mi vel ridiculus sem suspendisse senectus a convallis nostra condimentum tincidunt ac auctor orci nec ligula.
+                    </div>
+                </div>
+
+                <div class="cell small-12 grid-x homepage__contact-details-wrapper"> 
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
+                            <p><i class="fas fa-map-marker-alt"></i></p>
+                        </div>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
+                            <u>1</u>411 AR, Naarden </a></p>
+                        </div> 
+                    </div>
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
+                            <p><i class="fas fa-phone"></i></p>
+                        </div>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p> <a class="contact-details__anchor"><u>0</u>35 - 694 4646</a></p>
+                        </div>      
+                    </div>
+
+                    <div class="cell small-12 medium-4 grid-x homepage__contact-details">
+                        <div class="cell small-1 medium-2 homepage__contact-details__left-div">
+                            <p><i class="far fa-envelope"></i></p>
+                        </div>
+                        <div class="cell small-11 medium-10 homepage__contact-details__right-div">
+                            <p><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
 @stop

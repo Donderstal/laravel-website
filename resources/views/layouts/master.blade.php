@@ -8,7 +8,10 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <link href="{{ asset('css/app.css') }}" media="all" rel="stylesheet" type="text/css">
+    <!-- Fontawesome for (temp) icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     @yield('head_extra')
 
 </head>
@@ -21,4 +24,5 @@
 
     @yield('script_extra')
 </body>
+    <script src="/js/app.js"></script>
 </html>

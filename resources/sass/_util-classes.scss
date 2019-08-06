@@ -1,0 +1,91 @@
+%center-in-parent {
+    margin: 0 auto;
+}
+
+%generic-border-radius {
+    border-radius: 5px;
+}
+
+%small-border-radius {
+    border-radius: 3px;
+}
+
+%dark-bg-white-text {
+    color: $white;
+    background-color: map-get($global-palette, 'dark');
+}
+
+%flex-and-justify {
+    justify-content: space-around;
+    display: flex;
+}
+
+%generic-padding {
+    padding: $main-margin-mobile;
+
+    @include breakpoint(medium up) {
+
+        padding: $main-margin-tablet;
+    } 
+}
+
+%generic-padding-large {
+    padding: $main-margin-mobile;
+    @include breakpoint(medium up) {
+        padding: $large-margin-tablet;
+    } 
+    @include breakpoint(large up) {
+        padding: $large-margin-desktop;
+    } 
+}
+
+%red-underline {
+    text-decoration: underline;
+    text-decoration-color: map-get($global-palette, active);
+}
+
+button {
+    @extend .button-font;
+    @extend %generic-border-radius;
+    background-color: map-get($global-palette, active);
+    color: white;
+}
+
+input {
+    color: map-get($global-palette, medium-grey);
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 340px;
+    height: 56px !important;
+    margin-right: 1.25rem;
+    padding: 1rem !important;
+    border-radius: 2px !important;
+    @extend .form-placeholder-font;
+    @include breakpoint (large up) {
+        max-width: 280px;        
+    }
+}
+
+.checkbox-label {
+    @extend .standard-font;
+    color: map-get($global-palette, dark);
+    margin-bottom: 2rem !important;
+}
+
+
+label {
+    @extend .form-label-font;
+}
+
+.contact-details__anchor:hover {
+    @extend %red-underline;
+}
+
+%section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.full-height {
+    height: 100% !important;
+}

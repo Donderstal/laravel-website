@@ -1,0 +1,128 @@
+.homepage__header-image {
+    background-image: url('/img/city-street.jpg');
+    background-size: cover;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.homepage__header-image-wrapper {
+    height: 100vh;
+    margin-bottom: -8rem;
+}
+
+.homepage__uitgelicht-pointer-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.homepage__uitgelicht-pointer {
+    @extend %center-in-parent;
+    @extend %generic-padding;
+    @extend .homepage-subtitle-font;
+    font-weight: 800;
+    margin-bottom: 0;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background-color: #FFFFFF;
+    width: 130px;
+    height: 52px;
+    @include breakpoint (medium up) {
+        width: 296px;
+        height: 91px;
+    }
+}
+
+.homepage__search-button {
+    @extend %center-in-parent;
+    display: block;
+    position: relative;
+    top: 2rem;
+}
+
+.homepage__featured {
+    margin-top: $margin-small;
+    margin-bottom: $margin-large;    
+    align-items: center;
+    display: flex;
+}
+
+.homepage__about-and-info {
+    @extend %generic-padding;
+}
+
+.homepage__about {
+    max-width: 625px;
+    div {
+        @extend .standard-font;
+        font-weight: 600;
+        color: map-get($global-palette, dark);
+    }
+    margin-bottom: 80px;
+    @include breakpoint (large up) {
+        margin: 0 auto;
+    }
+}
+
+.homepage__about-title, .homepage__featured-title {
+    @extend .main-header-font;
+    text-align: center;
+    color: map-get($global-palette, dark);
+}
+
+.homepage__about-title {
+    @include breakpoint (medium down) {
+        text-align: left;
+    }
+}
+
+.homepage__contact-details-wrapper {
+    @extend %center-in-parent;
+    max-width: 801px;
+}
+
+.homepage__contact-details {
+    @extend .contact-detail-font;
+    color: map-get($global-palette, dark);
+    @include breakpoint (large up) {
+        margin-top: 2rem;
+    }
+}
+
+.homepage__contact-details__right-div {
+    padding-left: 1rem;
+}
+
+.homepage__contact-details__left-div {
+    text-align: right;
+}
+
+.homepage__uitgelicht-pointer__icon {
+    display: block;
+    margin-top: .5rem;
+    @extend %center-in-parent;
+}
+
+.homepage__featured-cars {
+    @extend %section-inner;
+}
+
+.homepage__our-products-button{
+    @extend button;
+    @extend %center-in-parent;
+    display: block;
+    margin-top: $margin-small;
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    width: 280px;
+    @include breakpoint (medium up) {
+        height: 66px;
+        line-height: 66px;
+        width: 380px; 
+    }
+}

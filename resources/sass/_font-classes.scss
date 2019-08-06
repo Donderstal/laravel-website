@@ -1,0 +1,149 @@
+//Adapted mixins from the Foundation presets
+//Generate font classes with responsive sizing
+//Actual classes at bottom of file
+
+@mixin create-paragraph-classes($para-array) {
+    @each $size, $paras in $para-array {
+      @include breakpoint($size) {
+          @each $para, $para-defs in $paras {
+            #{$para}, .#{$para} {
+              @include font-props-from-defs($para-defs);
+            }
+          }        
+      }
+    }
+  }
+
+@mixin font-props-from-defs($font-defs) {
+  $font-size-temp: 1rem;
+  
+  @if map-has-key($font-defs, font-size) {
+    $font-size-temp: rem-calc(map-get($font-defs, font-size));
+    font-size: $font-size-temp;
+  } @else if map-has-key($font-defs, fs) {
+    $font-size-temp: rem-calc(map-get($font-defs, fs));
+    font-size: $font-size-temp;
+  } @else if $size == $-zf-zero-breakpoint {
+    font-size: $font-size-temp;
+  }
+  @if map-has-key($font-defs, line-height) {
+    line-height: unitless-calc(map-get($font-defs, line-height), $font-size-temp);
+  } @else if map-has-key($font-defs, lh) {
+    line-height: unitless-calc(map-get($font-defs, lh), $font-size-temp);
+  } @else if $size == $-zf-zero-breakpoint {
+    line-height: unitless-calc($header-lineheight, $font-size-temp);
+  }
+
+  @if map-has-key($font-defs, margin-top) {
+    margin-top: rem-calc(map-get($font-defs, margin-top));
+  } @else if map-has-key($font-defs, mt) {
+    margin-top: rem-calc(map-get($font-defs, mt));
+  } @else if $size == $-zf-zero-breakpoint {
+    margin-top: 0;
+  }
+  @if map-has-key($font-defs, margin-bottom) {
+    margin-bottom: rem-calc(map-get($font-defs, margin-bottom));
+  } @else if map-has-key($font-defs, mb) {
+    margin-bottom: rem-calc(map-get($font-defs, mb));
+  } @else if $size == $-zf-zero-breakpoint {
+    margin-bottom: rem-calc($header-margin-bottom);
+  }
+}
+
+$font-weight-very-bold: 900;
+
+$font-weight-medium-bold: 700;
+$font-weight-normal-bold: 600;
+$font-weight-semi-bold: 500;
+
+
+/* @include create-paragraph-classes($paragraph-styles);
+
+@include create-paragraph-classes($header-styles); */
+
+// header
+@include create-paragraph-classes($navigation-fonts);
+
+.search-bar-title-font {
+  font-weight: $font-weight-medium-bold;
+  color: map-get($global-palette, dark)
+}
+
+.navbar-header-font {
+  font-weight: $font-weight-very-bold;
+}
+
+.navbar-link-font {
+  font-weight: $font-weight-normal-bold;
+}
+
+// footer
+@include create-paragraph-classes($footer-fonts);
+
+.contact-detail-font {
+  font-weight: $font-weight-medium-bold;
+}
+
+.open-day-font {
+  font-weight: $font-weight-normal-bold;
+  margin-bottom: .375rem;
+}
+
+.open-location-font {
+  color: map-get($global-palette, light-grey);
+  font-weight: $font-weight-normal-bold;
+  margin-bottom: 0;
+}
+
+.bottom-copyright-font {
+  color: map-get($global-palette, medium-grey);
+}
+
+// general font styles
+@include create-paragraph-classes($general-fonts);
+
+.main-header-font, .secondary-header-font {
+  font-weight: $font-weight-normal-bold;
+}
+
+.standard-font {
+  font-weight: $font-weight-semi-bold;
+}
+
+.product-card-header {
+  font-weight: $font-weight-medium-bold;
+}
+
+.homepage-subtitle-font {
+  font-weight: 800;
+}
+
+// form font styles
+@include create-paragraph-classes($form-fonts);
+
+.button-font {
+  color: white;
+  font-weight: $font-weight-normal-bold;
+}
+
+.form-label-font {
+  color: map-get($global-palette, medium-grey);
+  font-weight: $font-weight-very-bold;
+}
+
+.form-placeholder-font {
+  color: map-get($global-palette, medium-grey);
+}
+
+// products font styles
+@include create-paragraph-classes($product-fonts);
+
+.ons-aanbod-subheader {
+  font-weight: bold;
+  color: map-get($global-palette, medium-grey);
+} 
+
+.ons-aandbod-select {
+  font-weight: 800;
+  color: map-get($global-palette, dark);
+}

@@ -86,9 +86,21 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function all(){
-        $products = Products::all();
-        return view('products.all')->with([
+    public function list(){
+        $products = Products::with(['gallery', 'slug'])->get()
+            ->where('status', 'available');
+        return view('aanbod')->with([
+            'title' => 'Ons aanbod',
+            'products' => $products
+        ]);
+    }
+
+    // Placeholder for actual 'verkocht' function
+    public function verkocht(){
+        $products = Products::all()->where('status', 'sold');
+
+        return view('aanbod')->with([
+            'title' => 'Verkocht',
             'products' => $products
         ]);
     }
