@@ -16,6 +16,11 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('footer__newsletter__button').addEventListener('click', () => {
+        handleNewsLetterSubscription() 
+        }
+    )
+
     if ( $('#brands-search-button').length > 0 ) {
         document.getElementById('brands-search-button').addEventListener('click', () => {
             handleSearchRequest()
@@ -24,7 +29,6 @@ $( document ).ready(function() {
     }
 
     if ( $('#product-page__meer-opties').length > 0 ) {
-        console.log('Hey Webpack!')
 
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
             showParentElement('opties')
@@ -117,6 +121,22 @@ function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
 
+function handleNewsLetterSubscription() {
+    const userEmail = $('#footer__newsletter__input').val() ;
+
+    $.ajax({
+        url: '/emails/newsletter-form',
+        data: {
+            'email'      : userEmail
+        },
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+}
 
 function handleSearchRequest() {
     const searchRequest = $('#landing-page__search-select').val();

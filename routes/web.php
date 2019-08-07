@@ -28,6 +28,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 });
 
 Route::get('/emails/post-call-me-form', 'EmailsController@callMeForm')->name('call-me-form');
+Route::get('/emails/newsletter-form', 'EmailsController@newsLetterForm')->name('newsletter-form');
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    

@@ -12,4 +12,11 @@ class EmailsController extends Controller {
         die();
     }
 
+    public function newsLetterForm() {
+
+        var_dump('sucka!');
+        die();
+    }
+
+
 }

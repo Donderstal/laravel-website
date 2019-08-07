@@ -92,8 +92,8 @@
             </div>
 
             <div>
-               <p> <input class="footer__newsletter__input" type='email' placeholder="E-mail adres" > 
-               <button class="footer__newsletter__button" type="submit">AANMELDEN</button> </p>
+               <p> <input id="footer__newsletter__input" class="footer__newsletter__input" type='email' placeholder="E-mail adres" > 
+               <button id="footer__newsletter__button" class="footer__newsletter__button" type="submit">AANMELDEN</button> </p>
             </div>
          </div>
 
