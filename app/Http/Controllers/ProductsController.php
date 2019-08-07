@@ -93,11 +93,6 @@ class ProductsController extends Controller
             
         $product_brands_controller = new ProductsBrandsController;
         $brands_list = $product_brands_controller->getBrandNamesArray();
-       
-        /* var_dump($products[0]['price']);
-        var_dump($products[0]['mileage']); 
-        var_dump($products[0]["brand"]['title']);
-        var_dump($products[0]['year']); */
 
         return view('aanbod')->with([
             'title' => 'Ons aanbod',

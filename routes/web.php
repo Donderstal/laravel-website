@@ -25,6 +25,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('/list', 'ProductsController@list')->name('list');
     Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
+    Route::get('/sort/{sort_request}', 'SearchController@handleSortRequest')->name('sort');
 });
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
@@ -33,7 +34,6 @@ Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');
 Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');    
 Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
 Route::get('/search', 'SearchController@searchForRequest')->name('search');
-Route::get('/sort', 'SearchController@handleSortRequest')->name('sort');
 
 
 // Paginas:

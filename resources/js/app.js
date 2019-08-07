@@ -105,20 +105,23 @@ function handleSearchRequest() {
 
 // Handle sort selection from ons-aanbod page select element
 // Get value of select element and pass it to laravel
-function handleSortRequest(optionValue) {
-    console.log(optionValue)
-
+function handleSortRequest(sortRequest) {
+3
     $.ajax({
         method: 'GET',
-        url: '/sort',
-        data: optionValue,
-        success: function(response) {
-            console.log(response)
+        url: '/autos/sort/' + sortRequest,
+        data: sortRequest,
+        success: function() {
+            sortURL = window.location.origin + '/autos/sort/' + sortRequest
+
+            location.href = sortURL  
         },
         error: function(error) {
             console.log(error)
         }
     })
+
+    
 }
 
 // The 'gallery' variable is an Array of Objects
