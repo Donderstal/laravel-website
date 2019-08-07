@@ -106,21 +106,10 @@ function handleSearchRequest() {
 // Handle sort selection from ons-aanbod page select element
 // Get value of select element and pass it to laravel
 function handleSortRequest(sortRequest) {
-3
-    $.ajax({
-        method: 'GET',
-        url: '/autos/sort/' + sortRequest,
-        data: sortRequest,
-        success: function() {
-            sortURL = window.location.origin + '/autos/sort/' + sortRequest
 
-            location.href = sortURL  
-        },
-        error: function(error) {
-            console.log(error)
-        }
-    })
+    sortURL = window.location.origin + '/autos/list/sort?q=' + sortRequest
 
+    location.href = sortURL  
     
 }
 
