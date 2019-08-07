@@ -21,7 +21,8 @@
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__sort-wrapper">
                         <span class="ons-aanbod__sort-text"> Sorteren op </span>
-                        <select class="ons-aanbod__sort-select">    
+                        <select id="ons-aanbod-sorter" class="ons-aanbod__sort-select">    
+                            <option value="" disabled="" selected="">Sorteer aanbod...</option>
                             <option value="bouwjaar">Bouwjaar</option>
                             <option value="prijs">Prijs</option>
                             <option value="merk">Merk</option>

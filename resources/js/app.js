@@ -51,6 +51,13 @@ $( document ).ready(function() {
 
     }
 
+    if ( $('#ons-aanbod-sorter').length > 0 ) {
+        document.getElementById('ons-aanbod-sorter').addEventListener('change', () => {
+            handleSortRequest($('#ons-aanbod-sorter').val())
+            }
+        )
+    }
+    
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
@@ -87,16 +94,19 @@ function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
 
-
+// Handle search request from search bar partials
+// Bring user to search page with query string based on option value
 function handleSearchRequest() {
     const searchRequest = $('#search-select').val();
-
-    console.log(window.location.origin)
-
     searchURL = window.location.origin + '/search?q=' + searchRequest
 
-    location.href = searchURL
-    
+    location.href = searchURL  
+}
+
+// Handle sort selection from ons-aanbod page select element
+// Get value of select element and pass it to laravel
+function handleSortRequest(optionValue) {
+    console.log(optionValue)
 }
 
 // The 'gallery' variable is an Array of Objects
