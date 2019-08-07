@@ -89,8 +89,14 @@ function toggleSearchbar() {
 
 
 function handleSearchRequest() {
-    const searchRequest = $('#landing-page__search-select').val();
-    window.location += ('search?q=' + searchRequest)
+    const searchRequest = $('#search-select').val();
+
+    console.log(window.location.origin)
+
+    searchURL = window.location.origin + '/search?q=' + searchRequest
+
+    location.href = searchURL
+    
 }
 
 // The 'gallery' variable is an Array of Objects
