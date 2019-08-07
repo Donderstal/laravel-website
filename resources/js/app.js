@@ -107,6 +107,18 @@ function handleSearchRequest() {
 // Get value of select element and pass it to laravel
 function handleSortRequest(optionValue) {
     console.log(optionValue)
+
+    $.ajax({
+        method: 'GET',
+        url: '/sort',
+        data: optionValue,
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(error) {
+            console.log(error)
+        }
+    })
 }
 
 // The 'gallery' variable is an Array of Objects

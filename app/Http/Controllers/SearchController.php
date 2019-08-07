@@ -27,4 +27,23 @@ class SearchController extends Controller
 
 
     }
+
+    public function handleSortRequest() {
+        $this->sortByNumber();
+    }
+
+    public function sortByNumber() {
+        $products = Products::with(['gallery', 'slug'])->get()
+            ->where('status', 'available');
+        
+        $number_of_products = count($products);
+
+        for ( $i = 0; $i < $number_of_products; $i++ ) {
+            var_dump($products[$i]['price']);
+        }
+
+        die();
+
+        return $sorted_products_array;
+    }
 }
