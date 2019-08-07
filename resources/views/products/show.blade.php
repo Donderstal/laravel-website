@@ -35,7 +35,7 @@
                 <div class="product-page__main-info__subsection">
                     <h1 class="product-page__main-header-font">{{ $product->brand->title }}</h1>
 
-                    <p class="product-page__main-subtitle-font">{{ $product->title }}</p>
+                    <p id="bel-mij-terug__product-name" class="product-page__main-subtitle-font">{{ $product->title }}</p>
                 </div>
 
                 <div class="product-page__main-info__subsection">
@@ -70,14 +70,14 @@
                     </div>
 
                     <div class="cell small-12 medium-6">
-                        <input class="product-page__input" placeholder="Naam">
+                        <input id="bel-mij-terug__naam" class="product-page__input" placeholder="Naam">
                     </div>
 
                     <div class="cell small-12 medium-6">
-                        <input class="product-page__input" placeholder="Telefoon nr.">
+                        <input id="bel-mij-terug__tel" class="product-page__input" placeholder="Telefoon nr.">
                     </div>
 
-                    <div class="cell small-12 product-page__contact-large-font">
+                    <div id="bel-mij-terug" class="cell small-12 product-page__contact-large-font">
                         <u>Bel</u> mij terug
                     </div>
                     

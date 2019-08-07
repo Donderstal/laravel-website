@@ -24,6 +24,8 @@ $( document ).ready(function() {
     }
 
     if ( $('#product-page__meer-opties').length > 0 ) {
+        console.log('Hey Webpack!')
+
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
             showParentElement('opties')
             }
@@ -49,6 +51,11 @@ $( document ).ready(function() {
             }
         )
 
+        document.getElementById('bel-mij-terug').addEventListener('click', () => {
+            postCallMeForm()
+            }
+        )
+
     }
 
 
@@ -62,6 +69,29 @@ $( document ).ready(function() {
 
 
 });
+
+function postCallMeForm() {
+    const userName = $('#bel-mij-terug__naam').val();
+    const telephoneNum = $('#bel-mij-terug__tel').val();
+    const productName = $('#bel-mij-terug__product-name').text() ;
+
+    $.ajax({
+        url: '/emails/post-call-me-form',
+        data: {
+            'name'      : userName,
+            'telephone' : telephoneNum,
+            'product'   : productName
+        },
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+
+    console.log(userName, telephoneNum, productName)
+}
 
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page
 function showParentElement(modifier){
