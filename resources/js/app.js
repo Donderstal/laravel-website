@@ -16,9 +16,13 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('navbar__searchbar__button').addEventListener('click', () => {
+        handleNavbarSearchRequest()
+    })
+
     if ( $('#brands-search-button').length > 0 ) {
         document.getElementById('brands-search-button').addEventListener('click', () => {
-            handleSearchRequest()
+            handleBrandSearchRequest()
             }
         )
     }
@@ -94,9 +98,17 @@ function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
 }
 
+// handle menu search bar request
+function handleNavbarSearchRequest() {
+    const searchRequest = $('#navbar__searchbar-input').val();
+    searchURL = window.location.origin + '/search?q=' + searchRequest
+
+    location.href = searchURL  
+}
+
 // Handle search request from search bar partials
 // Bring user to search page with query string based on option value
-function handleSearchRequest() {
+function handleBrandSearchRequest() {
     const searchRequest = $('#search-select').val();
     searchURL = window.location.origin + '/search?q=' + searchRequest
 

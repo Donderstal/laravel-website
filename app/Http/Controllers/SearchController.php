@@ -20,7 +20,7 @@ class SearchController extends Controller
             ->orderBy('created_at', 'DESC')
             ->paginate(config('site.products.paginate_count'));
 
-        return view('aanbod')->with([
+        return view('products.list')->with([
 
             'title' => 'Zoekresultaten voor "' . $request->q . '"',
             'products' => $products
