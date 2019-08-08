@@ -112,11 +112,11 @@ function handleSortRequest(sortRequest) {
         url: '/autos/list',
         data: { 'sort': sortRequest },
         success: function(response) {
-            console.log(response)
             const HTMLresponse = $(response)
-            const newProducts = $(HTMLresponse[20].nextSibling.innerHTML)
-            
-            $('#products-wrapper').replaceWith(newProducts)
+            const newProductsPage= $(HTMLresponse[20].nextSibling.innerHTML)
+            const newSortedProducts = $(newProductsPage['0'].innerHTML)
+
+            $('#products-wrapper').replaceWith($(newSortedProducts[4]))
         },
         error: function(response) {
             console.log(response)

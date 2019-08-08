@@ -3,7 +3,7 @@
 @section('content')
     <section class="ons-aanbod-wrapper">
 
-        <div id="products-wrapper" class="grid-x grid-container">
+        <div class="grid-x grid-container">
 
         @if( strpos(Request::url(), 'list') !== false)
             @include('partials.search-bar')
@@ -33,7 +33,7 @@
             @endif
             </div>
 
-            <div class="cell small-12 grid-x grid-margin-y">
+            <div id="products-wrapper" class="cell small-12 grid-x grid-margin-y">
                 @foreach($products as $indexKey => $product)
                  <div class="cell small-12 medium-6 large-4 xlarge-3">
                     @include('products.card')
