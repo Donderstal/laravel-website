@@ -144,7 +144,7 @@ class ProductsController extends Controller
                 $type = 'mileage';
                 break;
             case 'merk' :
-                $type = 'price';
+                $type = 'brand';
         }
 
         $available_products = Products::with(['gallery', 'slug'])->get()
@@ -152,17 +152,12 @@ class ProductsController extends Controller
 
         $number_of_products = count($available_products);
 
-        if ($type === 'brand') {
-            var_dump('This functionality will be added soon...');
-        }
-        else {
-            $product_names_sorted_by_type 
-            = $this->orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type);
-        }
+        $product_names_sorted_by_type 
+        = $this->orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type);
 
         $sorted_products_array 
         = $this->orderProductsBasedOnSortedArray($number_of_products, $available_products, $product_names_sorted_by_type);
-        
+
         return $sorted_products_array;
 
     }
@@ -170,12 +165,18 @@ class ProductsController extends Controller
     public function orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type){
 
         $products_array = [];
-
-        for ( $i = 0; $i < $number_of_products; $i++ ) {
-            $products_array[$available_products[$i][$type]] = $available_products[$i]['title'];
+        if ($type !== 'brand') {
+            for ( $i = 0; $i < $number_of_products; $i++ ) {
+                $products_array[$available_products[$i]['title']] = $available_products[$i][$type];
+            }
+            asort($products_array, 1);         
         }
-
-        ksort($products_array, 1);
+        else {
+            for ( $i = 0; $i < $number_of_products; $i++ ) {
+                $products_array[$available_products[$i]['title']] = $available_products[$i]['brand']['title'];
+            }
+            asort($products_array, 2);  
+        }  
 
         return $products_array;
     }
@@ -188,12 +189,14 @@ class ProductsController extends Controller
 
             for ( $i = 0; $i < $number_of_products; $i++ ) {
 
-                if ( $value === $available_products[$i]['title'] ) {
+                if ( $key === $available_products[$i]['title'] ) {
 
-                    $array_position = array_search($key, array_keys($product_names_sorted_by_type));
+                    $array_position = array_search($value, array_values($product_names_sorted_by_type));
+
+                    $product_names_sorted_by_type[$key] = 'cleared';
 
                     $sorted_products_array[$array_position] = $available_products[$i];
-
+           
                 }
 
             }
