@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Http\Controllers\Admin\Products\ProductsBrandsController;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -19,7 +20,7 @@ class SearchController extends Controller
             ->orderBy('created_at', 'DESC')
             ->paginate(config('site.products.paginate_count'));
 
-        return view('aanbod')->with([
+        return view('products.list')->with([
 
             'title' => 'Zoekresultaten voor "' . $request->q . '"',
             'products' => $products
@@ -27,4 +28,5 @@ class SearchController extends Controller
 
 
     }
+
 }

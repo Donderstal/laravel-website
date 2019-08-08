@@ -41,13 +41,11 @@
 }
 
 .search-bar__left {
-    
     @include breakpoint (medium up) {
         left: 5rem;   
         border-right: .5px groove map-get($global-palette, medium-grey);     
     }
 }
-
 
 .search-bar__left, .search-bar__right {
     display: flex;
@@ -56,10 +54,8 @@
 
 .search-bar__icon {
     position: relative;
-    @include breakpoint (small only) {
-        height: 22px;
-        width: 14px;
-    }
+        height: 44px !important;
+        width: 32px !important;
 }
 
 .search-bar__button {

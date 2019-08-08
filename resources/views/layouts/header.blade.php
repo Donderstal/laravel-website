@@ -11,8 +11,8 @@
             </p>
 
             <div class="navbar__searchbar">
-                <input class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
-                <button class="navbar__searchbar__button">ZOEKEN</button>
+                <input id="navbar__searchbar-input" class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
+                <button id="navbar__searchbar__button" class="navbar__searchbar__button">ZOEKEN</button>
             </div>
             
         </div>

@@ -18,11 +18,7 @@ class LandingPageController extends Controller
         }      
 
         $product_brands_controller = new ProductsBrandsController;
-        $product_brands = $product_brands_controller->getBrandsName();
-        $number_of_brands = count($product_brands);
-        for ( $i = 0; $i < $number_of_brands; $i++) {
-            $brands_list[] = $product_brands[$i]['title'];
-        }
+        $brands_list = $product_brands_controller->getBrandNamesArray();
 
         return view('welcome')->with([
             'title' => 'Gooische Auto Mediair',
