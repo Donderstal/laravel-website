@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use App\Models\ProductsSlugs;
 use App\Http\Controllers\Admin\Products\ProductsBrandsController;
-use Illuminate\Http\Request;
+use Request;
 
 class ProductsController extends Controller
 {
@@ -94,7 +94,7 @@ class ProductsController extends Controller
         $product_brands_controller = new ProductsBrandsController;
         $brands_list = $product_brands_controller->getBrandNamesArray();
 
-        return view('aanbod')->with([
+        return view('products.list')->with([
             'title' => 'Ons aanbod',
             'products' => $products,
             'brands' => $brands_list
@@ -105,27 +105,30 @@ class ProductsController extends Controller
     public function verkocht(){
         $products = Products::all()->where('status', 'sold');
 
-        return view('aanbod')->with([
+        return view('products.list')->with([
             'title' => 'Verkocht',
             'products' => $products
         ]);
     }
 
-    public function handleSortRequest($sort_request) {
-        switch ($sort_request) {
-            case 'bouwjaar':
-                $this->sortController('year');
-                break;
-            case 'prijs':
-                $this->sortController('price');
-                break;
-            case 'km-stand':
-                $this->sortController('mileage');
-                break;
-            case 'merk':
-                $this->sortController('brand');
-                break;
-        }
+    public function action(Request $request) {
+
+        $post_data = Request::post();
+
+        $sorted_products_array = [];
+
+        if (isset($post_data)) {
+            $sorted_products_array = $this->sortController($post_data['sort']);
+        } 
+
+        $product_brands_controller = new ProductsBrandsController;
+        $brands_list = $product_brands_controller->getBrandNamesArray();
+
+        return view('products.list', [
+            'title' => 'Ons aanbod',
+            'products' => $sorted_products_array,
+            'brands' => $brands_list
+        ]);
         
     }
 
@@ -137,7 +140,7 @@ class ProductsController extends Controller
         $number_of_products = count($available_products);
 
         if ($type === 'brand') {
-            var_dump('This functionality will be addded soon...');
+            var_dump('This functionality will be added soon...');
         }
         else {
             $product_names_sorted_by_type 
@@ -147,14 +150,8 @@ class ProductsController extends Controller
         $sorted_products_array 
         = $this->orderProductsBasedOnSortedArray($number_of_products, $available_products, $product_names_sorted_by_type);
 
-        $product_brands_controller = new ProductsBrandsController;
-        $brands_list = $product_brands_controller->getBrandNamesArray();
-        
-        return view('aanbod')->with([
-            'title' => 'Ons aanbod',
-            'products' => $sorted_products_array,
-            'brands' => $brands_list
-        ]);
+        return $sorted_products_array;
+
     }
 
     public function orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type){

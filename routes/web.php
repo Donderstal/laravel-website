@@ -23,9 +23,12 @@ ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
     Route::get('/list', 'ProductsController@list')->name('list');
+    Route::post('/list', [
+        'uses' => 'ProductsController@action',
+        'as' => 'product.action'
+    ]);
     Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
-    Route::get('/list/sort/{sort_request}', 'ProductsController@handleSortRequest')->name('sort');
 });
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
