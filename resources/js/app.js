@@ -96,6 +96,7 @@ function toggleDropdown() {
 // Toggle menu search bar
 function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
+    $('#navbar__searchbar-input').focus();
 }
 
 // handle menu search bar request
