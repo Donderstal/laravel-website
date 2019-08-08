@@ -107,13 +107,12 @@ function handleSearchRequest() {
 // Get value of select element and pass it to laravel
 function handleSortRequest(sortRequest) {
 
-    console.log('in handlesortrequest....')
-
     $.ajax({
         method: 'POST',
         url: '/autos/list',
         data: { 'sort': sortRequest },
         success: function(response) {
+            console.log(response)
             const HTMLresponse = $(response)
             const newProducts = $(HTMLresponse[20].nextSibling.innerHTML)
             
@@ -123,12 +122,6 @@ function handleSortRequest(sortRequest) {
             console.log(response)
         }
     })
-
-    console.log('after ajax...')
-
-    /* sortURL = window.location.origin + '/autos/list/sort?q=' + sortRequest
-
-    location.href = sortURL */  
     
 }
 

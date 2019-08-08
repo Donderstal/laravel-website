@@ -132,7 +132,20 @@ class ProductsController extends Controller
         
     }
 
-    public function sortController($type) {
+    public function sortController($sort_request) {
+        switch($sort_request) {
+            case 'prijs' :
+                $type = 'price';
+                break;
+            case 'bouwjaar' :
+                $type = 'year';
+                break;
+            case 'km-stand' :
+                $type = 'mileage';
+                break;
+            case 'merk' :
+                $type = 'price';
+        }
 
         $available_products = Products::with(['gallery', 'slug'])->get()
         ->where('status', 'available');
@@ -149,7 +162,7 @@ class ProductsController extends Controller
 
         $sorted_products_array 
         = $this->orderProductsBasedOnSortedArray($number_of_products, $available_products, $product_names_sorted_by_type);
-
+        
         return $sorted_products_array;
 
     }
