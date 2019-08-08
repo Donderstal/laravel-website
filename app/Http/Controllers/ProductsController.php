@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use App\Models\ProductsSlugs;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\Products\ProductsBrandsController;
+use Request;
 
 class ProductsController extends Controller
 {
@@ -89,9 +90,14 @@ class ProductsController extends Controller
     public function list(){
         $products = Products::with(['gallery', 'slug'])->get()
             ->where('status', 'available');
-        return view('aanbod')->with([
+            
+        $product_brands_controller = new ProductsBrandsController;
+        $brands_list = $product_brands_controller->getBrandNamesArray();
+
+        return view('products.list')->with([
             'title' => 'Ons aanbod',
-            'products' => $products
+            'products' => $products,
+            'brands' => $brands_list
         ]);
     }
 
@@ -99,9 +105,105 @@ class ProductsController extends Controller
     public function verkocht(){
         $products = Products::all()->where('status', 'sold');
 
-        return view('aanbod')->with([
+        return view('products.list')->with([
             'title' => 'Verkocht',
             'products' => $products
         ]);
+    }
+
+    public function action(Request $request) {
+
+        $post_data = Request::post();
+
+        $sorted_products_array = [];
+
+        if (isset($post_data)) {
+            $sorted_products_array = $this->sortController($post_data['sort']);
+        } 
+
+        $product_brands_controller = new ProductsBrandsController;
+        $brands_list = $product_brands_controller->getBrandNamesArray();
+
+        return view('products.list', [
+            'title' => 'Ons aanbod',
+            'products' => $sorted_products_array,
+            'brands' => $brands_list
+        ]);
+        
+    }
+
+    public function sortController($sort_request) {
+        switch($sort_request) {
+            case 'prijs' :
+                $type = 'price';
+                break;
+            case 'bouwjaar' :
+                $type = 'year';
+                break;
+            case 'km-stand' :
+                $type = 'mileage';
+                break;
+            case 'merk' :
+                $type = 'brand';
+        }
+
+        $available_products = Products::with(['gallery', 'slug'])->get()
+        ->where('status', 'available');
+
+        $number_of_products = count($available_products);
+
+        $product_names_sorted_by_type 
+        = $this->orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type);
+
+        $sorted_products_array 
+        = $this->orderProductsBasedOnSortedArray($number_of_products, $available_products, $product_names_sorted_by_type);
+
+        return $sorted_products_array;
+
+    }
+
+    public function orderProductTitlesBasedOnNumber($number_of_products, $available_products, $type){
+
+        $products_array = [];
+        if ($type !== 'brand') {
+            for ( $i = 0; $i < $number_of_products; $i++ ) {
+                $products_array[$available_products[$i]['title']] = $available_products[$i][$type];
+            }
+            asort($products_array, 1);         
+        }
+        else {
+            for ( $i = 0; $i < $number_of_products; $i++ ) {
+                $products_array[$available_products[$i]['title']] = $available_products[$i]['brand']['title'];
+            }
+            asort($products_array, 2);  
+        }  
+
+        return $products_array;
+    }
+
+    public function orderProductsBasedOnSortedArray($number_of_products, $available_products,$product_names_sorted_by_type) {
+
+        $sorted_products_array = [];
+
+         foreach ( $product_names_sorted_by_type as $key => $value) {
+
+            for ( $i = 0; $i < $number_of_products; $i++ ) {
+
+                if ( $key === $available_products[$i]['title'] ) {
+
+                    $array_position = array_search($value, array_values($product_names_sorted_by_type));
+
+                    $product_names_sorted_by_type[$key] = 'cleared';
+
+                    $sorted_products_array[$array_position] = $available_products[$i];
+           
+                }
+
+            }
+
+        }
+
+        return $sorted_products_array;
+
     }
 }

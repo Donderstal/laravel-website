@@ -20,10 +20,13 @@ $( document ).ready(function() {
         handleNewsLetterSubscription() 
         }
     )
+    document.getElementById('navbar__searchbar__button').addEventListener('click', () => {
+        handleNavbarSearchRequest()
+    })
 
     if ( $('#brands-search-button').length > 0 ) {
         document.getElementById('brands-search-button').addEventListener('click', () => {
-            handleSearchRequest()
+            handleBrandSearchRequest()
             }
         )
     }
@@ -62,6 +65,13 @@ $( document ).ready(function() {
 
     }
 
+    if ( $('#ons-aanbod-sorter').length > 0 ) {
+        document.getElementById('ons-aanbod-sorter').addEventListener('change', () => {
+            handleSortRequest($('#ons-aanbod-sorter').val())
+            }
+        )
+    }
+    
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
@@ -97,6 +107,24 @@ function postCallMeForm() {
     console.log(userName, telephoneNum, productName)
 }
 
+
+function handleNewsLetterSubscription() {
+    const userEmail = $('#footer__newsletter__input').val() ;
+
+    $.ajax({
+        url: '/emails/newsletter-form',
+        data: {
+            'email'      : userEmail
+        },
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+}
+
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page
 function showParentElement(modifier){
     (modifier === 'opties')
@@ -119,28 +147,46 @@ function toggleDropdown() {
 // Toggle menu search bar
 function toggleSearchbar() {
     $('.navbar__searchbar').toggle()
+    $('#navbar__searchbar-input').focus();
 }
 
-function handleNewsLetterSubscription() {
-    const userEmail = $('#footer__newsletter__input').val() ;
+// handle menu search bar request
+function handleNavbarSearchRequest() {
+    const searchRequest = $('#navbar__searchbar-input').val();
+    searchURL = window.location.origin + '/search?q=' + searchRequest
+
+    location.href = searchURL  
+}
+
+// Handle search request from search bar partials
+// Bring user to search page with query string based on option value
+function handleBrandSearchRequest() {
+    const searchRequest = $('#search-select').val();
+    searchURL = window.location.origin + '/search?q=' + searchRequest
+
+    location.href = searchURL  
+}
+
+// Handle sort selection from ons-aanbod page select element
+// Get value of select element and pass it to laravel
+function handleSortRequest(sortRequest) {
 
     $.ajax({
-        url: '/emails/newsletter-form',
-        data: {
-            'email'      : userEmail
-        },
+        method: 'POST',
+        url: '/autos/list',
+        data: { 'sort': sortRequest },
         success: function(response) {
-            console.log(response)
+            const HTMLresponse = $(response)
+            const newProductsPage= $(HTMLresponse[20].nextSibling.innerHTML)
+            const newSortedProducts = $(newProductsPage['0'].innerHTML)
+
+            $('#products-wrapper').replaceWith($(newSortedProducts[4]))
         },
         error: function(response) {
             console.log(response)
         }
     })
-}
-
-function handleSearchRequest() {
-    const searchRequest = $('#landing-page__search-select').val();
-    window.location += ('search?q=' + searchRequest)
+    
 }
 
 // The 'gallery' variable is an Array of Objects
