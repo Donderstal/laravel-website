@@ -31,6 +31,13 @@ $( document ).ready(function() {
         )
     }
 
+    if ( $('#general-info__form-button').length > 0 ) {
+        document.getElementById('general-info__form-button').addEventListener('click', () => {
+            handleContactForm()
+            }
+        )
+    }
+
     if ( $('#product-page__meer-opties').length > 0 ) {
 
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
@@ -89,8 +96,6 @@ function postCallMeForm() {
     const telephoneNum = $('#bel-mij-terug__tel').val();
     const productName = $('#bel-mij-terug__product-name').text() ;
 
-    console.log('posting that email stuff....')
-
     $.ajax({
         method: 'POST',
         url: '/emails/post-call-me-form',
@@ -109,7 +114,6 @@ function postCallMeForm() {
 
 }
 
-
 function handleNewsLetterSubscription() {
     const userEmail = $('#footer__newsletter__input').val() ;
 
@@ -118,6 +122,35 @@ function handleNewsLetterSubscription() {
         url: '/emails/newsletter-form',
         data: {
             'email'      : userEmail
+        },
+        success: function(response) {
+            console.log(response)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    })
+}
+
+function handleContactForm() {
+
+    var firstName = $('#first-name').val();
+    var lastName = $('#last-name').val();
+    var email = $('#email').val();
+    var telephone = $('#telephone').val();
+    var subject = $('#subject').val();
+    var textBlock = $('#text-block').val();
+
+    $.ajax({
+        method: 'POST',
+        url: '/emails/contact-form',
+        data: {
+          'first-name': firstName,
+          'last-name': lastName,
+          'subject' : subject,
+          'email':  email,
+          'telephone': telephone,
+          'text-block': textBlock  
         },
         success: function(response) {
             console.log(response)

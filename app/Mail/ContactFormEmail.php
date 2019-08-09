@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactFromEmail extends Mailable
+class ContactFormEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,7 +18,7 @@ class ContactFromEmail extends Mailable
      */
     public function __construct($posted_data)
     {
-        //
+        $this->data = $posted_data;
     }
 
     /**
@@ -28,6 +28,14 @@ class ContactFromEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.contact-mail');
+        return $this->view('email.contact-mail')
+                    ->with([
+                        'first-name'        => $this->data['first-name'],
+                        'last-name'         => $this->data['last-name'],
+                        'telephone'         => $this->data['telephone'],
+                        'email'             => $this->data['email'],
+                        'subject'           => $this->data['subject'],
+                        'text-block'        => $this->data['text-block']
+                    ]);
     }
 }

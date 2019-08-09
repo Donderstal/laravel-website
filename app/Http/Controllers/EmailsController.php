@@ -36,6 +36,8 @@ class EmailsController extends Controller {
         $res['subject'] = $_POST['subject'];
         $res['text-block'] = $_POST['text-block'];
 
+        Mail::to('daan@abiggercircle.com')->send(new ContactFormEmail($res));
+
         return $res;
     }
 

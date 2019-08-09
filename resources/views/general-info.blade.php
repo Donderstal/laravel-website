@@ -135,7 +135,7 @@
             @if ($title != 'Over ons')
             <div class="cell small-12 general-info__contact-form">
                 <h1>CONTACT FORMULIER</h1>
-                <form method="POST" action="/emails/contact-form" class="grid-x general-info__form">
+                <form id="general-info__form" class="grid-x general-info__form">
                     <div class="cell small-12 medium-6">
                         <label for="first-name">Voornaam:</label>
                         <input type="text" id="first-name" name="first-name" placeholder='Voornaam'>
@@ -173,7 +173,7 @@
                     </div>
 
                     <div class="cell small-12">
-                        <button class="general-info__form-button">VERZENDEN</button>
+                        <button type="button" id="general-info__form-button" class="general-info__form-button">VERZENDEN</button>
                     </div>
                     
                 </form>

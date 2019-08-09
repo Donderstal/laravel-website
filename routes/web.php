@@ -33,7 +33,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 
 Route::post('/emails/post-call-me-form', 'EmailsController@callMeForm')->name('call-me-form');
 Route::post('/emails/newsletter-form', 'EmailsController@newsLetterForm')->name('newsletter-form');
-Route::post('/emails/contact-form', 'EmailsController@ncontactForm')->name('contact-form');
+Route::post('/emails/contact-form', 'EmailsController@contactForm')->name('contact-form');
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    
