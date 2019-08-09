@@ -89,6 +89,8 @@ function postCallMeForm() {
     const telephoneNum = $('#bel-mij-terug__tel').val();
     const productName = $('#bel-mij-terug__product-name').text() ;
 
+    console.log('posting that email stuff....')
+
     $.ajax({
         url: '/emails/post-call-me-form',
         data: {
@@ -104,7 +106,6 @@ function postCallMeForm() {
         }
     })
 
-    console.log(userName, telephoneNum, productName)
 }
 
 
