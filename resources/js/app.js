@@ -92,6 +92,7 @@ function postCallMeForm() {
     console.log('posting that email stuff....')
 
     $.ajax({
+        method: 'POST',
         url: '/emails/post-call-me-form',
         data: {
             'name'      : userName,
@@ -113,6 +114,7 @@ function handleNewsLetterSubscription() {
     const userEmail = $('#footer__newsletter__input').val() ;
 
     $.ajax({
+        method: 'POST',
         url: '/emails/newsletter-form',
         data: {
             'email'      : userEmail
@@ -288,3 +290,11 @@ function toggleLargeGalleryButtonDiv() {
     $('.product-page__image-header__button-wrapper')
         .toggleClass('large-gallery__button-div')
 }
+
+
+/* MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null */

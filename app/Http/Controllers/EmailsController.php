@@ -4,40 +4,39 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\CallMeEmail;
+use App\Mail\NewsLetterEmail;
+use App\Mail\ContactFormEmail;
+
 
 class EmailsController extends Controller {
 
     public function callMeForm() {
-        $res[] = $_GET['name'];
-        $res[] = $_GET['telephone'];
-        $res[] = $_GET['product'];
-        try {
-            Mail::send('emails.call-me-mail', $res, function ($m) use ($res) {
-                $m->to('daan@abiggercircle.com', 'Developer')->subject('Yoyoyo!');
-                $m->from('no-reply@gam.nl', 'GAM');
-            });
-        }
-        catch (\Exception $e) {
-            var_dump($e);
-            return $e;
-        }
+        $res['name'] = $_POST['name'];
+        $res['telephone'] = $_POST['telephone'];
+        $res['product'] = $_POST['product'];
 
-        var_dump('sucka!');
+        Mail::to('daan@abiggercircle.com')->send(new CallMeEmail($res));
 
         return $res;
     }
 
     public function newsLetterForm() {
+        $res = $_POST['email'];
 
-        var_dump('sucka!');
-        die();
+        return $res;
     }
 
 
     public function contactForm() {
+        $res['first-name'] = $_POST['first-name'];
+        $res['last-name'] = $_POST['last-name'];
+        $res['telephone'] = $_POST['telephone'];
+        $res['email'] = $_POST['email'];
+        $res['subject'] = $_POST['subject'];
+        $res['text-block'] = $_POST['text-block'];
 
-        var_dump('sucka!');
-        die();
+        return $res;
     }
 
 

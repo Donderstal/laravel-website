@@ -153,7 +153,7 @@
 
                     <div class="cell small-12 medium-6">
                         <label for="telefoon">Telefoonnummer:</label>
-                        <input type="tel" id="telefoon" name="telefoon" placeholder="Telefoonnummer">
+                        <input type="tel" id="telephone" name="telephone" placeholder="Telefoonnummer">
                     </div>
                     
                     <div class="cell small-12 medium-6 end">
@@ -162,8 +162,8 @@
                     </div>
                     
                     <div class="cell small-12">
-                        <label for="opmerking">Vragen en opmerkingen:</label>
-                        <textarea id="opmerking" name="opmerking" placeholder="Vragen en opmerkingen">
+                        <label for="text-block">Vragen en opmerkingen:</label>
+                        <textarea id="text-block" name="text-block" placeholder="Vragen en opmerkingen">
                         </textarea>
                     </div>
 
