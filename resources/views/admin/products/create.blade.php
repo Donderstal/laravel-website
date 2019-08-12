@@ -101,7 +101,7 @@
             ])
             @endinput
             <div class="row">
-                <div class="col-4">
+                <div class="col-6">
                     @input([
                         'type' => 'radio-group',
                         'label' => 'Status',
