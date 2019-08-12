@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use App\Http\Controllers\Admin\Products\ProductsBrandsController;
 use App\Http\Controllers\SearchController;
 

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Nicolaslopezj\Searchable\SearchableTrait;

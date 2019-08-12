@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Products;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use App\Models\Products;
 use App\Models\ProductsColors;
 use App\Models\ProductsModels;

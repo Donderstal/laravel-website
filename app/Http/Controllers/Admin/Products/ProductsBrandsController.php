@@ -6,7 +6,7 @@ use App\Facades\ImageUtil;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
