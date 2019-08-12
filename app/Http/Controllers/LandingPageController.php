@@ -12,10 +12,7 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-        $all_products = Products::all();
-        for ( $i = 0; $i < 3; $i++) {
-            $three_products[] = $all_products[$i];
-        }      
+        $three_products = Products::latest()->limit(3)->get();
 
         $product_brands_controller = new ProductsBrandsController;
         $brands_list = $product_brands_controller->getBrandNamesArray();
