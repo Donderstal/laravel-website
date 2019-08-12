@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Products;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateModelRequest;
 use App\Http\Requests\UpdateModelRequest;
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use App\Models\ProductsModels;
 use Illuminate\Http\Request;
 
