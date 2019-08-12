@@ -111,6 +111,7 @@
                         'items' => [
                             'available' => 'Available',
                             'sold' => 'Sold',
+                            'coming_soon' => 'Coming Soon'
                         ],
                     ])
                     @endinput
