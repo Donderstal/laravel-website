@@ -100,7 +100,7 @@
          <div class="cell small-12 large-6 footer__social-wrapper">
             <div >
                <p class="footer__social-title">Volg ons op:</p>
-               <p class="footer__social"><i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i></p>
+               <p class="footer__social"><i class="fab fa-facebook-square"></i></p>
             </div>
          </div>
 
