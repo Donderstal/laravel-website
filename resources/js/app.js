@@ -5,6 +5,15 @@ var SVGInjector = require('svg-injector')
 
 
 $( document ).ready(function() {
+
+    // Elements to inject
+    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
+
+    if (mySVGsToInject) {
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    }
+
     // All event listeners are in this function
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown()
@@ -78,16 +87,6 @@ $( document ).ready(function() {
             }
         )
     }
-
-
-    // Elements to inject
-    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
-
-    if (mySVGsToInject) {
-        // Do the injection
-        SVGInjector(mySVGsToInject);
-    }
-
 
 });
 
@@ -327,11 +326,3 @@ function toggleLargeGalleryButtonDiv() {
     $('.product-page__image-header__button-wrapper')
         .toggleClass('large-gallery__button-div')
 }
-
-
-/* MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null */
