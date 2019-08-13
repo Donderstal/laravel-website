@@ -49,7 +49,6 @@ class MasterProductsSeeder extends Seeder
             $brand->models()->createMany($models_list);
             $brand_objs[] = $brand;
         }
-        var_dump('fdsf');
 
         $cars = [
             [
@@ -63,7 +62,8 @@ class MasterProductsSeeder extends Seeder
                 'brand_id' => 1,
                 'model_id' => 3,
                 'status' => 'coming_soon',
-                'enable' => 1
+                'enable' => 1,
+                'user_id' => 1
             ],
             [
                 'title' => 'Farrari awesome',
@@ -76,7 +76,8 @@ class MasterProductsSeeder extends Seeder
                 'brand_id' => 2,
                 'model_id' => 1,
                 'status' => 'sold',
-                'enable' => 1
+                'enable' => 1,
+
             ],
             [
                 'title' => 'Mercedes awesome',
@@ -93,11 +94,7 @@ class MasterProductsSeeder extends Seeder
             ]
         ];
         foreach($cars as $car_spec) {
-            $car = App\Models\Products::create($car_spec);
-            $car->slug()->create([
-                'slug' => Str::slug($car_spec['title']),
-                'default' => true
-            ]);
+            $car = factory(App\Models\Products::class)->create();
         }
     }
 }
