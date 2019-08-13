@@ -11,7 +11,7 @@
         <div class="grid-x">
             <!-- Top image -->
             <div class="cell small-12 medium-9 medium-offset-3 general-info__top-image">
-                <img class="general-info__cover-photo" src="{{ asset('img/admin/city-photo.jpg') }}">
+                <img class="general-info__cover-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
             </div>
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">

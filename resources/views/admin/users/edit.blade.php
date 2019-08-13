@@ -48,7 +48,7 @@
                                 <label for="avatar_file"></label>
                             </div>
                             <div class="avatar-preview">
-                                <div id="imagePreview" style="background-image: url({{ asset('img/admin/default-avatar.png') }});">
+                                <div id="imagePreview" style="background-image: url({{ mix('img/admin/default-avatar.png') }});">
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ use App\Models\ProductsBrands;
 use App\Models\Products;
 use App\Models\ProductsColors;
 use App\Models\ProductsModels;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class ProductsController extends Controller
@@ -34,13 +35,9 @@ class ProductsController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-        $product = Products::create($request->except(['_token', 'cover_file']));
-
-        // Add slug for product
-        $product->slug()->create([
-            'slug' => Str::slug($request->title),
-            'default' => true
-        ]);
+        $product_attr = $request->except(['_token', 'cover_file']);
+        $product_attr['created_by'] = Auth::id();
+        $product = Products::create($product_attr);
 
         if ($request->hasFile('cover_file')) {
             $product->setCover($request->cover_file);

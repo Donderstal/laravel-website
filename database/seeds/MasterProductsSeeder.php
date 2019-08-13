@@ -49,55 +49,10 @@ class MasterProductsSeeder extends Seeder
             $brand->models()->createMany($models_list);
             $brand_objs[] = $brand;
         }
-        var_dump('fdsf');
 
-        $cars = [
-            [
-                'title' => 'Bugatti awesome',
-                'price' => 100000,
-                'mileage' => 9,
-                'year' => 2019,
-                'fuel' => 'diesel',
-                'transmission' => 'at',
-                'color_id' => 1,
-                'brand_id' => 1,
-                'model_id' => 3,
-                'status' => 'coming_soon',
-                'enable' => 1
-            ],
-            [
-                'title' => 'Farrari awesome',
-                'price' => 100001,
-                'mileage' => 123,
-                'year' => 2018,
-                'fuel' => 'diesel',
-                'transmission' => 'at',
-                'color_id' => 2,
-                'brand_id' => 2,
-                'model_id' => 1,
-                'status' => 'sold',
-                'enable' => 1
-            ],
-            [
-                'title' => 'Mercedes awesome',
-                'price' => 100001,
-                'mileage' => 123,
-                'year' => 2018,
-                'fuel' => 'diesel',
-                'transmission' => 'at',
-                'color_id' => 3,
-                'brand_id' => 3,
-                'model_id' => 1,
-                'status' => 'available',
-                'enable' => 1
-            ]
-        ];
-        foreach($cars as $car_spec) {
-            $car = App\Models\Products::create($car_spec);
-            $car->slug()->create([
-                'slug' => Str::slug($car_spec['title']),
-                'default' => true
-            ]);
-        }
+        factory(App\Models\Products::class, 3)->states('sold')->create();
+        factory(App\Models\Products::class, 3)->states('available')->create();
+        factory(App\Models\Products::class, 3)->states('coming_soon')->create();
+        factory(App\Models\Products::class, 3)->states('ferrari', 'available')->create();
     }
 }

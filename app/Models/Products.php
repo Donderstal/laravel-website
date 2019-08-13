@@ -4,8 +4,8 @@ namespace App\Models;
 
 use App\Models\ProductsBrands;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Products extends Model
@@ -32,7 +32,7 @@ class Products extends Model
         'color_id',
         'brand_id',
         'model_id',
-        'user_id',
+        'created_by',
         'status',
         'enable',
         'visits'
@@ -54,8 +54,12 @@ class Products extends Model
     protected static function boot()
     {
         parent::boot();
-        static::creating(function ($model) {
-            $model->created_by = Auth::id();
+        static::created(function ($model) {
+            // Add slug for product
+            $model->slug()->create([
+                'slug' => Str::slug($model->title),
+                'default' => true
+            ]);
         });
     }
 
