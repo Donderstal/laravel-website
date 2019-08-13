@@ -7,17 +7,17 @@ var SVGInjector = require('svg-injector')
 $( document ).ready(function() {
     // All event listeners are in this function
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
-        toggleDropdown() 
+        toggleDropdown()
         }
     )
 
     document.getElementById('navbar__search-icon').addEventListener('click', () => {
-        toggleSearchbar() 
+        toggleSearchbar()
         }
     )
 
     document.getElementById('footer__newsletter__button').addEventListener('click', () => {
-        handleNewsLetterSubscription() 
+        handleNewsLetterSubscription()
         }
     )
     document.getElementById('navbar__searchbar__button').addEventListener('click', () => {
@@ -57,7 +57,7 @@ $( document ).ready(function() {
 
         document.getElementById('product-gallery__left-button').addEventListener('click', () => {
             getNextPicture('left')
-            }        
+            }
         )
 
         document.getElementById('product-image').addEventListener('click', () => {
@@ -78,7 +78,7 @@ $( document ).ready(function() {
             }
         )
     }
-    
+
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
@@ -150,7 +150,7 @@ function handleContactForm() {
           'subject' : subject,
           'email':  email,
           'telephone': telephone,
-          'text-block': textBlock  
+          'text-block': textBlock
         },
         success: function(response) {
             console.log(response)
@@ -188,19 +188,23 @@ function toggleSearchbar() {
 
 // handle menu search bar request
 function handleNavbarSearchRequest() {
-    const searchRequest = $('#navbar__searchbar-input').val();
-    searchURL = window.location.origin + '/search?q=' + searchRequest
-
-    location.href = searchURL  
+    handleBrandSearchRequest('#navbar__searchbar-input');
 }
 
 // Handle search request from search bar partials
 // Bring user to search page with query string based on option value
-function handleBrandSearchRequest() {
-    const searchRequest = $('#search-select').val();
-    searchURL = window.location.origin + '/search?q=' + searchRequest
+function handleBrandSearchRequest(inputId = '#search-select') {
+    const searchRequest = $(inputId).val();
+    // If a user does not fill out the search query then will go to a search page with
+    // q as null. This is so that if someone does an analysis of the search queries they can see when
+    // a user clicks on the button without a selection or query.
+    if (!searchRequest) {
+        searchURL = window.location.origin + '/search?q='
+    } else {
+        searchURL = window.location.origin + '/search?q=' + searchRequest
+    }
 
-    location.href = searchURL  
+    location.href = searchURL
 }
 
 // Handle sort selection from ons-aanbod page select element
@@ -222,7 +226,7 @@ function handleSortRequest(sortRequest) {
             console.log(response)
         }
     })
-    
+
 }
 
 // The 'gallery' variable is an Array of Objects
@@ -243,9 +247,9 @@ function isCurrentPicture(element) {
 }
 
 function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
-    let nextPictureObjectIndex = ( direction == 'left' ) 
-        ? (currentPictureObjectIndex - 1) 
-        : (currentPictureObjectIndex + 1) 
+    let nextPictureObjectIndex = ( direction == 'left' )
+        ? (currentPictureObjectIndex - 1)
+        : (currentPictureObjectIndex + 1)
 
     if (nextPictureObjectIndex > (gallery.length - 1) ) {
         nextPictureObjectIndex = 0
@@ -257,7 +261,7 @@ function getNextPictureObjectIndex(direction, currentPictureObjectIndex) {
 
     document.getElementById('product-gallery__counter').innerText = ( nextPictureObjectIndex + 1 )
 
-    return nextPictureObjectIndex 
+    return nextPictureObjectIndex
 }
 
 function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
@@ -276,8 +280,8 @@ function getLargeGallery () {
         createLargeGalleryBackground ()
         toggleLargeGallery()
         toggleLargeGalleryButtonDiv()
-        createLargeGalleryReturnButton()       
-        
+        createLargeGalleryReturnButton()
+
         $('body').toggleClass('large-gallery__body-styles')
         $('html,body').scrollTop(0);
         $('.header-general').css('display', 'none');
