@@ -104,7 +104,12 @@ class Products extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'created_by', 'id');
+        $non_soft_deleted_user = $this->belongsTo(User::class, 'created_by', 'id');
+        if($non_soft_deleted_user) {
+            return $non_soft_deleted_user;
+        }
+
+        return $this->created_by;
     }
 
     public function setCover($resource)
