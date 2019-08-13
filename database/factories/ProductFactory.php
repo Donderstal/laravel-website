@@ -41,3 +41,30 @@ $factory->afterCreating(App\Models\Products::class, function ($product, $faker) 
     $fake_uploaded_file = new \Illuminate\Http\UploadedFile($random_image, $faker->name());
     $product->setCover($fake_uploaded_file);
 });
+
+$factory->state(App\Models\Products::class, 'sold', function ($faker) {
+    return [
+        'status' => 'sold'
+    ];
+});
+
+$factory->state(App\Models\Products::class, 'available', function ($faker) {
+    return [
+        'status' => 'available'
+    ];
+});
+
+$factory->state(App\Models\Products::class, 'coming_soon', function ($faker) {
+    return [
+        'status' => 'coming_soon'
+    ];
+});
+
+$factory->state(App\Models\Products::class, 'ferrari', function ($faker) {
+    return [
+        'brand_id' => function() {
+            $brand = ProductsBrands::offset(1)->first();
+            return $brand->id;
+        },
+    ];
+});
