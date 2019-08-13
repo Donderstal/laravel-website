@@ -31,12 +31,12 @@ class CreateSpecificationRequest extends FormRequest
         $title = $this->post('title');
         // Will return a unique rule that will look for unique for the columns, title and product_id where
         // product id is the current product_id
-        $unique_rule_for_product_title = Rule::unique('products_specification')->where(function ($query) use ($product_id, $title) {
+        $unique_rule_for_product_and_title = Rule::unique('products_specification')->where(function ($query) use ($product_id, $title) {
             return $query->where('title', $title)
             ->where('product_id', $product_id);
         });
         return [
-            'title' => $unique_rule_for_product_title,
+            'title' => $unique_rule_for_product_and_title,
             'value' => 'required'
         ];
     }
