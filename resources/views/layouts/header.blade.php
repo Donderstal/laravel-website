@@ -7,7 +7,7 @@
         <div class="cell small-3 large-2 large-order-3 header-subsection">
 
             <p id="navbar__search-icon" class="header__search-icon-wrapper">
-             <img class="navbar__search-icon svg-injection" src="{{ asset('img/ui-icons/search-black.svg') }}">
+             <img class="navbar__search-icon svg-injection" src="{{ mix('img/ui-icons/search-black.svg') }}">
             </p>
 
             <div class="navbar__searchbar">
@@ -18,9 +18,9 @@
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             @if(Request::url() === 'http://www.gam.test' )
-                <img class="navbar__GAM-logo svg-injection" src="{{ asset('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
             @else 
-                <img class="navbar__GAM-logo svg-injection" src="{{ asset('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @endif
         </div>
         <div class="cell small-3 large-8 large-order-2 header__main-navigation">

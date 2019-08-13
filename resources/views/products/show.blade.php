@@ -17,11 +17,11 @@
 
                 <div class="product-page__image-header__button-wrapper">
                     <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
-                        <img class="button-arrow-left svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> 
+                        <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> 
                     </button>
                         <span> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
                     <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
-                        <img class="button-arrow-right svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}">  
+                        <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  
                     </button>
                 </div>     
 
@@ -60,9 +60,9 @@
                     <div class="cell small-4 end">
                         <div class="product-page__contact-small-font">Delen </div>
                         <div class="product-page__social-icons-wrapper"> 
-                            <img class="svg-injection" src="{{ asset('img/ui-icons/facebook.svg') }}">
-                            <img class="svg-injection" src="{{ asset('img/ui-icons/link.svg') }}"> 
-                            <img class="svg-injection" src="{{ asset('img/ui-icons/mail.svg') }}">
+                            <img class="svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
+                            <img class="svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
+                            <img class="svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="product-page__main-info__subsection">
-                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
+                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
                 </div>
 
             </div>
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="product-page__main-info__subsection">
-                    <p id="product-page__meer-opties" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
+                    <p id="product-page__meer-opties" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
                 </div>
             </div>
         </div>
@@ -215,7 +215,7 @@
                 </div>
 
                 <div class="cell small-12 product-page__main-info__subsection">
-                    <p id="product-page__meer-voorzien-van" class="product-page__all-specs-font--dark"><img class="product-page__all-specs-arrow--dark svg-injection" src="{{ asset('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
+                    <p id="product-page__meer-voorzien-van" class="product-page__all-specs-font--dark"><img class="product-page__all-specs-arrow--dark svg-injection" src="{{ mix('img/ui-icons/plus.svg') }}"> <u>ME</u>ER WEERGEVEN</p>
                 </div>
             </div>
         </div>
