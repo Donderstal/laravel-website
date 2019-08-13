@@ -4,12 +4,12 @@
     <section class="homepage">
 
         <div class="homepage__header-image-wrapper">
-            <div class="homepage__header-image">
+            <div class="homepage__header-image" style="background-image: url( {{ mix('/img/city-street.jpg')}} )">
                 @include('partials.search-bar')
                 <div class="homepage__uitgelicht-pointer-wrapper">
                     <p class="homepage__uitgelicht-pointer">
                         UITGELICHT
-                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
+                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ mix('img/ui-icons/arrows-down.svg')}}">
                     </p>
                 </div>
             </div>
