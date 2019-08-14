@@ -163,12 +163,11 @@
                     
                     <div class="cell small-12">
                         <label for="text-block">Vragen en opmerkingen:</label>
-                        <textarea id="text-block" name="text-block" placeholder="Vragen en opmerkingen">
-                        </textarea>
+                        <textarea id="text-block" name="text-block" placeholder="Vragen en opmerkingen"></textarea>
                     </div>
 
                     <div class="cell small-12">
-                        <input type="checkbox" id="voorwaarden" name="voorwaarden">
+                        <input required type="checkbox" id="voorwaarden" name="voorwaarden">
                         <label class="checkbox-label" for="voorwaarden">Ja, ik ga akkoord met de voorwaarden.</label>
                     </div>
 

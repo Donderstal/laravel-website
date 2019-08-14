@@ -33,6 +33,10 @@ $( document ).ready(function() {
         handleNavbarSearchRequest()
     })
 
+    if ( $('.product-card').length > 0 ) {
+        generateProductCardListeners()
+    }
+
     if ( $('#brands-search-button').length > 0 ) {
         document.getElementById('brands-search-button').addEventListener('click', () => {
             handleBrandSearchRequest()
@@ -90,6 +94,21 @@ $( document ).ready(function() {
 
 });
 
+function generateProductCardListeners() {
+    let productCards = document.getElementsByClassName('product-card')
+
+    for ( i = 0; i < productCards.length; i++) {
+        document.getElementsByClassName('product-card')[i].id = 'product-card' + 1
+
+        document.getElementsByClassName('product-card')[i].addEventListener('click', () => {
+            const eventTargetClass = $(event.target).attr('class')
+            const closeID = $('.' + eventTargetClass).closest('.product-card').attr('id')
+            window.location = $('#' + closeID).attr('href')
+            }
+        )
+    }
+}
+
 function postCallMeForm() {
     const userName = $('#bel-mij-terug__naam').val();
     const telephoneNum = $('#bel-mij-terug__tel').val();
@@ -132,25 +151,19 @@ function handleNewsLetterSubscription() {
 }
 
 function handleContactForm() {
-
-    var firstName = $('#first-name').val();
-    var lastName = $('#last-name').val();
-    var email = $('#email').val();
-    var telephone = $('#telephone').val();
-    var subject = $('#subject').val();
-    var textBlock = $('#text-block').val();
+    const dataObject = {
+        'first-name'    : $('#first-name').val(),
+        'last-name'     : $('#last-name').val(),
+        'subject'       : $('#subject').val(),
+        'email'         : $('#email').val(),
+        'telephone'     : $('#telephone').val(),
+        'text-block'    : $('#text-block').val()
+    }
 
     $.ajax({
         method: 'POST',
         url: '/emails/contact-form',
-        data: {
-          'first-name': firstName,
-          'last-name': lastName,
-          'subject' : subject,
-          'email':  email,
-          'telephone': telephone,
-          'text-block': textBlock
-        },
+        data: dataObject,
         success: function(response) {
             console.log(response)
         },
