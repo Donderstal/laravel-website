@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" media="all" rel="stylesheet" type="text/css">
+    <link href="{{ mix('css/app.css') }}" media="all" rel="stylesheet" type="text/css">
     <!-- Fontawesome for (temp) icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -24,5 +24,13 @@
 
     @yield('script_extra')
 </body>
-    <script src="/js/app.js"></script>
+    @include('partials.sentry-javascript-error-initialisation')
+    <script src="{{ mix('/js/app.js')}}"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+    </script>
 </html>

@@ -137,8 +137,8 @@ $topbar-height-lg: 130px;
     @include breakpoint (large up) {
         width: 390px;
         height: 60px;
-        top: $topbar-height-lg;
-        right: 5rem;
+        top: $topbar-height-lg * .75 ;
+        right: 20rem;
     }
 }
 
@@ -150,7 +150,10 @@ $topbar-height-lg: 130px;
 
 .navbar__searchbar__button {
     @extend .navbar-searchbar-font;
-    width: 150px;
-    height: 40px;
+    height: 40px;    
+    width: 80px;
+    @include breakpoint (large up) {
+         width: 150px;
+    }
 }
 

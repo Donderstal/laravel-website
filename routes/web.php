@@ -13,9 +13,7 @@
 
 use App\Facades\ImageUtil;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LandingPageController@index')->name('landing-page');
 
 Auth::routes([
     'register' => (App::environment() == 'local' ? true : false)
@@ -25,27 +23,22 @@ ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
     Route::get('/list', 'ProductsController@list')->name('list');
+    Route::post('/list', [
+        'uses' => 'ProductsController@action',
+        'as' => 'product.action'
+    ]);
     Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
+
+Route::post('/emails/post-call-me-form', 'EmailsController@callMeForm')->name('call-me-form');
+Route::post('/emails/newsletter-form', 'EmailsController@newsLetterForm')->name('newsletter-form');
+Route::post('/emails/contact-form', 'EmailsController@contactForm')->name('contact-form');
 
 Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
 Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    
 Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');    
 Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');    
 Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
-Route::get('search', 'SearchController@index')->name('search');
-
-
-// Paginas:
-
-// Home --> /home --> view('home')
-// Zoek resultaten --> ?? --> view('search-results')
-// Ons aanbod --> /aanbod --> view('aanbod)
-// Enkel Product --> /aanbod/product --> view('view-product')
-// Werkplaats --> /werkplaats --> view('general-info')->with(text)
-// Financiering --> /financiering --> view('general-info')->with(financiering-text)
-// Zoektocht --> /zoektocht --> view('general-info')->with(zoektocht-text)
-// Over ons --> /over-ons --> view('general-info')->with(over-ons-text)
-// Contact /contact --> view('general-info')->with(contact-text)
+Route::get('/search', 'SearchController@searchForRequest')->name('search');
 

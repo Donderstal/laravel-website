@@ -19,6 +19,7 @@
 @include('admin.layouts.footer')
 @include('admin.layouts.modal')
 
+@include('partials.sentry-javascript-error-initialisation')
 <script src="{{ mix('js/admin.js') }}"></script>
 <script>
     @stack('scripts')

@@ -11,7 +11,7 @@
         <div class="grid-x">
             <!-- Top image -->
             <div class="cell small-12 medium-9 medium-offset-3 general-info__top-image">
-                <img class="general-info__cover-photo" src="{{ asset('img/admin/city-photo.jpg') }}">
+                <img class="general-info__cover-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
             </div>
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
@@ -135,7 +135,7 @@
             @if ($title != 'Over ons')
             <div class="cell small-12 general-info__contact-form">
                 <h1>CONTACT FORMULIER</h1>
-                <form class="grid-x general-info__form">
+                <form id="general-info__form" class="grid-x general-info__form">
                     <div class="cell small-12 medium-6">
                         <label for="first-name">Voornaam:</label>
                         <input type="text" id="first-name" name="first-name" placeholder='Voornaam'>
@@ -153,7 +153,7 @@
 
                     <div class="cell small-12 medium-6">
                         <label for="telefoon">Telefoonnummer:</label>
-                        <input type="tel" id="telefoon" name="telefoon" placeholder="Telefoonnummer">
+                        <input type="tel" id="telephone" name="telephone" placeholder="Telefoonnummer">
                     </div>
                     
                     <div class="cell small-12 medium-6 end">
@@ -162,8 +162,8 @@
                     </div>
                     
                     <div class="cell small-12">
-                        <label for="opmerking">Vragen en opmerkingen:</label>
-                        <textarea id="opmerking" name="opmerking" placeholder="Vragen en opmerkingen">
+                        <label for="text-block">Vragen en opmerkingen:</label>
+                        <textarea id="text-block" name="text-block" placeholder="Vragen en opmerkingen">
                         </textarea>
                     </div>
 
@@ -173,7 +173,7 @@
                     </div>
 
                     <div class="cell small-12">
-                        <button class="general-info__form-button">VERZENDEN</button>
+                        <button type="button" id="general-info__form-button" class="general-info__form-button">VERZENDEN</button>
                     </div>
                     
                 </form>

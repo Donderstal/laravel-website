@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Model\ProductsBrands;
+use App\Models\ProductsBrands;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Products extends Model
@@ -32,7 +32,7 @@ class Products extends Model
         'color_id',
         'brand_id',
         'model_id',
-        'user_id',
+        'created_by',
         'status',
         'enable',
         'visits'
@@ -54,9 +54,32 @@ class Products extends Model
     protected static function boot()
     {
         parent::boot();
-        static::creating(function ($model) {
-            $model->created_by = Auth::id();
+        static::created(function ($model) {
+            // Add slug for product
+            $model->slug()->create([
+                'slug' => Str::slug($model->title),
+                'default' => true
+            ]);
         });
+    }
+
+    public function delete() {
+        try {
+            \DB::transaction(function()
+            {
+                $this->update(['cover_id' => null]);
+                $this->gallery()->delete();
+                $this->slug()->delete();
+                $this->options()->delete();
+                $this->specification()->delete();
+                $this->services()->delete();
+                throw new \Exception('problem');
+                parent::delete();
+            });
+        } catch (\Exception $e) {
+            flash_message('Could not delete this product for unknown error', 'error');
+
+        }
     }
 
     public function cover()
@@ -81,7 +104,12 @@ class Products extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'created_by', 'id');
+        $non_soft_deleted_user = $this->belongsTo(User::class, 'created_by', 'id');
+        if($non_soft_deleted_user) {
+            return $non_soft_deleted_user;
+        }
+
+        return $this->created_by;
     }
 
     public function setCover($resource)

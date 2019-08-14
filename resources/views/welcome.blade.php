@@ -4,19 +4,19 @@
     <section class="homepage">
 
         <div class="homepage__header-image-wrapper">
-            <div class="homepage__header-image">
+            <div class="homepage__header-image" style="background-image: url( {{ mix('img/city-street.jpg')}} )">
                 @include('partials.search-bar')
                 <div class="homepage__uitgelicht-pointer-wrapper">
                     <p class="homepage__uitgelicht-pointer">
                         UITGELICHT
-                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ asset('img/ui-icons/arrows-down.svg')}}">
+                        <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ mix('img/ui-icons/arrows-down.svg')}}">
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="grid-x homepage__main-content">
-            
+
             <div class="cell small-12 homepage__featured grid-x">
 
                 <div class="cell small-12">
@@ -24,20 +24,16 @@
                 </div>
 
                 <div class="cell small-12 homepage__featured-cars grid-x">
+                    @foreach($products as $indexKey => $product)
                     <div class="cell small-12 large-4">
                         @include('products.card')
                     </div>
-                    <div class="cell small-12 large-4">
-                        @include('products.card')
-                    </div>
-                    <div class="cell small-12 large-4">
-                        @include('products.card')
-                    </div>
+                    @endforeach
                 </div>
                 <div class="cell small-12 ">
                     <a class="homepage__our-products-button" href="{{ route('products.list') }}">ONS AANBOD BEKIJKEN</a>
                 </div>
-                
+
             </div>
 
             <div class="cell small-12 homepage__about-and-info">
@@ -48,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="cell small-12 grid-x homepage__contact-details-wrapper"> 
+                <div class="cell small-12 grid-x homepage__contact-details-wrapper">
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
                         <div class="cell small-1 medium-2 homepage__contact-details__left-div">
@@ -57,7 +53,7 @@
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
                             <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
                             <u>1</u>411 AR, Naarden </a></p>
-                        </div> 
+                        </div>
                     </div>
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
@@ -66,7 +62,7 @@
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
                             <p> <a class="contact-details__anchor"><u>0</u>35 - 694 4646</a></p>
-                        </div>      
+                        </div>
                     </div>
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
@@ -79,7 +75,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
         </div>
 

@@ -33,6 +33,8 @@
                         <td>
                             @if ($product->status == 'available')
                                 <span class="badge badge-success">Available</span>
+                            @elseif ($product->status == 'coming_soon')
+                                <span class="badge badge-success">Coming Soon</span>
                             @else
                                 <span class="badge badge-warning">Sold</span>
                             @endif
@@ -45,7 +47,7 @@
                             @endif
                         </td>
                         <td>
-                            {{ $product->user->name }}
+                            {{ isset($product->user) ? $product->user->name : 'User ' . $product->created_by . ' has been deleted' }}
                         </td>
                         <td>
                             {{ \Carbon\Carbon::parse($product->updated_at)->format('Y/m/d H:i') }}
