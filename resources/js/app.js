@@ -98,10 +98,10 @@ function generateProductCardListeners() {
     let productCards = document.getElementsByClassName('product-card')
 
     for ( i = 0; i < productCards.length; i++) {
-        document.getElementsByClassName('product-card')[i].id = 'product-card' + 1
+        document.getElementsByClassName('product-card')[i].id = 'product-card' + i
 
         document.getElementsByClassName('product-card')[i].addEventListener('click', () => {
-            const eventTargetClass = $(event.target).attr('class')
+            const eventTargetClass = $(event.target).attr('class').split(' ').pop()
             const closeID = $('.' + eventTargetClass).closest('.product-card').attr('id')
             window.location = $('#' + closeID).attr('href')
             }
