@@ -38,10 +38,11 @@
                     <p id="bel-mij-terug__product-name" class="product-page__main-subtitle-font">{{ $product->title }}</p>
                 </div>
 
+                @if($product->status !== 'sold')
                 <div class="product-page__main-info__subsection">
                     <p class="product-page__price-font">&euro; {{ number_format("$product->price",0,",",".") }}</p>
 
-                    <p class="product-page__VAT-font">BTW niet verrekenbaar</p>
+                    <p class="product-page__VAT-font"> BTW niet verrekenbaar</p>
                 </div>
 
                 <div class="grid-x product-page__main-info__subsection">
@@ -82,6 +83,28 @@
                     </div>
                     
                 </div>
+
+                @else 
+                <div class="grid-x product-page__main-info__subsection">
+                    <div class="cell small-12">
+                        <h2 class="footer__contact-header">Verkocht</h2>
+                    </div>
+
+                    <div class="cell small-12">
+                        <h3 class="product-page__main-subtitle-font">Interesse?</h3>
+                    </div>
+
+                    <div class="cell small-12">
+                        <p class="product-page__contact-small-font">Mocht u op zoek zijn naar een specifiek model, dan kunnen wij voor u op zoek gaan. Vul het formulier op de Zoekopdracht pagina in om van start te gaan.</p>
+                    </div>
+
+                    <div class="cell small-12 product-page__contact-large-font">
+                        <a href="{{ route('zoektocht') }}"><u>Na</u>ar Zoekopdracht</a>
+                    </div>
+
+                </div>
+
+                @endif
 
                 <div class="grid-x product-page__main-info__subsection">
                     <div class="cell small-6">
