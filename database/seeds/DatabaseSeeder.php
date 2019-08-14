@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $seed_classes = [
             UsersTableSeeder::class,
         ];
-        if( App::environment() === 'local' )
+        if( env('DB_DEV_SEED') === true )
         {
             $seed_classes[] = MasterProductsSeeder::class;
         }
