@@ -24,6 +24,7 @@
 
     @yield('script_extra')
 </body>
+    @include('partials.sentry-javascript-error-initialisation')
     <script src="{{ mix('/js/app.js')}}"></script>
     <script type="text/javascript">
         $.ajaxSetup({

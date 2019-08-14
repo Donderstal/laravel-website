@@ -63,6 +63,25 @@ class Products extends Model
         });
     }
 
+    public function delete() {
+        try {
+            \DB::transaction(function()
+            {
+                $this->update(['cover_id' => null]);
+                $this->gallery()->delete();
+                $this->slug()->delete();
+                $this->options()->delete();
+                $this->specification()->delete();
+                $this->services()->delete();
+                throw new \Exception('problem');
+                parent::delete();
+            });
+        } catch (\Exception $e) {
+            flash_message('Could not delete this product for unknown error', 'error');
+
+        }
+    }
+
     public function cover()
     {
         return $this->belongsTo(ProductsGallery::class, 'cover_id', 'id');
@@ -85,7 +104,12 @@ class Products extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'created_by', 'id');
+        $non_soft_deleted_user = $this->belongsTo(User::class, 'created_by', 'id');
+        if($non_soft_deleted_user) {
+            return $non_soft_deleted_user;
+        }
+
+        return $this->created_by;
     }
 
     public function setCover($resource)

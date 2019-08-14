@@ -7,6 +7,7 @@ use App\Http\Requests\CreateModelRequest;
 use App\Http\Requests\UpdateModelRequest;
 use App\Models\ProductsBrands;
 use App\Models\ProductsModels;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class ProductsModelsController extends Controller
@@ -46,15 +47,28 @@ class ProductsModelsController extends Controller
         return redirect()->route('admin.products.brands.models.index', $brand->id);
     }
 
+    private function guardDelete(ProductsModels $model)
+    {
+        $products_with_model = Products::where('model_id', $model->id)->count();
+        if ($products_with_model !== 0) {
+            flash_message('Could not delete this model, because it is currently in use in one or more products.', 'error');
+            return true;
+        }
+        return false;
+    }
+
     public function delete(ProductsBrands $brand, ProductsModels $model)
     {
+        if($this->guardDelete($model)){
+            return redirect()->route('admin.products.brands.models.index', $brand->id);
+        }
+
         try {
             $model->delete();
             flash_message('The model deleted successfully.', 'warning');
         } catch (\Exception $e) {
-            if ($e->errorInfo[1] == 1451) {
-                flash_message('Could not delete this model, because it is currently in use in one or more products.', 'error');
-            }
+            flash_message('Could not delete this model for unknown error', 'error');
+            // TODO implement an exception handel
         }
 
         return redirect()->route('admin.products.brands.models.index', $brand->id);
