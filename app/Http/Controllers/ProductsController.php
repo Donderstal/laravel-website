@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\ProductsBrands;
 use App\Models\ProductsSlugs;
-use App\Http\Controllers\Admin\Products\ProductsBrandsController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Request as ControllerRequest;
 
 class ProductsController extends Controller
@@ -95,12 +96,11 @@ class ProductsController extends Controller
         });
 
         // Brand filters
-        $product_brands_controller = new ProductsBrandsController;
-        $brands_list = $product_brands_controller->getBrandNamesArray();
-        $brands_lower = array_map('strtolower', $brands_list);
+        $brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
+        $brands_slugs = ProductsBrands::getAllSlugs($brands_list);
         $brand_to_filter = strtolower($request->brand);
 
-        $products_list_query->when(in_array($brand_to_filter, $brands_lower), function($q) use ($brand_to_filter) {
+        $products_list_query->when(in_array($brand_to_filter, $brands_slugs), function($q) use ($brand_to_filter) {
             return $q->whereHas('brand', function($query) use ($brand_to_filter) {
                 $query->where('slug', $brand_to_filter);
             });
@@ -114,9 +114,24 @@ class ProductsController extends Controller
 
         $products_list_query->paginate(config('site.products.paginate_count'));
 
+        $product_list_search_params = $request->toArray();
+
+        if ($request->status) {
+            $product_list_search_params['status'] = $request->status;
+        }
+
+        if ($request->brand) {
+            $product_list_search_params['brand'] = $request->brand;
+        }
+
+        $product_list_search_url = URL::full();
+
         return view('products.list')->with([
             'title' => 'Ons aanbod',
             'products' => $products_list_query->get(),
+            'product_list_search_params' => $product_list_search_params,
+            'product_list_search_url' => $product_list_search_url,
+            'selected_brand_slug' => $request->brand,
             'brands' => $brands_list
         ]);
     }

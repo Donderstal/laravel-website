@@ -22,6 +22,18 @@ class ProductsBrands extends Model
         'slug'
     ];
 
+    public static function getAllBrandsInOrderQuery() {
+        return self::orderBy('title', 'ASC');
+    }
+
+    public static function getAllSlugs(\Illuminate\Database\Eloquent\Collection $brands) {
+        return $brands->map([self::class, 'getSlug'])->toArray();
+    }
+
+    public static function getSlug(ProductsBrands $brand) {
+        return $brand->slug;
+    }
+
     protected static function boot()
     {
         parent::boot();

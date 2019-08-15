@@ -3,7 +3,13 @@
         <select id="search-select" class="search-bar__title">
             <option value="" disabled selected>Vind jouw merk</option>
             @foreach($brands as $indexKey => $brand)
-                <option class="search-bar__option" value="{{ strtolower($brand) }}">{{ $brand }}</option>
+                <option
+                    class="search-bar__option"
+                    value="{{ strtolower($brand->slug) }}"
+                    @if ($selected_brand_slug === $brand->slug)
+                        selected="true"
+                    @endif
+                    >{{ $brand->title }}</option>
             @endforeach
         </select>
         <img class="search-bar__icon svg-injection" src="{{ mix('img/ui-icons/list-arrows.svg')}}">
@@ -11,6 +17,8 @@
     <div class="cell small-0 medium-1">
     </div>
     <div class="cell small-12 medium-4 search-bar__right">
-        <button id="brands-search-button" class="search-bar__button">ZOEKEN</button>
+        <a href="{{ isset($product_list_search_url) ? $product_list_search_url : route('products.list', ['status' => 'aanbod']) }} ">
+            <button id="brands-search-button" class="search-bar__button">ZOEKEN</button>
+        </a>
     </div>
 </div>

@@ -16,7 +16,7 @@ class ProductsBrandsController extends Controller
     public function index()
     {
         return view('admin.products.brands')->with([
-            'brands' => $this->getBrandsName()
+            'brands' => $this->getBrandsInOrder()
         ]);
     }
 
@@ -36,7 +36,7 @@ class ProductsBrandsController extends Controller
     public function edit(ProductsBrands $brand)
     {
         return view('admin.products.brands')->with([
-            'brands' => $this->getBrandsName(),
+            'brands' => $this->getBrandsInOrder(),
             'brand' => $brand
         ]);
     }
@@ -92,17 +92,8 @@ class ProductsBrandsController extends Controller
         return redirect()->route('admin.products.brands.index');
     }
 
-    public function getBrandsName()
+    public function getBrandsInOrder()
     {
-        return ProductsBrands::orderBy('title', 'ASC')->get();
-    }
-
-    public function getBrandNamesArray() {
-        $brands = $this->getBrandsName();
-        $number_of_brands = count($brands);
-        for ( $i = 0; $i < $number_of_brands; $i++) {
-            $brands_list[] = $brands[$i]['title'];
-        }
-        return $brands_list;
+        return ProductsBrands::getAllBrandsInOrderQuery()->get();
     }
 }

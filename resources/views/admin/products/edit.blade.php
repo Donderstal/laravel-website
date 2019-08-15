@@ -128,6 +128,19 @@
                     ])
                     @endinput
                 </div>
+                <div class="col-4">
+                    @input([
+                        'type' => 'radio-group',
+                        'label' => 'Coming Soon',
+                        'name' => 'is_coming_soon',
+                        'value' => 0,
+                        'items' => [
+                            '1' => 'Yes',
+                            '0' => 'No',
+                        ],
+                    ])
+                    @endinput
+                </div>
             </div>
 
         </div>
@@ -157,9 +170,34 @@
 @stop
 
 @push('scripts-ready')
-        $('#brand_id').on('change', function () {
+          var cover_file_to_correct_state = function(is_coming_soon) {
+            var cover_file = $('#cover_file');
+            var label_cover_file = $('.control-label[for=cover_file]');
+            var label_cover_file_input = $('.custom-file-label[for=cover_file]');
+            if (is_coming_soon === '1') {
+                cover_file.prop('required', false);
+                cover_file.prop('disabled', true);
+                cover_file.prop('value', '');
+                label_cover_file.addClass('after_hidden');
+                label_cover_file_input.html('Default Coming Soon Image Used');
+            } else {
+                cover_file.prop('required', true);
+                cover_file.prop('disabled', false);
+                label_cover_file.removeClass('after_hidden');
+                label_cover_file_input.html('Choose file...');
+            }
+        };
+
+        cover_file_to_correct_state($('.active input[name=is_coming_soon]').val());
+        $('input[name=is_coming_soon]').on('change', function (event) {
+            console.log('here');
+            var is_coming_soon = this.value;
+            cover_file_to_correct_state(is_coming_soon);
+        });
+
+        var get_models = function(brand_title) {
             $.ajax({
-                url: '{{ route('admin.products.get_models') }}/' + $(this).val(),
+                url: '{{ route('admin.products.get_models') }}/' + brand_title,
                 type: 'GET',
                 dataType: 'json',
                 success: function (result) {
@@ -183,5 +221,8 @@
                     }
                 }
             });
+        };
+        $('#brand_id').on('change', function () {
+            get_models(this.value);
         });
 @endpush
