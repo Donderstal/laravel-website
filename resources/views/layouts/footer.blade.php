@@ -101,7 +101,7 @@
          <div class="cell small-12 large-6 footer__social-wrapper">
             <div >
                <p class="footer__social-title">Volg ons op:</p>
-               <p class="footer__social"><i class="fab fa-facebook-square"></i></p>
+               <p class="footer__social"><a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank"><i class="fab fa-facebook-square"></i></a></p>
             </div>
          </div>
 
