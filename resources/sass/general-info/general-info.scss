@@ -166,3 +166,8 @@
         width: 500px;        
     }
 }
+
+.general-info__opening-hours_type {
+    @extend .open-location-font;
+    color: map-get($global-palette, medium-grey);
+}

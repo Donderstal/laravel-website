@@ -98,19 +98,19 @@
                     <div class="cell small-12 medium-6"> 
                         <div class="footer__opening-hours"> 
                             <p class="footer__opening-hours__day"> Maandag t/m vrijdag </p>
-                            <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                            <p class="general-info__opening-hours_type"> Showroom & werkplaats </p>
                             <p class="footer__opening-hours__time"> 08:00 - 18:00 </p>
                         </div>
                         <div class="footer__opening-hours"> 
                             <p class="footer__opening-hours__day"> Zaterdag </p>
-                            <p class="footer__opening-hours__type"> Showroom </p>
+                            <p class="general-info__opening-hours_type"> Showroom </p>
                             <p class="footer__opening-hours__time"> 10:00 - 17:00 </p>
-                            <p class="footer__opening-hours__type"> Werkplaats </p>
+                            <p class="general-info__opening-hours_type"> Werkplaats </p>
                             <p class="footer__opening-hours__time"> Gesloten </p>
                         </div>
                         <div class="footer__opening-hours"> 
                             <p class="footer__opening-hours__day"> Zondag </p>
-                            <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                            <p class="general-info__opening-hours_type"> Showroom & werkplaats </p>
                             <p class="footer__opening-hours__time"> Gesloten </p>
                         </div>
                     </div>
