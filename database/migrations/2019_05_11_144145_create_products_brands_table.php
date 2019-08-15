@@ -16,6 +16,7 @@ class CreateProductsBrandsTable extends Migration
         Schema::create('products_brands', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
             $table->string('logo', 50)->nullable();
             $table->timestamps();
         });
