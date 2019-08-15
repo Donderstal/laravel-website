@@ -5,9 +5,7 @@
 
         <div class="grid-x grid-container">
 
-        @if( strpos(Request::url(), 'list') !== false)
             @include('partials.search-bar')
-        @endif
 
             <div class="cell small-12 grid-x ons-aanbod__title-bar">
                 <div class="cell small-12 medium-6">
@@ -17,11 +15,10 @@
                     </div>
                 </div>
 
-            @if( strpos(Request::url(), 'list') !== false)
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__sort-wrapper">
                         <span class="ons-aanbod__sort-text"> Sorteren op </span>
-                        <select id="ons-aanbod-sorter" class="ons-aanbod__sort-select">    
+                        <select id="ons-aanbod-sorter" class="ons-aanbod__sort-select">
                             <option value="" disabled="" selected="">Sorteer aanbod...</option>
                             <option value="bouwjaar">Bouwjaar</option>
                             <option value="prijs">Prijs</option>
@@ -30,7 +27,6 @@
                         </select>
                     </div>
                 </div>
-            @endif
             </div>
 
             <div id="products-wrapper" class="cell small-12 grid-x grid-margin-y">
@@ -39,21 +35,21 @@
                     @include('products.card')
                 </div>
                 @endforeach
-            </div> 
+            </div>
 
             <div class="ons-aanbod__nav-buttons__wrapper">
                 <div class="ons-aanbod__nav-buttons">
                     <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> </button>
-                </div> 
+                </div>
                 <div class="ons-aanbod__nav-buttons">
                     <button class="ons-aanbod__bottom-button--active"> 1 </button>
                     <button class="ons-aanbod__bottom-button"> 2 </button>
                     <button class="ons-aanbod__bottom-button"> 3 </button>
-                </div> 
+                </div>
                 <div class="ons-aanbod__nav-buttons">
                     <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  </button>
-                </div> 
-            </div> 
+                </div>
+            </div>
 
         </div>
 

@@ -114,14 +114,19 @@ class ProductsController extends Controller
 
         $products_list_query->paginate(config('site.products.paginate_count'));
 
-        $product_list_search_params = $request->toArray();
+        // This is the Query Params that will be added to the javascript
+        $product_list_search_query_params = $request->toArray();
+
+
+        // This is the path params that should be added to the javascript
+        $product_list_search_path_params = [];
 
         if ($request->status) {
-            $product_list_search_params['status'] = $request->status;
+            $product_list_search_path_params['status'] = $request->status;
         }
 
         if ($request->brand) {
-            $product_list_search_params['brand'] = $request->brand;
+            $product_list_search_path_params['brand'] = $request->brand;
         }
 
         $product_list_search_url = URL::full();
@@ -129,8 +134,8 @@ class ProductsController extends Controller
         return view('products.list')->with([
             'title' => 'Ons aanbod',
             'products' => $products_list_query->get(),
-            'product_list_search_params' => $product_list_search_params,
-            'product_list_search_url' => $product_list_search_url,
+            'product_list_search_path_params' => $product_list_search_path_params,
+            'product_list_search_query_params' => $product_list_search_query_params,
             'selected_brand_slug' => $request->brand,
             'brands' => $brands_list
         ]);
