@@ -22,12 +22,8 @@ Auth::routes([
 ImageUtil::routes();
 
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () {
-    Route::get('/list', 'ProductsController@list')->name('list');
-    Route::post('/list', [
-        'uses' => 'ProductsController@action',
-        'as' => 'product.action'
-    ]);
-    Route::get('/verkocht', 'ProductsController@verkocht')->name('verkocht');
+    Route::get('/', 'ProductsController@list')->name('listAll');
+    Route::get('{status}/{brand?}', 'ProductsController@list')->name('list')->where('status', 'aanbod|verkocht');
     Route::get('{slug}', 'ProductsController@show')->name('show');
 });
 

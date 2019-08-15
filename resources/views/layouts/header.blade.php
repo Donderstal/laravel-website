@@ -32,10 +32,10 @@
                     <a class="header__menu-anchor" href="/"> Home</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('products.list') }}"> Ons aanbod</a>
+                    <a class="header__menu-anchor" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('products.verkocht') }}">Verkocht</a>
+                    <a class="header__menu-anchor" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor" href="{{ route('werkplaats') }}">Werkplaats</a>

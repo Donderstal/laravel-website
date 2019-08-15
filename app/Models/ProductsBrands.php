@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\ProductsModels;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Support\Str;
 
 class ProductsBrands extends Model
 {
@@ -17,8 +18,18 @@ class ProductsBrands extends Model
 
     protected $fillable = [
         'title',
-        'logo'
+        'logo',
+        'slug'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            // Add slug for brand
+            $model->slug = Str::slug($model->title);
+        });
+    }
 
     public function models()
     {
