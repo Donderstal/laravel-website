@@ -272,3 +272,34 @@
     height: 100vh;
     overflow-y: hidden;
 }
+
+.product-gallery__counter, .product-page__ui-icon {
+    color: white;
+}
+
+.product-page__call-me__telephone-number {
+    @extend .product-page__contact-large-font;
+}
+
+.product-page__call-me__telephone-number:hover, 
+.product-page__call-me__button:hover,
+.product-page__all-specs-font:hover {
+    @extend %on-link-hover-dark;
+}
+
+.product-page__all-specs-font--dark:hover {
+    @extend %on-link-hover-light;
+}
+
+.product-page__ui-icon:hover {
+    cursor: pointer;
+
+    svg {
+        g {
+            stroke: map-get($global-palette, active);
+        }
+        path {
+            stroke: map-get($global-palette, active);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<div class="grid-y product-card ">
+<div class="grid-y product-card" href="{{ route( 'products.show', ['slug' => $product->slug->slug]) }}">
 
     <div class="cell small-7 product-card__image-wrapper">
         <img class="product-card__car-image" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">

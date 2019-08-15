@@ -7,7 +7,7 @@
             <div class="homepage__header-image" style="background-image: url( {{ mix('img/city-street.jpg')}} )">
                 @include('partials.search-bar')
                 <div class="homepage__uitgelicht-pointer-wrapper">
-                    <p class="homepage__uitgelicht-pointer">
+                    <p id="homepage__uitgelicht-pointer" class="homepage__uitgelicht-pointer">
                         UITGELICHT
                         <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ mix('img/ui-icons/arrows-down.svg')}}">
                     </p>
@@ -20,7 +20,7 @@
             <div class="cell small-12 homepage__featured grid-x">
 
                 <div class="cell small-12">
-                    <h2 class="homepage__featured-title">UITGELICHT</h2>
+                    <h2 id="homepage__featured-title" class="homepage__featured-title">UITGELICHT</h2>
                 </div>
 
                 <div class="cell small-12 homepage__featured-cars grid-x">
@@ -51,7 +51,7 @@
                             <p><i class="fas fa-map-marker-alt"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p><a class="contact-details__anchor"> Energiestraat 25B <br/>
+                            <p><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Energiestraat 25B <br/>
                             <u>1</u>411 AR, Naarden </a></p>
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                             <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p> <a class="contact-details__anchor"><u>0</u>35 - 694 4646</a></p>
-                        </div>
+                            <p> <a class="contact-details__anchor" target="_blank" href="tel:0356944646"><u>0</u>35 - 694 4646</a></p>
+                        </div>      
                     </div>
 
                     <div class="cell small-12 medium-4 grid-x homepage__contact-details">
@@ -70,7 +70,7 @@
                             <p><i class="far fa-envelope"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p><a class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
+                            <p><a href="mailto:info@gambv.nl" target="_blank" class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
                         </div>
                     </div>
 

@@ -6,7 +6,7 @@
                 <option class="search-bar__option" value="{{ strtolower($brand) }}">{{ $brand }}</option>
             @endforeach
         </select>
-        <img class="search-bar__icon svg-injection" src="{{ mix('img/ui-icons/list-arrows.svg')}}">
+        <span id="search-bar__icon" class="search-bar__icon-wrapper" ><img class="search-bar__icon svg-injection" src="{{ mix('img/ui-icons/list-arrows.svg')}}"></span>
     </div>
     <div class="cell small-0 medium-1">
     </div>

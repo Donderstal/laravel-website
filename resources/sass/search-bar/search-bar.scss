@@ -24,7 +24,7 @@
 .search-bar__title {
     @extend .search-bar-title-font;
     background-image: none;
-    max-width: 350px;
+    max-width: 400px;
     border: none;
     height: 100%;
     @include breakpoint (small) {
@@ -54,8 +54,9 @@
 
 .search-bar__icon {
     position: relative;
-        height: 44px !important;
-        width: 32px !important;
+    height: 44px !important;
+    width: 32px !important;
+    pointer-events: none;
 }
 
 .search-bar__button {
@@ -67,4 +68,11 @@
         height: 66px;
         width: 200px;
     }
+}
+
+.search-bar__icon-wrapper {
+    position: relative;
+    z-index: 5;
+    right: 2rem;
+    pointer-events: none;
 }

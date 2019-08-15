@@ -44,6 +44,18 @@
     text-decoration-color: map-get($global-palette, active);
 }
 
+%on-link-hover-dark {
+    @extend %red-underline;
+    cursor: pointer;    
+    color: white;
+}
+
+%on-link-hover-light {
+    @extend %red-underline;
+    cursor: pointer;    
+    color: map-get($global-palette, dark);
+}
+
 button {
     @extend .button-font;
     @extend %generic-border-radius;
