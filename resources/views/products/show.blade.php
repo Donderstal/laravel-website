@@ -13,7 +13,7 @@
         <div class="cell small-12 large-5 product-page__image-header">
             <div class="product-page__header-img-wrapper">
 
-                <img class="product-page__image-header__img" id="product-image" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+                <img class="product-page__image-header__img" id="product-image" src="{{ $product->cover ? route('image.action', ['cover', $product->cover->picture]) : mix(config('site.products.default_image_path')) }}">
 
                 <div class="product-page__image-header__button-wrapper">
                     <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 

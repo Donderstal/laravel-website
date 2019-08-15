@@ -35,6 +35,7 @@ class Products extends Model
         'created_by',
         'status',
         'enable',
+        'is_coming_soon',
         'visits'
     ];
 
@@ -153,4 +154,7 @@ class Products extends Model
         return $this->hasOne(ProductsSlugs::class, 'product_id', 'id')->where('default', true);
     }
 
+    public function isComingSoon() {
+        return $this->is_coming_soon;
+    }
 }

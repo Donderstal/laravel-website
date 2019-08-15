@@ -33,8 +33,6 @@
                         <td>
                             @if ($product->status == 'available')
                                 <span class="badge badge-success">Available</span>
-                            @elseif ($product->status == 'coming_soon')
-                                <span class="badge badge-success">Coming Soon</span>
                             @else
                                 <span class="badge badge-warning">Sold</span>
                             @endif

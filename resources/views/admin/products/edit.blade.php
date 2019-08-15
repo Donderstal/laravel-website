@@ -110,8 +110,7 @@
                         'value' => $product->status,
                         'items' => [
                             'available' => 'Available',
-                            'sold' => 'Sold',
-                            'coming_soon' => 'Coming Soon'
+                            'sold' => 'Sold'
                         ],
                     ])
                     @endinput

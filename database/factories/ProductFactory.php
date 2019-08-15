@@ -25,8 +25,9 @@ $factory->define(App\Models\Products::class, function (Faker $faker) {
             $brand = ProductsBrands::find($product['brand_id']);
             return $brand->models->first()->id;
         },
-        'status' => 'coming_soon',
-        'enable' => 1,
+        'status' => 'available',
+        'enable' => true,
+        'is_coming_soon' => false,
         'created_by' => function () {
             return factory(App\Models\User::class)->create()->id;
         }
@@ -34,12 +35,14 @@ $factory->define(App\Models\Products::class, function (Faker $faker) {
 });
 
 $factory->afterCreating(App\Models\Products::class, function ($product, $faker) {
-    $dir = '/tmp';
-    $width = 640;
-    $height = 480;
-    $random_image = $faker->image($dir, $width, $height, 'transport');
-    $fake_uploaded_file = new \Illuminate\Http\UploadedFile($random_image, $faker->name());
-    $product->setCover($fake_uploaded_file);
+    if (!$product->isComingSoon()) {
+        $dir = '/tmp';
+        $width = 640;
+        $height = 480;
+        $random_image = $faker->image($dir, $width, $height, 'transport');
+        $fake_uploaded_file = new \Illuminate\Http\UploadedFile($random_image, $faker->name());
+        $product->setCover($fake_uploaded_file);
+    }
 });
 
 $factory->state(App\Models\Products::class, 'sold', function ($faker) {
@@ -56,7 +59,7 @@ $factory->state(App\Models\Products::class, 'available', function ($faker) {
 
 $factory->state(App\Models\Products::class, 'coming_soon', function ($faker) {
     return [
-        'status' => 'coming_soon'
+        'is_coming_soon' => false
     ];
 });
 

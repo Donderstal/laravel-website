@@ -64,13 +64,6 @@ class ProductsController extends Controller
         $product->visits++;
         $product->save();
 
-        // get the cover from gallery array
-        $product->cover = (object)array_filter($product->gallery->toArray(), function ($item) use ($product) {
-            if ($item['id'] == $product->cover_id) {
-                return $product;
-            }
-        })[0];
-
         // get related products
         $related_products = Products::where('brand_id', $product->brand_id)
             ->where('model_id', $product->model_id)
@@ -90,7 +83,7 @@ class ProductsController extends Controller
     public function list(){
         $products = Products::with(['gallery', 'slug'])->get()
             ->where('status', 'available');
-            
+
         $product_brands_controller = new ProductsBrandsController;
         $brands_list = $product_brands_controller->getBrandNamesArray();
 

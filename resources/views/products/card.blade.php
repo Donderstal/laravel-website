@@ -1,7 +1,7 @@
 <div class="grid-y product-card ">
 
     <div class="cell small-7 product-card__image-wrapper">
-        <img class="product-card__car-image" src="{{ route('image.action', ['cover', $product->cover->picture]) }}">
+        <img class="product-card__car-image" src="{{ $product->cover ? route('image.action', ['cover', $product->cover->picture]) : mix(config('site.products.default_image_path')) }}">
     </div>
     <div class="cell small-3 grid-x product-card__top-text-row">
         <div class="cell small-12 grid-x">

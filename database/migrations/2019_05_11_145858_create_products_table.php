@@ -28,8 +28,9 @@ class CreateProductsTable extends Migration
             $table->bigInteger('model_id')->unsigned();
             $table->integer('visits')->default(0);
             $table->bigInteger('created_by')->unsigned();
-            $table->enum('status', ['available', 'sold', 'coming_soon'])->default('available');
+            $table->enum('status', ['available', 'sold'])->default('available');
             $table->boolean('enable')->default(true);
+            $table->boolean('is_coming_soon')->default(false);
             $table->timestamps();
 
             $table->foreign('color_id')

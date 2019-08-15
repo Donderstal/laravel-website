@@ -114,7 +114,7 @@ return [
             // file size of product images
             'file_size' => 10485760, // 10 MB
         ],
-
+        'default_image_path' => 'public/img/default-product-image.jpg',
         // Fuel types
         'fuel_types' => [
             'gasoline' => 'Gasoline',

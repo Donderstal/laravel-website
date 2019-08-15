@@ -27,13 +27,16 @@ class CreateProductRequest extends FormRequest
             'title' => 'required',
             'brand_id' => 'required|exists:products_brands,id',
             'model_id' => 'required|exists:products_models,id',
-            'cover_file' => 'required|max:' . config('site.products.image.file_size') . '|mimes:jpg,jpeg,png',
             'price' => 'required|numeric',
             'mileage' => 'required|numeric',
             'year' => 'required|numeric|min:1900|max:' . now()->format('Y'),
             'fuel' => 'required|in:' . implode(',',array_keys(config('site.products.fuel_types'))),
             'transmission' => 'required|in:' . implode(',',array_keys(config('site.products.transmission_types'))),
-            'color_id' => 'required|exists:products_colors,id'
+            'color_id' => 'required|exists:products_colors,id',
+            'cover_file' => 'max:' . config('site.products.image.file_size') . '|mimes:jpg,jpeg,png',
+            'is_coming_soon' => 'boolean',
+            'enable' => 'boolean'
+
         ];
     }
 }

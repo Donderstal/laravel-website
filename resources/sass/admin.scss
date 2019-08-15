@@ -32,6 +32,12 @@ $fa-font-path: "../fonts/font-awesome";
   }
 }
 
+// Util
+
+.after_hidden:after {
+    display: none;
+}
+
 // Avatar upload placeholder
 .avatar-upload {
   position: relative;
