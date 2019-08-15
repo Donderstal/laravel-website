@@ -303,21 +303,3 @@
         }
     }
 }
-
-.product-page__ui-icon--special {
-    svg {
-        g {
-            fill: #FFF
-        }
-    }
-}
-
-.product-page__ui-icon--special:hover {
-    cursor: pointer;
-
-    svg {
-        g {
-            fill: map-get($global-palette, active);
-        }
-    }
-}

@@ -7,7 +7,7 @@
             <div class="homepage__header-image" style="background-image: url( {{ mix('img/city-street.jpg')}} )">
                 @include('partials.search-bar')
                 <div class="homepage__uitgelicht-pointer-wrapper">
-                    <p class="homepage__uitgelicht-pointer">
+                    <p id="homepage__uitgelicht-pointer" class="homepage__uitgelicht-pointer">
                         UITGELICHT
                         <img class="homepage__uitgelicht-pointer__icon svg-injection" src="{{ mix('img/ui-icons/arrows-down.svg')}}">
                     </p>
@@ -20,7 +20,7 @@
             <div class="cell small-12 homepage__featured grid-x">
 
                 <div class="cell small-12">
-                    <h2 class="homepage__featured-title">UITGELICHT</h2>
+                    <h2 id="homepage__featured-title" class="homepage__featured-title">UITGELICHT</h2>
                 </div>
 
                 <div class="cell small-12 homepage__featured-cars grid-x">

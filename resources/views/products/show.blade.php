@@ -135,13 +135,13 @@
                 </div>
 
                 <div class="product-page__main-info__subsection">
-                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
+                    <p id="product-page__specificaties-bekijken" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
                 </div>
 
             </div>
         </div>
 
-        <div class="cell small-12 product-page__specificaties">
+        <div id="product-page__specificaties" class="cell small-12 product-page__specificaties">
             <div class="grid-x product-page__specificaties__inner">
                 <div class="cell small-12 product-page__specificaties__header"> 
                     <h1 class="product-page__main-header-dark-font">

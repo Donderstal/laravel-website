@@ -14,7 +14,7 @@ $( document ).ready(function() {
         SVGInjector(mySVGsToInject);
     }
 
-    // All event listeners are in this function
+    // General event listeners
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown()
         }
@@ -33,10 +33,18 @@ $( document ).ready(function() {
         handleNavbarSearchRequest()
     })
 
+    //for homepage
+    if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
+        document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {
+            scrollToElement('homepage__featured-title')
+        })
+    }
+    // for pages that show product cards
     if ( $('.product-card').length > 0 ) {
         generateProductCardListeners()
     }
 
+    // for pages that show the search bar
     if ( $('#brands-search-button').length > 0 ) {
         document.getElementById('brands-search-button').addEventListener('click', () => {
             handleBrandSearchRequest()
@@ -44,6 +52,7 @@ $( document ).ready(function() {
         )
     }
 
+    // for pages pages that show contact form (zoektoch and contact)
     if ( $('#general-info__form-button').length > 0 ) {
         document.getElementById('general-info__form-button').addEventListener('click', () => {
             handleContactForm()
@@ -51,7 +60,12 @@ $( document ).ready(function() {
         )
     }
 
+    // for product page
     if ( $('#product-page__meer-opties').length > 0 ) {
+
+        document.getElementById('product-page__specificaties-bekijken').addEventListener('click', () => {
+            scrollToElement('product-page__specificaties')
+        })
 
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
             showParentElement('opties')
@@ -85,6 +99,7 @@ $( document ).ready(function() {
 
     }
 
+    // for pages that have the sort functionality (ons aanbod and verkocht)
     if ( $('#ons-aanbod-sorter').length > 0 ) {
         document.getElementById('ons-aanbod-sorter').addEventListener('change', () => {
             handleSortRequest($('#ons-aanbod-sorter').val())
@@ -93,6 +108,12 @@ $( document ).ready(function() {
     }
 
 });
+
+function scrollToElement(elementId) {
+    $('html,body').animate({
+        scrollTop: $("#" + elementId).offset().top},
+        'slow');
+}
 
 function generateProductCardListeners() {
     let productCards = document.getElementsByClassName('product-card')
