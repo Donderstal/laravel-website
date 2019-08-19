@@ -1,6 +1,6 @@
 @if(Request::url() === 'http://www.gam.test' )
     <section class="header-home">
-@else 
+@else
     <section class="header-general">
 @endif
     <div class="top-bar grid-x">
@@ -11,15 +11,23 @@
             </p>
 
             <div class="navbar__searchbar">
-                <input id="navbar__searchbar-input" class="navbar__searchbar__input" placeholder="Zoeken..." type="text">
+                <input
+                    id="navbar__searchbar-input"
+                    class="navbar__searchbar__input"
+                    placeholder="Zoeken..."
+                    type="text"
+                    @if (isset($gamSearchState))
+                        value="{{ $gamSearchState['queryParams']['q'] ?? '' }}"
+                    @endif
+                    >
                 <button id="navbar__searchbar__button" class="navbar__searchbar__button">ZOEKEN</button>
             </div>
-            
+
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             @if(Request::url() === 'http://www.gam.test' )
                 <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
-            @else 
+            @else
                 <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @endif
         </div>
@@ -56,3 +64,11 @@
         </div>
     </div>
 </section>
+@push('scripts-ready')
+    $('#navbar__searchbar__button').on('click', function() {
+        window.gam.search.handleSearchRequest()
+    });
+    $('#navbar__searchbar-input').on('change', function() {
+        window.gam.search.actionUpdateQuery(this.value);
+    });
+@endpush

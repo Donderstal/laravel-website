@@ -107,6 +107,24 @@ return [
             ]
         ]
     ],
+    'sortables' => [
+        [
+            'slug' => 'bouwjaar',
+            'title' => 'Bouwjaar'
+        ],
+        [
+            'slug' => 'prijs',
+            'title' => 'Prijs'
+        ],
+        [
+            'slug' => 'merk',
+            'title' => 'Merk'
+        ],
+        [
+            'slug' => 'km-stand',
+            'title' => 'Km-stand'
+        ]
+    ],
 
     'products' => [
         // Product images

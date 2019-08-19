@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['gamSearchState' =>  $gamSearchState])
 
 @section('content')
     <section class="ons-aanbod-wrapper">
@@ -19,11 +19,15 @@
                     <div class="ons-aanbod__sort-wrapper">
                         <span class="ons-aanbod__sort-text"> Sorteren op </span>
                         <select id="ons-aanbod-sorter" class="ons-aanbod__sort-select">
-                            <option value="" disabled="" selected="">Sorteer aanbod...</option>
-                            <option value="bouwjaar">Bouwjaar</option>
-                            <option value="prijs">Prijs</option>
-                            <option value="merk">Merk</option>
-                            <option value="km-stand">Km-stand</option>
+                            <option value="" selected="">Sorteer aanbod...</option>
+                            @foreach(config('site.sortables') as $indexKey => $sortable)
+                                <option
+                                    value="{{ strtolower($sortable['slug']) }}"
+                                    @if ($sortable['slug'] === $selected_sortable_slug)
+                                        selected=""
+                                    @endif
+                                    >{{ $sortable['title'] }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -55,3 +59,9 @@
 
     </section>
 @endsection
+@push('scripts-ready')
+    $('#ons-aanbod-sorter').on('change', function() {
+        window.gam.search.actionUpdateSort(this.value);
+        window.gam.search.handleSearchRequest();
+    });
+@endpush

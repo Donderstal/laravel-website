@@ -1,7 +1,8 @@
 require('./bootstrap');
 
 var SVGInjector = require('svg-injector')
-
+window.gam = {};
+window.gam.search = {};
 
 
 $( document ).ready(function() {
@@ -20,16 +21,6 @@ $( document ).ready(function() {
         handleNewsLetterSubscription()
         }
     )
-    document.getElementById('navbar__searchbar__button').addEventListener('click', () => {
-        handleNavbarSearchRequest()
-    })
-
-    if ( $('#brands-search-button').length > 0 ) {
-        document.getElementById('brands-search-button').addEventListener('click', () => {
-            handleBrandSearchRequest()
-            }
-        )
-    }
 
     if ( $('#general-info__form-button').length > 0 ) {
         document.getElementById('general-info__form-button').addEventListener('click', () => {
@@ -71,14 +62,6 @@ $( document ).ready(function() {
         )
 
     }
-
-    if ( $('#ons-aanbod-sorter').length > 0 ) {
-        document.getElementById('ons-aanbod-sorter').addEventListener('change', () => {
-            handleSortRequest($('#ons-aanbod-sorter').val())
-            }
-        )
-    }
-
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
@@ -186,47 +169,59 @@ function toggleSearchbar() {
     $('#navbar__searchbar-input').focus();
 }
 
-// handle menu search bar request
-function handleNavbarSearchRequest() {
-    handleBrandSearchRequest('#navbar__searchbar-input');
+
+// Search Module
+window.gam.search.handleSearchRequest = function () {
+    searchURL = window.location.origin + '/autos';
+    if (window.gamSearchState) {
+        searchURL = window.gam.search.handelGamSearchState(searchURL, window.gamSearchState);
+    } else {
+        // default
+        searchURL += '/' + 'aanbod';
+    }
+    console.log(searchURL);
+
+    location.href = searchURL;
+
 }
 
-// Handle search request from search bar partials
-// Bring user to search page with query string based on option value
-function handleBrandSearchRequest(inputId = '#search-select') {
-    const searchRequest = $(inputId).val();
-    // If a user does not fill out the search query then will go to a search page with
-    // q as null. This is so that if someone does an analysis of the search queries they can see when
-    // a user clicks on the button without a selection or query.
-    if (!searchRequest) {
-        searchURL = window.location.origin + '/search?q='
+window.gam.search.handelGamSearchState = function(searchURL, gamSearchState) {
+    if (gamSearchState.pathParams.carState) {
+        searchURL += '/' + gamSearchState.pathParams.carState;
     } else {
-        searchURL = window.location.origin + '/search?q=' + searchRequest
+        searchURL += '/' + 'aanbod';
     }
 
-    location.href = searchURL
+    if (gamSearchState.pathParams.brand) {
+        searchURL += '/' + gamSearchState.pathParams.brand;
+    }
+
+    if (!jQuery.isEmptyObject(gamSearchState.queryParams)) {
+        serializedParams = $.param(gamSearchState.queryParams);
+        searchURL += '?' + serializedParams;
+    }
+    return searchURL;
 }
 
-// Handle sort selection from ons-aanbod page select element
-// Get value of select element and pass it to laravel
-function handleSortRequest(sortRequest) {
 
-    $.ajax({
-        method: 'POST',
-        url: '/autos/list',
-        data: { 'sort': sortRequest },
-        success: function(response) {
-            const HTMLresponse = $(response)
-            const newProductsPage= $(HTMLresponse[20].nextSibling.innerHTML)
-            const newSortedProducts = $(newProductsPage['0'].innerHTML)
+window.gam.search.actionUpdateBrand = function(brand) {
+    gamSearchState.pathParams.brand = brand;
+}
 
-            $('#products-wrapper').replaceWith($(newSortedProducts[4]))
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
+window.gam.search.actionUpdateSort = function(sortKey) {
+    if (!sortKey) {
+        delete gamSearchState.queryParams.order;
+    } else {
+        gamSearchState.queryParams.order = sortKey;
+    }
+}
 
+window.gam.search.actionUpdateQuery = function(query) {
+    if (!query) {
+        delete gamSearchState.queryParams.q;
+    } else {
+        gamSearchState.queryParams.q = query;
+    }
 }
 
 // The 'gallery' variable is an Array of Objects
@@ -327,11 +322,3 @@ function toggleLargeGalleryButtonDiv() {
     $('.product-page__image-header__button-wrapper')
         .toggleClass('large-gallery__button-div')
 }
-
-
-/* MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null */

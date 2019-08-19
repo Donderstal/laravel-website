@@ -13,7 +13,7 @@ class LandingPageController extends Controller
     public function index()
     {
         $three_products = Products::latest()->limit(3)->get();
-        $brands = ProductsBrands::getAllBrandsInOrderQuery();
+        $brands = ProductsBrands::getAllBrandsInOrderQuery()->get();
 
         return view('welcome')->with([
             'title' => 'Gooische Auto Mediair',

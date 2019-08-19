@@ -25,6 +25,10 @@
     @yield('script_extra')
 </body>
     @include('partials.sentry-javascript-error-initialisation')
+    @include('partials.gam-search-state')
+    <script type="text/javascript">
+        @stack('scripts')
+    </script>
     <script src="{{ mix('/js/app.js')}}"></script>
     <script type="text/javascript">
         $.ajaxSetup({
@@ -32,5 +36,9 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
             });
+        {!!  show_flash_message()  !!}
+        $(document).ready(function () {
+            @stack('scripts-ready')
+        });
     </script>
 </html>

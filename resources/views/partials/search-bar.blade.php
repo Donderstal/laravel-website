@@ -6,7 +6,7 @@
                 <option
                     class="search-bar__option"
                     value="{{ strtolower($brand->slug) }}"
-                    @if ($selected_brand_slug === $brand->slug)
+                    @if (isset($selected_brand_slug) && $selected_brand_slug === $brand->slug)
                         selected="true"
                     @endif
                     >{{ $brand->title }}</option>
@@ -21,5 +21,10 @@
     </div>
 </div>
 @push('scripts-ready')
-// add the binding for the change of the select and the click of the search
+    $('#brands-search-button').on('click', function() {
+        window.gam.search.handleSearchRequest()
+    });
+    $('#search-select').on('change', function() {
+        window.gam.search.actionUpdateBrand(this.value);
+    });
 @endpush
