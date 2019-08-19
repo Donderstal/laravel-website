@@ -27,10 +27,29 @@ class ContactFormRequest extends FormRequest
         'firstname'    => 'required',
         'lastname'   => 'required',
         'email'   => 'required|email',
-        'telephone'     => 'nullable|numeric',
+        'telephone' => 'nullable|regex:/^\+?\d*$/',
         'subject'     => 'required',
         'textblock'     => 'required',
         'voorwaarden'     => 'required|boolean'
       ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'firstname.required' => 'A first name is required',
+            'lastname.required'  => 'A last name is required',
+            'email.required'   => 'Email is Required',
+            'email.email'   => 'Email must be valid',
+            'telephone.regex'     => 'Not valid telephone number',
+            'subject.required'     => 'Subject is required',
+            'textblock.required'     => 'Message is required',
+            'voorwaarden.required'     => 'You have to aggree to the conditions'
+        ];
     }
 }

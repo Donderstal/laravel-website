@@ -76,7 +76,9 @@ class ProductsController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
+        $title = 'GAM - ' . $product->title . ' - ' . $product->brand()->first()->title . ' - ' . $product->model()->first()->title;
         return view('products.show')->with([
+            'title' => $title,
             'product' => $product,
             'related_products' => $related_products
         ]);
