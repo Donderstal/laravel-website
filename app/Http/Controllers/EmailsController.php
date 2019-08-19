@@ -26,20 +26,4 @@ class EmailsController extends Controller {
 
         return $res;
     }
-
-
-    public function contactForm() {
-        $res['first-name'] = $_POST['first-name'];
-        $res['last-name'] = $_POST['last-name'];
-        $res['telephone'] = $_POST['telephone'];
-        $res['email'] = $_POST['email'];
-        $res['subject'] = $_POST['subject'];
-        $res['text-block'] = $_POST['text-block'];
-
-        Mail::to('daan@abiggercircle.com')->send(new ContactFormEmail($res));
-
-        return $res;
-    }
-
-
 }

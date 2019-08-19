@@ -82,29 +82,4 @@ class GeneralInfoController extends Controller {
             ]
         ]);
     }
-
-    public function contact() {
-
-        return view('general-info')->with([
-            'title' => 'Contact',
-            'text1'  => '#1 Welcome to contact! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
-            'review1' => [
-                'title' => 'Pietje puk',
-                'car' => 'Maseratti',
-                'text' => 'Lorem ipsum wat een mooie auto. Lorem ipsum dolor amet auto. Auto ipsum wat een prachtig ding. Ipsum ipsum patreis deo et amorem Amoriumateram. Dolor sic amet GAM!'
-            ],
-            'review2' => [
-                'title' => 'Pietje puk2',
-                'car' => 'Maseratti',
-                'text' => 'Lorem ipsum wat een mooie auto. Lorem ipsum dolor amet auto. Auto ipsum wat een prachtig ding. Ipsum ipsum patreis deo et amorem Amoriumateram. Dolor sic amet GAM!'
-            ],
-            'review1' => [
-                'title' => 'Pietje puk3',
-                'car' => 'Maseratti',
-                'text' => 'Lorem ipsum wat een mooie auto. Lorem ipsum dolor amet auto. Auto ipsum wat een prachtig ding. Ipsum ipsum patreis deo et amorem Amoriumateram. Dolor sic amet GAM!'
-            ]
-
-        ]);
-    }
-
 }
