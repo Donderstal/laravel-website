@@ -26,11 +26,6 @@ $( document ).ready(function() {
         }
     )
 
-    document.getElementById('footer__newsletter__button').addEventListener('click', () => {
-        handleNewsLetterSubscription()
-        }
-    )
-
     //for homepage
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {
@@ -105,24 +100,6 @@ function postCallMeForm() {
         }
     })
 
-}
-
-function handleNewsLetterSubscription() {
-    const userEmail = $('#footer__newsletter__input').val() ;
-
-    $.ajax({
-        method: 'POST',
-        url: '/emails/newsletter-form',
-        data: {
-            'email'      : userEmail
-        },
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
 }
 
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page

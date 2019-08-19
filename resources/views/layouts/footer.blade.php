@@ -1,6 +1,6 @@
 <section class="footer">
 
-    <!-- 
+    <!--
        Contact and photo
     -->
     <div class="footer__top-wrapper">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="cell small-11">
                               <p  class="footer__contact-paragraph"><a href="tel:0356944646"  target="_blank"class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
-                        </div>      
+                        </div>
 
                      </div>
 
@@ -93,6 +93,7 @@
             </div>
 
             <div>
+                {{-- This will be the html from the mail chimp form --}}
                <p> <input id="footer__newsletter__input" class="footer__newsletter__input" type='email' placeholder="E-mail adres" >
                <button id="footer__newsletter__button" class="footer__newsletter__button" type="submit">AANMELDEN</button> </p>
             </div>
