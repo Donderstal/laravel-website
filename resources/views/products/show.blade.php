@@ -19,7 +19,7 @@
                     <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> 
                     </button>
-                        <span> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
+                        <span class="product-gallery__counter"> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
                     <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
                         <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  
                     </button>
@@ -38,10 +38,11 @@
                     <p id="bel-mij-terug__product-name" class="product-page__main-subtitle-font">{{ $product->title }}</p>
                 </div>
 
+                @if($product->status !== 'sold')
                 <div class="product-page__main-info__subsection">
                     <p class="product-page__price-font">&euro; {{ number_format("$product->price",0,",",".") }}</p>
 
-                    <p class="product-page__VAT-font">BTW niet verrekenbaar</p>
+                    <p class="product-page__VAT-font"> BTW niet verrekenbaar</p>
                 </div>
 
                 <div class="grid-x product-page__main-info__subsection">
@@ -53,16 +54,22 @@
                     <div class="cell small-6">
                         <div class="product-page__contact-small-font">Bellen </div>
                         <div>
-                            <a class="product-page__contact-large-font" href="tel:+31356944646"><u>0</u>35 694 4646</a> 
+                            <a class="product-page__call-me__telephone-number" target="_blank" href="tel:0356944646"><u>0</u>35 694 4646</a> 
                         </div>
                     </div>
 
                     <div class="cell small-4 end">
                         <div class="product-page__contact-small-font">Delen </div>
                         <div class="product-page__social-icons-wrapper"> 
-                            <img class="svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
-                            <img class="svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
-                            <img class="svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
+                            <span class="product-page__ui-icon">
+                                <img class="svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
+                            </span>
+                            <span class="product-page__ui-icon">
+                                <img class="svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
+                            </span>
+                            <span class="product-page__ui-icon--special">
+                                <img class="svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
+                            </span>
                         </div>
                     </div>
 
@@ -77,11 +84,33 @@
                         <input id="bel-mij-terug__tel" class="product-page__input" placeholder="Telefoon nr.">
                     </div>
 
-                    <div id="bel-mij-terug" class="cell small-12 product-page__contact-large-font">
+                    <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
                         <u>Bel</u> mij terug
                     </div>
                     
                 </div>
+
+                @else 
+                <div class="grid-x product-page__main-info__subsection">
+                    <div class="cell small-12">
+                        <h2 class="footer__contact-header">Verkocht</h2>
+                    </div>
+
+                    <div class="cell small-12">
+                        <h3 class="product-page__main-subtitle-font">Interesse?</h3>
+                    </div>
+
+                    <div class="cell small-12">
+                        <p class="product-page__contact-small-font">Mocht u op zoek zijn naar een specifiek model, dan kunnen wij voor u op zoek gaan. Vul het formulier op de Zoekopdracht pagina in om van start te gaan.</p>
+                    </div>
+
+                    <div class="cell small-12 product-page__contact-large-font">
+                        <a href="{{ route('zoektocht') }}"><u>Na</u>ar Zoekopdracht</a>
+                    </div>
+
+                </div>
+
+                @endif
 
                 <div class="grid-x product-page__main-info__subsection">
                     <div class="cell small-6">
@@ -106,13 +135,13 @@
                 </div>
 
                 <div class="product-page__main-info__subsection">
-                    <p class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
+                    <p id="product-page__specificaties-bekijken" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
                 </div>
 
             </div>
         </div>
 
-        <div class="cell small-12 product-page__specificaties">
+        <div id="product-page__specificaties" class="cell small-12 product-page__specificaties">
             <div class="grid-x product-page__specificaties__inner">
                 <div class="cell small-12 product-page__specificaties__header"> 
                     <h1 class="product-page__main-header-dark-font">
@@ -187,7 +216,7 @@
                               <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor"> <u>0</u>35 - 694 4646</a></p>
+                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>0</u>35 - 694 4646</a></p>
                         </div>      
 
                      </div>

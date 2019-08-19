@@ -6,7 +6,16 @@ window.gam.search = {};
 
 
 $( document ).ready(function() {
-    // All event listeners are in this function
+
+    // Elements to inject
+    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
+
+    if (mySVGsToInject) {
+        // Do the injection
+        SVGInjector(mySVGsToInject);
+    }
+
+    // General event listeners
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown()
         }
@@ -22,6 +31,18 @@ $( document ).ready(function() {
         }
     )
 
+    //for homepage
+    if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
+        document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {
+            scrollToElement('homepage__featured-title')
+        })
+    }
+    // for pages that show product cards
+    if ( $('.product-card').length > 0 ) {
+        generateProductCardListeners()
+    }
+
+    // for pages pages that show contact form (zoektoch and contact)
     if ( $('#general-info__form-button').length > 0 ) {
         document.getElementById('general-info__form-button').addEventListener('click', () => {
             handleContactForm()
@@ -29,7 +50,12 @@ $( document ).ready(function() {
         )
     }
 
+    // for product page
     if ( $('#product-page__meer-opties').length > 0 ) {
+
+        document.getElementById('product-page__specificaties-bekijken').addEventListener('click', () => {
+            scrollToElement('product-page__specificaties')
+        })
 
         document.getElementById('product-page__meer-opties').addEventListener('click', () => {
             showParentElement('opties')
@@ -62,17 +88,30 @@ $( document ).ready(function() {
         )
 
     }
-
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
-
-    if (mySVGsToInject) {
-        // Do the injection
-        SVGInjector(mySVGsToInject);
-    }
-
-
 });
+
+function scrollToElement(elementId) {
+    $('html,body').animate({
+        scrollTop: $("#" + elementId).offset().top},
+        'slow');
+}
+
+function generateProductCardListeners() {
+    let productCards = document.getElementsByClassName('product-card')
+
+    for ( i = 0; i < productCards.length; i++) {
+        document.getElementsByClassName('product-card')[i].id = 'product-card' + i
+
+        document.getElementsByClassName('product-card')[i].addEventListener('click', () => {
+            const eventTargetClass = $(event.target).attr('class').split(' ').pop()
+            const closeID = $('.' + eventTargetClass).closest('.product-card').attr('id')
+            window.location = $('#' + closeID).attr('href')
+            }
+        )
+    }
+}
 
 function postCallMeForm() {
     const userName = $('#bel-mij-terug__naam').val();
@@ -116,25 +155,19 @@ function handleNewsLetterSubscription() {
 }
 
 function handleContactForm() {
-
-    var firstName = $('#first-name').val();
-    var lastName = $('#last-name').val();
-    var email = $('#email').val();
-    var telephone = $('#telephone').val();
-    var subject = $('#subject').val();
-    var textBlock = $('#text-block').val();
+    const dataObject = {
+        'first-name'    : $('#first-name').val(),
+        'last-name'     : $('#last-name').val(),
+        'subject'       : $('#subject').val(),
+        'email'         : $('#email').val(),
+        'telephone'     : $('#telephone').val(),
+        'text-block'    : $('#text-block').val()
+    }
 
     $.ajax({
         method: 'POST',
         url: '/emails/contact-form',
-        data: {
-          'first-name': firstName,
-          'last-name': lastName,
-          'subject' : subject,
-          'email':  email,
-          'telephone': telephone,
-          'text-block': textBlock
-        },
+        data: dataObject,
         success: function(response) {
             console.log(response)
         },

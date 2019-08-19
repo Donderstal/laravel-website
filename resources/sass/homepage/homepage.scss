@@ -37,6 +37,10 @@
     }
 }
 
+.homepage__uitgelicht-pointer:hover {
+    @extend %on-link-hover-light;
+}
+
 .homepage__search-button {
     @extend %center-in-parent;
     display: block;
