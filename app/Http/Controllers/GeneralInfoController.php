@@ -38,9 +38,8 @@ class GeneralInfoController extends Controller {
 
     public function overOns() {
 
-        return view('general-info')->with([
+        return view('over-ons')->with([
             'title' => 'Over ons',
-            'text1'  => '#1 Welcome to over ons! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.',
             'reviews' => [
                 'review1' => [
                     'title' => 'Voornaam achternaam',
