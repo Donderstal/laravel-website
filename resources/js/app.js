@@ -37,18 +37,6 @@ $( document ).ready(function() {
             scrollToElement('homepage__featured-title')
         })
     }
-    // for pages that show product cards
-    if ( $('.product-card').length > 0 ) {
-        generateProductCardListeners()
-    }
-
-    // for pages pages that show contact form (zoektoch and contact)
-    if ( $('#general-info__form-button').length > 0 ) {
-        document.getElementById('general-info__form-button').addEventListener('click', () => {
-            handleContactForm()
-            }
-        )
-    }
 
     // for product page
     if ( $('#product-page__meer-opties').length > 0 ) {
@@ -88,29 +76,12 @@ $( document ).ready(function() {
         )
 
     }
-    // Elements to inject
-    var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 });
 
 function scrollToElement(elementId) {
     $('html,body').animate({
         scrollTop: $("#" + elementId).offset().top},
         'slow');
-}
-
-function generateProductCardListeners() {
-    let productCards = document.getElementsByClassName('product-card')
-
-    for ( i = 0; i < productCards.length; i++) {
-        document.getElementsByClassName('product-card')[i].id = 'product-card' + i
-
-        document.getElementsByClassName('product-card')[i].addEventListener('click', () => {
-            const eventTargetClass = $(event.target).attr('class').split(' ').pop()
-            const closeID = $('.' + eventTargetClass).closest('.product-card').attr('id')
-            window.location = $('#' + closeID).attr('href')
-            }
-        )
-    }
 }
 
 function postCallMeForm() {
@@ -145,29 +116,6 @@ function handleNewsLetterSubscription() {
         data: {
             'email'      : userEmail
         },
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-}
-
-function handleContactForm() {
-    const dataObject = {
-        'first-name'    : $('#first-name').val(),
-        'last-name'     : $('#last-name').val(),
-        'subject'       : $('#subject').val(),
-        'email'         : $('#email').val(),
-        'telephone'     : $('#telephone').val(),
-        'text-block'    : $('#text-block').val()
-    }
-
-    $.ajax({
-        method: 'POST',
-        url: '/emails/contact-form',
-        data: dataObject,
         success: function(response) {
             console.log(response)
         },

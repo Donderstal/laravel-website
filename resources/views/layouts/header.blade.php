@@ -58,7 +58,7 @@
                     <a class="header__menu-anchor" href="{{ route('over-ons') }}">Over ons</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('contact') }}">Contact</a>
+                    <a class="header__menu-anchor" href="{{ route('contact.create') }}">Contact</a>
                 </p>
             </div>
         </div>
