@@ -26,8 +26,6 @@ $brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
 $brands_slugs = ProductsBrands::getAllSlugs($brands_list);
 $brands_slug_regex = implode($brands_slugs, '|');
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () use ($brands_slug_regex){
-
-
     Route::get('/', 'ProductsController@list')->name('listAll');
     Route::get('{status}/{brand?}', 'ProductsController@list')->name('list')->where(['status' => 'aanbod|verkocht', 'brand' => $brands_slug_regex]);
     Route::get('{slug}', 'ProductsController@show')->name('show');
@@ -37,10 +35,8 @@ Route::post('/emails/post-call-me-form', 'EmailsController@callMeForm')->name('c
 Route::post('/emails/newsletter-form', 'EmailsController@newsLetterForm')->name('newsletter-form');
 Route::post('/emails/contact-form', 'EmailsController@contactForm')->name('contact-form');
 
-Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');    
-Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');    
-Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');    
-Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');    
-Route::get('/contact', 'GeneralInfoController@contact')->name('contact');    
-Route::get('/search', 'SearchController@searchForRequest')->name('search');
-
+Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');
+Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');
+Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');
+Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');
+Route::get('/contact', 'GeneralInfoController@contact')->name('contact');
