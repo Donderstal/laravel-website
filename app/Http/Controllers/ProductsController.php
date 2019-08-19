@@ -83,6 +83,58 @@ class ProductsController extends Controller
     }
 
     public function list(Request $request){
+        // This is the Query Params that will be added to the javascript
+        $product_list_search_query_params = $request->toArray();
+        // This will mean that every new search has no page
+        unset($product_list_search_query_params['page']);
+
+        // Remove the empty values
+        foreach($product_list_search_query_params as $key => $value) {
+            if (!$value) {
+                unset($product_list_search_query_params[$key]);
+            }
+        }
+
+        // This is the path params that should be added to the javascript
+        $product_list_search_path_params = [];
+
+        if ($request->status) {
+            $product_list_search_path_params['status'] = $request->status;
+        }
+
+        if ($request->brand) {
+            $product_list_search_path_params['brand'] = $request->brand;
+        }
+
+        $product_list_search_url = URL::full();
+
+        // Finial gamSearchState that will be passed to the javascript as json
+        $gamSearchState = [
+            'pathParams' => $product_list_search_path_params,
+            'queryParams' => $product_list_search_query_params
+        ];
+
+        $brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
+        $products_list_query = $this->buildQuery($request, $brands_list);
+
+        // Create the results
+        $products_results = $products_list_query->paginate(config('site.products.paginate_count'));
+        // Important to add the query params that the user is search for
+        $products_results->appends($product_list_search_query_params);
+
+        return view('products.list')->with([
+            'gamSearchState' => $gamSearchState,
+            'title' => 'Ons aanbod',
+            'products' => $products_results,
+            'product_list_search_path_params' => $product_list_search_path_params,
+            'product_list_search_query_params' => $product_list_search_query_params,
+            'selected_brand_slug' => $request->brand,
+            'brands' => $brands_list,
+            'selected_sortable_slug' => $request->order
+        ]);
+    }
+
+    private function buildQuery($request, $brands_list) {
         $products_list_query = Products::query();
         $products_list_query->with(['slug'])->where('enable', true);
 
@@ -96,7 +148,6 @@ class ProductsController extends Controller
         });
 
         // Brand filters
-        $brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
         $brands_slugs = ProductsBrands::getAllSlugs($brands_list);
         $brand_to_filter = strtolower($request->brand);
 
@@ -130,47 +181,6 @@ class ProductsController extends Controller
                 $query->orderBy('title', 'asc');
             });
         });
-
-        $products_list_query->paginate(config('site.products.paginate_count'));
-
-        // This is the Query Params that will be added to the javascript
-        $product_list_search_query_params = $request->toArray();
-
-        // Remove the empty values
-        foreach($product_list_search_query_params as $key => $value) {
-            if (!$value) {
-                unset($product_list_search_query_params[$key]);
-            }
-        }
-
-        // This is the path params that should be added to the javascript
-        $product_list_search_path_params = [];
-
-        if ($request->status) {
-            $product_list_search_path_params['status'] = $request->status;
-        }
-
-        if ($request->brand) {
-            $product_list_search_path_params['brand'] = $request->brand;
-        }
-
-        $product_list_search_url = URL::full();
-
-        // Finial gamSearchState that will be passed to the javascript as json
-        $gamSearchState = [
-            'pathParams' => $product_list_search_path_params,
-            'queryParams' => $product_list_search_query_params
-        ];
-
-        return view('products.list')->with([
-            'gamSearchState' => $gamSearchState,
-            'title' => 'Ons aanbod',
-            'products' => $products_list_query->get(),
-            'product_list_search_path_params' => $product_list_search_path_params,
-            'product_list_search_query_params' => $product_list_search_query_params,
-            'selected_brand_slug' => $request->brand,
-            'brands' => $brands_list,
-            'selected_sortable_slug' => $request->order
-        ]);
+        return $products_list_query;
     }
 }

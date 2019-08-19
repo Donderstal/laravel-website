@@ -11,7 +11,7 @@
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__header-wrapper">
                         <h2 class="ons-aanbod__header"> {{ strtoupper( $title ) }} </h2> <br class="hide-for-large" />
-                        <h2 class="ons-aanbod__header-number"> {{ count($products) }} </h2>
+                        <h2 class="ons-aanbod__header-number"> {{ $products->total() }} </h2>
                     </div>
                 </div>
 
@@ -41,20 +41,8 @@
                 @endforeach
             </div>
 
-            <div class="ons-aanbod__nav-buttons__wrapper">
-                <div class="ons-aanbod__nav-buttons">
-                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> </button>
-                </div>
-                <div class="ons-aanbod__nav-buttons">
-                    <button class="ons-aanbod__bottom-button--active"> 1 </button>
-                    <button class="ons-aanbod__bottom-button"> 2 </button>
-                    <button class="ons-aanbod__bottom-button"> 3 </button>
-                </div>
-                <div class="ons-aanbod__nav-buttons">
-                    <button class="ons-aanbod__bottom-button"> <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  </button>
-                </div>
-            </div>
-
+            {{-- bootstrap-4.blade.php is being used as the blade--}}
+            {{ $products->links() }}
         </div>
 
     </section>
