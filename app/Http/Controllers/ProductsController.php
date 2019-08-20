@@ -190,21 +190,17 @@ class ProductsController extends Controller
 
     public function store(CallMeFormRequest $request)
     {
-        /* $res = [];
-        $res['first-name'] = $request->firstname;
-        $res['last-name'] = $request->lastname;
-        $res['telephone'] = $request->telephone;
-        $res['email'] = $request->email;
-        $res['subject'] = $request->subject;
-        $res['text-block'] = $request->textblock;
 
+        $res['name'] = $request->name;
+        $res['telephone'] = $request->telephone;
+        $res['product_slug'] = $request->slug;
+
+        // Mail::to(config('site.adminemail'))->send(new CallMeEmail($res));
         $request->session()->flash('message', [
             'text' => 'Bedankt!',
             'type' => 'success'
         ]);
- */
-        //Mail::to($res['email'])->send(new ContactFormEmail($res));
-
+        
         return redirect()->route('products.show', ['slug' => $request->slug] );
     }
 

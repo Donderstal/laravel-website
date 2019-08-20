@@ -42,14 +42,14 @@ class ContactFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'firstname.required' => 'A first name is required',
-            'lastname.required'  => 'A last name is required',
-            'email.required'   => 'Email is Required',
-            'email.email'   => 'Email must be valid',
-            'telephone.regex'     => 'Not valid telephone number',
-            'subject.required'     => 'Subject is required',
-            'textblock.required'     => 'Message is required',
-            'voorwaarden.required'     => 'You have to aggree to the conditions'
+            'firstname.required' => 'Vul uw voornaam in',
+            'lastname.required'  => 'Vul uw achternaam in',
+            'email.required'   => 'Vul uw emailadres in',
+            'email.email'   => 'Vul een geldig email adres in',
+            'telephone.regex'     => 'Vul een geldig telefoonnummer in',
+            'subject.required'     => 'Vul een onderwerp in',
+            'textblock.required'     => 'Vul uw vragen en opmerkingen in',
+            'voorwaarden.required'     => 'U moet akkoord met de voorwaarden'
         ];
     }
 }
