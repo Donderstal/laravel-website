@@ -29,6 +29,6 @@ class ContactController extends Controller
 
         //Mail::to($res['email'])->send(new ContactFormEmail($res));
 
-        return redirect()->route('contact.create', $request->toArray());
+        return redirect()->route('contact.create');
     }
 }

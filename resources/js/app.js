@@ -65,41 +65,13 @@ $( document ).ready(function() {
             }
         )
 
-        document.getElementById('bel-mij-terug').addEventListener('click', () => {
-            postCallMeForm()
-            }
-        )
-
     }
-});
+})
 
 function scrollToElement(elementId) {
     $('html,body').animate({
         scrollTop: $("#" + elementId).offset().top},
         'slow');
-}
-
-function postCallMeForm() {
-    const userName = $('#bel-mij-terug__naam').val();
-    const telephoneNum = $('#bel-mij-terug__tel').val();
-    const productName = $('#bel-mij-terug__product-name').text() ;
-
-    $.ajax({
-        method: 'POST',
-        url: '/emails/post-call-me-form',
-        data: {
-            'name'      : userName,
-            'telephone' : telephoneNum,
-            'product'   : productName
-        },
-        success: function(response) {
-            console.log(response)
-        },
-        error: function(response) {
-            console.log(response)
-        }
-    })
-
 }
 
 // Used for opening up 'meer opties' and 'voorzien van' parts of product page
