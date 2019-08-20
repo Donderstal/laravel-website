@@ -29,6 +29,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('/', 'ProductsController@list')->name('listAll');
     Route::get('{status}/{brand?}', 'ProductsController@list')->name('list')->where(['status' => 'aanbod|verkocht', 'brand' => $brands_slug_regex]);
     Route::get('{slug}', 'ProductsController@show')->name('show');
+    Route::post('{slug}', 'ProductsController@store')->name('store');
 });
 
 Route::post('/emails/post-call-me-form', 'EmailsController@callMeForm')->name('call-me-form');
@@ -41,3 +42,4 @@ Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');
 // Contact
 Route::get('/contact', 'ContactController@create')->name('contact.create');
 Route::post('/contact', 'ContactController@store')->name('contact.store');
+

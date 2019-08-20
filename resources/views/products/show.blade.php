@@ -76,17 +76,38 @@
                     <div class="cell small-12 product-page__decorative-line">
                     </div>
 
-                    <div class="cell small-12 medium-6">
-                        <input id="bel-mij-terug__naam" class="product-page__input" placeholder="Naam">
+                    @if ($errors->any())
+                    <div class="cell small-12 alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
 
-                    <div class="cell small-12 medium-6">
-                        <input id="bel-mij-terug__tel" class="product-page__input" placeholder="Telefoon nr.">
-                    </div>
+                    @if (Session::has('message'))
+                    <div class="cell small-12 large-6 sent-message">
+                        <div class="message-{{ Session::get('message')['type'] }}">{{ Session::get('message')['text'] }}</div>
+                        </div>
+                    @endif
 
-                    <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
-                        <u>Bel</u> mij terug
-                    </div>
+                    @if (!Session::has('message'))
+                    <form class="grid-x cell small-12" action="{{ route('products.store', ['slug' => $slug_object->slug ]) }}" method="post">
+                    {{@csrf_field()}}
+                        <div class="cell small-12 medium-6">
+                            <input id="bel-mij-terug__naam" class="product-page__input {{$errors->has('name') ? 'is-invalid-input' : null}}" placeholder="Naam" name="name" required value="{{ old('name') }}">
+                        </div>
+
+                        <div class="cell small-12 medium-6">
+                            <input id="bel-mij-terug__tel" class="product-page__input {{$errors->has('telephone') ? 'is-invalid-input' : null}}" placeholder="Telefoon nr." name="telephone" required value="{{ old('telephone') }}">
+                        </div>
+
+                        <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
+                            <button><u>Bel</u> mij terug</button>
+                        </div>
+                    </form>
+                    @endif
                     
                 </div>
 

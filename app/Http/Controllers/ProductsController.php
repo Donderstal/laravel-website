@@ -7,6 +7,7 @@ use App\Models\ProductsBrands;
 use App\Models\ProductsSlugs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
+use App\Http\Requests\CallMeFormRequest;
 use Request as ControllerRequest;
 
 class ProductsController extends Controller
@@ -78,6 +79,7 @@ class ProductsController extends Controller
 
         $title = 'GAM - ' . $product->title . ' - ' . $product->brand()->first()->title . ' - ' . $product->model()->first()->title;
         return view('products.show')->with([
+            'slug_object' => $product->slug()->first(),
             'title' => $title,
             'product' => $product,
             'related_products' => $related_products
@@ -185,4 +187,25 @@ class ProductsController extends Controller
         });
         return $products_list_query;
     }
+
+    public function store(CallMeFormRequest $request)
+    {
+        /* $res = [];
+        $res['first-name'] = $request->firstname;
+        $res['last-name'] = $request->lastname;
+        $res['telephone'] = $request->telephone;
+        $res['email'] = $request->email;
+        $res['subject'] = $request->subject;
+        $res['text-block'] = $request->textblock;
+
+        $request->session()->flash('message', [
+            'text' => 'Bedankt!',
+            'type' => 'success'
+        ]);
+ */
+        //Mail::to($res['email'])->send(new ContactFormEmail($res));
+
+        return redirect()->route('products.show', ['slug' => $request->slug] );
+    }
+
 }
