@@ -7,7 +7,11 @@
         <div class="cell small-3 large-2 large-order-3 header-subsection">
 
             <p id="navbar__search-icon" class="header__search-icon-wrapper">
-             <img class="navbar__search-icon svg-injection" src="{{ mix('img/ui-icons/search-black.svg') }}">
+            @if( Route::currentRouteName() === 'landing-page' )
+                <img class="navbar__search-icon svg-injection" src="{{ mix('img/ui-icons/search.svg') }}">
+            @else
+                <img class="navbar__search-icon svg-injection" src="{{ mix('img/ui-icons/search-black.svg') }}">
+            @endif
             </p>
 
             <div class="navbar__searchbar">

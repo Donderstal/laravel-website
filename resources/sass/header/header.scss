@@ -79,6 +79,10 @@ $topbar-height-lg: 130px;
 .navbar__GAM-log-wrapper {
     max-height: 50px;
     max-width: 100px;
+    @include breakpoint(large up) {
+        max-height: 100px;
+        max-width: 210px;
+    }
 }   
 
 .header__dropdown-button:hover {
