@@ -303,3 +303,10 @@
         }
     }
 }
+.product-page__clickable-link:hover {
+    @extend %red-underline;
+}
+
+.product-page__call-me-button {
+    background-color: transparent !important;
+}

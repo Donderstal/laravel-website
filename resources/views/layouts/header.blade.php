@@ -47,28 +47,28 @@
             </div>
             <div class="header-main-menu">
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="/"> Home</a>
+                    <a class="header__menu-anchor {{ (Route::currentRouteName() === 'landing-page')  ? 'header__active-link' : '' }}" href="{{ route('landing-page') }}"> Home</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('werkplaats') }}">Werkplaats</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'werkplaats')? 'header__active-link' : '' }}" href="{{ route('werkplaats') }}">Werkplaats</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('financiering') }}">Financiering</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'financiering')? 'header__active-link' : '' }}" href="{{ route('financiering') }}">Financiering</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('zoektocht') }}">Zoektocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'zoektocht')? 'header__active-link' : '' }}" href="{{ route('zoektocht') }}">Zoektocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('over-ons') }}">Over ons</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'over-ons')? 'header__active-link' : '' }}" href="{{ route('over-ons') }}">Over ons</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor" href="{{ route('contact.create') }}">Contact</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'contact.create' || Route::currentRouteName() === 'contact.store ')? 'header__active-link' : '' }}" href="{{ route('contact.create') }}">Contact</a>
                 </p>
             </div>
         </div>

@@ -54,7 +54,7 @@
                     <div class="cell small-6">
                         <div class="product-page__contact-small-font">Bellen </div>
                         <div>
-                            <a class="product-page__call-me__telephone-number" target="_blank" href="tel:0356944646"><u>0</u>35 694 4646</a> 
+                            <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>0</u>35 694 4646</a> 
                         </div>
                     </div>
 
@@ -104,7 +104,7 @@
                         </div>
 
                         <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
-                            <button><u>Bel</u> mij terug</button>
+                            <button class="product-page__call-me-button product-page__clickable-link"><u>Bel</u> mij terug</button>
                         </div>
                     </form>
                     @endif
