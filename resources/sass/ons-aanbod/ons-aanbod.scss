@@ -50,12 +50,15 @@
 }
 
 .ons-aanbod__sort-wrapper {
-    @include breakpoint (small only) {
+    @include breakpoint (small up) {
         margin: 0 auto;
         max-width: 320px;
         padding-left: 1rem;
     }
-    @include breakpoint (medium up) {
+    @include breakpoint (medium only) {
+        padding-left: 0rem;
+    }
+    @include breakpoint (large up) {
         float: right;
         padding-right: 1rem;
     }

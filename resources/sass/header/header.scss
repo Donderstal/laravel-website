@@ -94,7 +94,7 @@ $topbar-height-lg: 130px;
     @include breakpoint(medium down) {
         z-index: 20;
         display: none;
-        height: 50vh;
+        height: 100vh !important;
         width: 100vw;
         position: absolute;
         top: $topbar-height-md;

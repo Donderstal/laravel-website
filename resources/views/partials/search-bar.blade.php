@@ -12,9 +12,13 @@
                     >{{ $brand->title }}</option>
             @endforeach
         </select>
-        <span id="search-bar__icon" class="search-bar__icon-wrapper" ><img class="search-bar__icon svg-injection" src="{{ mix('img/ui-icons/list-arrows.svg')}}"></span>
+        <span id="search-bar__icon" class="search-bar__icon-wrapper" >
+            <span class="search-bar__inner-wrapper">
+                <img class="search-bar__icon" src="{{ mix('img/ui-icons/list-arrows.svg')}}">
+            </span>
+        </span>
     </div>
-    <div class="cell small-0 medium-1">
+    <div class="cell search-bar__middle small-0 medium-1">
     </div>
     <div class="cell small-12 medium-4 search-bar__right">
         <button id="brands-search-button" class="search-bar__button">ZOEKEN</button>

@@ -66,15 +66,15 @@ button {
 input {
     color: map-get($global-palette, medium-grey);
     box-sizing: border-box;
+    max-width: 280px;   
     display: inline-block;
-    max-width: 340px;
     height: 56px !important;
     margin-right: 1.25rem;
     padding: 1rem !important;
     border-radius: 2px !important;
     @extend .form-placeholder-font;
-    @include breakpoint (large up) {
-        max-width: 280px;        
+    @include breakpoint (medium only) {
+        max-width: 340px;    
     }
 }
 
