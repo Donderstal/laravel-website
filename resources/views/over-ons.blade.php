@@ -15,7 +15,7 @@
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
                 <h1>{{ strtoupper($title) }}</h1>
-                <p>#1 Welcome to over ons! Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos. Justo sed integer suscipit sodales mauris accumsan vitae vestibulum a a penatibus eget vestibulum facilisis id. Parturient vestibulum malesuada condimentum suspendisse ut laoreet neque a hendrerit duis a sem a aptent aliquet potenti hac a parturient placerat diam nec a. Ad a amet.</p>
+                <p>Zoek je een nieuwe auto en het wow-gevoel van een goede aankoop? Bij de Gooische Auto Mediair vind je topklasse auto’s en service. Welk merk en type je ook zoekt, wij vinden de auto die het beste op je wensen aansluit. Nieuw of jong gebruikt: je hebt altijd een goede deal. De GAM staat voor exclusieve mobiliteit en de persoonlijke zorg die daarbij past. Wil je weten hoe je favoriete auto rijdt? Kom langs voor een proefrit.</p>
             </div>
 
             <div class="grid-x cell small-12 general-info__reviews">
