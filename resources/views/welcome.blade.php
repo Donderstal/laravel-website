@@ -33,7 +33,7 @@
                 <div class="cell small-12 ">
                     <a class="homepage__our-products-button" href="{{ route('products.list', ['status'=>'aanbod']) }}">ONS AANBOD BEKIJKEN</a>
                 </div>
-
+                
             </div>
 
             <div class="cell small-12 homepage__about-and-info">

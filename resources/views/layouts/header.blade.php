@@ -1,7 +1,7 @@
-@if(Request::url() === 'http://www.gam.test' )
-    <section class="header-home">
+@if( Route::currentRouteName() === 'landing-page' )
+    <section class="header header-home">
 @else
-    <section class="header-general">
+    <section class="header header-general">
 @endif
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
@@ -25,11 +25,17 @@
 
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
-            @if(Request::url() === 'http://www.gam.test' )
-                <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+            <div class="navbar__GAM-log-wrapper">
+            @if( Route::currentRouteName() === 'landing-page' )
+                <img class="logo-white navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+
+                <img class="logo-black navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @else
-                <img class="navbar__GAM-logo svg-injection" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="logo-white navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+
+                <img class="logo-black navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @endif
+            </div>
         </div>
         <div class="cell small-3 large-8 large-order-2 header__main-navigation">
             <div class="hide-for-large">
