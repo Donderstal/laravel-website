@@ -89,12 +89,16 @@ function toggleDropdown() {
     $('.header').toggleClass('dropdown-nav-active')
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
 
-    $('.logo-white')
-        .toggleClass('navbar__GAM-logo__do-not-display')
-        .toggleClass('navbar__GAM-logo')
-    $('.logo-black')
-        .toggleClass('navbar__GAM-logo__do-not-display')
-        .toggleClass('navbar__GAM-logo')
+    $('.search-bar').toggle('navbar__GAM-logo__do-not-display')
+
+    if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
+        $('.logo-white')
+            .toggleClass('navbar__GAM-logo__do-not-display')
+            .toggleClass('navbar__GAM-logo')
+        $('.logo-black')
+            .toggleClass('navbar__GAM-logo__do-not-display')
+            .toggleClass('navbar__GAM-logo')
+    }
 }
 
 // Toggle menu search bar
