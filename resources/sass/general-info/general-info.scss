@@ -160,10 +160,11 @@
 
 .general-info__contact__inner {
     @extend %center-in-parent; 
-    margin-top: -10rem;
+    
     margin-bottom: 5rem;
     @include breakpoint(medium up) {
-        width: 500px;        
+        width: 500px;      
+        margin-top: -10rem;  
     }
 }
 
