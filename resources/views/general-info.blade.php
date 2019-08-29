@@ -16,12 +16,12 @@
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
                 <h1>{{ strtoupper($title) }}</h1>
-                <p>{{ $text1 }}</p>
+                <p>{!! $text1 !!}</p>
             </div>
 
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">
-                <h2> OVER {{ strtoupper($title) }} </h2>
-                <p> {{ $text2 }} </p>
+                <h2> OVER {{ strtoupper($title2) }} </h2>
+                <p> {!! $text2 !!} </p>
             </div>
             <!-- Second subparagraph -->
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">

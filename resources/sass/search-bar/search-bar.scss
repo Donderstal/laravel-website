@@ -52,13 +52,6 @@
     align-items: center;
 }
 
-.search-bar__icon {
-    position: relative;
-    height: 44px !important;
-    width: 32px !important;
-    pointer-events: none;
-}
-
 .search-bar__button {
     @include breakpoint(small) {
         height: 35px;
@@ -71,8 +64,38 @@
 }
 
 .search-bar__icon-wrapper {
-    position: relative;
-    z-index: 5;
-    right: 2rem;
+    position: relative; 
+    width: 0; 
+    height: 0;
+}
+
+.search-bar__inner-wrapper {
+    position: absolute; 
+    width: 17px;
+    height: 25px;
+    right: .525rem;
+    top: -.575rem;
     pointer-events: none;
+    @include breakpoint (medium up) {
+        width: 32px;
+        height: 48px;
+        top: -1.0625rem;
+    }
+}
+
+.search-bar__icon {
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: none;
+}
+
+.search-bar__middle {
+    @include breakpoint (small down) {
+        display: none;
+    }
+}
+
+.search-bar__right {
+    margin-bottom: .5rem;
+    margin-top: .25rem;
 }

@@ -15,6 +15,7 @@ $( document ).ready(function() {
         SVGInjector(mySVGsToInject);
     }
 
+
     // General event listeners
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
         toggleDropdown()
@@ -88,9 +89,16 @@ function toggleDropdown() {
     $('.header').toggleClass('dropdown-nav-active')
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
 
-    $('.header').hasClass('dropdown-nav-active')
-    ? $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal.svg')
-    : $('.navbar__GAM-logo').attr('src', 'img/ui-icons/GAM-logo-minimal-white.svg')
+    $('.search-bar').toggle('navbar__GAM-logo__do-not-display')
+
+    if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
+        $('.logo-white')
+            .toggleClass('navbar__GAM-logo__do-not-display')
+            .toggleClass('navbar__GAM-logo')
+        $('.logo-black')
+            .toggleClass('navbar__GAM-logo__do-not-display')
+            .toggleClass('navbar__GAM-logo')
+    }
 }
 
 // Toggle menu search bar

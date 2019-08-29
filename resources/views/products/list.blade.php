@@ -18,6 +18,7 @@
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__sort-wrapper">
                         <span class="ons-aanbod__sort-text"> Sorteren op </span>
+                        <br class="show-for-medium-only" />
                         <select id="ons-aanbod-sorter" class="ons-aanbod__sort-select">
                             <option value="" selected="">Sorteer aanbod...</option>
                             @foreach(config('site.sortables') as $indexKey => $sortable)

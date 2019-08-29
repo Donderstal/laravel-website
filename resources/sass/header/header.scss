@@ -68,15 +68,22 @@ $topbar-height-lg: 130px;
 }
 
 .navbar__GAM-logo {
-    width: auto;
-    max-height: $topbar-height-sm * .8;
-    @include breakpoint(medium up) {
-        max-height: $topbar-height-md * .8;
-    }
-    @include breakpoint(large up) {
-        max-height: $topbar-height-lg * .8;
-    }
+    display: block;
+    margin: auto;
 }
+
+.navbar__GAM-logo__do-not-display {
+    display: none !important;
+}
+
+.navbar__GAM-log-wrapper {
+    max-height: 50px;
+    max-width: 100px;
+    @include breakpoint(large up) {
+        max-height: 100px;
+        max-width: 210px;
+    }
+}   
 
 .header__dropdown-button:hover {
     cursor: pointer;
@@ -87,7 +94,7 @@ $topbar-height-lg: 130px;
     @include breakpoint(medium down) {
         z-index: 20;
         display: none;
-        height: 50vh;
+        height: 100vh !important;
         width: 100vw;
         position: absolute;
         top: $topbar-height-md;
