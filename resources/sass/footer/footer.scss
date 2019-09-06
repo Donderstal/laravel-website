@@ -76,10 +76,14 @@
 
 .footer__bottom-copyright {
     @extend .bottom-copyright-font;
+    margin: 3rem 0 2rem;
     text-align: center;
     sub {
         display: inline-block; 
         margin: 0 auto;
+        a {
+            color: white;     
+        }
     }
 }
 
@@ -91,6 +95,9 @@
 
 .footer__newsletter__header, .footer__contact-header {
     @extend .main-header-font;
+    @extend %generic-padding;
+    margin: 1rem 0 2rem;
+
 }
 
 .footer__newsletter__button {
@@ -106,6 +113,11 @@
     justify-content: space-between;
     float: left;
     margin-bottom: 60px;
+}
+
+.fa-facebook-square, .fa-instagram {
+    color: white; 
+    font-size: 2rem;
 }
 
 .fa-facebook-square, .fa-instagram {
