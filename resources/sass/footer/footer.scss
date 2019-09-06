@@ -109,19 +109,10 @@
 }
 
 .fa-facebook-square, .fa-instagram {
+    color: white; 
     font-size: 2rem;
 }
 
 .footer__social-title {
     @extend .homepage-subtitle-font;
-}
-
-.footer__social-wrapper {
-    @include breakpoint (large up) {
-        display: flex;
-        align-items: center;
-        div {
-            margin: 0 auto;
-        }
-     }
 }

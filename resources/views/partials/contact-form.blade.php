@@ -49,7 +49,7 @@
 
             <div class="cell small-12">
                 <input required type="checkbox" id="voorwaarden" name="voorwaarden" class="{{$errors->has('voorwaarden') ? 'is-invalid-input' : null}}" required value="1" {{ old('voorwaarden') == 1 ? 'checked' : null}}>
-                <label class="checkbox-label" for="voorwaarden" >Ja, ik ga akkoord met de voorwaarden.</label>
+                <label class="checkbox-label" for="voorwaarden" >Ja, ik ga akkoord met de</label> <a class="checkbox-label" id="voorwaarden_file" target="_blank"href="{{ URL::to('resources/Privacy_en_Cookie_Statement_GAM.pdf') }}">voorwaarden. </a>
             </div>
 
             <div class="cell small-12">

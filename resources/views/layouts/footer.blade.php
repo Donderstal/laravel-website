@@ -46,6 +46,13 @@
                         </div>
 
                      </div>
+
+                     <div class="cell small-12 footer__social-wrapper">
+                        <div >
+                           <p class="footer__social-title">Volg ons op:</p>
+                           <p class="footer__social"><a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank"><i class="fab fa-facebook-square"></i></a></p>
+                        </div>
+                     </div>
                   </div>
 
                <!--- Opening hours --->
@@ -73,43 +80,15 @@
 
             <!-- photo with logo -->
             <div class="cell small-12 large-6 footer__photo">
-
-                  <img class="footer__photo-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
+               <img class="footer__photo-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
             </div>
+
+            <div class="cell small-12 footer__bottom-copyright">
+               <sub>Copyright 2019 Gooische Auto Mediair</sub>
+            </div>
+
          </div>
 
       </div>
-
-    <!--
-       Newsletter and social
-    -->
-   <div class="footer__bottom-wrapper">
-      <div class="grid-x footer__newsletter-and-social">
-
-         <div class="cell small-12 large-6">
-            <div>
-               <h2 class="footer__newsletter__header">NIEUWSBRIEF</h2>
-               <p class="footer__newsletter__copy">Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.</p>
-            </div>
-
-            <div>
-                {{-- This will be the html from the mail chimp form --}}
-               <p> <input id="footer__newsletter__input" class="footer__newsletter__input" type='email' placeholder="E-mail adres" >
-               <button id="footer__newsletter__button" class="footer__newsletter__button" type="submit">AANMELDEN</button> </p>
-            </div>
-         </div>
-
-         <div class="cell small-12 large-6 footer__social-wrapper">
-            <div >
-               <p class="footer__social-title">Volg ons op:</p>
-               <p class="footer__social"><a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank"><i class="fab fa-facebook-square"></i></a></p>
-            </div>
-         </div>
-
-         <div class="cell small-12 footer__bottom-copyright">
-            <sub>Copyright 2019 Gooische Auto Mediair</sub>
-         </div>
-      </div>
-   </div>
 
 </section>
