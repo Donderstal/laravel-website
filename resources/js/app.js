@@ -27,6 +27,11 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementsByClassName('navbar__GAM-logo')[0].addEventListener('click', () => {
+            location.href = '/'
+        }
+    )
+
     //for homepage
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {

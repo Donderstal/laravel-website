@@ -15,7 +15,7 @@
     @yield('head_extra')
 
 </head>
-<body>
+<body style="margin: 0 !important;">
     @include('layouts.header')
 
     @yield('content')
