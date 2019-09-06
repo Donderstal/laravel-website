@@ -40,7 +40,7 @@
                 <div class="homepage__about">
                     <h2 class="homepage__about-title">GOOISCHE AUTO MEDIAIR</h2>
                     <div>
-                    Adipiscing vestibulum molestie eros suspendisse habitant ullamcorper scelerisque volutpat dictumst adipiscing in accumsan iaculis vivamus parturient dis. Mus dictumst non congue condimentum curabitur mi vel ridiculus sem suspendisse senectus a convallis nostra condimentum tincidunt ac auctor orci nec ligula.
+                    Persoonlijke service, aandacht, maatwerk en vooral veel liefde voor auto’s. Dat is de Gooische Auto Mediair. We zoeken, leveren en onderhouden auto’s van alle premiummerken voor klanten in heel Nederland. Dit doen wij met enorm veel passie en plezier en veel tevreden klanten als resultaat.
                     </div>
                 </div>
 

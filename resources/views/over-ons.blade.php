@@ -15,7 +15,7 @@
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
                 <h1>{{ strtoupper($title) }}</h1>
-                <p>Zoek je een nieuwe auto en het wow-gevoel van een goede aankoop? Bij de Gooische Auto Mediair vind je topklasse auto’s en service. Welk merk en type je ook zoekt, wij vinden de auto die het beste op je wensen aansluit. Nieuw of jong gebruikt: je hebt altijd een goede deal. De GAM staat voor exclusieve mobiliteit en de persoonlijke zorg die daarbij past. Wil je weten hoe je favoriete auto rijdt? Kom langs voor een proefrit.</p>
+                <p>Na verschillende dealerschappen hebben Erik Keizer en Pilter Groeneveld zich vanaf 2006 gespecialiseerd in de import en verkoop van verschillende automerken. Van Audi, BMW, Mercedes en Volkswagen tot Volvo. Dit doen wij met vakkundige collega’s die niet alleen graag aan auto’s, maar ook aan hun kennis sleutelen. Vanuit onze showroom en werkplaats in Naarden tot de beste auto-importeurs in Nederland.</p>
             </div>
 
             <div class="grid-x cell small-12 general-info__reviews">
