@@ -41,3 +41,6 @@ Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');
 Route::get('/contact', 'ContactController@create')->name('contact.create');
 Route::post('/contact', 'ContactController@store')->name('contact.store');
 
+//View privacy statement
+Route::get('/privacy_statement', 'PrivacyStatementController@showPDF')->name('layouts.privacy_statement');
+

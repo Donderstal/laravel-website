@@ -1,6 +1,4 @@
 <div style="align:center">
-    Bruh!!
-    <sub>Emails bruh</sub>
     <p> 
         Onderwerp: {{ $subject }}
     </p>
