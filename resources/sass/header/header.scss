@@ -17,6 +17,10 @@ $topbar-height-lg: 130px;
     }
 }
 
+.clickable__logo:hover {
+    cursor: pointer;
+}
+
 .header-home {
     background-color: rgba(2,40,53,0.15);
     position: relative;
@@ -70,6 +74,10 @@ $topbar-height-lg: 130px;
 .navbar__GAM-logo {
     display: block;
     margin: auto;
+}
+
+.navbar__GAM-logo:hover {
+    cursor: pointer;
 }
 
 .navbar__GAM-logo__do-not-display {

@@ -28,7 +28,7 @@ $( document ).ready(function() {
     )
 
     document.getElementsByClassName('navbar__GAM-logo')[0].addEventListener('click', () => {
-            location.href = '/'
+        location.href = '/'
         }
     )
 
