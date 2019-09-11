@@ -5,7 +5,11 @@
     </div>
     <div class="cell small-3 grid-x product-card__top-text-row">
         <div class="cell small-12 grid-x">
-            <div class="cell small-8 product-card__car-name">{{ $product['title'] }} </div>
+            <div class="cell small-8 product-card__car-name">
+                <span id="product-car__car-name--ruler">
+                {{ $product['title'] }}
+                </span>
+            </div>
             <div class="cell small-4 product-card__car-price"> 
                 @if ( $product['status'] === 'sold' ) 
                     Verkocht!
