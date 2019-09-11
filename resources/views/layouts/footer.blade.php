@@ -53,8 +53,8 @@
                               <a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank">
                                  <i class="fab fa-facebook-square"></i>
                               </a>
-                              <a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank">
-                                 <i class="fab fa-instagram-square"></i>
+                              <a href="https://www.instagram.com/gooischeautomediair/" target="_blank">
+                                 <i class="fab fa-instagram"></i>
                               </a>
                            </p>
                         </div>
