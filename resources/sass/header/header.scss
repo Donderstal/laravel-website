@@ -9,7 +9,7 @@ $topbar-height-lg: 130px;
     color: $white;
     background-color: transparent;
     @include breakpoint(medium up) {
-        margin: 0 auto 2rem;
+        margin: 0 auto;
         height: $topbar-height-md;
     }
     @include breakpoint(large up) {
