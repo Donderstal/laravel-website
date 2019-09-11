@@ -95,11 +95,11 @@
                     @if (!Session::has('message'))
                     <form class="grid-x cell small-12" action="{{ route('products.store', ['slug' => $slug_object->slug ]) }}" method="post">
                     {{@csrf_field()}}
-                        <div class="cell small-12 medium-6">
+                        <div class="cell small-12 medium-6 product-page__input-div">
                             <input id="bel-mij-terug__naam" class="product-page__input {{$errors->has('name') ? 'is-invalid-input' : null}}" placeholder="Naam" name="name" required value="{{ old('name') }}">
                         </div>
 
-                        <div class="cell small-12 medium-6">
+                        <div class="cell small-12 medium-6 product-page__input-div">
                             <input id="bel-mij-terug__tel" class="product-page__input {{$errors->has('telephone') ? 'is-invalid-input' : null}}" placeholder="Telefoon nr." name="telephone" required value="{{ old('telephone') }}">
                         </div>
 

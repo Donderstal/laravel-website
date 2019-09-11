@@ -28,11 +28,8 @@
 .product-page__main-info__inner, {
     @extend %generic-padding;
     @extend %center-in-parent;
-    @include breakpoint (medium) {
-        max-width: 640px;
-    }
     @include breakpoint (medium up) {
-        max-width: 420px;
+        max-width: 520px;
     }
 }
 
@@ -52,9 +49,9 @@
     @include breakpoint (medium down) {
         margin-bottom: -10rem;           
     }  
-    @include breakpoint (large up) {
-        top: 0;
-        padding-top: 0;        
+    @include breakpoint (medium up) {
+        padding-top: 7rem;     
+        top: -16rem;
     }    
     @include breakpoint (large up) {
         padding-left: 10rem;
@@ -126,6 +123,12 @@
 .product-page__social-icons-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.product-page__input-div {
+    @include breakpoint(medium) {
+        padding-right: 2rem;
+    }
 }
 
 .product-page__input {
@@ -274,6 +277,8 @@
 
 .product-gallery__counter, .product-page__ui-icon {
     color: white;
+    top: 1.125rem;
+    position: relative;
 }
 
 .product-page__call-me__telephone-number {
