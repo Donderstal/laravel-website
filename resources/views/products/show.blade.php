@@ -54,7 +54,7 @@
                     <div class="cell small-6">
                         <div class="product-page__contact-small-font">Bellen </div>
                         <div>
-                            <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>0</u>35 694 4646</a> 
+                            <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>03</u>5 694 4646</a> 
                         </div>
                     </div>
 
@@ -237,7 +237,7 @@
                               <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>0</u>35 - 694 4646</a></p>
+                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>03</u>5 - 694 4646</a></p>
                         </div>      
 
                      </div>

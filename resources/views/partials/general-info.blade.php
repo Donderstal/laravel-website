@@ -9,7 +9,7 @@
                             </div>
                             <div class="cell small-11">
                                 <p><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Energiestraat 25B <br/>
-                                <u>1</u>411 AR, Naarden </a></p>
+                                <u>14</u>11 AR, Naarden </a></p>
                             </div>
 
                         </div>
@@ -19,7 +19,7 @@
                                 <p><i class="fas fa-phone"></i></p>
                             </div>
                             <div class="cell small-11">
-                                <p><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>0</u>35 - 694 4646</a></p>
+                                <p><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>03</u>5 - 694 4646</a></p>
                             </div>
 
                         </div>
@@ -30,7 +30,7 @@
                                 <p><i class="far fa-envelope"></i></p>
                             </div>
                             <div class="cell small-11">
-                                <p><a class="contact-details__anchor" href="mailto:info@gambv.nl" target="_blank" > <u>i</u>nfo@gambv.nl</a></p>
+                                <p><a class="contact-details__anchor" href="mailto:info@gambv.nl" target="_blank" > <u>in</u>fo@gambv.nl</a></p>
                             </div>
 
                         </div>
