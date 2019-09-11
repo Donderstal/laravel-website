@@ -39,26 +39,31 @@
                 </div>
 
                 @if($product->status !== 'sold')
-                <div class="product-page__main-info__subsection">
-                    <p class="product-page__price-font">&euro; {{ number_format("$product->price",0,",",".") }}</p>
-
+                <div class="product-page__main-info__price-subsection">
+                    <p class="product-page__price-font">
+                        @if ( $product['status'] === 'sold' ) 
+                            Verkocht!
+                        @else
+                            &euro; {{ number_format("$product->price",0,",",".") }} 
+                        @endif    
+                    </p>
                     <p class="product-page__VAT-font"> BTW niet verrekenbaar</p>
                 </div>
 
-                <div class="grid-x product-page__main-info__subsection">
+                <div class="grid-x product-page__contact-details__subsection">
 
                     <div class="cell small-12">
                         <h3 class="product-page__main-subtitle-font">Interesse?</h3>                        
                     </div>
 
-                    <div class="cell small-6">
+                    <div class="cell small-6 product-page__contact-inner-div">
                         <div class="product-page__contact-small-font">Bellen </div>
                         <div>
                             <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>03</u>5 694 4646</a> 
                         </div>
                     </div>
 
-                    <div class="cell small-4 end">
+                    <div class="cell small-4 end product-page__contact-inner-div">
                         <div class="product-page__contact-small-font">Delen </div>
                         <div class="product-page__social-icons-wrapper"> 
                             <span class="product-page__ui-icon">

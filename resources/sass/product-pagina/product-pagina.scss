@@ -56,7 +56,7 @@
     @include breakpoint (large up) {
         top: 0;
         margin-top: 0;
-        padding-top: 0;
+        padding-top: $margin-small;
         padding-left: 10rem;
         padding-right: 10rem;
     }
@@ -92,8 +92,11 @@
 
 .product-page__header-img-wrapper {
     max-height: 646px;	
-    max-width: 994px;
-    margin: 0 auto;    
+    margin: 0 auto;  
+    position: absolute;
+    @include breakpoint ( large up ) {
+        width: 50vw;
+    }  
 }
 
 .product-page__over-gam__subsection {
@@ -104,10 +107,28 @@
 
 }
 
+.product-page__main-info__price-subsection {
+    margin-bottom: $margin-small * 1.5;
+    p {
+        margin-bottom: 0rem;
+    }
+}
+
 .product-page__main-info__subsection {
-    margin-bottom: $margin-small / 2;
+    margin-bottom: $margin-small * .7;
     div {
         margin-bottom: $margin-small / 4;
+    }
+}
+
+.product-page__contact-details__subsection {
+    @extend .product-page__main-info__subsection;
+    margin-bottom: $margin-small*2;
+    .product-page__contact-small-font {
+        margin-bottom: $margin-small / 8;
+    }
+    .product-page__contact-inner-div {
+        margin-bottom: 0;
     }
 }
 
@@ -167,7 +188,7 @@
 }
 
 .product-page__specificaties__header, .product-page__opties__header, 
-.product-page__service-subsection, .product-page__main-header-font {
+.product-page__service-subsection {
     margin-bottom: $margin-small / 2;
     @include breakpoint(medium) {
         margin-top: $margin-small / 2;
@@ -278,10 +299,14 @@
     overflow-y: hidden;
 }
 
-.product-gallery__counter, .product-page__ui-icon {
+.product-gallery__counter {
     color: white;
     top: 1.125rem;
     position: relative;
+}
+
+.product-page__ui-icon {
+     color: white;
 }
 
 .product-page__call-me__telephone-number {
