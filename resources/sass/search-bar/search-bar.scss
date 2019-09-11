@@ -27,9 +27,7 @@
     max-width: 400px;
     border: none;
     height: 100%;
-    @include breakpoint (small) {
-        padding: 1.1875rem 0 .5rem;
-    }
+    padding: .5rem 0;
 }
 
 .search-bar__option {
