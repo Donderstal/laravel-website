@@ -128,7 +128,7 @@ class ProductsController extends Controller
 
         return view('products.list')->with([
             'gamSearchState' => $gamSearchState,
-            'title' => 'Ons aanbod',
+            'title' => $request->status,
             'products' => $products_results,
             'product_list_search_path_params' => $product_list_search_path_params,
             'product_list_search_query_params' => $product_list_search_query_params,

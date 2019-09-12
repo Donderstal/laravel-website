@@ -2,6 +2,11 @@
 * non-font classes
 */
 
+.product-page__top-part-wrapper {
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
 .product-page__main-info, .product-page__opties {
     background-color: map-get($global-palette, dark);
     color: white
@@ -80,9 +85,6 @@
     display: flex;
     align-items: center;
     top: -2rem;
-    /* @include breakpoint (large up) {
-        left: 10rem;        
-    } */
 }
 
 .product-page__image-header__img {
@@ -91,12 +93,35 @@
 }
 
 .product-page__header-img-wrapper {
-    max-height: 646px;	
     margin: 0 auto;  
     position: absolute;
     @include breakpoint ( large up ) {
         width: 50vw;
+        height: 50vw * .75;
     }  
+    @include breakpoint ( xxlarge up ) {
+        width: 50vw;
+        height: 50vw * .66;
+        max-width: 960px;
+        max-height: 634px;
+    }  
+}
+
+.product-page__verkocht-header {
+    @extend .footer__contact-header;
+    padding-left: 0;
+}
+
+.product-page__main-info:before {
+    top: 2rem;
+    margin-top: 2rem;
+    content:"";
+    background-color: map-get($global-palette, dark);
+    position: absolute;
+    height: 100%;
+    width: 2000px;
+    left: 0;
+    z-index: -1;
 }
 
 .product-page__over-gam__subsection {
@@ -303,6 +328,10 @@
     color: white;
     top: 1.125rem;
     position: relative;
+    @include breakpoint ( large up ) {
+        color: map-get($global-palette, dark);
+        top: 1.5rem;
+    }
 }
 
 .product-page__ui-icon {

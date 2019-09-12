@@ -50,10 +50,10 @@
                     <a class="header__menu-anchor {{ (Route::currentRouteName() === 'landing-page')  ? 'header__active-link' : '' }}" href="{{ route('landing-page') }}"> Home</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $title === 'aanbod' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $title === 'verkocht' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'werkplaats')? 'header__active-link' : '' }}" href="{{ route('werkplaats') }}">Werkplaats</a>
