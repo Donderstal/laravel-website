@@ -156,6 +156,6 @@ return [
         'url' => 'autos',
 
         // number of records per page in listings, search and ...
-        'paginate_count' => 25
+        'paginate_count' => 16
     ]
 ];

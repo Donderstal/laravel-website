@@ -51,8 +51,7 @@ class MasterProductsSeeder extends Seeder
         }
 
         factory(App\Models\Products::class, 3)->states('sold')->create();
-        factory(App\Models\Products::class, 3)->states('available')->create();
+        factory(App\Models\Products::class, 20)->states('available')->create();
         factory(App\Models\Products::class, 3)->states('coming_soon')->create();
-        factory(App\Models\Products::class, 3)->states('ferrari', 'available')->create();
     }
 }

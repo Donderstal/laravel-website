@@ -2,7 +2,7 @@
         <div class="ons-aanbod__nav-buttons">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <button class="ons-aanbod__bottom-button disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+            <button style="visibility: hidden;" class="ons-aanbod__bottom-button disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
                 <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}" aria-hidden="true">
             </button>
         @else
