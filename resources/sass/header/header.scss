@@ -9,12 +9,16 @@ $topbar-height-lg: 130px;
     color: $white;
     background-color: transparent;
     @include breakpoint(medium up) {
-        margin: 0 auto 2rem;
+        margin: 0 auto;
         height: $topbar-height-md;
     }
     @include breakpoint(large up) {
         height: $topbar-height-lg;
     }
+}
+
+.clickable__logo:hover {
+    cursor: pointer;
 }
 
 .header-home {
@@ -70,6 +74,10 @@ $topbar-height-lg: 130px;
 .navbar__GAM-logo {
     display: block;
     margin: auto;
+}
+
+.navbar__GAM-logo:hover {
+    cursor: pointer;
 }
 
 .navbar__GAM-logo__do-not-display {

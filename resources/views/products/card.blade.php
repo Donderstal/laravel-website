@@ -5,8 +5,18 @@
     </div>
     <div class="cell small-3 grid-x product-card__top-text-row">
         <div class="cell small-12 grid-x">
-            <div class="cell small-8 product-card__car-name">{{ $product['title'] }} </div>
-            <div class="cell small-4 product-card__car-price"> &euro; {{ number_format("$product->price",0,",",".") }} </div>
+            <div class="cell small-8 product-card__car-name">
+                <span id="product-car__car-name--ruler">
+                {{ $product['title'] }}
+                </span>
+            </div>
+            <div class="cell small-4 product-card__car-price"> 
+                @if ( $product['status'] === 'sold' ) 
+                    Verkocht!
+                @else
+                    &euro; {{ number_format("$product->price",0,",",".") }} 
+                @endif
+            </div>
             <div class="cell small-12 product-card__car-model"> {{ $product['model']['title'] }} </div>
         </div>
         <div class="product-card__decorative-line">

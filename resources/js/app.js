@@ -27,6 +27,11 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementsByClassName('navbar__GAM-logo')[0].addEventListener('click', () => {
+        location.href = '/'
+        }
+    )
+
     //for homepage
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {
@@ -36,6 +41,10 @@ $( document ).ready(function() {
 
     // for product page
     if ( $('#product-page__meer-opties').length > 0 ) {
+
+        document.getElementById('product-page__copy-link').addEventListener('click', () => {
+            copyUrlToClipboard()
+        })
 
         document.getElementById('product-page__specificaties-bekijken').addEventListener('click', () => {
             scrollToElement('product-page__specificaties')
@@ -68,6 +77,17 @@ $( document ).ready(function() {
 
     }
 })
+
+function copyUrlToClipboard() {
+    const dummy = document.createElement('input');
+    const text = window.location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+}
 
 function scrollToElement(elementId) {
     $('html,body').animate({
@@ -209,6 +229,12 @@ function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
 // Functions for opening Large gallery
 /// Open large gallery 'controller'
 function getLargeGallery () {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if ( viewportWidth > 1024 ) {
+        $('.product-page__header-img-wrapper').css('position', 'relative')
+        $('#product-gallery__counter').css('color', 'white')
+    }
+
     if ($('#return-button').length !== 1) {
         createLargeGalleryBackground ()
         toggleLargeGallery()
@@ -223,6 +249,12 @@ function getLargeGallery () {
 
 /// close large gallery 'controller'
 function removeLargeGallery() {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if ( viewportWidth > 1024 ) {
+        $('.product-page__header-img-wrapper').css('position', 'absolute')
+        $('#product-gallery__counter').css('color', '#022835')
+    }
+
     toggleLargeGallery()
     toggleLargeGalleryButtonDiv()
     $('body').toggleClass('large-gallery__body-styles')

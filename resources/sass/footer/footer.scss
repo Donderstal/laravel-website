@@ -48,7 +48,6 @@
     max-width: 380px;
 }
 
-
 .footer__photo {
     @include breakpoint (large up) {
        display: flex;
@@ -76,10 +75,14 @@
 
 .footer__bottom-copyright {
     @extend .bottom-copyright-font;
+    margin: 3rem 0 2rem;
     text-align: center;
     sub {
         display: inline-block; 
         margin: 0 auto;
+        a {
+            color: white;     
+        }
     }
 }
 
@@ -91,6 +94,9 @@
 
 .footer__newsletter__header, .footer__contact-header {
     @extend .main-header-font;
+    @extend %generic-padding;
+    margin: 1rem 0 2rem;
+
 }
 
 .footer__newsletter__button {
@@ -109,19 +115,14 @@
 }
 
 .fa-facebook-square, .fa-instagram {
+    color: white; 
     font-size: 2rem;
+}
+
+.fab:hover, .footer__privacy-statement:hover {
+    color: map-get($global-palette, active);
 }
 
 .footer__social-title {
     @extend .homepage-subtitle-font;
-}
-
-.footer__social-wrapper {
-    @include breakpoint (large up) {
-        display: flex;
-        align-items: center;
-        div {
-            margin: 0 auto;
-        }
-     }
 }

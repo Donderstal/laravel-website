@@ -40,7 +40,7 @@
                 <div class="homepage__about">
                     <h2 class="homepage__about-title">GOOISCHE AUTO MEDIAIR</h2>
                     <div>
-                    Adipiscing vestibulum molestie eros suspendisse habitant ullamcorper scelerisque volutpat dictumst adipiscing in accumsan iaculis vivamus parturient dis. Mus dictumst non congue condimentum curabitur mi vel ridiculus sem suspendisse senectus a convallis nostra condimentum tincidunt ac auctor orci nec ligula.
+                    Persoonlijke service, aandacht, maatwerk en vooral veel liefde voor auto’s. Dat is de Gooische Auto Mediair. We zoeken, leveren en onderhouden auto’s van alle premiummerken voor klanten in heel Nederland. Dit doen wij met enorm veel passie en plezier en veel tevreden klanten als resultaat.
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
                             <p><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Energiestraat 25B <br/>
-                            <u>1</u>411 AR, Naarden </a></p>
+                            <u>14</u>11 AR, Naarden </a></p>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
                             <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p> <a class="contact-details__anchor" target="_blank" href="tel:0356944646"><u>0</u>35 - 694 4646</a></p>
+                            <p> <a class="contact-details__anchor" target="_blank" href="tel:0356944646"><u>03</u>5 - 694 4646</a></p>
                         </div>      
                     </div>
 
@@ -70,7 +70,7 @@
                             <p><i class="far fa-envelope"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p><a href="mailto:info@gambv.nl" target="_blank" class="contact-details__anchor"> <u>i</u>nfo@gambv.nl</a></p>
+                            <p><a href="mailto:info@gambv.nl" target="_blank" class="contact-details__anchor"> <u>in</u>fo@gambv.nl</a></p>
                         </div>
                     </div>
 

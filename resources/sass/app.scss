@@ -90,6 +90,11 @@
 
 @import 'product-pagina/product-pagina';
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -116,4 +121,24 @@ button {
 
 u {
   @extend %red-underline;
+}
+
+.pdf-outer-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-inner-div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 320px;
+}
+
+.pdf-body {
+  height: 100vh;
+  overflow: hidden;
 }

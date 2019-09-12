@@ -2,6 +2,11 @@
 * non-font classes
 */
 
+.product-page__top-part-wrapper {
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
 .product-page__main-info, .product-page__opties {
     background-color: map-get($global-palette, dark);
     color: white
@@ -28,11 +33,8 @@
 .product-page__main-info__inner, {
     @extend %generic-padding;
     @extend %center-in-parent;
-    @include breakpoint (medium) {
-        max-width: 640px;
-    }
     @include breakpoint (medium up) {
-        max-width: 420px;
+        max-width: 520px;
     }
 }
 
@@ -45,7 +47,21 @@
 }
 
 .product-page__main-info {
+    position: relative;
+    top: -10rem;
+    margin-top: 2rem;
+    padding-top: 8rem;
+    @include breakpoint (medium down) {
+        margin-bottom: -10rem;           
+    }  
+    @include breakpoint (medium up) {
+        padding-top: 7rem;     
+        top: -16rem;
+    }    
     @include breakpoint (large up) {
+        top: 0;
+        margin-top: 0;
+        padding-top: $margin-small;
         padding-left: 10rem;
         padding-right: 10rem;
     }
@@ -55,9 +71,9 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    top: -1.5rem;
     margin: 0 auto;
     width: 160px;
+    top: -1rem;
     @include breakpoint (large up) {
         top: -1.5rem;    
     }
@@ -68,9 +84,7 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    /* @include breakpoint (large up) {
-        left: 10rem;        
-    } */
+    top: -2rem;
 }
 
 .product-page__image-header__img {
@@ -81,19 +95,36 @@
 .product-page__header-img-wrapper {
     max-height: 646px;	
     max-width: 994px;
-    margin: 0 auto;    
+    margin: 0 auto;  
+    @include breakpoint ( large up ) {
+        position: absolute;
+        width: 50vw;
+        height: 50vw * .75;
+    }  
+    @include breakpoint ( xxlarge up ) {
+        width: 50vw;
+        height: 50vw * .66;
+        max-width: 960px;
+        max-height: 634px;
+    }  
 }
 
-.product-page__main-info {
-    position: relative;
-    top: -10rem;
-    padding-top: 10rem;
-    @include breakpoint (medium down) {
-        margin-bottom: -10rem;           
-    }  
-    @include breakpoint (large up) {
-        top: 0;
-        padding-top: 0;        
+.product-page__verkocht-header {
+    @extend .footer__contact-header;
+    padding-left: 0;
+}
+
+.product-page__main-info:before {
+    @include breakpoint (xxlarge up) {
+        top: 2rem;
+        margin-top: 2rem;
+        content:"";
+        background-color: map-get($global-palette, dark);
+        position: absolute;
+        height: 100%;
+        width: 2000px;
+        left: 0;
+        z-index: -1;        
     }
 }
 
@@ -105,10 +136,28 @@
 
 }
 
+.product-page__main-info__price-subsection {
+    margin-bottom: $margin-small * 1.5;
+    p {
+        margin-bottom: 0rem;
+    }
+}
+
 .product-page__main-info__subsection {
-    margin-bottom: $margin-small / 2;
+    margin-bottom: $margin-small * .7;
     div {
         margin-bottom: $margin-small / 4;
+    }
+}
+
+.product-page__contact-details__subsection {
+    @extend .product-page__main-info__subsection;
+    margin-bottom: $margin-small*2;
+    .product-page__contact-small-font {
+        margin-bottom: $margin-small / 8;
+    }
+    .product-page__contact-inner-div {
+        margin-bottom: 0;
     }
 }
 
@@ -127,6 +176,12 @@
 .product-page__social-icons-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.product-page__input-div {
+    @include breakpoint(medium) {
+        padding-right: 2rem;
+    }
 }
 
 .product-page__input {
@@ -162,7 +217,7 @@
 }
 
 .product-page__specificaties__header, .product-page__opties__header, 
-.product-page__service-subsection, .product-page__main-header-font {
+.product-page__service-subsection {
     margin-bottom: $margin-small / 2;
     @include breakpoint(medium) {
         margin-top: $margin-small / 2;
@@ -239,7 +294,6 @@
     @include breakpoint (small down) {
         height: auto;
         width: 100vw;
-        top: 50%;
         transform: translateY(75%);
     }
     @include breakpoint (medium) {
@@ -273,8 +327,24 @@
     overflow-y: hidden;
 }
 
-.product-gallery__counter, .product-page__ui-icon {
+.product-gallery__counter {
     color: white;
+    top: 1.125rem;
+    position: relative;
+    @include breakpoint ( large up ) {
+        color: map-get($global-palette, dark);
+        top: 1.5rem;
+    }
+}
+
+.product-page__ui-icon {
+    color: white;
+    display: table;
+}
+
+.product-icon {
+    display: table-cell;
+    vertical-align:middle;
 }
 
 .product-page__call-me__telephone-number {
@@ -297,6 +367,9 @@
     svg {
         g {
             stroke: map-get($global-palette, active);
+            g {
+                stroke: map-get($global-palette, active);
+            }
         }
         path {
             stroke: map-get($global-palette, active);

@@ -31,29 +31,29 @@
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             <div class="navbar__GAM-log-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
-                <img class="logo-white navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
 
-                <img class="logo-black navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @else
-                <img class="logo-white navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
 
-                <img class="logo-black navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
             @endif
             </div>
         </div>
         <div class="cell small-3 large-8 large-order-2 header__main-navigation">
             <div class="hide-for-large">
-                <p id="header__dropdown-button" class="header__dropdown-button"><u>M</u>ENU</p>
+                <p id="header__dropdown-button" class="header__dropdown-button"><u>ME</u>NU</p>
             </div>
             <div class="header-main-menu">
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor {{ (Route::currentRouteName() === 'landing-page')  ? 'header__active-link' : '' }}" href="{{ route('landing-page') }}"> Home</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $page_title === 'Aanbod' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'aanbod']) }}"> Ons aanbod</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === '')? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $page_title === 'Verkocht' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'werkplaats')? 'header__active-link' : '' }}" href="{{ route('werkplaats') }}">Werkplaats</a>

@@ -23,7 +23,7 @@
 }
 
 .grid-container {
-    max-width: 1440px;
+    max-width: 1800px;
 }
 
 .ons-aanbod__header-number {
@@ -61,6 +61,7 @@
     @include breakpoint (large up) {
         float: right;
         padding-right: 1rem;
+        max-width: 500px;
     }
 
 }

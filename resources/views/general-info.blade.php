@@ -20,12 +20,12 @@
             </div>
 
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">
-                <h2> OVER {{ strtoupper($title2) }} </h2>
+                <h2>{{ strtoupper($title2) }} </h2>
                 <p> {!! $text2 !!} </p>
             </div>
             <!-- Second subparagraph -->
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">
-                <h2> OVER {{ strtoupper($title) }} </h2>
+                <h2>{{ strtoupper($title3) }} </h2>
                 <p> {{ $text3 }} </p>
             </div>
 

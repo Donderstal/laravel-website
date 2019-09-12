@@ -9,156 +9,165 @@
 <section class="product-page">
 
     <div class="grid-x">
+        <div class="grid-x cell small-12 product-page__top-part-wrapper">
 
-        <div class="cell small-12 large-5 product-page__image-header">
-            <div class="product-page__header-img-wrapper">
+            <div class="cell small-12 large-5 product-page__image-header">
+                <div class="product-page__header-img-wrapper">
 
-                <img class="product-page__image-header__img" id="product-image" src="{{ $product->cover ? route('image.action', ['cover', $product->cover->picture]) : mix(config('site.products.default_image_path')) }}">
+                    <img class="product-page__image-header__img" id="product-image" src="{{ $product->cover ? route('image.action', ['cover', $product->cover->picture]) : mix(config('site.products.default_image_path')) }}">
 
-                <div class="product-page__image-header__button-wrapper">
-                    <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
-                        <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> 
-                    </button>
-                        <span class="product-gallery__counter"> <span id="product-gallery__counter">1</span> / {{ sizeof($product->gallery) }}</span>
-                    <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
-                        <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  
-                    </button>
-                </div>     
+                    <div class="product-page__image-header__button-wrapper">
+                        <button id="product-gallery__left-button" class="ons-aanbod__bottom-button"> 
+                            <img class="button-arrow-left svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> 
+                        </button>
+                            <span id="product-gallery__counter" class="product-gallery__counter"> 
+                                1 / {{ sizeof($product->gallery) }}
+                            </span>
+                        <button id="product-gallery__right-button" class="ons-aanbod__bottom-button"> 
+                            <img class="button-arrow-right svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}">  
+                        </button>
+                    </div>     
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="cell small-12 large-7 product-page__main-info">
+                <div class="product-page__main-info__inner">
 
-        <div class="cell small-12 large-7 product-page__main-info">
-            <div class="product-page__main-info__inner">
+                    <div class="product-page__main-info__subsection">
+                        <h1 class="product-page__main-header-font">{{ $product->brand->title }}</h1>
 
-                <div class="product-page__main-info__subsection">
-                    <h1 class="product-page__main-header-font">{{ $product->brand->title }}</h1>
-
-                    <p id="bel-mij-terug__product-name" class="product-page__main-subtitle-font">{{ $product->title }}</p>
-                </div>
-
-                @if($product->status !== 'sold')
-                <div class="product-page__main-info__subsection">
-                    <p class="product-page__price-font">&euro; {{ number_format("$product->price",0,",",".") }}</p>
-
-                    <p class="product-page__VAT-font"> BTW niet verrekenbaar</p>
-                </div>
-
-                <div class="grid-x product-page__main-info__subsection">
-
-                    <div class="cell small-12">
-                        <h3 class="product-page__main-subtitle-font">Interesse?</h3>                        
+                        <p id="bel-mij-terug__product-name" class="product-page__main-subtitle-font">{{ $product->title }}</p>
                     </div>
 
-                    <div class="cell small-6">
-                        <div class="product-page__contact-small-font">Bellen </div>
-                        <div>
-                            <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>0</u>35 694 4646</a> 
+                    @if($product->status !== 'sold')
+                    <div class="product-page__main-info__price-subsection">
+                        <p class="product-page__price-font">
+                            @if ( $product['status'] === 'sold' ) 
+                                Verkocht!
+                            @else
+                                &euro; {{ number_format("$product->price",0,",",".") }} 
+                            @endif    
+                        </p>
+                        <p class="product-page__VAT-font"> BTW niet verrekenbaar</p>
+                    </div>
+
+                    <div class="grid-x product-page__contact-details__subsection">
+
+                        <div class="cell small-12">
+                            <h3 class="product-page__main-subtitle-font">Interesse?</h3>                        
                         </div>
-                    </div>
 
-                    <div class="cell small-4 end">
-                        <div class="product-page__contact-small-font">Delen </div>
-                        <div class="product-page__social-icons-wrapper"> 
-                            <span class="product-page__ui-icon">
-                                <img class="svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
-                            </span>
-                            <span class="product-page__ui-icon">
-                                <img class="svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
-                            </span>
-                            <span class="product-page__ui-icon--special">
-                                <img class="svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
-                            </span>
+                        <div class="cell small-6 product-page__contact-inner-div">
+                            <div class="product-page__contact-small-font">Bellen </div>
+                            <div>
+                                <a class="product-page__call-me__telephone-number product-page__clickable-link" target="_blank" href="tel:0356944646"><u>03</u>5 694 4646</a> 
+                            </div>
                         </div>
+
+                        <div class="cell small-4 end product-page__contact-inner-div">
+                            <div class="product-page__contact-small-font">Delen </div>
+                            <div class="product-page__social-icons-wrapper"> 
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}" target="_blank" class="product-page__ui-icon">
+                                    <img  class="product-icon svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
+                                </a>
+                                <a class="product-page__ui-icon" id="product-page__copy-link">
+                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
+                                </a>
+                                <a href="mailto:info@gambv.nl"  class="product-page__ui-icon">
+                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cell small-12 product-page__decorative-line">
+                        </div>
+
+                        @if ($errors->any())
+                        <div class="cell small-12 alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
+                        @if (Session::has('message'))
+                        <div class="cell small-12 large-6 sent-message">
+                            <div class="message-{{ Session::get('message')['type'] }}">{{ Session::get('message')['text'] }}</div>
+                            </div>
+                        @endif
+
+                        @if (!Session::has('message'))
+                        <form class="grid-x cell small-12" action="{{ route('products.store', ['slug' => $slug_object->slug ]) }}" method="post">
+                        {{@csrf_field()}}
+                            <div class="cell small-12 medium-6 product-page__input-div">
+                                <input id="bel-mij-terug__naam" class="product-page__input {{$errors->has('name') ? 'is-invalid-input' : null}}" placeholder="Naam" name="name" required value="{{ old('name') }}">
+                            </div>
+
+                            <div class="cell small-12 medium-6 product-page__input-div">
+                                <input id="bel-mij-terug__tel" class="product-page__input {{$errors->has('telephone') ? 'is-invalid-input' : null}}" placeholder="Telefoon nr." name="telephone" required value="{{ old('telephone') }}">
+                            </div>
+
+                            <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
+                                <button class="product-page__call-me-button product-page__clickable-link"><u>Bel</u> mij terug</button>
+                            </div>
+                        </form>
+                        @endif
+                        
                     </div>
 
-                    <div class="cell small-12 product-page__decorative-line">
+                    @else 
+                    <div class="grid-x product-page__main-info__subsection">
+                        <div class="cell small-12">
+                            <h2 class="product-page__verkocht-header">Verkocht</h2>
+                        </div>
+
+                        <div class="cell small-12">
+                            <h3 class="product-page__main-subtitle-font">Interesse?</h3>
+                        </div>
+
+                        <div class="cell small-12">
+                            <p class="product-page__contact-small-font">Mocht u op zoek zijn naar een specifiek model, dan kunnen wij voor u op zoek gaan. Vul het formulier op de Zoekopdracht pagina in om van start te gaan.</p>
+                        </div>
+
+                        <div class="cell small-12 product-page__contact-large-font">
+                            <a class="product-page__call-me__telephone-number product-page__clickable-link" href="{{ route('zoektocht') }}"><u>Na</u>ar Zoekopdracht</a>
+                        </div>
+
                     </div>
 
-                    @if ($errors->any())
-                    <div class="cell small-12 alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
                     @endif
 
-                    @if (Session::has('message'))
-                    <div class="cell small-12 large-6 sent-message">
-                        <div class="message-{{ Session::get('message')['type'] }}">{{ Session::get('message')['text'] }}</div>
-                        </div>
-                    @endif
+                    <div class="grid-x product-page__main-info__subsection">
+                        <div class="cell small-6">
+                            <p class="product-page__detail-title-darkbg-font">Km stand</p>
+                            <p class="product-page__detail-darkbg-font">{{ $product->mileage }} km</p>
+                        </div>  
 
-                    @if (!Session::has('message'))
-                    <form class="grid-x cell small-12" action="{{ route('products.store', ['slug' => $slug_object->slug ]) }}" method="post">
-                    {{@csrf_field()}}
-                        <div class="cell small-12 medium-6">
-                            <input id="bel-mij-terug__naam" class="product-page__input {{$errors->has('name') ? 'is-invalid-input' : null}}" placeholder="Naam" name="name" required value="{{ old('name') }}">
-                        </div>
+                        <div class="cell small-6">
+                            <p class="product-page__detail-title-darkbg-font">Brandstof</p>
+                            <p class="product-page__detail-darkbg-font">{{ config('site.products.fuel_types')[$product->fuel] }}</p>
+                        </div>  
 
-                        <div class="cell small-12 medium-6">
-                            <input id="bel-mij-terug__tel" class="product-page__input {{$errors->has('telephone') ? 'is-invalid-input' : null}}" placeholder="Telefoon nr." name="telephone" required value="{{ old('telephone') }}">
-                        </div>
+                        <div class="cell small-6">
+                            <p class="product-page__detail-title-darkbg-font">Kleur</p>
+                            <p class="product-page__detail-darkbg-font">{{ $product->color->title }}</p>
+                        </div>  
 
-                        <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
-                            <button class="product-page__call-me-button product-page__clickable-link"><u>Bel</u> mij terug</button>
-                        </div>
-                    </form>
-                    @endif
-                    
-                </div>
-
-                @else 
-                <div class="grid-x product-page__main-info__subsection">
-                    <div class="cell small-12">
-                        <h2 class="footer__contact-header">Verkocht</h2>
+                        <div class="cell small-6">
+                            <p class="product-page__detail-title-darkbg-font">Transmissie</p>
+                            <p class="product-page__detail-darkbg-font">{{ config('site.products.transmission_types')[$product->transmission] }}</p>
+                        </div>  
                     </div>
 
-                    <div class="cell small-12">
-                        <h3 class="product-page__main-subtitle-font">Interesse?</h3>
-                    </div>
-
-                    <div class="cell small-12">
-                        <p class="product-page__contact-small-font">Mocht u op zoek zijn naar een specifiek model, dan kunnen wij voor u op zoek gaan. Vul het formulier op de Zoekopdracht pagina in om van start te gaan.</p>
-                    </div>
-
-                    <div class="cell small-12 product-page__contact-large-font">
-                        <a href="{{ route('zoektocht') }}"><u>Na</u>ar Zoekopdracht</a>
+                    <div class="product-page__main-info__subsection">
+                        <p id="product-page__specificaties-bekijken" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
                     </div>
 
                 </div>
-
-                @endif
-
-                <div class="grid-x product-page__main-info__subsection">
-                    <div class="cell small-6">
-                        <p class="product-page__detail-title-darkbg-font">Km stand</p>
-                        <p class="product-page__detail-darkbg-font">{{ $product->mileage }} km</p>
-                    </div>  
-
-                    <div class="cell small-6">
-                        <p class="product-page__detail-title-darkbg-font">Brandstof</p>
-                        <p class="product-page__detail-darkbg-font">{{ config('site.products.fuel_types')[$product->fuel] }}</p>
-                    </div>  
-
-                    <div class="cell small-6">
-                        <p class="product-page__detail-title-darkbg-font">Kleur</p>
-                        <p class="product-page__detail-darkbg-font">{{ $product->color->title }}</p>
-                    </div>  
-
-                    <div class="cell small-6">
-                        <p class="product-page__detail-title-darkbg-font">Transmissie</p>
-                        <p class="product-page__detail-darkbg-font">{{ config('site.products.transmission_types')[$product->transmission] }}</p>
-                    </div>  
-                </div>
-
-                <div class="product-page__main-info__subsection">
-                    <p id="product-page__specificaties-bekijken" class="product-page__all-specs-font"><img class="product-page__all-specs-arrow svg-injection" src="{{ mix('img/ui-icons/arrow.svg') }}"> <u>BE</u>KIJK ALLE SPECIFICATIES</p>
-                </div>
-
             </div>
         </div>
 
@@ -237,7 +246,7 @@
                               <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>0</u>35 - 694 4646</a></p>
+                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>03</u>5 - 694 4646</a></p>
                         </div>      
 
                      </div>
