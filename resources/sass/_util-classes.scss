@@ -82,8 +82,22 @@ input {
     @extend .standard-font;
     color: map-get($global-palette, dark);
     margin-bottom: 2rem !important;
+    margin-right: 0 !important;
 }
 
+.checkbox-label:hover {
+    @extend %on-link-hover-light;
+}
+
+.privacy-statement__link {
+    @extend .checkbox-label;
+}
+
+.privacy-statement__link:hover {
+    u {
+    color: map-get($global-palette, active);        
+    }
+}
 
 label {
     @extend .form-label-font;
