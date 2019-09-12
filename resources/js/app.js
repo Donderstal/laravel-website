@@ -232,6 +232,7 @@ function getLargeGallery () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'relative')
+        $('#product-gallery__counter').css('color', 'white')
     }
 
     if ($('#return-button').length !== 1) {
@@ -251,6 +252,7 @@ function removeLargeGallery() {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'absolute')
+        $('#product-gallery__counter').css('color', '#022835')
     }
 
     toggleLargeGallery()
