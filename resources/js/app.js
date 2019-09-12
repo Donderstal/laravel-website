@@ -229,6 +229,11 @@ function displayNextPicture(nextPictureObjectIndex, currentPictureObject) {
 // Functions for opening Large gallery
 /// Open large gallery 'controller'
 function getLargeGallery () {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if ( viewportWidth > 1024 ) {
+        $('.product-page__header-img-wrapper').css('position', 'relative')
+    }
+
     if ($('#return-button').length !== 1) {
         createLargeGalleryBackground ()
         toggleLargeGallery()
@@ -243,6 +248,11 @@ function getLargeGallery () {
 
 /// close large gallery 'controller'
 function removeLargeGallery() {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if ( viewportWidth > 1024 ) {
+        $('.product-page__header-img-wrapper').css('position', 'absolute')
+    }
+
     toggleLargeGallery()
     toggleLargeGalleryButtonDiv()
     $('body').toggleClass('large-gallery__body-styles')

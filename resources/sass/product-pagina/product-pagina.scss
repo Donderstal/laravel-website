@@ -93,9 +93,11 @@
 }
 
 .product-page__header-img-wrapper {
+    max-height: 646px;	
+    max-width: 994px;
     margin: 0 auto;  
-    position: absolute;
     @include breakpoint ( large up ) {
+        position: absolute;
         width: 50vw;
         height: 50vw * .75;
     }  
@@ -113,15 +115,17 @@
 }
 
 .product-page__main-info:before {
-    top: 2rem;
-    margin-top: 2rem;
-    content:"";
-    background-color: map-get($global-palette, dark);
-    position: absolute;
-    height: 100%;
-    width: 2000px;
-    left: 0;
-    z-index: -1;
+    @include breakpoint (xxlarge up) {
+        top: 2rem;
+        margin-top: 2rem;
+        content:"";
+        background-color: map-get($global-palette, dark);
+        position: absolute;
+        height: 100%;
+        width: 2000px;
+        left: 0;
+        z-index: -1;        
+    }
 }
 
 .product-page__over-gam__subsection {
@@ -290,7 +294,6 @@
     @include breakpoint (small down) {
         height: auto;
         width: 100vw;
-        top: 50%;
         transform: translateY(75%);
     }
     @include breakpoint (medium) {
