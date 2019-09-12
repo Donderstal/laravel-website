@@ -71,3 +71,12 @@ $factory->state(App\Models\Products::class, 'ferrari', function ($faker) {
         },
     ];
 });
+
+$factory->state(App\Models\Products::class, 'mercedes', function ($faker) {
+    return [
+        'brand_id' => function() {
+            $brand = ProductsBrands::offset(2)->first();
+            return $brand->id;
+        },
+    ];
+});
