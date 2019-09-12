@@ -42,6 +42,10 @@ $( document ).ready(function() {
     // for product page
     if ( $('#product-page__meer-opties').length > 0 ) {
 
+        document.getElementById('product-page__copy-link').addEventListener('click', () => {
+            copyUrlToClipboard()
+        })
+
         document.getElementById('product-page__specificaties-bekijken').addEventListener('click', () => {
             scrollToElement('product-page__specificaties')
         })
@@ -73,6 +77,17 @@ $( document ).ready(function() {
 
     }
 })
+
+function copyUrlToClipboard() {
+    const dummy = document.createElement('input');
+    const text = window.location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+}
 
 function scrollToElement(elementId) {
     $('html,body').animate({

@@ -67,15 +67,15 @@
                         <div class="cell small-4 end product-page__contact-inner-div">
                             <div class="product-page__contact-small-font">Delen </div>
                             <div class="product-page__social-icons-wrapper"> 
-                                <span class="product-page__ui-icon">
-                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
-                                </span>
-                                <span class="product-page__ui-icon">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}" target="_blank" class="product-page__ui-icon">
+                                    <img  class="product-icon svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
+                                </a>
+                                <a class="product-page__ui-icon" id="product-page__copy-link">
                                     <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
-                                </span>
-                                <span class="product-page__ui-icon">
+                                </a>
+                                <a href="mailto:info@gambv.nl"  class="product-page__ui-icon">
                                     <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
-                                </span>
+                                </a>
                             </div>
                         </div>
 
