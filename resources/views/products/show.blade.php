@@ -68,13 +68,13 @@
                             <div class="product-page__contact-small-font">Delen </div>
                             <div class="product-page__social-icons-wrapper"> 
                                 <span class="product-page__ui-icon">
-                                    <img class="svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
+                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/facebook.svg') }}">
                                 </span>
                                 <span class="product-page__ui-icon">
-                                    <img class="svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
+                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
                                 </span>
-                                <span class="product-page__ui-icon--special">
-                                    <img class="svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
+                                <span class="product-page__ui-icon">
+                                    <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
                                 </span>
                             </div>
                         </div>

@@ -48,7 +48,6 @@
     max-width: 380px;
 }
 
-
 .footer__photo {
     @include breakpoint (large up) {
        display: flex;
@@ -120,9 +119,8 @@
     font-size: 2rem;
 }
 
-.fa-facebook-square, .fa-instagram {
-    color: white; 
-    font-size: 2rem;
+.fab:hover, .footer__privacy-statement:hover {
+    color: map-get($global-palette, active);
 }
 
 .footer__social-title {

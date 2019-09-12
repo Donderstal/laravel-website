@@ -106,6 +106,10 @@ class ProductsController extends Controller
             $product_list_search_path_params['status'] = $request->status;
         }
 
+        ($request->status == 'aanbod') ? $title = 'GAM - Ons aanbod' : $title = 'GAM - Verkocht';
+
+        ($request->status == 'aanbod') ? $page_title = 'Aanbod' : $page_title = 'Verkocht';
+
         if ($request->brand) {
             $product_list_search_path_params['brand'] = $request->brand;
         }
@@ -128,7 +132,8 @@ class ProductsController extends Controller
 
         return view('products.list')->with([
             'gamSearchState' => $gamSearchState,
-            'title' => $request->status,
+            'title' => $title,
+            'page_title' => $page_title,
             'products' => $products_results,
             'product_list_search_path_params' => $product_list_search_path_params,
             'product_list_search_query_params' => $product_list_search_query_params,

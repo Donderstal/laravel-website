@@ -90,7 +90,7 @@
             </div>
 
             <div class="cell small-12 footer__bottom-copyright">
-               <sub><a href="{{ route('layouts.privacy_statement') }}">Privacy Statement en Algemene Voorwaarden</a></sub> <br />
+               <sub><a class="footer__privacy-statement" href="{{ route('layouts.privacy_statement') }}">Privacy Statement en Algemene Voorwaarden</a></sub> <br />
               <sub>Copyright 2019 Gooische Auto Mediair</sub>
             </div>
 

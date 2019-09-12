@@ -10,7 +10,7 @@
             <div class="cell small-12 grid-x ons-aanbod__title-bar">
                 <div class="cell small-12 medium-6">
                     <div class="ons-aanbod__header-wrapper">
-                        <h2 class="ons-aanbod__header"> {{ strtoupper( $title ) }} </h2> <br class="hide-for-large" />
+                        <h2 class="ons-aanbod__header"> {{ strtoupper( $page_title ) }} </h2> <br class="hide-for-large" />
                         <h2 class="ons-aanbod__header-number"> {{ $products->total() }} </h2>
                     </div>
                 </div>

@@ -335,7 +335,13 @@
 }
 
 .product-page__ui-icon {
-     color: white;
+    color: white;
+    display: table;
+}
+
+.product-icon {
+    display: table-cell;
+    vertical-align:middle;
 }
 
 .product-page__call-me__telephone-number {
@@ -358,6 +364,9 @@
     svg {
         g {
             stroke: map-get($global-palette, active);
+            g {
+                stroke: map-get($global-palette, active);
+            }
         }
         path {
             stroke: map-get($global-palette, active);
