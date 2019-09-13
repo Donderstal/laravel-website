@@ -235,7 +235,7 @@
                 </div>
 
                 <div class="cell small-12 medium-4 product-page__remarks-subsection">
-                    <p>{{ $product->model->title }}</p>
+                    <p>{{ $product->model->title }} {{ $product->title }}</p>
                     <p>{{ $product->note }}</p>
                 </div>
                 <div class="cell small-12 medium-4 product-page__remarks-subsection">
