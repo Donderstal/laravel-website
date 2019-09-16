@@ -17,11 +17,9 @@ $( document ).ready(function() {
 
     window.addEventListener('scroll', () => {
         if ( $(window).scrollTop() > $('.header').height() ) {
-            console.log('scrollin bro!!!')
             $('.header-sticky').css('visibility', 'visible')
         }
         if ( $(window).scrollTop() < $('.header').height() ) {
-            console.log('done scrollin')
             $('.header-sticky').css('visibility', 'hidden')
         }
     })
@@ -32,8 +30,13 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('navbar__search-icon--sticky').addEventListener('click', () => {
+        toggleSearchbar('sticky')
+        }
+    )
+
     document.getElementById('navbar__search-icon').addEventListener('click', () => {
-        toggleSearchbar()
+        toggleSearchbar('normal')
         }
     )
 
@@ -133,8 +136,14 @@ function toggleDropdown() {
 
 // Toggle menu search bar
 function toggleSearchbar() {
-    $('.navbar__searchbar').toggle()
-    $('#navbar__searchbar-input').focus();
+    if ('normal') {
+        $('.navbar__searchbar').toggle()
+        $('#navbar__searchbar-input').focus();        
+    }
+    else if ('sticky') {
+        $('.navbar__searchbar--sticky').toggle()
+        $('#navbar__searchbar-input--sticky').focus();       
+    }
 }
 
 

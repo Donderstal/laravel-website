@@ -90,7 +90,7 @@
     <div class="top-bar grid-x">
         <div class="cell small-3 large-2 large-order-3 header-subsection">
 
-            <p id="navbar__search-icon" class="header__search-icon-wrapper">
+            <p id="navbar__search-icon--sticky" class="header__search-icon-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
                 <img class="navbar__search-icon svg-injection" src="{{ mix('img/ui-icons/search.svg') }}">
             @else
@@ -98,9 +98,9 @@
             @endif
             </p>
 
-            <div class="navbar__searchbar">
+            <div class="navbar__searchbar--sticky">
                 <input
-                    id="navbar__searchbar-input"
+                    id="navbar__searchbar-input--sticky"
                     class="navbar__searchbar__input"
                     placeholder="Zoeken..."
                     type="text"
