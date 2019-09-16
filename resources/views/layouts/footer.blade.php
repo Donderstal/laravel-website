@@ -86,7 +86,13 @@
 
             <!-- photo with logo -->
             <div class="cell small-12 large-6 footer__photo">
-               <img class="footer__photo-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
+            <iframe
+               width="600"
+               height="450"
+               frameborder="0" style="border:0"
+               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCxeVsdpK04jOzBGDqE5NGjSyze5Ryo2-4
+                  &q=Space+Needle,Seattle+WA" allowfullscreen>
+            </iframe>
             </div>
 
             <div class="cell small-12 footer__bottom-copyright">

@@ -15,6 +15,16 @@ $( document ).ready(function() {
         SVGInjector(mySVGsToInject);
     }
 
+    window.addEventListener('scroll', () => {
+        if ( $(window).scrollTop() > $('.header').height() ) {
+            console.log('scrollin bro!!!')
+            $('.header-sticky').css('visibility', 'visible')
+        }
+        if ( $(window).scrollTop() < $('.header').height() ) {
+            console.log('done scrollin')
+            $('.header-sticky').css('visibility', 'hidden')
+        }
+    })
 
     // General event listeners
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
@@ -137,7 +147,6 @@ window.gam.search.handleSearchRequest = function () {
         // default
         searchURL += '/' + 'aanbod';
     }
-    console.log(searchURL);
 
     location.href = searchURL;
 
@@ -232,7 +241,7 @@ function getLargeGallery () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'relative')
-        $('#product-gallery__counter').css('color', 'white')
+        $('.product-gallery__counter').css('color', 'white')
     }
 
     if ($('#return-button').length !== 1) {
@@ -252,7 +261,7 @@ function removeLargeGallery() {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'absolute')
-        $('#product-gallery__counter').css('color', '#022835')
+        $('.product-gallery__counter').css('color', '#022835')
     }
 
     toggleLargeGallery()
