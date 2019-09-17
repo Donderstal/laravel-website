@@ -21,6 +21,24 @@ $topbar-height-lg: 130px;
     cursor: pointer;
 }
 
+.header-sticky {
+    position: fixed !important;
+    visibility: hidden;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+    .top-bar {
+        margin: 0 auto;
+        height: $topbar-height-sm !important;
+        .header-subsection {
+            .navbar__GAM-log-wrapper {
+                max-height: 50px;
+                max-width: 100px;                
+            }
+        }
+    }
+}
+
 .header-home {
     background-color: rgba(2,40,53,0.15);
     position: relative;
@@ -28,7 +46,7 @@ $topbar-height-lg: 130px;
 }
 
 .header-general {
-    background-color: transparent;
+    background-color: RGBA(255, 255, 255, 7.5);
     .header__dropdown-button {
         color: map-get($global-palette, dark);
     }
@@ -132,12 +150,17 @@ $topbar-height-lg: 130px;
     margin-bottom: 0;
 }
 
-.navbar__searchbar {
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar__searchbar, .navbar__searchbar--sticky {
     @extend %generic-border-radius;
     display:none;
     width: 320px;
     height: 60px;
-    position: absolute; 
+    position: fixed; 
     top: $topbar-height-sm;
     background-color: white;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25);
@@ -157,7 +180,8 @@ $topbar-height-lg: 130px;
     }
 }
 
-.navbar__searchbar__input, .navbar__searchbar__input:focus {
+.navbar__searchbar__input, .navbar__searchbar__input:focus,
+.navbar__searchbar__input--sticky, .navbar__searchbar__input--sticky:focus {
     border: none;
     background-color: transparent;
     display: inline-block;

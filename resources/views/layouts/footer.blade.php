@@ -86,7 +86,12 @@
 
             <!-- photo with logo -->
             <div class="cell small-12 large-6 footer__photo">
-               <img class="footer__photo-photo" src="{{ mix('img/admin/city-photo.jpg') }}">
+            <iframe
+               width="600"
+               height="450"
+               frameborder="0" style="border:0"
+               src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ8Rg2IZgTxkcRb2XhXtWGx88&&key=AIzaSyDpz6vOl2k6lhhIXe6f6wn3T6h09vXjRNQ&language=nl" allowfullscreen>
+            </iframe>
             </div>
 
             <div class="cell small-12 footer__bottom-copyright">

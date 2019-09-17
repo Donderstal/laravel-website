@@ -116,8 +116,6 @@
 
 .product-page__main-info:before {
     @include breakpoint (xxlarge up) {
-        top: 2rem;
-        margin-top: 2rem;
         content:"";
         background-color: map-get($global-palette, dark);
         position: absolute;
@@ -125,6 +123,7 @@
         width: 2000px;
         left: 0;
         z-index: -1;        
+        bottom: .05rem;
     }
 }
 

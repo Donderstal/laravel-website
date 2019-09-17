@@ -6,7 +6,6 @@ window.gam.search = {};
 
 
 $( document ).ready(function() {
-
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
 
@@ -15,6 +14,14 @@ $( document ).ready(function() {
         SVGInjector(mySVGsToInject);
     }
 
+    window.addEventListener('scroll', () => {
+        if ( $(window).scrollTop() > $('.header').height() ) {
+            $('.header-sticky').css('visibility', 'visible')
+        }
+        if ( $(window).scrollTop() < $('.header').height() ) {
+            $('.header-sticky').css('visibility', 'hidden')
+        }
+    })
 
     // General event listeners
     document.getElementById('header__dropdown-button').addEventListener('click', () => {
@@ -22,8 +29,13 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('navbar__search-icon--sticky').addEventListener('click', () => {
+        toggleSearchbar('sticky')
+        }
+    )
+
     document.getElementById('navbar__search-icon').addEventListener('click', () => {
-        toggleSearchbar()
+        toggleSearchbar('normal')
         }
     )
 
@@ -123,8 +135,14 @@ function toggleDropdown() {
 
 // Toggle menu search bar
 function toggleSearchbar() {
-    $('.navbar__searchbar').toggle()
-    $('#navbar__searchbar-input').focus();
+    if ('normal') {
+        $('.navbar__searchbar').toggle()
+        $('#navbar__searchbar-input').focus();        
+    }
+    else if ('sticky') {
+        $('.navbar__searchbar--sticky').toggle()
+        $('#navbar__searchbar-input--sticky').focus();       
+    }
 }
 
 
@@ -137,7 +155,6 @@ window.gam.search.handleSearchRequest = function () {
         // default
         searchURL += '/' + 'aanbod';
     }
-    console.log(searchURL);
 
     location.href = searchURL;
 
@@ -232,7 +249,7 @@ function getLargeGallery () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'relative')
-        $('#product-gallery__counter').css('color', 'white')
+        $('.product-gallery__counter').css('color', 'white')
     }
 
     if ($('#return-button').length !== 1) {
@@ -252,7 +269,7 @@ function removeLargeGallery() {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if ( viewportWidth > 1024 ) {
         $('.product-page__header-img-wrapper').css('position', 'absolute')
-        $('#product-gallery__counter').css('color', '#022835')
+        $('.product-gallery__counter').css('color', '#022835')
     }
 
     toggleLargeGallery()
