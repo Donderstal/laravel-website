@@ -6,6 +6,8 @@ window.gam.search = {};
 
 
 $( document ).ready(function() {
+    console.log('omg plz work')
+    console.log('plz bro cmon')
 
     // Elements to inject
     var mySVGsToInject = document.querySelectorAll('img.svg-injection');
