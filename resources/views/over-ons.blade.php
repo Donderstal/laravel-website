@@ -27,7 +27,6 @@
                 @foreach($reviews as $review)
                 <div class="general-info__review-panel cell small-12 medium-10 large-6">
                     <h2 class="general-info__review-title"> {{ $review['title'] }} </h2>
-                    <sub class="general-info__review-car">{{ $review['car'] }}</sub>
                     <p class="general-info__review-text"> {{ $review['text'] }} </p>
                 </div>
                 @endforeach
@@ -46,6 +45,18 @@
                     <div class="general-info__employee-wrapper">
                         <p class="general-info__employee-name">{{ $employee['name'] }}</p>
                         <p class="general-info__employee-job-title"> {{ $employee['job-title'] }} </p>
+                        <p class="general-info__employee-contact-details"> 
+                            <a class="general-info__employee-contact-details--anchor"
+                            href="tel:{!! $employee['tel'] !!}">
+                            {{ $employee['tel'] }} 
+                            </a>
+                        </p>
+                        <p class="general-info__employee-contact-details"> 
+                            <a class="general-info__employee-contact-details--anchor" 
+                            href="mailto:{!! $employee['mail'] !!}">
+                            {{ $employee['mail'] }} 
+                            </a>
+                        </p>
                     </div>
                 </div>
                 @endforeach
