@@ -147,6 +147,22 @@
     color: map-get($global-palette, medium-grey )
 }
 
+.general-info__employee-contact-details--anchor {
+        @extend .general-info__employee-job-title;
+        font-size: 1rem;        
+        color: map-get($global-palette, medium-grey ) !important;    
+}
+
+.general-info__employee-contact-details--anchor:hover,
+.general-info__employee-contact-details:hover {
+    color: map-get($global-palette, dark) !important;
+}
+
+.general-info__employee-contact-details--anchor,
+.general-info__employee-contact-details {
+    margin-bottom: .5rem !important;
+}
+
 .general-info__contact {
     margin-top: 3.5rem;
     width: 320px;

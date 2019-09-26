@@ -60,43 +60,85 @@ class GeneralInfoController extends Controller {
             'title' => 'Over ons',
             'reviews' => [
                 'review1' => [
-                    'title' => 'Voornaam achternaam',
-                    'car' => 'Maseratti',
-                    'text' => 'Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos.'
+                    'title' => 'Rene Valkhoff',
+                    'text' => '“Altijd een eerlijk en kloppend verhaal. Zeer goede after sales service, mooie verzorgde auto’s, ze leveren wat ze beloven”'
                 ],
                 'review2' => [
-                    'title' => 'Voornaam achternaam2',
-                    'car' => 'Maseratti',
-                    'text' => 'Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos.'
+                    'title' => 'Hans Snel',
+                    'text' => '“Jarenlang auto’s besteld bij dealers maar een veel betere service bij GAM! Korte levertijd op de auto die je zoekt. Makkelijk te bereiken en vrijwel geen wachttijd bij service!"'
                 ],
                 'review3' => [
-                    'title' => 'Voornaam achternaam3',
-                    'car' => 'Maseratti',
-                    'text' => 'Sed conubia sit parturient praesent condimentum ornare adipiscing ad a id tempor quisque blandit lacus est vulputate adipiscing facilisis metus est malesuada a parturient ullamcorper himenaeos.'
-                ]
+                    'title' => 'Geertjan van Oosten',
+                    'text' => '“Ik doe al jaren zaken met de GAM, altijd naar volle tevredenheid en steeds met alle plezier. Uiterst betrouwbaar, kundig en klantvriendelijk personeel. En het importeren via GAM scheelt duizenden soms tuinduizenden euro.”'
+                ],
+                'review4' => [
+                    'title' => 'Brigitte Klapmeijer',
+                    'text' => '“Na diverse persoonlijke gesprekken met een van de medewerkers van GAM BV heb ik besloten mijn auto bij hen te kopen.
+
+                    Door hun kennis, meedenken en betrokkenheid konden ze mij bijzonder goed adviseren. Uiteindelijk heb ik een hele andere auto gekocht dan de auto die ik voor ogen had maar tot op de dag van vandaag, super blij mee.
+                    
+                    De medewerkers bij GAM BV heb ik als zeer kundig en plezierig ervaren, de service staat hoog in het vaandel, ik kan ze iedereen van harte aanbevelen!”'
+                ],
             ],
             'employees' => [
                 'employee1' => [
-                    'name' => 'Voornaam achternaam',
+                    'name' => 'Erik Keizer',
                     'img' => 'img/generic-office-lady.jpg',
-                    'job-title' => 'Salesmanager'
+                    'job-title' => 'Eigenaar',
+                    'mail'  =>  'Erik@gambv.nl',
+                    'tel'   =>  '0629339747'
                 ],
                 'employee2' => [
-                    'name' => 'Voornaam achternaam2',
+                    'name' => 'Pilter Groeneveld',
                     'img' => 'img/generic-office-lady.jpg',
-                    'job-title' => 'Salesmanager'
+                    'job-title' => 'Eigenaar',
+                    'mail'  =>  'Pilter@gambv.nl',
+                    'tel'   =>  '0629339746'
                 ],
                 'employee3' => [
-                    'name' => 'Voornaam achternaam3',
+                    'name' => 'Govert Mos',
                     'img' => 'img/generic-office-lady.jpg',
-                    'job-title' => 'Salesmanager'
+                    'job-title' => 'Verkoop',
+                    'mail'  =>  'govert@gambv.nl',
+                    'tel'   =>  '0629339745'
                 ],
                 'employee4' => [
-                    'name' => 'Voornaam achternaam4',
+                    'name' => 'Declan Luiks',
                     'img' => 'img/generic-office-lady.jpg',
-                    'job-title' => 'Salesmanager'
+                    'job-title' => 'Verkoop',
+                    'mail'  =>  'Declan@gambv.nl',
+                    'tel'   =>  '0639461005'
+                ],
+                'employee5' => [
+                    'name' => 'Petra Hendriks',
+                    'img' => 'img/generic-office-lady.jpg',
+                    'job-title' => 'Administratie',
+                    'mail'  =>  'Administratie@gambv.nl',
+                    'tel'   =>  '0356944646'
+                ],
+                'employee6' => [
+                    'name' => 'Enno van der Haagen',
+                    'img' => 'img/generic-office-lady.jpg',
+                    'job-title' => 'Werkplaatschef',
+                    'mail'  =>  'werkplaats@gambv.nl',
+                    'tel'   =>  '0629339748'
+                ],
+                'employee7' => [
+                    'name' => 'Charron Kalkhoven',
+                    'img' => 'img/generic-office-lady.jpg',
+                    'job-title' => 'Monteur',
+                    'mail'  =>  'werkplaats@gambv.nl',
+                    'tel'   =>  '0356944646'
+                ],
+                'employee8' => [
+                    'name' => 'Paul Kwantes',
+                    'img' => 'img/generic-office-lady.jpg',
+                    'job-title' => 'Monteur',
+                    'mail'  =>  'werkplaats@gambv.nl',
+                    'tel'   =>  '0356944646'
                 ]
             ]
         ]);
     }
 }
+ 
