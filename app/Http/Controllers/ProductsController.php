@@ -8,6 +8,8 @@ use App\Models\ProductsSlugs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Requests\CallMeFormRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CallMeEmail;
 use Request as ControllerRequest;
 
 class ProductsController extends Controller
@@ -198,9 +200,11 @@ class ProductsController extends Controller
 
         $res['name'] = $request->name;
         $res['telephone'] = $request->telephone;
-        $res['product_slug'] = $request->slug;
+        $res['product'] = $request->product;
 
-        // Mail::to(config('site.adminemail'))->send(new CallMeEmail($res));
+/*         config('site.adminemail') */
+
+        Mail::to('patrick@abiggercircle.com')->send(new CallMeEmail($res));
         $request->session()->flash('message', [
             'text' => 'Bedankt!',
             'type' => 'success'

@@ -29,13 +29,14 @@ class ContactFormEmail extends Mailable
     public function build()
     {
         return $this->view('email.contact-mail')
+                    ->subject('Contact formulier ingevuld')
                     ->with([
-                        'first-name'        => $this->data['first-name'],
-                        'last-name'         => $this->data['last-name'],
+                        'first_name'        => $this->data['first_name'],
+                        'last_name'         => $this->data['last_name'],
                         'telephone'         => $this->data['telephone'],
                         'email'             => $this->data['email'],
                         'subject'           => $this->data['subject'],
-                        'text-block'        => $this->data['text-block']
+                        'text_block'        => $this->data['text_block']
                     ]);
     }
 }

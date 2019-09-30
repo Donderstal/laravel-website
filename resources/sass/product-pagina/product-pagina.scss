@@ -38,6 +38,10 @@
     }
 }
 
+.bel-mij-terug__prod {
+    display: none;
+}
+
 .product-page__specificaties__inner {
     @extend %generic-padding;
     @include breakpoint (medium only) {

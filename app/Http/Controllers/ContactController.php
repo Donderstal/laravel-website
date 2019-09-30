@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest as Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormEmail;
+
 class ContactController extends Controller
 {
     public function create()
@@ -15,19 +18,19 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $res = [];
-        $res['first-name'] = $request->firstname;
-        $res['last-name'] = $request->lastname;
+        $res['first_name'] = $request->firstname;
+        $res['last_name'] = $request->lastname;
         $res['telephone'] = $request->telephone;
         $res['email'] = $request->email;
         $res['subject'] = $request->subject;
-        $res['text-block'] = $request->textblock;
+        $res['text_block'] = $request->textblock;
 
         $request->session()->flash('message', [
             'text' => 'Bedankt!',
             'type' => 'success'
         ]);
 
-        //Mail::to($res['email'])->send(new ContactFormEmail($res));
+        Mail::to('patrick@abiggercircle.com')->send(new ContactFormEmail($res));
 
         return redirect()->route('contact.create');
     }

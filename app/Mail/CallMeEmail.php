@@ -29,6 +29,7 @@ class CallMeEmail extends Mailable
     public function build()
     {
         return $this->view('email.call-me-mail')
+                    ->subject('Verzoek om teruggebeld te worden')
                     ->with([
                         'userName' => $this->data['name'],
                         'telephone' => $this->data['telephone'],

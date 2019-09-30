@@ -111,6 +111,8 @@
                                 <input id="bel-mij-terug__tel" class="product-page__input {{$errors->has('telephone') ? 'is-invalid-input' : null}}" placeholder="Telefoon nr." name="telephone" required value="{{ old('telephone') }}">
                             </div>
 
+                            <input id="bel-mij-terug__prod" class="product-page__input" placeholder="Telefoon nr." name="product" required value="{{ $product->brand->title . ' ' . $product->title }}">
+
                             <div id="bel-mij-terug" class="cell small-12 product-page__call-me__button product-page__contact-large-font">
                                 <button class="product-page__call-me-button product-page__clickable-link"><u>Bel</u> mij terug</button>
                             </div>
