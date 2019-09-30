@@ -59,10 +59,14 @@
 }
 
 .homepage__featured {
-    margin-top: $margin-small;
+    padding-top: $margin-small;
     margin-bottom: $margin-large;    
     align-items: center;
     display: flex;
+    @include breakpoint(medium up) {
+        margin-top: $margin-large / 2;    
+        padding-top: $margin-large / 2;    
+    }
 }
 
 .homepage__about-and-info {

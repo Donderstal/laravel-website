@@ -47,7 +47,7 @@ $( document ).ready(function() {
     //for homepage
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         document.getElementById('homepage__uitgelicht-pointer').addEventListener('click', () => {
-            scrollToElement('homepage__featured-title')
+            scrollToElement('homepage__featured')
         })
     }
 

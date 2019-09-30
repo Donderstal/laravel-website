@@ -17,7 +17,7 @@
 
         <div class="grid-x homepage__main-content">
 
-            <div class="cell small-12 homepage__featured grid-x">
+            <div id="homepage__featured" class="cell small-12 homepage__featured grid-x">
 
                 <div class="cell small-12">
                     <h2 id="homepage__featured-title" class="homepage__featured-title">UITGELICHT</h2>
