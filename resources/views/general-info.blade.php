@@ -26,7 +26,7 @@
             <!-- Second subparagraph -->
             <div class="cell small-12 medium-9 large-6 general-info__paragraph">
                 <h2>{{ strtoupper($title3) }} </h2>
-                <p> {{ $text3 }} </p>
+                <p> {!! $text3 !!} </p>
             </div>
 
             @include('partials.contact-form')
