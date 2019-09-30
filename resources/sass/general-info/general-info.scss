@@ -120,8 +120,8 @@
 }
 
 .general-info__employee-photo {
-    @extend %center-in-parent;
     display: block;
+    margin-bottom: 1rem;
     max-height: 180px;
     max-width: 130px;
     @include breakpoint (medium up) {

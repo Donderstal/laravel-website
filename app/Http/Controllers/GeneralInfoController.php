@@ -83,56 +83,56 @@ class GeneralInfoController extends Controller {
             'employees' => [
                 'employee1' => [
                     'name' => 'Erik Keizer',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Erik.jpg',
                     'job-title' => 'Eigenaar',
                     'mail'  =>  'Erik@gambv.nl',
                     'tel'   =>  '0629339747'
                 ],
                 'employee2' => [
                     'name' => 'Pilter Groeneveld',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Pilter.jpg',
                     'job-title' => 'Eigenaar',
                     'mail'  =>  'Pilter@gambv.nl',
                     'tel'   =>  '0629339746'
                 ],
                 'employee3' => [
                     'name' => 'Govert Mos',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Govert.jpg',
                     'job-title' => 'Verkoop',
                     'mail'  =>  'govert@gambv.nl',
                     'tel'   =>  '0629339745'
                 ],
                 'employee4' => [
                     'name' => 'Declan Luiks',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Declan.jpg',
                     'job-title' => 'Verkoop',
                     'mail'  =>  'Declan@gambv.nl',
                     'tel'   =>  '0639461005'
                 ],
                 'employee5' => [
                     'name' => 'Petra Hendriks',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/P-Hendriks.jpg',
                     'job-title' => 'Administratie',
                     'mail'  =>  'Administratie@gambv.nl',
                     'tel'   =>  '0356944646'
                 ],
                 'employee6' => [
                     'name' => 'Enno van der Haagen',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Enno.jpg',
                     'job-title' => 'Werkplaatschef',
                     'mail'  =>  'werkplaats@gambv.nl',
                     'tel'   =>  '0629339748'
                 ],
                 'employee7' => [
                     'name' => 'Charron Kalkhoven',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Charron.jpg',
                     'job-title' => 'Monteur',
                     'mail'  =>  'werkplaats@gambv.nl',
                     'tel'   =>  '0356944646'
                 ],
                 'employee8' => [
                     'name' => 'Paul Kwantes',
-                    'img' => 'img/generic-office-lady.jpg',
+                    'img' => 'img/staff/Paul.jpg',
                     'job-title' => 'Monteur',
                     'mail'  =>  'werkplaats@gambv.nl',
                     'tel'   =>  '0356944646'
