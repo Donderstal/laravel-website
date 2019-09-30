@@ -142,3 +142,9 @@ u {
   height: 100vh;
   overflow: hidden;
 }
+
+.no-scroll {
+  overflow-x: hidden; 
+  overflow-y: auto;
+  position: fixed;
+}

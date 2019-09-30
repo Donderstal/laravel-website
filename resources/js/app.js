@@ -29,6 +29,11 @@ $( document ).ready(function() {
         }
     )
 
+    document.getElementById('header__dropdown-button--sticky').addEventListener('click', () => {
+        toggleDropdown()
+        }
+    )
+
     document.getElementById('navbar__search-icon--sticky').addEventListener('click', () => {
         toggleSearchbar('sticky')
         }
@@ -120,8 +125,10 @@ function toggleDropdown() {
     $('.navbar__search-icon').toggle();
     $('.header').toggleClass('dropdown-nav-active')
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
-
-    $('.search-bar').toggle('navbar__GAM-logo__do-not-display')
+    $('html').toggleClass('no-scroll')
+    $('body').toggleClass('no-scroll')
+    $('.search-bar').toggleClass('navbar__GAM-logo__do-not-display')
+    $('.header-sticky').css('visibility', 'hidden')
 
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         $('.logo-white')

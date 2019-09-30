@@ -127,7 +127,7 @@
         </div>
         <div class="cell small-3 large-8 large-order-2 header__main-navigation">
             <div class="hide-for-large">
-                <p id="header__dropdown-button" class="header__dropdown-button"><u>ME</u>NU</p>
+                <p id="header__dropdown-button--sticky" class="header__dropdown-button"><u>ME</u>NU</p>
             </div>
             <div class="header-main-menu">
                 <p class="navbar-link-font header__menu-paragraph">
