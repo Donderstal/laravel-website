@@ -33,12 +33,22 @@
     height: 52px;
     @include breakpoint (medium up) {
         width: 296px;
+        height: 60px;
+    }
+    @include breakpoint (xlarge up) {
+        width: 296px;
         height: 91px;
     }
 }
 
 .homepage__uitgelicht-pointer:hover {
     @extend %on-link-hover-light;
+}
+
+.homepage__uitgelicht-pointer__icon {
+    display: block;
+    margin-top: .5rem;
+    @extend %center-in-parent;
 }
 
 .homepage__search-button {
@@ -103,12 +113,6 @@
 
 .homepage__contact-details__left-div {
     text-align: right;
-}
-
-.homepage__uitgelicht-pointer__icon {
-    display: block;
-    margin-top: .5rem;
-    @extend %center-in-parent;
 }
 
 .homepage__featured-cars {

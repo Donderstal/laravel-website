@@ -13,8 +13,8 @@
     @include breakpoint (medium up) {
         height: 126px;
         width: 620px;        
-    }
-    @include breakpoint (large up) {
+    } 
+    @include breakpoint (xlarge up) {
         width: 780px;       
         height: 146px 
     }
