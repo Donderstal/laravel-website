@@ -59,6 +59,18 @@ class GeneralInfoController extends Controller {
         return view('over-ons')->with([
             'title' => 'Over ons',
             'reviews' => [
+                'review4' => [
+                    'title' => 'Brigitte Klapmeijer',
+                    'text' => '“Na diverse persoonlijke gesprekken met een van de medewerkers van GAM BV heb ik besloten mijn auto bij hen te kopen.
+
+                    Door hun kennis, meedenken en betrokkenheid konden ze mij bijzonder goed adviseren. Uiteindelijk heb ik een hele andere auto gekocht dan de auto die ik voor ogen had maar tot op de dag van vandaag, super blij mee.
+                    
+                    De medewerkers bij GAM BV heb ik als zeer kundig en plezierig ervaren, de service staat hoog in het vaandel, ik kan ze iedereen van harte aanbevelen!”'
+                ],
+                'review5' => [
+                    'title' => 'Stephan Reesink',
+                    'text' => '“Zelf als groot autoliefhebber – en kenner, ben ik des te kritischer op de juiste match tussen ‘value for money’. Al 10 jaar komen we samen tot de beste deal en dat is dan ook gelijk de kracht van de GAM. De wens van de klant staat bij het gehele team echt centraal en daarbij wordt aanvullend op de klantwens de juiste actuele kennis en advies aangeboden, wat ook gelijk de meest duurzame oplossing voor de klant biedt. Gelet op de velen wijzigingen in autoland is dat hetgeen wat wel extra aandacht behoeft. Bij GAM als één van de grootste onafhankelijke autodealers, ben je dan ook gelijk op het juiste adres”'
+                ],
                 'review1' => [
                     'title' => 'Rene Valkhoff',
                     'text' => '“Altijd een eerlijk en kloppend verhaal. Zeer goede after sales service, mooie verzorgde auto’s, ze leveren wat ze beloven”'
@@ -70,14 +82,6 @@ class GeneralInfoController extends Controller {
                 'review3' => [
                     'title' => 'Geertjan van Oosten',
                     'text' => '“Ik doe al jaren zaken met de GAM, altijd naar volle tevredenheid en steeds met alle plezier. Uiterst betrouwbaar, kundig en klantvriendelijk personeel. En het importeren via GAM scheelt duizenden soms tuinduizenden euro.”'
-                ],
-                'review4' => [
-                    'title' => 'Brigitte Klapmeijer',
-                    'text' => '“Na diverse persoonlijke gesprekken met een van de medewerkers van GAM BV heb ik besloten mijn auto bij hen te kopen.
-
-                    Door hun kennis, meedenken en betrokkenheid konden ze mij bijzonder goed adviseren. Uiteindelijk heb ik een hele andere auto gekocht dan de auto die ik voor ogen had maar tot op de dag van vandaag, super blij mee.
-                    
-                    De medewerkers bij GAM BV heb ik als zeer kundig en plezierig ervaren, de service staat hoog in het vaandel, ik kan ze iedereen van harte aanbevelen!”'
                 ],
             ],
             'employees' => [
