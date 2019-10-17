@@ -202,9 +202,9 @@ class ProductsController extends Controller
         $res['telephone'] = $request->telephone;
         $res['product'] = $request->product;
 
-/*         config('site.adminemail') */
+        /*         config('site.adminemail') */
 
-        Mail::to('patrick@abiggercircle.com')->send(new CallMeEmail($res));
+        Mail::to('employee@company.nl')->send(new CallMeEmail($res));
         $request->session()->flash('message', [
             'text' => 'Bedankt!',
             'type' => 'success'

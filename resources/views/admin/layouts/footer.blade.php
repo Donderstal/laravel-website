@@ -5,6 +5,6 @@
     </div>
     <div class="ml-auto">
         <span>Powered by</span>
-        <a href="https://www.abiggercircle.com">A Bigger Circle</a>
+        <a>Example company</a>
     </div>
 </footer>

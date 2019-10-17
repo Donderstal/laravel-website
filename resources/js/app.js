@@ -112,7 +112,7 @@ function scrollToElement(elementId) {
         'slow');
 }
 
-// Used for opening up 'meer opties' and 'voorzien van' parts of product page
+// Used for opening up parts of product page
 function showParentElement(modifier){
     (modifier === 'opties')
     ? $('.product-page__all-options-wrapper').toggleClass('full-height')
@@ -205,9 +205,6 @@ window.company.search.actionUpdateQuery = function(query) {
         companySearchState.queryParams.q = query;
     }
 }
-
-// The 'gallery' variable is an Array of Objects
-// It is retrieved from the PHP Laravel in the script tag in resources/views/products/show.blade.php
 
 // Functions for scrolling through gallery
 function getNextPicture(direction) {

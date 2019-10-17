@@ -1,8 +1,3 @@
-<!--
-    Template for 'page3', 'page2', 'Over ons', 'Contact' and 'Werkplaats' pages
-    They're pretty much the same except for their content
--->
-
 @extends('layouts.master')
 
 @section('content')
