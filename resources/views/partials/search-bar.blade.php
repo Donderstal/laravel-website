@@ -26,9 +26,9 @@
 </div>
 @push('scripts-ready')
     $('#brands-search-button').on('click', function() {
-        window.gam.search.handleSearchRequest()
+        window.company.search.handleSearchRequest()
     });
     $('#search-select').on('change', function() {
-        window.gam.search.actionUpdateBrand(this.value);
+        window.company.search.actionUpdateBrand(this.value);
     });
 @endpush

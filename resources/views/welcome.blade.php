@@ -38,9 +38,9 @@
 
             <div class="cell small-12 homepage__about-and-info">
                 <div class="homepage__about">
-                    <h2 class="homepage__about-title">GOOISCHE AUTO MEDIAIR</h2>
+                    <h2 class="homepage__about-title">Dummy Company</h2>
                     <div>
-                    Persoonlijke service, aandacht, maatwerk en vooral veel liefde voor auto’s. Dat is de Gooische Auto Mediair. We zoeken, leveren en onderhouden auto’s van alle premiummerken voor klanten in heel Nederland. Dit doen wij met enorm veel passie en plezier en veel tevreden klanten als resultaat.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                 </div>
 
@@ -51,8 +51,8 @@
                             <p><i class="fas fa-map-marker-alt"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Energiestraat 25B <br/>
-                            <u>14</u>11 AR, Naarden </a></p>
+                            <p><a class="contact-details__anchor" target="_blank"> Voorbeeldstraat 13 <br/>
+                            <u>14</u>90 XQ, Duckstad </a></p>
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@
                             <p><i class="far fa-envelope"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p><a href="mailto:info@gambv.nl" target="_blank" class="contact-details__anchor"> <u>in</u>fo@gambv.nl</a></p>
+                            <p><a href="mailto:info@companybv.nl" target="_blank" class="contact-details__anchor"> <u>in</u>fo@companybv.nl</a></p>
                         </div>
                     </div>
 

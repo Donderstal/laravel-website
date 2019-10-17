@@ -1,5 +1,5 @@
     <div>
-        <h3>Een bezoeker van de GAM website heeft het contact formulier ingevuld</h3>
+        <h3>Een bezoeker van de company website heeft het contact formulier ingevuld</h3>
     </div>
     <div style="align:center">
         <p> 

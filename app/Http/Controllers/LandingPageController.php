@@ -16,7 +16,7 @@ class LandingPageController extends Controller
         $brands = ProductsBrands::getAllBrandsInOrderQuery()->get();
 
         return view('welcome')->with([
-            'title' => 'Gooische Auto Mediair',
+            'title' => 'Company name',
             'products' => $three_products,
             'brands' => $brands
         ]);

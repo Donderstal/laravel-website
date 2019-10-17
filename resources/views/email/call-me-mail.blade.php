@@ -1,6 +1,6 @@
 <div style="align:center">
     <p> 
-    Een bezoeker van www.gam.nl heeft verzocht om teruggebeld te worden over de {{ $product }} 
+    Een bezoeker van www.company.nl heeft verzocht om teruggebeld te worden over de {{ $product }} 
     </p>
     <p>
         Naam: {{ $userName }}

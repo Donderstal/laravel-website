@@ -31,7 +31,7 @@ $topbar-height-lg: 130px;
         margin: 0 auto;
         height: $topbar-height-sm !important;
         .header-subsection {
-            .navbar__GAM-log-wrapper {
+            .navbar__company-log-wrapper {
                 max-height: 50px;
                 max-width: 100px;                
             }
@@ -89,20 +89,20 @@ $topbar-height-lg: 130px;
     @extend %red-underline;
 }
 
-.navbar__GAM-logo {
+.navbar__company-logo {
     display: block;
     margin: auto;
 }
 
-.navbar__GAM-logo:hover {
+.navbar__company-logo:hover {
     cursor: pointer;
 }
 
-.navbar__GAM-logo__do-not-display {
+.navbar__company-logo__do-not-display {
     display: none !important;
 }
 
-.navbar__GAM-log-wrapper {
+.navbar__company-log-wrapper {
     max-height: 50px;
     max-width: 100px;
     @include breakpoint(large up) {

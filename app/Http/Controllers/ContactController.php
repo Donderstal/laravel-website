@@ -30,7 +30,7 @@ class ContactController extends Controller
             'type' => 'success'
         ]);
 
-        Mail::to('patrick@abiggercircle.com')->send(new ContactFormEmail($res));
+        Mail::to('example@email.com')->send(new ContactFormEmail($res));
 
         return redirect()->route('contact.create');
     }

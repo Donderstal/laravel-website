@@ -15,7 +15,7 @@
 .product-page__image-header, 
 .product-page__opties__inner, 
 .product-page__service, 
-.product-page__over-gam, 
+.product-page__over-company, 
 .product-page__related-products,
 .product-page__remarks-inner {
     @extend %generic-padding;
@@ -24,7 +24,7 @@
 .product-page__specificaties,
 .product-page__opties__inner, 
 .product-page__service, 
-.product-page__over-gam, 
+.product-page__over-company, 
 .product-page__related-products,
 .product-page__remarks-inner {
     @extend %section-inner;
@@ -131,7 +131,7 @@
     }
 }
 
-.product-page__over-gam__subsection {
+.product-page__over-company__subsection {
     @extend %generic-padding;
     @extend .standard-font;
     font-weight: normal;
@@ -164,7 +164,7 @@
     }
 }
 
-.product-page__over-gam__subheader {
+.product-page__over-company__subheader {
     @extend .ons-aanbod-subheader;    
     color: map-get($global-palette, dark)
 }

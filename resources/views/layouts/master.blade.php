@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="Gooische Auto Mediair">
+    <meta name="description" content="Dummy Company">
     <title>{{ $title ?? config('app.name') }}</title>
 
     <!-- Fonts -->
@@ -36,7 +36,7 @@
     @yield('script_extra')
 </body>
     @include('partials.sentry-javascript-error-initialisation')
-    @include('partials.gam-search-state')
+    @include('partials.company-search-state')
     <script type="text/javascript">
         @stack('scripts')
     </script>

@@ -75,7 +75,7 @@
                                 <a class="product-page__ui-icon" id="product-page__copy-link">
                                     <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/link.svg') }}"> 
                                 </a>
-                                <a href="mailto:info@gambv.nl"  class="product-page__ui-icon">
+                                <a href="mailto:info@companybv.nl"  class="product-page__ui-icon">
                                     <img class="product-icon svg-injection" src="{{ mix('img/ui-icons/mail.svg') }}">
                                 </a>
                             </div>
@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="cell small-12 product-page__contact-large-font">
-                            <a class="product-page__call-me__telephone-number product-page__clickable-link" href="{{ route('zoektocht') }}"><u>Na</u>ar Zoekopdracht</a>
+                            <a class="product-page__call-me__telephone-number product-page__clickable-link" href="{{ route('page3') }}"><u>Na</u>ar Zoekopdracht</a>
                         </div>
 
                     </div>
@@ -284,24 +284,24 @@
         <div class="cell small-12 product-page__decorative-line--bottom">
         </div>
 
-        <div class="cell small-12 product-page__over-gam">
-            <div class="grid-x product-page__over-gam__inner">
+        <div class="cell small-12 product-page__over-company">
+            <div class="grid-x product-page__over-company__inner">
                 <div class="cell small-12">
                     <p class="product-page__bottom-specs-title-font">OP ZOEK NAAR EEN VERGELIJKBARE AUTO?</p>
                 </div>
-                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
-                    Wij zoeken de auto van uw wensen! Gooische Auto Mediair, 10 jaar ervaring in het importeren van jong gebruikte auto’s. 
+                <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
+                    Wij zoeken de auto van uw wensen! Dummy Company, 10 jaar ervaring in het importeren van jong gebruikte auto’s. 
 
                     Ons bedrijf is aangesloten bij de BOVAG. Prijzen zijn incl. BTW en BPM tenzij anders vermeld. Inruil van uw huidige auto is mogelijk. 
                 </div>
-                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
-                    <p class="product-page__over-gam__subheader">Geopend:</p>
+                <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
+                    <p class="product-page__over-company__subheader">Geopend:</p>
                     Maandag t/m vrijdag van 08.00 tot 18.00 uur. 
                     Zaterdag van 10.00 tot 17.00 uur.
 
-                    Dichtbij (500m) snelweg A1 gevestigd, afrit 6 Naarden Vesting. 
+                    Dichtbij (500m) snelweg A1 gevestigd, afrit 6 Duckstad Vesting. 
                 </div>
-                <div class="cell small-12 medium-6 large-4 product-page__over-gam__subsection">
+                <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
                     Door een snel wisselende voorraad is het raadzaam eerst telefonisch contact te zoeken. Ondanks uiterst zorgvuldig samengestelde advertenties kunnen aan druk- of zetfouten geen rechten worden ontleend.
                 </div>
             </div>

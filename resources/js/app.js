@@ -1,8 +1,8 @@
 require('./bootstrap');
 
 var SVGInjector = require('svg-injector')
-window.gam = {};
-window.gam.search = {};
+window.company = {};
+window.company.search = {};
 
 
 $( document ).ready(function() {
@@ -44,7 +44,7 @@ $( document ).ready(function() {
         }
     )
 
-    document.getElementsByClassName('navbar__GAM-logo')[0].addEventListener('click', () => {
+    document.getElementsByClassName('navbar__company-logo')[0].addEventListener('click', () => {
         location.href = '/'
         }
     )
@@ -127,16 +127,16 @@ function toggleDropdown() {
     $('#header__dropdown-button').toggleClass('dropdown-nav-active-button')
     $('html').toggleClass('no-scroll')
     $('body').toggleClass('no-scroll')
-    $('.search-bar').toggleClass('navbar__GAM-logo__do-not-display')
+    $('.search-bar').toggleClass('navbar__company-logo__do-not-display')
     $('.header-sticky').css('visibility', 'hidden')
 
     if ( $('.homepage__uitgelicht-pointer').length > 0 ) {
         $('.logo-white')
-            .toggleClass('navbar__GAM-logo__do-not-display')
-            .toggleClass('navbar__GAM-logo')
+            .toggleClass('navbar__company-logo__do-not-display')
+            .toggleClass('navbar__company-logo')
         $('.logo-black')
-            .toggleClass('navbar__GAM-logo__do-not-display')
-            .toggleClass('navbar__GAM-logo')
+            .toggleClass('navbar__company-logo__do-not-display')
+            .toggleClass('navbar__company-logo')
     }
 }
 
@@ -154,10 +154,10 @@ function toggleSearchbar() {
 
 
 // Search Module
-window.gam.search.handleSearchRequest = function () {
+window.company.search.handleSearchRequest = function () {
     searchURL = window.location.origin + '/autos';
-    if (window.gamSearchState) {
-        searchURL = window.gam.search.handelGamSearchState(searchURL, window.gamSearchState);
+    if (window.companySearchState) {
+        searchURL = window.company.search.handelcompanySearchState(searchURL, window.companySearchState);
     } else {
         // default
         searchURL += '/' + 'aanbod';
@@ -167,42 +167,42 @@ window.gam.search.handleSearchRequest = function () {
 
 }
 
-window.gam.search.handelGamSearchState = function(searchURL, gamSearchState) {
-    if (gamSearchState.pathParams.carState) {
-        searchURL += '/' + gamSearchState.pathParams.carState;
+window.company.search.handelcompanySearchState = function(searchURL, companySearchState) {
+    if (companySearchState.pathParams.carState) {
+        searchURL += '/' + companySearchState.pathParams.carState;
     } else {
         searchURL += '/' + 'aanbod';
     }
 
-    if (gamSearchState.pathParams.brand) {
-        searchURL += '/' + gamSearchState.pathParams.brand;
+    if (companySearchState.pathParams.brand) {
+        searchURL += '/' + companySearchState.pathParams.brand;
     }
 
-    if (!jQuery.isEmptyObject(gamSearchState.queryParams)) {
-        serializedParams = $.param(gamSearchState.queryParams);
+    if (!jQuery.isEmptyObject(companySearchState.queryParams)) {
+        serializedParams = $.param(companySearchState.queryParams);
         searchURL += '?' + serializedParams;
     }
     return searchURL;
 }
 
 
-window.gam.search.actionUpdateBrand = function(brand) {
-    gamSearchState.pathParams.brand = brand;
+window.company.search.actionUpdateBrand = function(brand) {
+    companySearchState.pathParams.brand = brand;
 }
 
-window.gam.search.actionUpdateSort = function(sortKey) {
+window.company.search.actionUpdateSort = function(sortKey) {
     if (!sortKey) {
-        delete gamSearchState.queryParams.order;
+        delete companySearchState.queryParams.order;
     } else {
-        gamSearchState.queryParams.order = sortKey;
+        companySearchState.queryParams.order = sortKey;
     }
 }
 
-window.gam.search.actionUpdateQuery = function(query) {
+window.company.search.actionUpdateQuery = function(query) {
     if (!query) {
-        delete gamSearchState.queryParams.q;
+        delete companySearchState.queryParams.q;
     } else {
-        gamSearchState.queryParams.q = query;
+        companySearchState.queryParams.q = query;
     }
 }
 

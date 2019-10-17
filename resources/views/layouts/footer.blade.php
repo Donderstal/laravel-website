@@ -19,8 +19,8 @@
                            <p><i class="fas fa-map-marker-alt"></i></p>
                      </div>
                      <div class="cell small-11">
-                           <p class="footer__contact-paragraph"><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Energiestraat 25B <br/>
-                           <u>14</u>11 AR, Naarden </a></p>
+                           <p class="footer__contact-paragraph"><a class="contact-details__anchor" target="_blank"> Voorbeeldstraat 13 <br/>
+                           <u>14</u>90 XQ, Duckstad </a></p>
                      </div>
 
                      </div>
@@ -30,7 +30,7 @@
                               <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="footer__contact-paragraph"><a href="tel:0356944646"  target="_blank"class="contact-details__anchor"> <u>03</u>5 - 694 4646</a></p>
+                              <p  class="footer__contact-paragraph"><a href="tel:0612345678"  target="_blank"class="contact-details__anchor"> <u>06</u> - 12345678 </a></p>
                         </div>
 
                      </div>
@@ -41,7 +41,7 @@
                               <p><i class="far fa-envelope"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="footer__contact-paragraph"><a href="mailto:info@gambv.nl" target="_blank" class="contact-details__anchor"> <u>in</u>fo@gambv.nl</a></p>
+                              <p  class="footer__contact-paragraph"><a href="mailto:info@companybv.nl" target="_blank" class="contact-details__anchor"> <u>in</u>fo@companybv.nl</a></p>
                         </div>
 
                      </div>
@@ -50,10 +50,10 @@
                         <div >
                            <p class="footer__social-title">Volg ons op:</p>
                            <p class="footer__social">
-                              <a href="https://www.facebook.com/Gooische-Auto-Mediair-222891847726148/" target="_blank">
+                              <a target="_blank">
                                  <i class="fab fa-facebook-square"></i>
                               </a>
-                              <a href="https://www.instagram.com/gooischeautomediair/" target="_blank">
+                              <a target="_blank">
                                  <i class="fab fa-instagram"></i>
                               </a>
                            </p>
@@ -65,19 +65,17 @@
                <div class="cell small-12 medium-4 large-6">
                   <div class="footer__opening-hours">
                      <p class="footer__opening-hours__day"> Maandag t/m vrijdag </p>
-                     <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                     <p class="footer__opening-hours__type"> Showroom </p>
                      <p class="footer__opening-hours__time"> 08:00 - 18:00 </p>
                   </div>
                   <div class="footer__opening-hours">
                      <p class="footer__opening-hours__day"> Zaterdag </p>
                      <p class="footer__opening-hours__type"> Showroom </p>
                      <p class="footer__opening-hours__time"> 10:00 - 17:00 </p>
-                     <p class="footer__opening-hours__type"> Werkplaats </p>
-                     <p class="footer__opening-hours__time"> Gesloten </p>
                   </div>
                   <div class="footer__opening-hours">
                      <p class="footer__opening-hours__day"> Zondag </p>
-                     <p class="footer__opening-hours__type"> Showroom & werkplaats </p>
+                     <p class="footer__opening-hours__type"> Showroom </p>
                      <p class="footer__opening-hours__time"> Gesloten </p>
                   </div>
                </div>
@@ -90,13 +88,13 @@
                width="600"
                height="450"
                frameborder="0" style="border:0"
-               src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ8Rg2IZgTxkcRb2XhXtWGx88&&key=AIzaSyDpz6vOl2k6lhhIXe6f6wn3T6h09vXjRNQ&language=nl" allowfullscreen>
+               allowfullscreen>
             </iframe>
             </div>
 
             <div class="cell small-12 footer__bottom-copyright">
                <sub><a target="_blank" class="footer__privacy-statement" href="{{ route('layouts.privacy_statement') }}">Privacy Statement en Algemene Voorwaarden</a></sub> <br />
-              <sub>Copyright 2019 Gooische Auto Mediair</sub>
+              <sub>Copyright 2019 Dummy Company</sub>
             </div>
 
          </div>

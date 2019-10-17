@@ -1,5 +1,5 @@
 <!--
-    Template for 'Zoektocht', 'Financiering', 'Over ons', 'Contact' and 'Werkplaats' pages
+    Template for 'page3', 'page2', 'Over ons', 'Contact' and 'Werkplaats' pages
     They're pretty much the same except for their content
 -->
 
@@ -15,13 +15,13 @@
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
                 <h1>{{ strtoupper($title) }}</h1>
-                <p>Na verschillende dealerschappen hebben Erik Keizer en Pilter Groeneveld zich vanaf 2006 gespecialiseerd in de import en verkoop van verschillende automerken. Van Audi, BMW, Mercedes en Volkswagen tot Volvo. Dit doen wij met vakkundige collega’s die niet alleen graag aan auto’s, maar ook aan hun kennis sleutelen. Vanuit onze showroom en werkplaats in Naarden tot de beste auto-importeurs in Nederland.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
             <div class="grid-x cell small-12 general-info__reviews">
 
                 <div class="cell small-12">
-                    <h1 class="main-header-font">WAT ANDEREN <br/> DENKEN OVER GAM</h1>
+                    <h1 class="main-header-font">Lorem ipsum <br/> id est laborum.</h1>
                 </div>
 
                 @foreach($reviews as $review)

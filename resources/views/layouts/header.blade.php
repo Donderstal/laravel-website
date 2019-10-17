@@ -20,8 +20,8 @@
                     class="navbar__searchbar__input"
                     placeholder="Zoeken..."
                     type="text"
-                    @if (isset($gamSearchState))
-                        value="{{ $gamSearchState['queryParams']['q'] ?? '' }}"
+                    @if (isset($companySearchState))
+                        value="{{ $companySearchState['queryParams']['q'] ?? '' }}"
                     @endif
                     >
                 <button id="navbar__searchbar__button" class="navbar__searchbar__button">ZOEKEN</button>
@@ -29,15 +29,15 @@
 
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
-            <div class="navbar__GAM-log-wrapper">
+            <div class="navbar__company-log-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
-                <img class="clickable__logo logo-white navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
             @else
-                <img class="clickable__logo logo-white navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
             @endif
             </div>
         </div>
@@ -56,16 +56,16 @@
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $page_title === 'Verkocht' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'werkplaats')? 'header__active-link' : '' }}" href="{{ route('werkplaats') }}">Werkplaats</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page1')? 'header__active-link' : '' }}" href="{{ route('page1') }}">page1</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'financiering')? 'header__active-link' : '' }}" href="{{ route('financiering') }}">Financiering</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page2')? 'header__active-link' : '' }}" href="{{ route('page2') }}">page2</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'zoektocht')? 'header__active-link' : '' }}" href="{{ route('zoektocht') }}">Zoektocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page3')? 'header__active-link' : '' }}" href="{{ route('page3') }}">page3</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'over-ons')? 'header__active-link' : '' }}" href="{{ route('over-ons') }}">Over ons</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page4')? 'header__active-link' : '' }}" href="{{ route('page4') }}">Over ons</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'contact.create' || Route::currentRouteName() === 'contact.store ')? 'header__active-link' : '' }}" href="{{ route('contact.create') }}">Contact</a>
@@ -76,10 +76,10 @@
 </section>
 @push('scripts-ready')
     $('#navbar__searchbar__button').on('click', function() {
-        window.gam.search.handleSearchRequest()
+        window.company.search.handleSearchRequest()
     });
     $('#navbar__searchbar-input').on('change', function() {
-        window.gam.search.actionUpdateQuery(this.value);
+        window.company.search.actionUpdateQuery(this.value);
     });
 @endpush
 @if( Route::currentRouteName() === 'landing-page' )
@@ -104,8 +104,8 @@
                     class="navbar__searchbar__input"
                     placeholder="Zoeken..."
                     type="text"
-                    @if (isset($gamSearchState))
-                        value="{{ $gamSearchState['queryParams']['q'] ?? '' }}"
+                    @if (isset($companySearchState))
+                        value="{{ $companySearchState['queryParams']['q'] ?? '' }}"
                     @endif
                     >
                 <button id="navbar__searchbar__button" class="navbar__searchbar__button">ZOEKEN</button>
@@ -113,15 +113,15 @@
 
         </div>
         <div class="cell small-6 large-2 large-order-1 header-subsection">
-            <div class="navbar__GAM-log-wrapper">
+            <div class="navbar__company-log-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
-                <img class="clickable__logo logo-white navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
             @else
-                <img class="clickable__logo logo-white navbar__GAM-logo__do-not-display" src="{{ mix('img/ui-icons/GAM-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__GAM-logo" src="{{ mix('img/ui-icons/GAM-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
             @endif
             </div>
         </div>
@@ -140,16 +140,16 @@
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'products.list' && $page_title === 'Verkocht' ) ? 'header__active-link' : '' }}" href="{{ route('products.list', ['status'=>'verkocht']) }}">Verkocht</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'werkplaats')? 'header__active-link' : '' }}" href="{{ route('werkplaats') }}">Werkplaats</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page1')? 'header__active-link' : '' }}" href="{{ route('page1') }}">page1</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'financiering')? 'header__active-link' : '' }}" href="{{ route('financiering') }}">Financiering</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page2')? 'header__active-link' : '' }}" href="{{ route('page2') }}">page2</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'zoektocht')? 'header__active-link' : '' }}" href="{{ route('zoektocht') }}">Zoektocht</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page3')? 'header__active-link' : '' }}" href="{{ route('page3') }}">page3</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
-                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'over-ons')? 'header__active-link' : '' }}" href="{{ route('over-ons') }}">Over ons</a>
+                    <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'page4')? 'header__active-link' : '' }}" href="{{ route('page4') }}">Over ons</a>
                 </p>
                 <p class="navbar-link-font header__menu-paragraph">
                     <a class="header__menu-anchor {{ ( Route::currentRouteName() === 'contact.create' || Route::currentRouteName() === 'contact.store ')? 'header__active-link' : '' }}" href="{{ route('contact.create') }}">Contact</a>

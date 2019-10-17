@@ -32,10 +32,10 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::post('{slug}', 'ProductsController@store')->name('store');
 });
 
-Route::get('/werkplaats', 'GeneralInfoController@werkplaats')->name('werkplaats');
-Route::get('/financiering', 'GeneralInfoController@financiering')->name('financiering');
-Route::get('/zoektocht', 'GeneralInfoController@zoektocht')->name('zoektocht');
-Route::get('/over-ons', 'GeneralInfoController@overOns')->name('over-ons');
+Route::get('/page1', 'GeneralInfoController@page1')->name('page1');
+Route::get('/page2', 'GeneralInfoController@page2')->name('page2');
+Route::get('/page3', 'GeneralInfoController@page3')->name('page3');
+Route::get('/page4', 'GeneralInfoController@page4')->name('page4');
 
 // Contact
 Route::get('/contact', 'ContactController@create')->name('contact.create');

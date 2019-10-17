@@ -1,4 +1,4 @@
-@extends('layouts.master', ['gamSearchState' =>  $gamSearchState])
+@extends('layouts.master', ['companySearchState' =>  $companySearchState])
 
 @section('content')
     <section class="ons-aanbod-wrapper">
@@ -50,7 +50,7 @@
 @endsection
 @push('scripts-ready')
     $('#ons-aanbod-sorter').on('change', function() {
-        window.gam.search.actionUpdateSort(this.value);
-        window.gam.search.handleSearchRequest();
+        window.company.search.actionUpdateSort(this.value);
+        window.company.search.handleSearchRequest();
     });
 @endpush

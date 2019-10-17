@@ -1,5 +1,5 @@
 <!--
-    Template for 'Zoektocht', 'Financiering', and 'Werkplaats' pages
+    Template for 'page3', 'page2', and 'Werkplaats' pages
     They're pretty much the same except for their content
 -->
 

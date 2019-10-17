@@ -79,7 +79,7 @@ class ProductsController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        $title = 'GAM - ' . $product->title . ' - ' . $product->brand()->first()->title . ' - ' . $product->model()->first()->title;
+        $title = 'company - ' . $product->title . ' - ' . $product->brand()->first()->title . ' - ' . $product->model()->first()->title;
         return view('products.show')->with([
             'slug_object' => $product->slug()->first(),
             'title' => $title,
@@ -108,7 +108,7 @@ class ProductsController extends Controller
             $product_list_search_path_params['status'] = $request->status;
         }
 
-        ($request->status == 'aanbod') ? $title = 'GAM - Ons aanbod' : $title = 'GAM - Verkocht';
+        ($request->status == 'aanbod') ? $title = 'company - Ons aanbod' : $title = 'company - Verkocht';
 
         ($request->status == 'aanbod') ? $page_title = 'Aanbod' : $page_title = 'Verkocht';
 
@@ -118,8 +118,8 @@ class ProductsController extends Controller
 
         $product_list_search_url = URL::full();
 
-        // Finial gamSearchState that will be passed to the javascript as json
-        $gamSearchState = [
+        // Finial companySearchState that will be passed to the javascript as json
+        $companySearchState = [
             'pathParams' => $product_list_search_path_params,
             'queryParams' => $product_list_search_query_params
         ];
@@ -133,7 +133,7 @@ class ProductsController extends Controller
         $products_results->appends($product_list_search_query_params);
 
         return view('products.list')->with([
-            'gamSearchState' => $gamSearchState,
+            'companySearchState' => $companySearchState,
             'title' => $title,
             'page_title' => $page_title,
             'products' => $products_results,

@@ -1,7 +1,7 @@
 <footer class="app-footer">
     <div>
         © Copyright
-        <span> {{ now()->format('Y') }} GAM.</span>
+        <span> {{ now()->format('Y') }} company.</span>
     </div>
     <div class="ml-auto">
         <span>Powered by</span>
