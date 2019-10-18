@@ -5,7 +5,7 @@ Showcase repo for my work with Laravel, Sass and Foundation
 ### Installation
 You will need PHP Composer to run this project. You will also need to install Laravel and Yarn.
 
-The easiest way to get everything up and running is by using something like Xampp. Clone the repo into your xampp/htdocs folder. Open up the httpd.conf file. Search for 'documentroot' and point it to the Public folder of this repo.
+The easiest way to get everything up and running is by using something like Xampp. Clone the repo into your xampp/htdocs folder. Open up the XAMPP controle panel and open the httpd.conf file under the Apache admin button. Search for 'documentroot' and point it to the Public folder of this repo.
 
 There is a .env.example file in the root folder of the project. Rename this to `.env`.
 
