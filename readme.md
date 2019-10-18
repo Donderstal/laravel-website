@@ -38,7 +38,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 });
 ```
 
-Compile the front-end code and assets by running `npm run dev`
+Compile the front-end code and assets by running `npm run dev`. Sometimes this won't work right away and you'll have to run the same command a few times before Laravel can find the compiled assets
 
 Restart Apache and MySQL in the XAMPP control panel
 
