@@ -2,7 +2,7 @@
 
 Showcase repo for my work with Laravel, Sass and Foundation
 
-### Contents
+### Functionalities
 This project includes an Admin Dashboard for adding and managing products. Products are displayed individually on product pages. It also includes some contact forms and a database with a domain specific model. 
 
 ### Installation
