@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_ENV') == 'production' && env('ENABLE_HTTPS') == true) {
             URL::forceScheme('https');
         }
-
+        Schema::defaultStringLength(191);
         Blade::component('admin.components.fields.input', 'input');
         Blade::component('admin.components.button', 'button');
         Blade::component('admin.components.panel', 'panel');
