@@ -36,7 +36,7 @@ $factory->define(App\Models\Products::class, function (Faker $faker) {
 
 $factory->afterCreating(App\Models\Products::class, function ($product, $faker) {
     if (!$product->isComingSoon()) {
-        $dir = '/tmp';
+        $dir = '../../tmp';
         $width = 640;
         $height = 480;
         $random_image = $faker->image($dir, $width, $height, 'transport');

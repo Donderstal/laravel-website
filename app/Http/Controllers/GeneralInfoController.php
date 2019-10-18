@@ -51,8 +51,8 @@ class GeneralInfoController extends Controller {
 
     public function page4() {
 
-        return view('page4')->with([
-            'title' => 'Over ons',
+        return view('over-ons')->with([
+            'title' => 'page4',
             'reviews' => [
                 'review1' => [
                     'title' => 'Gaius Julies Caesar',
@@ -74,28 +74,28 @@ class GeneralInfoController extends Controller {
             'employees' => [
                 'employee1' => [
                     'name' => 'Miss Employee',
-                    'img' => 'img/staff/generic-office-lady.jpg',
+                    'img' => 'img/generic-office-lady.jpg',
                     'job-title' => 'Employee',
                     'mail'  =>  'employee@companybv.nl',
                     'tel'   =>  '0612345678'
                 ],
                 'employee2' => [
                     'name' => 'Miss Employee',
-                    'img' => 'img/staff/generic-office-lady.jpg',
+                    'img' => 'img/generic-office-lady.jpg',
                     'job-title' => 'Employee',
                     'mail'  =>  'employee@companybv.nl',
                     'tel'   =>  '0612345678'
                 ],
                 'employee3' => [
                     'name' => 'Miss Employee',
-                    'img' => 'img/staff/generic-office-lady.jpg',
+                    'img' => 'img/generic-office-lady.jpg',
                     'job-title' => 'Employee',
                     'mail'  =>  'employee@companybv.nl',
                     'tel'   =>  '0612345678'
                 ],
                 'employee4' => [
                     'name' => 'Miss Employee',
-                    'img' => 'img/staff/generic-office-lady.jpg',
+                    'img' => 'img/generic-office-lady.jpg',
                     'job-title' => 'Employee',
                     'mail'  =>  'employee@companybv.nl',
                     'tel'   =>  '0612345678'
