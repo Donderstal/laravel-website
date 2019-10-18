@@ -13,6 +13,8 @@ There is a .env.example file in the root folder of the project. Rename this to `
 
 After cloning this repo, run `composer install` and `yarn` to install the required dependencies. This can take some time.
 
+Start Apache and MySQL in the XAMPP control panel. In phpMyAdmin, make a new database which uses the same name as the `DB_DATABASE` variable in the `.env` files 
+
 Run the following command to set up the database tables:
 ```bash
 php artisan migrate
