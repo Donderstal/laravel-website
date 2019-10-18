@@ -38,9 +38,9 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
 });
 ```
 
-Compile the front-end code and asstes by running `npm run dev`
+Compile the front-end code and assets by running `npm run dev`
 
-Start Apache and MySQL in the XAMPP control panel
+Restart Apache and MySQL in the XAMPP control panel
 
 You should now be able to visit the website on localhost
 
