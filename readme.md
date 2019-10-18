@@ -11,7 +11,19 @@ The easiest way to get everything up and running is by using something like Xamp
 
 There is a .env.example file in the root folder of the project. Rename this to `.env`.
 
-Comment the following code in the routes/web.php file:
+After cloning this repo, run `composer install` and `yarn` to install the required dependencies. This can take some time.
+
+Run the following command to set up the database tables:
+```bash
+php artisan migrate
+```
+
+then the following command to seed the database with dummy data:
+```bash
+php artisan db:seed
+```
+
+Uncomment the following code in the routes/web.php file:
 ``$brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
 $brands_slugs = ProductsBrands::getAllSlugs($brands_list);
 $brands_slug_regex = implode($brands_slugs, '|');
@@ -22,15 +34,11 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::post('{slug}', 'ProductsController@store')->name('store');
 });``
 
-After cloning this repo, run `composer install` and `yarn` to install the required dependencies. This can take some time.
-
-If you need an administration account, to create an administration account run below command and follow the instruction.
-
-```bash
-php artisan db:seed --class=UsersTableSeeder
-```
-
 Compile the front-end code and asstes by running `npm run dev`
+
+Start Apache and MySQL in the XAMPP control panel
+
+You should now be able to visit the website on localhost
 
 ### Functionalities
 This project includes an Admin Dashboard for adding and managing products. Products are displayed individually on product pages. It also includes some contact forms and a database with a domain specific model. 
