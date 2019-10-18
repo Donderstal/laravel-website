@@ -61,7 +61,7 @@
                             <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11 medium-10 homepage__contact-details__right-div">
-                            <p> <a class="contact-details__anchor" target="_blank" href="tel:0356944646"><u>03</u>5 - 694 4646</a></p>
+                            <p> <a class="contact-details__anchor" target="_blank" href="tel:0356944646"><u>06</u> - 1234 5678</a></p>
                         </div>      
                     </div>
 

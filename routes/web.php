@@ -22,7 +22,7 @@ Auth::routes([
 
 ImageUtil::routes();
 
-/* $brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
+$brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
 $brands_slugs = ProductsBrands::getAllSlugs($brands_list);
 $brands_slug_regex = implode($brands_slugs, '|');
 Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () use ($brands_slug_regex){
@@ -30,7 +30,7 @@ Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], fun
     Route::get('{status}/{brand?}', 'ProductsController@list')->name('list')->where(['status' => 'aanbod|verkocht', 'brand' => $brands_slug_regex]);
     Route::get('{slug}', 'ProductsController@show')->name('show');
     Route::post('{slug}', 'ProductsController@store')->name('store');
-}); */
+});
 
 Route::get('/page1', 'GeneralInfoController@page1')->name('page1');
 Route::get('/page2', 'GeneralInfoController@page2')->name('page2');

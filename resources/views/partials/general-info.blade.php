@@ -8,7 +8,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i></p>
                             </div>
                             <div class="cell small-11">
-                                <p><a class="contact-details__anchor" href="https://www.google.nl/maps/place/Gooische+Auto+Mediair/@52.3021958,5.1486849,17z/data=!3m1!4b1!4m5!3m4!1s0x47c61398213618f1:0xcfc786d55ee1656f!8m2!3d52.3021925!4d5.1508736" target="_blank"> Voorbeeldstraat 13 <br/>
+                                <p><a class="contact-details__anchor" target="_blank"> Voorbeeldstraat 13 <br/>
                                 <u>14</u>90 XQ, Duckstad </a></p>
                             </div>
 

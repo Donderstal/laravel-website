@@ -132,7 +132,7 @@
                         </div>
 
                         <div class="cell small-12">
-                            <p class="product-page__contact-small-font">Mocht u op zoek zijn naar een specifiek model, dan kunnen wij voor u op zoek gaan. Vul het formulier op de Zoekopdracht pagina in om van start te gaan.</p>
+                            <p class="product-page__contact-small-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
 
                         <div class="cell small-12 product-page__contact-large-font">
@@ -248,7 +248,7 @@
                               <p><i class="fas fa-phone"></i></p>
                         </div>
                         <div class="cell small-11">
-                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>03</u>5 - 694 4646</a></p>
+                              <p  class="product-page__contact-paragraph"><a class="contact-details__anchor" target="_blank" href="tel:0356944646"> <u>06</u> - 1234 5678</a></p>
                         </div>      
 
                      </div>
@@ -290,19 +290,17 @@
                     <p class="product-page__bottom-specs-title-font">OP ZOEK NAAR EEN VERGELIJKBARE AUTO?</p>
                 </div>
                 <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
-                    Wij zoeken de auto van uw wensen! Dummy Company, 10 jaar ervaring in het importeren van jong gebruikte auto’s. 
-
-                    Ons bedrijf is aangesloten bij de BOVAG. Prijzen zijn incl. BTW en BPM tenzij anders vermeld. Inruil van uw huidige auto is mogelijk. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
                 </div>
                 <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
                     <p class="product-page__over-company__subheader">Geopend:</p>
                     Maandag t/m vrijdag van 08.00 tot 18.00 uur. 
                     Zaterdag van 10.00 tot 17.00 uur.
 
-                    Dichtbij (500m) snelweg A1 gevestigd, afrit 6 Duckstad Vesting. 
+                    Excepteur sint occaecat cupidatat non proident.
                 </div>
                 <div class="cell small-12 medium-6 large-4 product-page__over-company__subsection">
-                    Door een snel wisselende voorraad is het raadzaam eerst telefonisch contact te zoeken. Ondanks uiterst zorgvuldig samengestelde advertenties kunnen aan druk- of zetfouten geen rechten worden ontleend.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
             <!-- Main paragraph -->
             <div class="cell small-12 medium-9 general-info__main-paragraph">
                 <h1>CONTACT</h1>
-                <p>In de showroom van 1.500 m2 van de company vind je elk merk en model auto, nieuw en jong gebruikt. Ons grote aanbod aan luxe en exclusieve occasions van premium automerken is doorlopend in beweging. Deze exclusieve auto’s zijn altijd compleet uitgerust en technisch in perfecte staat. Schroom dus vooral niet om langs te komen of contact met ons op te nemen. Wij staan voor u klaar.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
             @include('partials.general-info')
