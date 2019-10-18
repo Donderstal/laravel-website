@@ -3,9 +3,7 @@
 Showcase repo for my work with Laravel, Sass and Foundation
 
 ### Installation
-You will need PHP Composer to run this project. You can find it here https://getcomposer.org/download/ if you do not already have it installed. 
-
-You will also need to install Laravel and Yarn if you don't have it already. Yarn can be easily installed through NPM by running `npm i yarn` or `npm i --gobal yarn` if you want to install it globally
+You will need PHP Composer to run this project. You can find it here https://getcomposer.org/download/ if you do not already have it installed. You will also need to install Laravel and Yarn if you don't have it already.
 
 The easiest way to get everything up and running is by using something like Xampp. Clone the repo into your xampp/htdocs folder. Open up the httpd.conf file. Search for 'documentroot' and point it to the Public folder of this repo.
 
