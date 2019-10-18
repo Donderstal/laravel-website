@@ -46,3 +46,5 @@ You should now be able to visit the website on localhost
 
 ### Functionalities
 This project includes an Admin Dashboard for adding and managing products. Products are displayed individually on product pages. It also includes some contact forms and a database with a domain specific model. 
+
+You can login to the admin dashboard with the credentials you create when seeding the database. In the Admin dashboard, you can create new users and products and manage existing users and products
