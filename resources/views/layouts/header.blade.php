@@ -31,13 +31,13 @@
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             <div class="navbar__company-log-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
-                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/plus.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/link.svg') }}">
             @else
-                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/plus.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/link.svg') }}">
             @endif
             </div>
         </div>
@@ -115,13 +115,13 @@
         <div class="cell small-6 large-2 large-order-1 header-subsection">
             <div class="navbar__company-log-wrapper">
             @if( Route::currentRouteName() === 'landing-page' )
-                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo" src="{{ mix('img/ui-icons/plus.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/link.svg') }}">
             @else
-                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/company-logo-minimal-white.svg') }}">
+                <img class="clickable__logo logo-white navbar__company-logo__do-not-display" src="{{ mix('img/ui-icons/plus.svg') }}">
 
-                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/company-logo-minimal.svg') }}">
+                <img class="clickable__logo logo-black navbar__company-logo" src="{{ mix('img/ui-icons/link.svg') }}">
             @endif
             </div>
         </div>
