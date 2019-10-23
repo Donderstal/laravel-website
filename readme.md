@@ -25,7 +25,7 @@ php artisan db:seed
 
 Restart Apache and MySQL in the XAMPP control panel
 
-Compile the front-end code and assets by running `npm run dev`. Sometimes this won't work right away and you'll have to run the same command a few times before Laravel can find the compiled assets
+Compile the front-end code and assets by running `yarn run dev`. Sometimes this won't work right away and you'll have to run the same command a few times before Laravel can find the compiled assets
 
 You should now be able to visit the website on localhost
 
