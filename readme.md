@@ -23,19 +23,6 @@ then the following command to seed the database with dummy data:
 php artisan db:seed
 ```
 
-Uncomment the following code in the routes/web.php file:
-```php
-$brands_list = ProductsBrands::getAllBrandsInOrderQuery()->get();
-$brands_slugs = ProductsBrands::getAllSlugs($brands_list);
-$brands_slug_regex = implode($brands_slugs, '|');
-Route::group(['prefix' => config('site.products.url'), 'as' => 'products.'], function () use ($brands_slug_regex){
-    Route::get('/', 'ProductsController@list')->name('listAll');
-    Route::get('{status}/{brand?}', 'ProductsController@list')->name('list')->where(['status' => 'aanbod|verkocht', 'brand' => $brands_slug_regex]);
-    Route::get('{slug}', 'ProductsController@show')->name('show');
-    Route::post('{slug}', 'ProductsController@store')->name('store');
-});
-```
-
 Restart Apache and MySQL in the XAMPP control panel
 
 Compile the front-end code and assets by running `npm run dev`. Sometimes this won't work right away and you'll have to run the same command a few times before Laravel can find the compiled assets
