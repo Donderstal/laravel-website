@@ -22,6 +22,7 @@ then the following command to seed the database with dummy data:
 ```bash
 php artisan db:seed
 ```
+After running this command you are prompted to fill in some credentials. These can be used to enter the admin dashboard.
 
 Restart Apache and MySQL in the XAMPP control panel
 
