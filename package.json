@@ -21,7 +21,7 @@
         "foundation-sites": "^6.5.3",
         "imagemin-mozjpeg": "^8.0.0",
         "imagemin-webpack-plugin": "^2.4.2",
-        "jquery": "^3.2",
+        "jquery": "^3.5",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
         "motion-ui": "^2.0.3",
